@@ -27,6 +27,7 @@ const myEmployeesName = employees.myMap(employee => employee.name);
 console.log(myEmployeesName); // ["John", "Sarah", "Michael"]
 ````
 ## Filter In JavaScript
+```javascript
 const products = [
     { name: 'iPhone', price: 999, inStock: true },
     { name: 'Samsung Galaxy', price: 899, inStock: false },
@@ -39,7 +40,7 @@ const availableProducts = products.filter(product => product.inStock);
 //     { name: 'Google Pixel', price: 799, inStock: true },
 // ]
 // Polyfill of filter()
-```javascript
+
 if (!Array.prototype.myFilter) {
     Array.prototype.myFilter = (callback) => {
         const result = [];
