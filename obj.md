@@ -98,13 +98,15 @@ function numIdenticalPairs(nums) {
 
     return count;
 }
-``````
+ 
 // Example usage:
 let nums = [1,2,3,1,1,3];
 console.log(numIdenticalPairs(nums)); // Output: 4
 
 ```
-##Count the Number of Consistent Strings
+
+### Count the Number of Consistent Strings
+
 ````javascript
 function countConsistentStrings(allowed, words) {
     let allowedSet = new Set(allowed);
@@ -186,6 +188,7 @@ console.log(sumOfUnique(nums)); // Output: 4 (1 + 3)
 
 ``
 ### Unique Number of Occurrences
+
 ```javascript
 function uniqueOccurrences(arr) {
     let frequency = {};
