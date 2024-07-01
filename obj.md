@@ -217,4 +217,151 @@ function uniqueOccurrences(arr) {
 let arr = [1, 2, 2, 1, 1, 3];
 console.log(uniqueOccurrences(arr)); // Output: true
  ````
+### Integer to Roman
+  ````javascript 
+function intToRoman(num) {
+    const romanSymbols = [
+        { value: 1000, symbol: 'M' },
+        { value: 900, symbol: 'CM' },
+        { value: 500, symbol: 'D' },
+        { value: 400, symbol: 'CD' },
+        { value: 100, symbol: 'C' },
+        { value: 90, symbol: 'XC' },
+        { value: 50, symbol: 'L' },
+        { value: 40, symbol: 'XL' },
+        { value: 10, symbol: 'X' },
+        { value: 9, symbol: 'IX' },
+        { value: 5, symbol: 'V' },
+        { value: 4, symbol: 'IV' },
+        { value: 1, symbol: 'I' }
+    ];
 
+    let roman = '';
+
+    for (let i = 0; i < romanSymbols.length; i++) {
+        const { value, symbol } = romanSymbols[i];
+        while (num >= value) {
+            roman += symbol;
+            num -= value;
+        }
+    }
+
+    return roman;
+}
+
+// Example usage:
+console.log(intToRoman(1994)); // Output: "MCMXCIV"
+console.log(intToRoman(58));   // Output: "LVIII"
+console.log(intToRoman(9));    // Output: "IX"
+````
+### Longest Substring Without Repeating Characters
+  ````javascript
+function lengthOfLongestSubstring(s) {
+    let seen = new Set();
+    let left = 0;
+    let maxLength = 0;
+
+    for (let right = 0; right < s.length; right++) {
+        while (seen.has(s[right])) {
+            seen.delete(s[left]);
+            left++;
+        }
+        seen.add(s[right]);
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+
+    return maxLength;
+}
+
+// Example usage:
+console.log(lengthOfLongestSubstring("abcabcbb")); // Output: 3
+console.log(lengthOfLongestSubstring("bbbbb"));    // Output: 1
+console.log(lengthOfLongestSubstring("pwwkew"));   // Output: 3
+console.log(lengthOfLongestSubstring(""));         // Output: 0
+console.log(lengthOfLongestSubstring("dvdf"));     // Output: 3
+````
+## Group Anagrams
+  ````javascript
+function groupAnagrams(strs) {
+    let map = new Map();
+
+    for (let str of strs) {
+        // Sort the string to use as a key
+        let sortedStr = str.split('').sort().join('');
+        
+        // If the key doesn't exist in the map, initialize with an empty array
+        if (!map.has(sortedStr)) {
+            map.set(sortedStr, []);
+        }
+        
+        // Add the original string to the corresponding group
+        map.get(sortedStr).push(str);
+    }
+
+    // Convert the map values to an array and return
+    return Array.from(map.values());
+}
+
+// Example usage:
+let strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
+console.log(groupAnagrams(strs)); // Output: [["eat","tea","ate"], ["tan","nat"], ["bat"]]
+````
+## Find All Anagrams in a String
+function findAnagrams(s, p) {
+    const result = [];
+    const pCount = Array(26).fill(0);
+    const sCount = Array(26).fill(0);
+
+    // Helper function to convert character to index
+    const charToIndex = char => char.charCodeAt(0) - 'a'.charCodeAt(0);
+
+    // Populate the frequency array for the pattern
+    for (let char of p) {
+        pCount[charToIndex(char)]++;
+    }
+
+    let left = 0;
+    let right = 0;
+
+    // Sliding window approach
+    while (right < s.length) {
+        // Expand the window by adding the current character to sCount
+        sCount[charToIndex(s[right])]++;
+        right++;
+
+        // If the window size is the same as the size of p
+        if (right - left === p.length) {
+            // If the current window matches the pattern's frequency count, store the start index
+            if (arraysEqual(pCount, sCount)) {
+                result.push(left);
+            }
+
+            // Move the window by removing the left character from sCount
+            sCount[charToIndex(s[left])]--;
+            left++;
+        }
+    }
+
+    return result;
+}
+
+// Helper function to compare two arrays for equality
+function arraysEqual(arr1, arr2) {
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Example usage:
+let s = "cbaebabacd";
+let p = "abc";
+console.log(findAnagrams(s, p)); // Output: [0, 6]
+
+s = "abab";
+p = "ab";
+console.log(findAnagrams(s, p)); // Output: [0, 1, 2]
+```
+ 
