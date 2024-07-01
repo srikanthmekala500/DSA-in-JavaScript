@@ -104,3 +104,113 @@ let nums = [1,2,3,1,1,3];
 console.log(numIdenticalPairs(nums)); // Output: 4
 
 ```
+##Count the Number of Consistent Strings
+````javascript
+function countConsistentStrings(allowed, words) {
+    let allowedSet = new Set(allowed);
+    let count = 0;
+
+    for (let word of words) {
+        let isConsistent = true;
+        for (let char of word) {
+            if (!allowedSet.has(char)) {
+                isConsistent = false;
+                break;
+            }
+        }
+        if (isConsistent) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// Example usage:
+let allowed = "ab";
+let words = ["ad","bd","aaab","baa","badab"];
+console.log(countConsistentStrings(allowed, words)); // Output: 2
+
+###Two Sum
+```javascript
+function twoSum(nums, target) {
+    let map = new Map();
+
+    for (let i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];
+
+        if (map.has(complement)) {
+            return [map.get(complement), i];
+        }
+
+        map.set(nums[i], i);
+    }
+
+    // In case there is no solution, although the problem guarantees one.
+    return [];
+}
+
+// Example usage:
+let nums = [2, 7, 11, 15];
+let target = 9;
+console.log(twoSum(nums, target)); // Output: [0, 1]
+##Sum of Unique Elements
+````javascript
+function sumOfUnique(nums) {
+    let frequency = {};
+    let sum = 0;
+
+    // Calculate the frequency of each element in the array
+    for (let num of nums) {
+        if (frequency[num]) {
+            frequency[num]++;
+        } else {
+            frequency[num] = 1;
+        }
+    }
+
+    // Calculate the sum of unique elements
+    for (let num in frequency) {
+        if (frequency[num] === 1) {
+            sum += parseInt(num);
+        }
+    }
+
+    return sum;
+}
+
+// Example usage:
+let nums = [1, 2, 3, 2];
+console.log(sumOfUnique(nums)); // Output: 4 (1 + 3)
+### Unique Number of Occurrences
+```javascript
+function uniqueOccurrences(arr) {
+    let frequency = {};
+
+    // Calculate the frequency of each element in the array
+    for (let num of arr) {
+        if (frequency[num]) {
+            frequency[num]++;
+        } else {
+            frequency[num] = 1;
+        }
+    }
+
+    let occurrences = new Set();
+
+    // Check if all frequencies are unique
+    for (let key in frequency) {
+        if (occurrences.has(frequency[key])) {
+            return false;
+        }
+        occurrences.add(frequency[key]);
+    }
+
+    return true;
+}
+
+// Example usage:
+let arr = [1, 2, 2, 1, 1, 3];
+console.log(uniqueOccurrences(arr)); // Output: true
+
+
