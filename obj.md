@@ -45,5 +45,31 @@ console.log(countPlayer) // {p1: 2, p4: 3, p3: 3, p2: 2: p5: 2}
 
 
 ``````
+## Prototype and Inheritance in JavaScript Objects
+````javascript
+const obj1 = {
+    name: "Vishal"
+}
+
+const obj2 = {
+    age: 21,
+    __proto__: obj1
+}
+
+console.log(obj2.name);
+````
+## Question 2: Group Anagrams (LeetCode 49)
+````javascript
+let anagrams = {};
+    for (let i = 0; i < strs.length; i++) {
+        const str = strs[i].split("").sort().join("")
+        if (!anagrams.hasOwnProperty(str)) {
+            anagrams[str] = []
+        }
+
+        anagrams[str] = [...anagrams[str], strs[i]];
+    }
+    return Object.values(anagrams);
+````
 
 
