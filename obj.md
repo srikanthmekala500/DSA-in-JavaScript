@@ -132,9 +132,9 @@ function countConsistentStrings(allowed, words) {
 let allowed = "ab";
 let words = ["ad","bd","aaab","baa","badab"];
 console.log(countConsistentStrings(allowed, words)); // Output: 2
-``````
+ 
 ###Two Sum
-```javascript
+ 
 function twoSum(nums, target) {
     let map = new Map();
 
@@ -156,9 +156,9 @@ function twoSum(nums, target) {
 let nums = [2, 7, 11, 15];
 let target = 9;
 console.log(twoSum(nums, target)); // Output: [0, 1]
-``````
+ 
 ##Sum of Unique Elements
-````javascript
+ 
 function sumOfUnique(nums) {
     let frequency = {};
     let sum = 0;
@@ -186,10 +186,11 @@ function sumOfUnique(nums) {
 let nums = [1, 2, 3, 2];
 console.log(sumOfUnique(nums)); // Output: 4 (1 + 3)
 
-``
+ 
 ### Unique Number of Occurrences
 
-```javascript
+ 
+
 function uniqueOccurrences(arr) {
     let frequency = {};
 
@@ -218,5 +219,5 @@ function uniqueOccurrences(arr) {
 // Example usage:
 let arr = [1, 2, 2, 1, 1, 3];
 console.log(uniqueOccurrences(arr)); // Output: true
-``
+ 
 
