@@ -1,6 +1,6 @@
 ### find count of all players
 
-`const data = {
+const data = {
     id: 1,
     name: ["P1", "P4"],
     next: {
@@ -41,6 +41,6 @@ const playerCount = (data) => {
 }
 
 const countPlayer = playerCount(data);
-console.log(countPlayer) // {p1: 2, p4: 3, p3: 3, p2: 2: p5: 2}`
+console.log(countPlayer) // {p1: 2, p4: 3, p3: 3, p2: 2: p5: 2}
 
 
