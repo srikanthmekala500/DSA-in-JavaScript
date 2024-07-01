@@ -307,6 +307,7 @@ let strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
 console.log(groupAnagrams(strs)); // Output: [["eat","tea","ate"], ["tan","nat"], ["bat"]]
 ````
 ## Find All Anagrams in a String
+  ````javascript
 function findAnagrams(s, p) {
     const result = [];
     const pCount = Array(26).fill(0);
