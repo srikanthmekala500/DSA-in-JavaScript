@@ -71,5 +71,36 @@ let anagrams = {};
     }
     return Object.values(anagrams);
 ````
+## Number of good pairs
 
+Given an array of integers nums, return the number of good pairs.
 
+A pair (i, j) is called good if nums[i] == nums[j] and i < j.
+
+Example 1:
+
+Input: nums = [1,2,3,1,1,3]
+Output: 4
+Explanation: There are 4 good pairs (0,3), (0,4), (3,4), (2,5) 0-indexed.
+````javascript
+function numIdenticalPairs(nums) {
+    let count = 0;
+    let freq = {};
+
+    for (let num of nums) {
+        if (freq[num]) {
+            count += freq[num];
+            freq[num]++;
+        } else {
+            freq[num] = 1;
+        }
+    }
+
+    return count;
+}
+
+// Example usage:
+let nums = [1,2,3,1,1,3];
+console.log(numIdenticalPairs(nums)); // Output: 4
+
+```
