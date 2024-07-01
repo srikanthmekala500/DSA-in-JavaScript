@@ -1,5 +1,5 @@
-// Question 1: Sum of all natural numbers from 1 to n
- 
+## Question 1: Sum of all natural numbers from 1 to n
+ ```javascript
 function sumOfNaturalNumber(num){
     let sum = 0;
     for(let i=1; i<=num; i++){
@@ -11,9 +11,10 @@ function sumOfNaturalNumber(num){
 console.log(sumOfNaturalNumber(5)); // 15  = 1+2+3+4+5
 console.log(sumOfNaturalNumber(10)); // 55
 console.log(sumOfNaturalNumber(8)); // 36
+```
 
-
-// Question 2: Sum of digits of a number
+## Question 2: Sum of digits of a number
+```javascript
 function sumOfDigits(num){
     let sum = 0;
     while(num > 0){
@@ -24,8 +25,9 @@ function sumOfDigits(num){
 }
 
 console.log(sumOfDigits(1287)); // 18
-
-// Question 3: Count the number of digits of a number
+```
+## Question 3: Count the number of digits of a number
+```javascript
 function countDigits(num){
     num = Math.abs(num);
     let count = 0;
@@ -38,9 +40,10 @@ function countDigits(num){
 
 console.log(countDigits(121)); // 3
 console.log(countDigits(-1211413131)); // 10
+```
 
-
-// Question 4: Check if a number is palindrome
+##  Question 4: Check if a number is palindrome
+```javascript
 let isPalindrome = function(x) {
     let copyNum = x, reverseNum = 0;
 
@@ -55,8 +58,9 @@ let isPalindrome = function(x) {
 
 console.log(isPalindrome(121)); // true
 console.log(isPalindrome(1234)); // false
-
-// Question 5: Find nth Fibonacci number
+```
+## Question 5: Find nth Fibonacci number
+```javascript
 // The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1.
 
 let fib = function(n) {
@@ -72,12 +76,13 @@ let fib = function(n) {
     }
     return next;
 };
-
+  
 // Fibonacci Sequence: 0 1 1 2 3 5 8...
 console.log(fib(5)); // 5
 console.log(fib(10)); // 55
-
-// Question 6: Missing Number in an Array
+```
+## Question 6: Missing Number in an Array
+```javascript
 // Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
 let missingNumbers = function(nums) {
@@ -93,3 +98,4 @@ let missingNumber = (nums) => nums.length*(nums.length+1)/2 - nums.reduce((acc, 
 
 console.log(missingNumber([3,0,1])); // 2
 console.log(missingNumber([9,6,4,2,3,5,7,0,1])); // 8
+```
