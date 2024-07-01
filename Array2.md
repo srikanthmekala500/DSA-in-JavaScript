@@ -1,4 +1,5 @@
-// Map in JavaScript
+## Map in JavaScript
+```javascript
 const employees = [
     { name: 'John', age: 32 },
     { name: 'Sarah', age: 28 },
@@ -8,8 +9,9 @@ const employees = [
 const employeesName = employees.map(employee => employee.name);
 console.log(myEmployeesName); // ["John", "Sarah", "Michael"]
 
-
-// Polyfill of map()
+````
+## Polyfill of map()
+```javascript
 if (!Array.prototype.myMap) {
     Array.prototype.myMap = function (callback) {
         const result = [];
@@ -23,8 +25,8 @@ if (!Array.prototype.myMap) {
 const myEmployeesName = employees.myMap(employee => employee.name);
 
 console.log(myEmployeesName); // ["John", "Sarah", "Michael"]
-
-// Filter In JavaScript
+````
+## Filter In JavaScript
 const products = [
     { name: 'iPhone', price: 999, inStock: true },
     { name: 'Samsung Galaxy', price: 899, inStock: false },
@@ -37,6 +39,7 @@ const availableProducts = products.filter(product => product.inStock);
 //     { name: 'Google Pixel', price: 799, inStock: true },
 // ]
 // Polyfill of filter()
+```javascript
 if (!Array.prototype.myFilter) {
     Array.prototype.myFilter = (callback) => {
         const result = [];
@@ -56,7 +59,9 @@ console.log(availableProducts);
 //     { name: 'iPhone', price: 999, inStock: true },
 //     { name: 'Google Pixel', price: 799, inStock: true },
 // ]
-// Reduce in JavaScript
+````
+## Reduce in JavaScript
+```javascript
 const orders = [
     { product: 'iPhone', price: 999, quantity: 2 },
     { product: 'Samsung Galaxy', price: 899, quantity: 1 },
@@ -68,8 +73,9 @@ const totalAmount = orders.reduce(function (accumulator, order) {
 }, 0);
 
 console.log(totalAmount); // 5294
-
-// Polyfill of reduce()
+```
+## Polyfill of reduce()
+```javascript
 if (!Array.prototype.myFilter) {
     Array.prototype.myReduce = (callback, initialValue) => {
         let accumulator = initialValue === undefined ? this[0] : initialValue;
@@ -85,9 +91,10 @@ const myTotalAmount = orders.myReduce(function (accumulator, order) {
 }, 0);
 
 console.log(totalAmount); // 5294
+```
 
-
-// Question 1: Find the longest word length
+## Question 1: Find the longest word length
+```javascript
 const words = ['apple', 'banana', 'cherry', 'dragonfruit', 'elderberry'];
 
 const longestWordLength = words.reduce((maxLength, word) => {
@@ -96,16 +103,18 @@ const longestWordLength = words.reduce((maxLength, word) => {
 }, 0);
 
 console.log(longestWordLength); // Output: 11
-
-// Question 2: Find the longest word
+```
+## Question 2: Find the longest word
+```javascript
 const longestWord = words.reduce((longestWord, word) => {
     return word.length > longestWord.length ? word : longestWord;
 }, "");
 
 console.log(longestWord); // Output: 'dragonfruit'
-
-
-// Question 3: Calculate the factorial of the largest number in the array
+````
+ 
+## Question 3: Calculate the factorial of the largest number in the array
+```javascript
 const numbers = [5, 2, , 4, 3];
 
 const largestFactorial = numbers.reduce((largest, num) => {
@@ -118,9 +127,10 @@ const largestFactorial = numbers.reduce((largest, num) => {
 }, 1);
 
 console.log(largestFactorial);// Output: 40320 (8!)
+ ```
 
-
-// Question 4: Calculate the average score of students who scored above 90
+## Question 4: Calculate the average score of students who scored above 90
+```javascript
 const students = [
     { name: 'John', score: 85 },
     { name: 'Sarah', score: 92 },
@@ -150,10 +160,10 @@ const filters = books.filter((books)=>{
 const titlesBefore2000 = filters.map(book => book.title);
 
 console.log(filters)
+```
+## Question 6: Capitalize the first letter of each word in the array
 
-// Question 6: Capitalize the first letter of each word in the array
-
-
+```javascript
 const strings = ['hello world', 'i am openai', 'welcome to javascript'];
 
 // Function to capitalize the first letter of each word
@@ -166,11 +176,12 @@ const capitalizedStrings = strings.map(capitalizeWords);
 
 console.log(capitalizedStrings);
 
-
+```
 
 ///////////////////////////
 
-// Question 7: Majority Element
+## Question 7: Majority Element
+```javascript
         // Given an array nums of size n, return the majority element.
 
         // The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array. 
@@ -200,8 +211,9 @@ function majorityElementWithMoore(nums) {
   
     return candidate;
   }
-
-//   Question 8 :Squares of a Sorted Array
+````
+## Question 8 :Squares of a Sorted Array
+```javascript
                 // Example 1:
                 // Input: [-4,-1,0,3,10]
                 // Output: [0,1,9,16,100]
@@ -214,8 +226,9 @@ const sortedSquares = (A) => {
 
 };
 console.log(sortedSquares([-4,-1,0,3,10]))
-
-// Question 9 : Find Pivot Index
+````
+## Question 9 : Find Pivot Index
+```javascript
         // The pivot index can be defined as the index where the sum of the numbers to the left of the index is equal to the sum of the numbers to the right of the index.
           // Example 1:
         // Input: nums = [1,7,3,6,5,6]
@@ -256,9 +269,9 @@ but before that, we need to loop through each element in the array.
     return -1;
 }
 
-
-
-// Question 10  : Move All Zeros in an Array to End of the Array
+````
+## Question 10  : Move All Zeros in an Array to End of the Array
+```javascript
 // A JavaScript program to move all zeroes at the end of array 
 
 // Function which pushes all zeros to end of an array. 
@@ -288,9 +301,10 @@ function pushZerosToEnd(arr, n)
 	document.write("Array after pushing all zeros to end of array :<br>"); 
 	for (let i = 0; i < n; i++) 
 		document.write(arr[i] + " "); 
+ ``` 
 
-  // Question 11  :Max Consecutive Ones
-
+## Question 11  :Max Consecutive Ones
+```javascript
     var findMaxConsecutiveOnes = function(nums) {
         let largest = 0;
         let current = 0;
@@ -301,4 +315,4 @@ function pushZerosToEnd(arr, n)
         return largest;
     };
  
-
+```
