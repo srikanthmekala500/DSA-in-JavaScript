@@ -1,3 +1,5 @@
+## Likedlist
+```javascript 
 class Node{
     constructor(data){
         this.data = data;
@@ -53,3 +55,4 @@ list.insertNode(60)
 list.insertArt(2,30)
 console.log(list.print())
 console.log(list)  
+``` 
