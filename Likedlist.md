@@ -589,6 +589,10 @@ head = reverseBetween(head, left, right);
 printList(head);
 ````
 ## Odd Even Linked list
+![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/58d43b16-3037-4984-a74f-5a6ddd23cdff)
+Input: head = [1,2,3,4,5]
+Output: [1,3,5,2,4]
+
 ```javascript
 class ListNode {
     constructor(val = 0, next = null) {
@@ -647,3 +651,140 @@ head = oddEvenList(head);
 console.log("Odd Even list:");
 printLinkedList(head);
 ````
+## Swap Nodes in Pairs	
+![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/b9852a9e-d46b-4a7d-95cd-337fe79a7f24)
+Input: head = [1,2,3,4]
+Output: [2,1,4,3]
+````javascript
+class ListNode {
+    constructor(val = 0, next = null) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+function swapPairs(head) {
+    if (!head || !head.next) {
+        return head;
+    }
+
+    let dummy = new ListNode(0);
+    dummy.next = head;
+    let prev = dummy;
+
+    while (prev.next && prev.next.next) {
+        let first = prev.next;
+        let second = prev.next.next;
+
+        first.next = second.next;
+        second.next = first;
+        prev.next = second;
+
+        prev = first;
+    }
+
+    return dummy.next;
+}
+
+// Helper function to create a linked list from an array
+function arrayToList(arr) {
+    let dummy = new ListNode();
+    let current = dummy;
+    for (let val of arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+// Helper function to convert a linked list to an array
+function listToArray(head) {
+    let arr = [];
+    while (head) {
+        arr.push(head.val);
+        head = head.next;
+    }
+    return arr;
+}
+
+// Example usage
+let head = arrayToList([1, 2, 3, 4]);
+head = swapPairs(head);
+console.log(listToArray(head)); // Output: [2, 1, 4, 3]
+````
+### Reorder List	
+![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/cda8c640-256b-45e3-b249-0e4d5d2b2724)
+Input: head = [1,2,3,4]
+Output: [1,4,2,3]
+
+```javascript
+class ListNode {
+    constructor(val = 0, next = null) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+function reorderList(head) {
+    if (!head || !head.next) {
+        return;
+    }
+
+    // Step 1: Find the middle of the list using slow and fast pointers
+    let slow = head;
+    let fast = head;
+    while (fast.next && fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    // Step 2: Reverse the second half of the list
+    let prev = null;
+    let curr = slow.next;
+    slow.next = null; // break the list into two halves
+    while (curr) {
+        let nextTemp = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = nextTemp;
+    }
+
+    // Step 3: Merge the two halves
+    let first = head;
+    let second = prev;
+    while (second) {
+        let nextFirst = first.next;
+        let nextSecond = second.next;
+        first.next = second;
+        second.next = nextFirst;
+        first = nextFirst;
+        second = nextSecond;
+    }
+}
+
+// Helper function to create a linked list from an array
+function arrayToList(arr) {
+    let dummy = new ListNode();
+    let current = dummy;
+    for (let val of arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+// Helper function to convert a linked list to an array
+function listToArray(head) {
+    let arr = [];
+    while (head) {
+        arr.push(head.val);
+        head = head.next;
+    }
+    return arr;
+}
+
+// Example usage
+let head = arrayToList([1, 2, 3, 4, 5]);
+reorderList(head);
+console.log(listToArray(head)); // Output: [1, 5, 2, 4, 3]
+```
