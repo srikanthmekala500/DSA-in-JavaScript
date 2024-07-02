@@ -179,3 +179,88 @@ while (node !== null) {
     node = node.next;
 }
 `````
+## Remove Duplicates from Sorted list I && II
+```javascript 
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+}
+
+function removeDuplicates(head) {
+    let current = head;
+
+    while (current !== null && current.next !== null) {
+        if (current.value === current.next.value) {
+            current.next = current.next.next; // Skip the duplicate
+        } else {
+            current = current.next; // Move to the next node
+        }
+    }
+
+    return head;
+}
+
+// Example usage:
+let head = new ListNode(1);
+head.next = new ListNode(1);
+head.next.next = new ListNode(2);
+head.next.next.next = new ListNode(3);
+head.next.next.next.next = new ListNode(3);
+
+let newHead = removeDuplicates(head);
+
+// Print list after removing duplicates
+let node = newHead;
+while (node !== null) {
+    console.log(node.value); // Output: 1 2 3
+    node = node.next;
+}
+````
+## Remove Duplicates from Sorted List II
+```javascript 
+This version removes all nodes that have duplicates, leaving only distinct numbers:
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+}
+
+function removeDuplicatesII(head) {
+    let dummy = new ListNode(0, head); // Dummy node to handle edge cases
+    let prev = dummy; // Previous non-duplicate node
+
+    while (head !== null) {
+        if (head.next !== null && head.value === head.next.value) {
+            // Skip all nodes with the same value
+            while (head.next !== null && head.value === head.next.value) {
+                head = head.next;
+            }
+            prev.next = head.next; // Remove duplicates
+        } else {
+            prev = prev.next; // Move prev to the next non-duplicate node
+        }
+        head = head.next; // Move to the next node
+    }
+
+    return dummy.next; // The real head is after the dummy node
+}
+
+// Example usage:
+let head = new ListNode(1);
+head.next = new ListNode(1);
+head.next.next = new ListNode(2);
+head.next.next.next = new ListNode(3);
+head.next.next.next.next = new ListNode(3);
+
+let newHead = removeDuplicatesII(head);
+
+// Print list after removing all duplicates
+let node = newHead;
+while (node !== null) {
+    console.log(node.value); // Output: 2
+    node = node.next;
+}
+```
