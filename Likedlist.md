@@ -354,5 +354,56 @@ head.next.next.next.next = head.next; // Create a cycle
 let cycleNode = detectCycle(head);
 console.log(cycleNode.value); // Output: 2
 ```
+![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/0a6ebc8a-39c5-46f3-8cce-ea71796e06b6)
+## Intersection of Two Linked Lists
+```javascript
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+}
+
+function getIntersectionNode(headA, headB) {
+    if (headA === null || headB === null) {
+        return null;
+    }
+
+    const nodesInB = new Set();
+
+    // Traverse list B and store the address/reference of each node in the set
+    let currentB = headB;
+    while (currentB !== null) {
+        nodesInB.add(currentB);
+        currentB = currentB.next;
+    }
+
+    // Traverse list A and check if any node is in the set
+    let currentA = headA;
+    while (currentA !== null) {
+        if (nodesInB.has(currentA)) {
+            return currentA;
+        }
+        currentA = currentA.next;
+    }
+
+    return null;
+}
+
+// Example usage:
+let headA = new ListNode(4);
+headA.next = new ListNode(1);
+let headB = new ListNode(5);
+headB.next = new ListNode(6);
+headB.next.next = new ListNode(1);
+let common = new ListNode(8);
+common.next = new ListNode(4);
+common.next.next = new ListNode(5);
+headA.next.next = common;
+headB.next.next.next = common;
+
+let intersectionNode = getIntersectionNode(headA, headB);
+console.log(intersectionNode ? intersectionNode.value : null); // Output: 8
+```
 
 
