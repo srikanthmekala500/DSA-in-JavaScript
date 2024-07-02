@@ -526,3 +526,65 @@ The two primary components used in the solution are:
 
 Prefix Sum: This technique is critical to discover sequences that total to 0. By keeping track of the cumulative sum at each node, we can swiftly identify regions of the list that cancel each other out.
 Hash Table: By storing the last occurrence of a node for a given prefix sum, we have the ability to quickly jump over sequences that sum to 0. This is because if a prefix sum repeats, the sum of the nodes between those repetitions is necessarily 0.
+## Reverse Linked List II	
+![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/bce4f6d3-6e48-4b8d-93d1-20f8a30d1e2a)
+```javascript
+class ListNode {
+    constructor(val = 0, next = null) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+function reverseBetween(head, left, right) {
+    if (!head || left === right) return head;
+
+    let dummy = new ListNode(0);
+    dummy.next = head;
+    let prev = dummy;
+
+    // Move `prev` to the node just before the `left` position
+    for (let i = 1; i < left; i++) {
+        prev = prev.next;
+    }
+
+    let start = prev.next; // `start` will point to the first node of the sublist to be reversed
+    let then = start.next; // `then` will point to the node that will be reversed
+
+    // Reverse the sublist
+    for (let i = 0; i < right - left; i++) {
+        start.next = then.next;
+        then.next = prev.next;
+        prev.next = then;
+        then = start.next;
+    }
+
+    return dummy.next;
+}
+
+// Helper function to print the linked list
+function printList(head) {
+    let curr = head;
+    while (curr) {
+        process.stdout.write(curr.val + ' -> ');
+        curr = curr.next;
+    }
+    console.log('null');
+}
+
+// Example usage
+let head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(3);
+head.next.next.next = new ListNode(4);
+head.next.next.next.next = new ListNode(5);
+
+console.log('Original list:');
+printList(head);
+
+let left = 2, right = 4;
+head = reverseBetween(head, left, right);
+
+// console.log(`Reversed list from position ${left} to ${right}:`);
+printList(head);
+````
