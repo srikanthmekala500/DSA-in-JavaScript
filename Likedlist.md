@@ -788,3 +788,124 @@ let head = arrayToList([1, 2, 3, 4, 5]);
 reorderList(head);
 console.log(listToArray(head)); // Output: [1, 5, 2, 4, 3]
 ```
+## Remove Nth Node from End of List	
+![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/d5c17f82-a647-4651-8078-d09f9f72d6df)
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+```javascript
+class ListNode {
+    constructor(val = 0, next = null) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+function removeNthFromEnd(head, n) {
+    // Step 1: Create a dummy node to handle edge cases
+    let dummy = new ListNode(0);
+    dummy.next = head;
+    let fast = dummy;
+    let slow = dummy;
+
+    // Step 2: Move the fast pointer n+1 steps ahead
+    for (let i = 0; i <= n; i++) {
+        fast = fast.next;
+    }
+
+    // Step 3: Move both pointers until fast reaches the end
+    while (fast) {
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    // Step 4: Remove the nth node from the end
+    slow.next = slow.next.next;
+
+    return dummy.next;
+}
+
+// Helper function to create a linked list from an array
+function arrayToList(arr) {
+    let dummy = new ListNode();
+    let current = dummy;
+    for (let val of arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+// Helper function to convert a linked list to an array
+function listToArray(head) {
+    let arr = [];
+    while (head) {
+        arr.push(head.val);
+        head = head.next;
+    }
+    return arr;
+}
+
+// Example usage
+let head = arrayToList([1, 2, 3, 4, 5]);
+let n = 2;
+head = removeNthFromEnd(head, n);
+console.log(listToArray(head)); // Output: [1, 2, 3, 5]
+
+class ListNode {
+    constructor(val = 0, next = null) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+function removeNthFromEnd(head, n) {
+    // Step 1: Create a dummy node to handle edge cases
+    let dummy = new ListNode(0);
+    dummy.next = head;
+    let fast = dummy;
+    let slow = dummy;
+
+    // Step 2: Move the fast pointer n+1 steps ahead
+    for (let i = 0; i <= n; i++) {
+        fast = fast.next;
+    }
+
+    // Step 3: Move both pointers until fast reaches the end
+    while (fast) {
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    // Step 4: Remove the nth node from the end
+    slow.next = slow.next.next;
+
+    return dummy.next;
+}
+
+// Helper function to create a linked list from an array
+function arrayToList(arr) {
+    let dummy = new ListNode();
+    let current = dummy;
+    for (let val of arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+// Helper function to convert a linked list to an array
+function listToArray(head) {
+    let arr = [];
+    while (head) {
+        arr.push(head.val);
+        head = head.next;
+    }
+    return arr;
+}
+
+// Example usage
+let head = arrayToList([1, 2, 3, 4, 5]);
+let n = 2;
+head = removeNthFromEnd(head, n);
+console.log(listToArray(head)); // Output: [1, 2, 3, 5]
+```
