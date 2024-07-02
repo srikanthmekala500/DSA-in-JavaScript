@@ -411,5 +411,48 @@ headB.next.next.next = common;
 let intersectionNode = getIntersectionNode(headA, headB);
 console.log(intersectionNode ? intersectionNode.value : null); // Output: 8
 ```
+![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/6695c5fd-3dd4-46ad-876d-8b405144d1f3)
+## Finding Next Greater Node in Linked List
+```javascript
+
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+}
+
+function nextLargerNodes(head) {
+    let result = [];
+    let stack = [];
+    let index = 0;
+    let current = head;
+
+    // Traverse the linked list
+    while (current !== null) {
+        // While stack is not empty and the current value is greater than
+        // the value at the top of the stack, update the result for the index
+        while (stack.length > 0 && stack[stack.length - 1][1] < current.value) {
+            let [idx, val] = stack.pop();
+            result[idx] = current.value;
+        }
+
+        // Push the index and value to the stack
+        stack.push([index, current.value]);
+        result.push(0); // Initialize the result for this index with 0
+        index++;
+        current = current.next;
+    }
+
+    return result;
+}
+
+// Example usage:
+let head = new ListNode(2);
+head.next = new ListNode(1);
+head.next.next = new ListNode(5);
+
+console.log(nextLargerNodes(head)); // Output: [5, 5, 0]
+````
 
 
