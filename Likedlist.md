@@ -356,7 +356,13 @@ console.log(cycleNode.value); // Output: 2
 ```
 ![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/0a6ebc8a-39c5-46f3-8cce-ea71796e06b6)
 ## Intersection of Two Linked Lists
+A JavaScript ### Set is a collection of unique values.
+Each value can only occur once in a Set.
+The values can be of any type, primitive values or objects.
+The ## has() method of Map instances returns a boolean indicating whether an element with the specified key exists in this map or not.
+
 ```javascript
+
 class ListNode {
     constructor(value = 0, next = null) {
         this.value = value;
