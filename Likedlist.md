@@ -264,3 +264,95 @@ while (node !== null) {
     node = node.next;
 }
 ```
+![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/bda43d08-6224-429e-99e2-ba6634fbc143)
+## Linked List Cycle I && II
+```javascript
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+}
+
+function hasCycle(head) {
+    if (head === null || head.next === null) {
+        return false;
+    }
+
+    let slow = head;
+    let fast = head;
+
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow === fast) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+// Example usage:
+let head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(3);
+head.next.next.next = new ListNode(4);
+head.next.next.next.next = head.next; // Create a cycle
+
+console.log(hasCycle(head)); // Output: true
+```
+## Linked List Cycle II
+```javascript
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+}
+
+function detectCycle(head) {
+    if (head === null || head.next === null) {
+        return null;
+    }
+
+    let slow = head;
+    let fast = head;
+    let isCycle = false;
+
+    while (fast !== null && fast.next !== null) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow === fast) {
+            isCycle = true;
+            break;
+        }
+    }
+
+    if (!isCycle) {
+        return null;
+    }
+
+    slow = head;
+    while (slow !== fast) {
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    return slow;
+}
+
+// Example usage:
+let head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(3);
+head.next.next.next = new ListNode(4);
+head.next.next.next.next = head.next; // Create a cycle
+
+let cycleNode = detectCycle(head);
+console.log(cycleNode.value); // Output: 2
+```
+
+
