@@ -851,6 +851,21 @@ let n = 2;
 head = removeNthFromEnd(head, n);
 console.log(listToArray(head)); // Output: [1, 2, 3, 5]
 
+```
+## Merge K Sorted Lists	
+Example 1:
+
+Input: lists = [[1,4,5],[1,3,4],[2,6]]
+Output: [1,1,2,3,4,4,5,6]
+Explanation: The linked-lists are:
+[
+  1->4->5,
+  1->3->4,
+  2->6
+]
+merging them into one sorted list:
+1->1->2->3->4->4->5->6
+`````javascript
 class ListNode {
     constructor(val = 0, next = null) {
         this.val = val;
@@ -858,31 +873,59 @@ class ListNode {
     }
 }
 
-function removeNthFromEnd(head, n) {
-    // Step 1: Create a dummy node to handle edge cases
-    let dummy = new ListNode(0);
-    dummy.next = head;
-    let fast = dummy;
-    let slow = dummy;
-
-    // Step 2: Move the fast pointer n+1 steps ahead
-    for (let i = 0; i <= n; i++) {
-        fast = fast.next;
+function mergeKLists(lists) {
+    if (!lists || lists.length === 0) {
+        return null;
     }
-
-    // Step 3: Move both pointers until fast reaches the end
-    while (fast) {
-        slow = slow.next;
-        fast = fast.next;
+    
+    // Helper function to merge two sorted lists
+    function mergeTwoLists(l1, l2) {
+        let dummy = new ListNode(0);
+        let current = dummy;
+        
+        while (l1 && l2) {
+            if (l1.val < l2.val) {
+                current.next = l1;
+                l1 = l1.next;
+            } else {
+                current.next = l2;
+                l2 = l2.next;
+            }
+            current = current.next;
+        }
+        
+        if (l1) {
+            current.next = l1;
+        }
+        
+        if (l2) {
+            current.next = l2;
+        }
+        
+        return dummy.next;
     }
-
-    // Step 4: Remove the nth node from the end
-    slow.next = slow.next.next;
-
-    return dummy.next;
+    
+    // Divide and conquer approach
+    function mergeLists(lists, start, end) {
+        if (start === end) {
+            return lists[start];
+        }
+        
+        let mid = Math.floor((start + end) / 2);
+        let left = mergeLists(lists, start, mid);
+        let right = mergeLists(lists, mid + 1, end);
+        
+        return mergeTwoLists(left, right);
+    }
+    
+    return mergeLists(lists, 0, lists.length - 1);
 }
 
-// Helper function to create a linked list from an array
+// Helper function to create linked lists from arrays
+function arraysToLists(arrays) {
+    return arrays.map(arrayToList);
+}
+
 function arrayToList(arr) {
     let dummy = new ListNode();
     let current = dummy;
@@ -904,8 +947,14 @@ function listToArray(head) {
 }
 
 // Example usage
-let head = arrayToList([1, 2, 3, 4, 5]);
-let n = 2;
-head = removeNthFromEnd(head, n);
-console.log(listToArray(head)); // Output: [1, 2, 3, 5]
-```
+let arrays = [
+    [1, 4, 5],
+    [1, 3, 4],
+    [2, 6]
+];
+
+let lists = arraysToLists(arrays);
+let mergedList = mergeKLists(lists);
+console.log(listToArray(mergedList)); // Output: [1, 1, 2, 3, 4, 4, 5, 6]
+````
+
