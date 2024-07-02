@@ -588,3 +588,62 @@ head = reverseBetween(head, left, right);
 // console.log(`Reversed list from position ${left} to ${right}:`);
 printList(head);
 ````
+## Odd Even Linked list
+```javascript
+class ListNode {
+    constructor(val = 0, next = null) {
+        this.val = val;
+        this.next = next;
+    }
+}
+ 
+var oddEvenList = function(head) {
+    if (!head) return head;
+
+    let odd = head;
+    let even = head.next;
+    let evenHead = even;
+
+    while (even && even.next) {
+        odd.next = even.next;
+        odd = odd.next;
+        even.next = odd.next;
+        even = even.next;
+    }
+
+    odd.next = evenHead;
+    return head;
+};
+
+// Helper function to create a linked list from an array
+function createLinkedList(arr) {
+    let dummy = new ListNode(0);
+    let current = dummy;
+    for (let val of arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+// Helper function to print the linked list
+function printLinkedList(head) {
+    let current = head;
+    let result = [];
+    while (current) {
+        result.push(current.val);
+        current = current.next;
+    }
+    console.log(result.join(" -> "));
+}
+
+// Example usage
+let head = createLinkedList([1, 2, 3, 4, 5]);
+console.log("Original list:");
+printLinkedList(head);
+
+head = oddEvenList(head);
+
+console.log("Odd Even list:");
+printLinkedList(head);
+````
