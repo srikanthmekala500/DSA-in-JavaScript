@@ -454,5 +454,75 @@ head.next.next = new ListNode(5);
 
 console.log(nextLargerNodes(head)); // Output: [5, 5, 0]
 ````
+## Remove Zero Consecutive Nodes from Linked List
+```javascript
+class ListNode {
+    constructor(value = 0, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+}
 
+function removeZeroSumSublists(head) {
+    let dummy = new ListNode(0); // Create a dummy node to handle edge cases
+    dummy.next = head;
+    let prefixSum = 0;
+    let map = new Map();
+    map.set(0, dummy); // Initialize the map with sum 0 pointing to the dummy node
 
+    // First pass: Calculate prefix sums and store them in the map
+    for (let current = dummy; current !== null; current = current.next) {
+        prefixSum += current.value;
+        map.set(prefixSum, current);
+    }
+
+    // Second pass: Reset the prefix sum and remove zero-sum sublists
+    prefixSum = 0;
+    for (let current = dummy; current !== null; current = current.next) {
+        prefixSum += current.value;
+        current.next = map.get(prefixSum).next; // Skip the zero-sum sublist
+    }
+
+    return dummy.next; // Return the head of the modified list
+}
+
+// Example usage:
+let head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(-3);
+head.next.next.next = new ListNode(3);
+head.next.next.next.next = new ListNode(1);
+
+let newHead = removeZeroSumSublists(head);
+
+// Print the modified list
+let node = newHead;
+while (node !== null) {
+    console.log(node.value); // Output: 3, 1
+    node = node.next;
+}
+```
+The provided solution makes use of the prefix sum concept and a hash table to efficiently find and remove zero-sum consecutive sequences in the linked list. Here's how the implementation unfolds:
+
+We initialize a dummy node that acts as a pre-head, ensuring we can handle cases where the head itself might be part of a zero-sum sequence. This dummy node points to the original head of the list.
+dummy = ListNode(next=head)
+We declare a hash table last to record the last node for each unique prefix sum observed. The hash table is indexed by the prefix sum and contains the corresponding node as its value.
+
+Starting from the dummy node (pre-head), we iterate through the linked list to calculate the prefix sum s for each node. As we compute the prefix sum, we update the last hash table with the current node. If the same sum occurs again later, it overwrites the previous node, since we only need the latest one.
+
+s, cur = 0, dummy
+while cur:
+    s += cur.val
+    last[s] = cur
+    cur = cur.next
+After populating the last table, we iterate the list again, starting from the dummy node, to update the next pointers. For each node, as we calculate the prefix sum s, we find the node corresponding to this sum in the last table, and we set the current node’s next pointer to last[s].next. This effectively skips over and removes any nodes part of a zero-sum sequence found between the two nodes with equal prefix sums.
+s, cur = 0, dummy
+while cur:
+    s += cur.val
+    cur.next = last[s].next
+    cur = cur.next
+Finally, we return dummy.next — the head of the modified list, which no longer contains any sequence of nodes that sum up to 0.
+The two primary components used in the solution are:
+
+Prefix Sum: This technique is critical to discover sequences that total to 0. By keeping track of the cumulative sum at each node, we can swiftly identify regions of the list that cancel each other out.
+Hash Table: By storing the last occurrence of a node for a given prefix sum, we have the ability to quickly jump over sequences that sum to 0. This is because if a prefix sum repeats, the sum of the nodes between those repetitions is necessarily 0.
