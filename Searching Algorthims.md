@@ -71,4 +71,41 @@ console.log(binarySearch(array, target1)); // Output: 4 (index of target1 in the
 console.log(binarySearch(array, target2)); // Output: -1 (target2 is not found in the sorted array)
 ```
 ## Binary Search using Recursion
+```JavaScript
+function binarySearchRecursive(arr, target, left, right) {
+    // Base case: if left pointer exceeds right pointer, element is not found
+    if (left > right) {
+        return -1;
+    }
+    
+    // Calculate mid index
+    let mid = Math.floor((left + right) / 2);
+    
+    // If target is found at mid index, return mid
+    if (arr[mid] === target) {
+        return mid;
+    } else if (arr[mid] < target) {
+        // If target is greater than element at mid, search in the right half
+        return binarySearchRecursive(arr, target, mid + 1, right);
+    } else {
+        // If target is smaller than element at mid, search in the left half
+        return binarySearchRecursive(arr, target, left, mid - 1);
+    }
+}
+
+// Wrapper function to initiate binary search with initial parameters
+function binarySearch(arr, target) {
+    return binarySearchRecursive(arr, target, 0, arr.length - 1);
+}
+
+// Example usage:
+let array = [2, 4, 6, 8, 10, 12, 14];
+let target1 = 10;
+let target2 = 5;
+
+console.log(binarySearch(array, target1)); // Output: 4 (index of target1 in the sorted array)
+console.log(binarySearch(array, target2)); // Output: -1 (target2 is not found in the sorted array)
+```
+## Find floor and ceil value of X in an array
+
 
