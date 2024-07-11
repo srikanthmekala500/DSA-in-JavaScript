@@ -419,7 +419,8 @@ function findPeakElement(nums) {
 // Example usage:
 let nums = [1, 2, 3, 1];
 let peakIndex = findPeakElement(nums);
-console.log(`Peak element index is: ${peakIndex}, peak element is: ${nums[peakIndex]}`); // Output: Peak element index is: 2, peak element is: 3
+console.log(`Peak element index is: ${peakIndex}, peak element is: ${nums[peakIndex]}`);
+ // Output: Peak element index is: 2, peak element is: 3
 ```
 ## Search in Rotated Sorted Array
 ```JavaScript
@@ -458,5 +459,6 @@ function search(nums, target) {
 // Example usage:
 let nums = [4, 5, 6, 7, 0, 1, 2];
 let target = 0;
-console.log(`Index of target ${target} is: ${search(nums, target)}`); // Output: Index of target 0 is: 4
+console.log(`Index of target ${target} is: ${search(nums, target)}`);
+ // Output: Index of target 0 is: 4
 ```
