@@ -72,3 +72,93 @@ obj = null;
 // The WeakMap's weak reference will allow the object to be garbage collected
 console.log(weakMap.has(obj)); // false
 ```
+## Contains Duplicate
+## Method 1: Using a Set
+```JavaScript
+function containsDuplicate(nums) {
+    let seen = new Set();
+    for (let num of nums) {
+        if (seen.has(num)) {
+            return true; // Found a duplicate
+        }
+        seen.add(num);
+    }
+    return false; // No duplicates found
+}
+
+// Example usage:
+let nums = [1, 2, 3, 1];
+console.log(`Array contains duplicate elements: ${containsDuplicate(nums)}`);
+// Output: Array contains duplicate elements: true
+## Method 2: Sorting
+function containsDuplicate(nums) {
+    nums.sort((a, b) => a - b);
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1]) {
+            return true; // Found a duplicate
+        }
+    }
+    return false; // No duplicates found
+}
+
+// Example usage:
+let nums = [1, 2, 3, 1];
+console.log(`Array contains duplicate elements: ${containsDuplicate(nums)}`);
+ // Output: Array contains duplicate elements: true
+
+To determine if there are any duplicate elements in an array, you can utilize various approaches in JavaScript, depending on the specific requirements and constraints of the problem. Here are a few methods:
+
+Method 1: Using a Set
+You can use a Set data structure to track unique elements as you iterate through the array. If you encounter an element that already exists in the Set, then there is a duplicate.
+
+javascript
+Copy code
+function containsDuplicate(nums) {
+    let seen = new Set();
+    for (let num of nums) {
+        if (seen.has(num)) {
+            return true; // Found a duplicate
+        }
+        seen.add(num);
+    }
+    return false; // No duplicates found
+}
+
+// Example usage:
+let nums = [1, 2, 3, 1];
+console.log(`Array contains duplicate elements: ${containsDuplicate(nums)}`); // Output: Array contains duplicate elements: true
+Method 2: Sorting
+Another approach is to sort the array first. After sorting, duplicates will be adjacent to each other, making them easy to identify in a single pass through the array.
+
+javascript
+Copy code
+function containsDuplicate(nums) {
+    nums.sort((a, b) => a - b);
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1]) {
+            return true; // Found a duplicate
+        }
+    }
+    return false; // No duplicates found
+}
+
+// Example usage:
+let nums = [1, 2, 3, 1];
+console.log(`Array contains duplicate elements: ${containsDuplicate(nums)}`); // Output: Array contains duplicate elements: true
+## Method 3: Using Object/Map
+function containsDuplicate(nums) {
+    let countMap = {};
+    for (let num of nums) {
+        if (countMap[num]) {
+            return true; // Found a duplicate
+        }
+        countMap[num] = (countMap[num] || 0) + 1;
+    }
+    return false; // No duplicates found
+}
+
+// Example usage:
+let nums = [1, 2, 3, 1];
+console.log(`Array contains duplicate elements: ${containsDuplicate(nums)}`); // Output: Array contains duplicate elements: true
+
+```
