@@ -127,3 +127,130 @@ console.log(`Array contains duplicate elements: ${containsDuplicate(nums)}`);
 // Output: Array contains duplicate elements: true
 
 ```
+## Intersection of Two Arrays 
+```JavaScript
+function intersection(nums1, nums2) {
+    let set1 = new Set(nums1);
+    let resultSet = new Set();
+    
+    for (let num of nums2) {
+        if (set1.has(num)) {
+            resultSet.add(num);
+        }
+    }
+    
+    return Array.from(resultSet); // Convert set to array
+}
+
+// Example usage:
+let nums1 = [1, 2, 2, 1];
+let nums2 = [2, 2];
+console.log(`Intersection of arrays: ${intersection(nums1, nums2)}`);
+ // Output: Intersection of arrays: 2
+/////////////////////////////////////////
+function intersection(nums1, nums2) {
+    nums1.sort((a, b) => a - b);
+    nums2.sort((a, b) => a - b);
+    
+    let result = [];
+    let i = 0, j = 0;
+    
+    while (i < nums1.length && j < nums2.length) {
+        if (nums1[i] === nums2[j]) {
+            if (result.length === 0 || result[result.length - 1] !== nums1[i]) {
+                result.push(nums1[i]);
+            }
+            i++;
+            j++;
+        } else if (nums1[i] < nums2[j]) {
+            i++;
+        } else {
+            j++;
+        }
+    }
+    
+    return result;
+}
+
+// Example usage:
+let nums1 = [1, 2, 2, 1];
+let nums2 = [2, 2];
+console.log(`Intersection of arrays: ${intersection(nums1, nums2)}`);
+ // Output: Intersection of arrays: 2
+
+```
+## Distribute Candies
+```JavaScript
+function distributeCandies(candies, numToGive) {
+    // Count unique types of candies
+    let uniqueCandies = new Set(candies);
+    let maxTypes = Math.min(uniqueCandies.size, Math.floor(numToGive / 2));
+    return maxTypes;
+}
+
+// Example usage:
+let candies = [1, 1, 2, 2, 3, 3];
+let numToGive = 6;
+console.log
+(`Maximum types of candies the sister can receive: ${distributeCandies(candies, numToGive)}`);
+// Output: Maximum types of candies the sister can receive: 3
+```
+![image](https://github.com/srikanthmekala500/DSA-in-JavaScript/assets/125475567/a9070d95-956c-4808-9e6e-a9dd6cb4b8f9)
+## Length of the longest consecutive sequence menas
+```JavaScript
+function longestConsecutive(nums) {
+    if (nums.length === 0) return 0;
+    
+    let numSet = new Set(nums);
+    let maxLength = 0;
+    
+    for (let num of numSet) {
+        // Only check for sequences starting at the beginning of a sequence
+        if (!numSet.has(num - 1)) {
+            let currentNum = num;
+            let currentLength = 1;
+            
+            // Expand sequence in the positive direction
+            while (numSet.has(currentNum + 1)) {
+                currentNum++;
+                currentLength++;
+            }
+            
+            maxLength = Math.max(maxLength, currentLength);
+        }
+    }
+    
+    return maxLength;
+}
+
+// Example usage:
+let nums = [100, 4, 200, 1, 3, 2];
+console.log(`Length of the longest consecutive sequence: ${longestConsecutive(nums)}`); // Output: Length of the longest consecutive sequence: 4
+```
+## Happy Number
+```JavaScript
+function isHappy(n) {
+    let seen = new Set();
+    
+    while (n !== 1 && !seen.has(n)) {
+        seen.add(n);
+        n = getNext(n);
+    }
+    
+    return n === 1;
+}
+
+function getNext(n) {
+    let sum = 0;
+    while (n > 0) {
+        let digit = n % 10;
+        sum += digit * digit;
+        n = Math.floor(n / 10);
+    }
+    return sum;
+}
+
+// Example usage:
+let number = 19;
+console.log(`Is ${number} a happy number? ${isHappy(number)}`); // Output: Is 19 a happy number? true
+```
