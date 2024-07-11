@@ -108,4 +108,144 @@ console.log(binarySearch(array, target2)); // Output: -1 (target2 is not found i
 ```
 ## Find floor and ceil value of X in an array
 
+## Sqrt(x) 
+```JavaScript
+// Calculate square root of a number
+let x = 25;
+let squareRoot = Math.sqrt(x);
+console.log(`Square root of ${x} is: ${squareRoot}`); // Output: Square root of 25 is: 5
 
+// You can also calculate square root directly in console:
+// Math.sqrt(25); // Output: 5
+// Example with different numbers
+console.log(Math.sqrt(9)); // Output: 3
+console.log(Math.sqrt(144)); // Output: 12
+console.log(Math.sqrt(2)); // Output: 1.4142135623730951
+console.log(Math.sqrt(0)); // Output: 0
+console.log(Math.sqrt(-1)); // Output: NaN
+console.log(Math.sqrt(0)); // Output: 0
+```
+## First Bad Version
+```JavaScript
+function firstBadVersion(n) {
+    let left = 1;
+    let right = n;
+    
+    while (left < right) {
+        let mid = Math.floor(left + (right - left) / 2);
+        if (isBadVersion(mid)) {
+            right = mid; // Look for earlier bad versions in the left half
+        } else {
+            left = mid + 1; // No bad version found, look in the right half
+        }
+    }
+    
+    // At this point, left === right and it should be the first bad version
+    return left;
+}
+
+let n = 10; // Example number of versions
+let firstBad = firstBadVersion(n);
+console.log(`The first bad version is: ${firstBad}`);
+````
+## Find the Index of the First Occurrence in a String
+```JavaScript
+function findFirstOccurrence(mainStr, subStr) {
+    return mainStr.indexOf(subStr);
+}
+
+let mainString = "Hello, world!";
+let subString = "world";
+let index = findFirstOccurrence(mainString, subString);
+
+console.log(`Index of the first occurrence of "${subString}" in "${mainString}" is: ${index}`);
+
+Index of the first occurrence of "world" in "Hello, world!" is: 7
+```
+## Binary Search
+```JavaScript
+function binarySearch(array, target) {
+    let left = 0;
+    let right = array.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        
+        // Check if target is present at mid
+        if (array[mid] === target) {
+            return mid;
+        }
+        
+        // If target is greater, ignore left half
+        if (array[mid] < target) {
+            left = mid + 1;
+        } else { // If target is smaller, ignore right half
+            right = mid - 1;
+        }
+    }
+    
+    // Element not found
+    return -1;
+}
+
+// Example usage:
+let sortedArray = [1, 3, 5, 7, 9, 11, 13, 15];
+let target = 7;
+let result = binarySearch(sortedArray, target);
+
+console.log(`Index of ${target} in the array is: ${result}`); // Output: Index of 7 in the array is: 3
+```
+## Search Insert Position
+```JavaScript
+function searchInsert(nums, target) {
+    let left = 0;
+    let right = nums.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+
+        if (nums[mid] === target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return left; // Target not found, return the insertion position
+}
+
+// Example usage:
+let nums = [1, 3, 5, 6];
+let target1 = 5;
+let target2 = 2;
+
+console.log(`Index to insert ${target1} in [${nums}] is: ${searchInsert(nums, target1)}`); // Output: Index to insert 5 in [1, 3, 5, 6] is: 2
+console.log(`Index to insert ${target2} in [${nums}] is: ${searchInsert(nums, target2)}`); // Output: Index to insert 2 in [1, 3, 5, 6] is: 1
+``` 
+## Find Minimum in Rotated Sorted Array
+```JavaScript
+function findMin(nums) {
+    let left = 0;
+    let right = nums.length - 1;
+
+    while (left < right) {
+        let mid = Math.floor(left + (right - left) / 2);
+
+        if (nums[mid] > nums[right]) {
+            left = mid + 1; // Minimum element is on the right side of mid
+        } else {
+            right = mid; // Minimum element is on the left side of or at mid
+        }
+    }
+
+    // After the loop, left (or right) is the index of the minimum element
+    return nums[left];
+}
+
+// Example usage:
+let rotatedSortedArray = [4, 5, 6, 7, 0, 1, 2];
+let minElement = findMin(rotatedSortedArray);
+console.log(`Minimum element in the rotated sorted array is: ${minElement}`); // Output: Minimum element in the rotated sorted array is: 0
+```
