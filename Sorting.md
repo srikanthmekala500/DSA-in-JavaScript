@@ -176,3 +176,84 @@ const quickSort = (arr) => {
 
 console.log(quickSort(arr1))
 ```
+## How Many Numbers are smaller than the current number
+```JavaScript
+function smallerNumbersThanCurrent(nums) {
+    // Create a sorted copy of nums
+    let sortedNums = [...nums].sort((a, b) => a - b);
+    
+    // Create a hashmap to store counts of each number
+    let countMap = new Map();
+    for (let i = 0; i < sortedNums.length; i++) {
+        if (!countMap.has(sortedNums[i])) {
+            countMap.set(sortedNums[i], i);
+        }
+    }
+    
+    // Create result array using countMap
+    let result = [];
+    for (let num of nums) {
+        result.push(countMap.get(num));
+    }
+    
+    return result;
+}
+
+// Example usage:
+let nums = [8, 1, 2, 2, 3];
+console.log(smallerNumbersThanCurrent(nums)); // Output: [4, 0, 1, 1, 3]
+```
+## Largest Number
+```JavaScript
+function largestNumber(nums) {
+    // Custom comparator function to sort numbers as strings
+    nums.sort((a, b) => {
+        let order1 = `${a}${b}`;
+        let order2 = `${b}${a}`;
+        return order2.localeCompare(order1); // Sort in descending order
+    });
+    
+    // Handle edge case where the largest number is "0"
+    if (nums[0] === '0') {
+        return '0';
+    }
+    
+    // Concatenate sorted numbers to form the largest number
+    return nums.join('');
+}
+
+// Example usage:
+let nums = [3, 30, 34, 5, 9];
+console.log(`Largest number: ${largestNumber(nums)}`); // Output: Largest number: 9534330
+```
+## Sort Color
+```JavaScript
+function sortColors(nums) {
+    let low = 0;
+    let mid = 0;
+    let high = nums.length - 1;
+    
+    while (mid <= high) {
+        if (nums[mid] === 0) {
+            // Swap nums[low] and nums[mid]
+            [nums[low], nums[mid]] = [nums[mid], nums[low]];
+            low++;
+            mid++;
+        } else if (nums[mid] === 1) {
+            // No need to swap, just move mid pointer forward
+            mid++;
+        } else { // nums[mid] === 2
+            // Swap nums[mid] and nums[high]
+            [nums[mid], nums[high]] = [nums[high], nums[mid]];
+            high--;
+            // Do not increment mid, as the swapped element needs to be checked again
+        }
+    }
+    
+    return nums;
+}
+
+// Example usage:
+let nums = [2, 0, 2, 1, 1, 0];
+console.log(sortColors(nums)); // Output: [0, 0, 1, 1, 2, 2]
+```
