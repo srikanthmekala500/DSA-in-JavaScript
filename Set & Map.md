@@ -225,7 +225,8 @@ function longestConsecutive(nums) {
 
 // Example usage:
 let nums = [100, 4, 200, 1, 3, 2];
-console.log(`Length of the longest consecutive sequence: ${longestConsecutive(nums)}`); // Output: Length of the longest consecutive sequence: 4
+console.log(`Length of the longest consecutive sequence: ${longestConsecutive(nums)}`);
+// Output: Length of the longest consecutive sequence: 4
 ```
 ## Happy Number
 ```JavaScript
@@ -252,5 +253,61 @@ function getNext(n) {
 
 // Example usage:
 let number = 19;
-console.log(`Is ${number} a happy number? ${isHappy(number)}`); // Output: Is 19 a happy number? true
+console.log(`Is ${number} a happy number? ${isHappy(number)}`);
+// Output: Is 19 a happy number? true
+```
+## First Unique Character In A String
+```JavaScript
+function firstUniqueChar(s) {
+    // Step 1: Count frequencies of each character
+    let charCount = new Map();
+    for (let char of s) {
+        charCount.set(char, charCount.get(char) + 1 || 1);
+    }
+    
+    // Step 2: Find the first unique character
+    for (let i = 0; i < s.length; i++) {
+        if (charCount.get(s[i]) === 1) {
+            return i;
+        }
+    }
+    
+    // Step 3: Return -1 if no unique character found
+    return -1;
+}
+
+// Example usage:
+let s = "leetcode";
+console.log(`Index of the first unique character: ${firstUniqueChar(s)}`); // Output: Index of the first unique character: 0
+```
+## Find Common Characters
+```JavaScript
+function commonChars(A) {
+    let minCount = new Array(26).fill(Infinity); // Initialize with a large number
+    
+    for (let word of A) {
+        let charCount = new Array(26).fill(0);
+        
+        for (let char of word) {
+            charCount[char.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+        }
+        
+        for (let i = 0; i < 26; i++) {
+            minCount[i] = Math.min(minCount[i], charCount[i]);
+        }
+    }
+    
+    let result = [];
+    for (let i = 0; i < 26; i++) {
+        for (let j = 0; j < minCount[i]; j++) {
+            result.push(String.fromCharCode('a'.charCodeAt(0) + i));
+        }
+    }
+    
+    return result;
+}
+
+// Example usage:
+let A = ["bella", "label", "roller"];
+console.log(`Common characters: ${commonChars(A)}`); // Output: Common characters: ["e","l","l"]
 ```
