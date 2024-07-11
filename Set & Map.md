@@ -278,7 +278,8 @@ function firstUniqueChar(s) {
 
 // Example usage:
 let s = "leetcode";
-console.log(`Index of the first unique character: ${firstUniqueChar(s)}`); // Output: Index of the first unique character: 0
+console.log(`Index of the first unique character: ${firstUniqueChar(s)}`);
+ // Output: Index of the first unique character: 0
 ```
 ## Find Common Characters
 ```JavaScript
@@ -309,5 +310,131 @@ function commonChars(A) {
 
 // Example usage:
 let A = ["bella", "label", "roller"];
-console.log(`Common characters: ${commonChars(A)}`); // Output: Common characters: ["e","l","l"]
+console.log(`Common characters: ${commonChars(A)}`);
+// Output: Common characters: ["e","l","l"]
+```
+## Sort Characters By Frequency
+```JavaScript
+function frequencySort(s) {
+    // Step 1: Count frequency of each character
+    let charCount = new Map();
+    for (let char of s) {
+        charCount.set(char, (charCount.get(char) || 0) + 1);
+    }
+    
+    // Step 2: Sort characters based on frequency (descending)
+    let sortedChars = Array.from(charCount.entries()).sort((a, b) => b[1] - a[1]);
+    
+    // Step 3: Construct sorted string
+    let result = '';
+    for (let [char, count] of sortedChars) {
+        result += char.repeat(count);
+    }
+    
+    return result;
+}
+
+// Example usage:
+let s = "tree";
+console.log(`Sorted characters by frequency: ${frequencySort(s)}`);
+// Output: Sorted characters by frequency: "eert" or "eetr"
+```
+## Valid Sudoku
+![image](https://github.com/srikanthmekala500/DSA-in-JavaScript/assets/125475567/26a2e3f3-d807-4a13-9943-53272e3cef00)
+```JavaScript
+function isValidSudoku(board) {
+    // Initialize sets for rows, columns, and sub-boxes
+    let rows = Array.from({ length: 9 }, () => new Set());
+    let columns = Array.from({ length: 9 }, () => new Set());
+    let boxes = Array.from({ length: 9 }, () => new Set());
+    
+    for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+            let num = board[i][j];
+            if (num !== '.') {
+                // Determine which sub-box the cell belongs to
+                let boxIndex = Math.floor(i / 3) * 3 + Math.floor(j / 3);
+                
+                // Check if number is already in the respective sets
+                if (rows[i].has(num) || columns[j].has(num) || boxes[boxIndex].has(num)) {
+                    return false; // Invalid Sudoku
+                }
+                
+                // Add number to sets
+                rows[i].add(num);
+                columns[j].add(num);
+                boxes[boxIndex].add(num);
+            }
+        }
+    }
+    
+    return true; // Valid Sudoku
+}
+
+// Example usage:
+let board = [
+    ["5","3",".",".","7",".",".",".","."],
+    ["6",".",".","1","9","5",".",".","."],
+    [".","9","8",".",".",".",".","6","."],
+    ["8",".",".",".","6",".",".",".","3"],
+    ["4",".",".","8",".","3",".",".","1"],
+    ["7",".",".",".","2",".",".",".","6"],
+    [".","6",".",".",".",".","2","8","."],
+    [".",".",".","4","1","9",".",".","5"],
+    [".",".",".",".","8",".",".","7","9"]
+];
+
+console.log(`Is the Sudoku board valid? ${isValidSudoku(board)}`);
+// Output: Is the Sudoku board valid? true
+```
+## First Unique Character in a String
+```JavaScript
+function firstUniqueChar(s) {
+    // Step 1: Count frequency of each character
+    let charCount = {};
+    for (let char of s) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+    
+    // Step 2: Find the first unique character
+    for (let i = 0; i < s.length; i++) {
+        if (charCount[s[i]] === 1) {
+            return i;
+        }
+    }
+    
+    // Step 3: Return -1 if no unique character found
+    return -1;
+}
+
+// Example usage:
+let s = "leetcode";
+console.log(`Index of the first unique character: ${firstUniqueChar(s)}`);
+// Output: Index of the first unique character: 0
+```
+## Longest Substring Without Repeating Characters
+```JavaScript
+function lengthOfLongestSubstring(s) {
+    let charMap = new Map(); // to store character and its index
+    let maxLength = 0;
+    let left = 0; // left pointer of the sliding window
+    
+    for (let right = 0; right < s.length; right++) {
+        let currentChar = s[right];
+        
+        if (charMap.has(currentChar) && charMap.get(currentChar) >= left) {
+            left = charMap.get(currentChar) + 1;
+        }
+        
+        charMap.set(currentChar, right);
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+    
+    return maxLength;
+}
+
+// Example usage:
+let s = "abcabcbb";
+console.log(`Length of the longest substring without repeating characters: ${lengthOfLongestSubstring(s)}`);
+// Output: Length of the longest substring without repeating characters: 3
 ```
