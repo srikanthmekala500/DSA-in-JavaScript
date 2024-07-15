@@ -3,6 +3,18 @@ Recursion is a programming technique where a function calls itself repeatedly to
 Recursion in JavaScript is a powerful technique where a function calls itself to solve smaller instances of the same problem until it reaches a base case. Understanding recursion is essential for solving problems where the solution can be built off simpler versions of the same problem.
 ## Basic Example: Factorial Calculation
 ## Factorial of a Number
+Base Case: If 
+𝑛
+n is 0, the function returns 1.
+Recursive Case: If 
+𝑛
+n is greater than 0, the function calls itself with 
+𝑛
+−
+1
+n−1 and multiplies the result by 
+𝑛
+n.
 ```JavaScript
 function factorial(n) {
     // Base case: factorial of 0 is 1
