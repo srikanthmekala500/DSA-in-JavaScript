@@ -85,6 +85,62 @@ console.log(isPalindrome("hello")); // Output: false
 console.log(isPalindrome("")); // Output: true (empty string is considered a palindrome)
 ```
 ## Create pow(x, n) function which returns x^n
+Exponentiation by Squaring: This is where let half = pow(x, Math.floor(n / 2)); comes into play:
+
+Explanation of Math.floor(n / 2):
+Math.floor(n / 2) calculates the integer part of 
+𝑛
+n divided by 2. For example, if 
+𝑛
+n is 7, Math.floor(7 / 2) gives 3.
+This is used to split the problem into two halves, approximately.
+Recursive Calculation:
+let half = pow(x, Math.floor(n / 2)); recursively calculates 
+𝑥
+x raised to the power of half of 
+𝑛
+n.
+This reduces the problem size significantly compared to calculating 
+𝑥
+x raised to 
+𝑛
+n directly.
+Optimization:
+By calculating half * half, the function squares the result of pow(x, Math.floor(n / 2)). This step is possible because 
+𝑥
+𝑛
+=
+𝑥
+𝑛
+/
+2
+×
+𝑥
+𝑛
+/
+2
+x 
+n
+ =x 
+n/2
+ ×x 
+n/2
+ .
+This approach reduces the number of recursive calls and improves efficiency.
+Odd Exponent Adjustment:
+
+If 
+𝑛
+n is odd (n % 2 !== 0), result *= x; multiplies result by 
+𝑥
+x to account for the remaining 
+𝑥
+x in 
+𝑥
+𝑛
+x 
+n
+ .
 * Recursive Approach
 ```JavaScript
 function pow(x, n) {
