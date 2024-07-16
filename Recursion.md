@@ -158,6 +158,93 @@ console.log(countDigits(0)); // Output: 1 (single digit for zero)
 ```
 ## Create a function to find the LCM of two numbers
 ![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/2764bbb8-bf95-417e-ba50-644531ffabee)
+Let's walk through the Euclidean algorithm to find the GCD of 
+𝑎
+=
+12
+a=12 and 
+𝑏
+=
+15
+b=15 using the function gcd(a, b):
+
+Initial values:
+
+𝑎
+=
+12
+a=12
+𝑏
+=
+15
+b=15
+First iteration:
+
+temp
+=
+15
+temp=15
+𝑏
+=
+12
+%
+15
+=
+12
+b=12%15=12 (since 12 is less than 15, the remainder is 12)
+𝑎
+=
+15
+a=15
+Second iteration:
+
+temp
+=
+12
+temp=12
+𝑏
+=
+15
+%
+12
+=
+3
+b=15%12=3
+𝑎
+=
+12
+a=12
+Third iteration:
+
+temp
+=
+3
+temp=3
+𝑏
+=
+12
+%
+3
+=
+0
+b=12%3=0
+𝑎
+=
+3
+a=3
+Termination:
+
+𝑏
+b is now 
+0
+0, so the loop exits, and the GCD is the current value of 
+𝑎
+a, which is 
+3
+3.
+Thus, the GCD of 12 and 15 is 
+3
+3.
 ```JavaScript
 // Function to compute GCD (Greatest Common Divisor) using Euclidean algorithm
 function gcd(a, b) {
