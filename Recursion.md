@@ -158,6 +158,33 @@ console.log(countDigits(0)); // Output: 1 (single digit for zero)
 ```
 ## Create a function to find the LCM of two numbers
 ![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/2764bbb8-bf95-417e-ba50-644531ffabee)
+
+```JavaScript
+// Function to compute GCD (Greatest Common Divisor) using Euclidean algorithm
+function gcd(a, b) {
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// Function to compute LCM (Least Common Multiple) using GCD
+function lcm(a, b) {
+    // Calculate the absolute values to handle negative numbers
+    let absA = Math.abs(a);
+    let absB = Math.abs(b);
+    
+    // Calculate LCM using the formula: LCM(a, b) = abs(a * b) / GCD(a, b)
+    return Math.abs(absA * absB) / gcd(absA, absB);
+}
+
+// Example usage
+console.log(lcm(12, 15)); // Output: 60 (LCM of 12 and 15)
+console.log(lcm(8, 10)); // Output: 40 (LCM of 8 and 10)
+console.log(lcm(5, 7)); // Output: 35 (LCM of 5 and 7)
+console.log(lcm(-6, 10)); // Output: 30 (LCM of -6 and 10)
 Let's walk through the Euclidean algorithm to find the GCD of 
 𝑎
 =
@@ -245,32 +272,6 @@ a, which is
 Thus, the GCD of 12 and 15 is 
 3
 3.
-```JavaScript
-// Function to compute GCD (Greatest Common Divisor) using Euclidean algorithm
-function gcd(a, b) {
-    while (b !== 0) {
-        let temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
-// Function to compute LCM (Least Common Multiple) using GCD
-function lcm(a, b) {
-    // Calculate the absolute values to handle negative numbers
-    let absA = Math.abs(a);
-    let absB = Math.abs(b);
-    
-    // Calculate LCM using the formula: LCM(a, b) = abs(a * b) / GCD(a, b)
-    return Math.abs(absA * absB) / gcd(absA, absB);
-}
-
-// Example usage
-console.log(lcm(12, 15)); // Output: 60 (LCM of 12 and 15)
-console.log(lcm(8, 10)); // Output: 40 (LCM of 8 and 10)
-console.log(lcm(5, 7)); // Output: 35 (LCM of 5 and 7)
-console.log(lcm(-6, 10)); // Output: 30 (LCM of -6 and 10)
 ```
 ![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/af2c8cda-1af3-4d66-b39f-af7d82227f35)
 
