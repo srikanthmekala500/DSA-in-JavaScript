@@ -158,6 +158,9 @@ console.log(countDigits(0)); // Output: 1 (single digit for zero)
 ```
 ## Create a function to find the LCM of two numbers
 ![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/2764bbb8-bf95-417e-ba50-644531ffabee)
+![image](https://github.com/user-attachments/assets/504caef1-2921-4214-8968-992259700ae1)
+![image](https://github.com/user-attachments/assets/68172ea1-aec6-4b38-b3f2-29175d964285)
+
 
 ```JavaScript
 // Function to compute GCD (Greatest Common Divisor) using Euclidean algorithm
