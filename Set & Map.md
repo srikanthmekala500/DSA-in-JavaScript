@@ -93,6 +93,12 @@ console.log(`Array contains duplicate elements: ${containsDuplicate(nums)}`);
 
 
 ## Method 2: Sorting
+Array Indexing
+nums is the array.
+i is the current index in the loop.
+nums[i] is the element at the current index.
+nums[i - 1] is the element at the previous index.
+
 function containsDuplicate(nums) {
     nums.sort((a, b) => a - b);
     for (let i = 1; i < nums.length; i++) {
