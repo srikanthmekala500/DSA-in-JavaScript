@@ -311,7 +311,8 @@ function searchRange(nums, target) {
         
         return lastIdx;
     }
-    
+      // Sort nums array (if not already sorted)
+    nums.sort((a, b) => a - b);
     // Find first and last occurrence
     let firstIdx = findFirstOccurrence(nums, target);
     let lastIdx = findLastOccurrence(nums, target);
