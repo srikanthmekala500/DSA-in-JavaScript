@@ -318,7 +318,7 @@ function pushZerosToEnd(arr, n)
  
 ```
 
-
+without using sort() method we sort the arry 
 ````javascript
 let arry = ["z", "b", "c", "a"];
 
