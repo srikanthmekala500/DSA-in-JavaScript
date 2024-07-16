@@ -123,7 +123,10 @@ function sumOfDigits(num) {
     
     // Handle negative numbers by taking absolute value
     num = Math.abs(num);
-    
+
+// console.log(Math.floor(5.95));
+    // Expected output: 5
+
     while (num > 0) {
         sum += num % 10; // Add the last digit to sum
         num = Math.floor(num / 10); // Remove the last digit
