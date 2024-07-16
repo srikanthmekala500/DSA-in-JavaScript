@@ -132,6 +132,12 @@ console.log(Math.sqrt(0)); // Output: 0
 ```
 ## First Bad Version
 ```JavaScript
+
+function isBadVersion(version) {
+    const firstBadVersion = 4; // Example first bad version
+    return version >= firstBadVersion;
+}
+
 function firstBadVersion(n) {
     let left = 1;
     let right = n;
