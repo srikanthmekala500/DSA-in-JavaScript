@@ -264,6 +264,67 @@ let rotatedSortedArray = [4, 5, 6, 7, 0, 1, 2];
 let minElement = findMin(rotatedSortedArray);
 console.log(`Minimum element in the rotated sorted array is: ${minElement}`);
 // Output: Minimum element in the rotated sorted array is: 0
+
+////////////////////////////////////////
+function findMin(nums) {
+    let left = 0;
+    let right = nums.length - 1;
+
+    while (left < right) {
+        let mid = Math.floor((left + right) / 2);
+
+        // If mid element is greater than the rightmost element, minimum is in the right half
+        if (nums[mid] > nums[right]) {
+            left = mid + 1;
+        } else {
+            // Otherwise, the minimum is in the left half including mid
+            right = mid;
+        }
+    }
+
+    // After the loop, left and right will point to the minimum element
+    return nums[left];
+}
+
+// Example usage:
+let nums = [4, 5, 6, 7, 0, 1, 2];
+let minimum = findMin(nums);
+console.log(`The minimum element in the array is: ${minimum}`);
+// Output: The minimum element in the array is: 0
+// Step-by-Step Example
+// Example Array: [4, 5, 6, 7, 0, 1, 2]
+
+// Initial State: left = 0, right = 6
+// Iteration 1:
+
+// Calculate mid: mid = Math.floor((0 + 6) / 2) = 3
+// nums[mid] = nums[3] = 7, nums[right] = nums[6] = 2
+// nums[mid] is greater than nums[right], so set left to mid + 1: left = 4
+// Iteration 2:
+
+// Calculate mid: mid = Math.floor((4 + 6) / 2) = 5
+// nums[mid] = nums[5] = 1, nums[right] = nums[6] = 2
+// nums[mid] is less than nums[right], so set right to mid: right = 5
+// Iteration 3:
+
+// Calculate mid: mid = Math.floor((4 + 5) / 2) = 4
+// nums[mid] = nums[4] = 0, nums[right] = nums[5] = 1
+// nums[mid] is less than nums[right], so set right to mid: right = 4
+// Final State:
+
+// left = 4, right = 4
+// left equals right, so the loop exits.
+// The minimum element is nums[left] = nums[4] = 0
+// Therefore, the minimum element in the array [4, 5, 6, 7, 0, 1, 2] is 0.
+
+// This code will efficiently find the minimum element in a rotated sorted array with a time complexity of 
+// 𝑂
+// (
+// log
+// ⁡
+// 𝑛
+// )
+// O(logn).
 ```
 ## Find First and Last Position of Element in Sorted Array
 ```JavaScript
