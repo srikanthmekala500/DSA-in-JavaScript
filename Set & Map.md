@@ -257,28 +257,29 @@ function longestConsecutive(nums) {
 let nums = [100, 4, 200, 1, 3, 2];
 console.log(`Length of the longest consecutive sequence: ${longestConsecutive(nums)}`);
 // Output: Length of the longest consecutive sequence: 4
+
 Example Walkthrough
-Let’s go through an example with nums = [100, 4, 200, 1, 3, 2]:
+// Let’s go through an example with nums = [100, 4, 200, 1, 3, 2]:
 
-Processing num = 1:
+// Processing num = 1:
 
-1 is the start of a sequence (since 0 is not in the set).
-Expands to 2, 3, 4.
-Sequence length is 4.
-Processing num = 2, num = 3, and num = 4:
+// 1 is the start of a sequence (since 0 is not in the set).
+// Expands to 2, 3, 4.
+// Sequence length is 4.
+// Processing num = 2, num = 3, and num = 4:
 
-These numbers are not processed further since they are part of the previously found sequence starting at 1.
-Processing num = 100:
+// These numbers are not processed further since they are part of the previously found sequence starting at 1.
+// Processing num = 100:
 
-100 is the start of a sequence (since 99 is not in the set).
-No consecutive numbers follow 100 in the set.
-Sequence length is 1.
-Processing num = 200:
+// 100 is the start of a sequence (since 99 is not in the set).
+// No consecutive numbers follow 100 in the set.
+// Sequence length is 1.
+// Processing num = 200:
 
-200 is the start of a sequence (since 199 is not in the set).
-No consecutive numbers follow 200 in the set.
-Sequence length is 1.
-The final result is 4, which is the length of the longest consecutive sequence found.
+// 200 is the start of a sequence (since 199 is not in the set).
+// No consecutive numbers follow 200 in the set.
+// Sequence length is 1.
+// The final result is 4, which is the length of the longest consecutive sequence found.
 ```
 ## Happy Number
 ```JavaScript
