@@ -361,6 +361,33 @@ let nums = [1, 1, 2, 3, 3, 4, 4, 5, 5];
 let singleElement = singleNonDuplicate(nums);
 console.log(`The single element in the array is: ${singleElement}`);
  // Output: The single element in the array is: 2
+Example Array: [1, 1, 2, 3, 3, 4, 4, 5, 5]
+
+// Initial State: left = 0, right = 8
+// Iteration 1:
+
+// Calculate mid: mid = Math.floor((0 + 8) / 2) = 4
+// mid is even.
+// nums[mid] = nums[4] = 3, nums[mid + 1] = nums[5] = 4
+// nums[mid] is not equal to nums[mid + 1], so set right to mid: right = 4
+// Iteration 2:
+
+// Calculate mid: mid = Math.floor((0 + 4) / 2) = 2
+// mid is even.
+// nums[mid] = nums[2] = 2, nums[mid + 1] = nums[3] = 3
+// nums[mid] is not equal to nums[mid + 1], so set right to mid: right = 2
+// Iteration 3:
+
+// Calculate mid: mid = Math.floor((0 + 2) / 2) = 1
+// mid is odd.
+// nums[mid] = nums[1] = 1, nums[mid - 1] = nums[0] = 1
+// nums[mid] is equal to nums[mid - 1], so set left to mid + 1: left = 2
+// Final State:
+
+// left = 2, right = 2
+// left equals right, so the loop exits.
+// The single element is nums[left] = nums[2] = 2
+// Therefore, the single non-duplicate element in the array [1, 1, 2, 3, 3, 4, 4, 5, 5] is 2.
 ```
 ## Search a 2D Matrix
 ```JavaScript
