@@ -114,6 +114,36 @@ function pow(x, n) {
 console.log(pow(2, 3)); // Output: 8 (2^3 = 8)
 console.log(pow(3, 4)); // Output: 81 (3^4 = 81)
 console.log(pow(2, -3)); // Output: 0.125 (2^-3 = 1/2^3 = 1/8 = 0.125)
+/////////////////
+function pow(x, n) {
+    if (n === 0) return 1; // Base case: x^0 = 1
+
+    if (n < 0) {
+        x = 1 / x; // Convert x to its reciprocal
+        n = -n;   // Make n positive
+    }
+
+    function fastPow(x, n) {
+        if (n === 0) return 1; // Base case: x^0 = 1
+
+        let half = fastPow(x, Math.floor(n / 2)); // Recursively calculate x^(n/2)
+        if (n % 2 === 0) {
+            return half * half; // If n is even, x^n = (x^(n/2))^2
+        } else {
+            return half * half * x; // If n is odd, x^n = (x^(n/2))^2 * x
+        }
+    }
+
+    return fastPow(x, n);
+}
+
+// Example usage:
+console.log(pow(2, 10)); // Output: 1024
+console.log(pow(2, -2)); // Output: 0.25
+console.log(pow(3, 5));  // Output: 243
+
+
+
 ```
 ## Create a function which returns the sum of digits of a number (e.g., sumOfDigits(453) is 12)
 ```JavaScript
