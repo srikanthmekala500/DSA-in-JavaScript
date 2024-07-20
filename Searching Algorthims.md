@@ -468,4 +468,69 @@ let nums = [4, 5, 6, 7, 0, 1, 2];
 let target = 0;
 console.log(`Index of target ${target} is: ${search(nums, target)}`);
  // Output: Index of target 0 is: 4
+
+// // Initial Setup
+// // nums = [4, 5, 6, 7, 0, 1, 2]
+// // target = 0
+// // left = 0
+// // right = 6 (last index)
+
+// Calculate Midpoint:
+
+// mid = Math.floor((left + right) / 2) = Math.floor((0 + 6) / 2) = 3;
+// nums[mid] = 7;
+
+// Check if nums[mid] is the target:
+
+// if (nums[mid] === target) {
+//     return mid;
+// }
+// // nums[mid] = 7, which is not equal to target (0)
+
+// Determine Which Side is Sorted:
+
+// if (nums[left] <= nums[mid]) {
+//     // Left side is sorted since nums[left] (4) <= nums[mid] (7)
+// }
+
+// Check if Target is in the Sorted Left Side:
+
+
+// if (nums[left] <= target && target < nums[mid]) {
+//     // nums[left] (4) <= target (0) && target (0) < nums[mid] (7)
+//     // This condition is false because 4 is not <= 0
+//     left = mid + 1; // Target is in the right side
+//     left = 4;
+// }
+
+
+// /////
+// Example Walkthrough
+// Let's take the array nums = [4, 5, 6, 7, 0, 1, 2] and target 0 as an example.
+
+// Initial Setup:
+
+// left pointer starts at index 0 (value 4).
+// right pointer starts at index 6 (value 2).
+// First Iteration:
+
+// Calculate mid index: (0 + 6) / 2 = 3 (value 7).
+// Determine which side is sorted:
+// The left side (left to mid) is sorted because 4 (left) <= 7 (mid).
+// Check if target 0 is within the sorted left side:
+// 0 is not between 4 and 7.
+// Therefore, move the left pointer to mid + 1 (index 4).
+// Second Iteration:
+
+// Calculate mid index: (4 + 6) / 2 = 5 (value 1).
+// Determine which side is sorted:
+// The left side (left to mid) is sorted because 0 (left) <= 1 (mid).
+// Check if target 0 is within the sorted left side:
+// 0 is between 0 and 1.
+// Therefore, move the right pointer to mid - 1 (index 4).
+// Third Iteration:
+
+// Calculate mid index: (4 + 4) / 2 = 4 (value 0).
+// Check if the mid value is the target:
+// 0 is the target.
 ```
