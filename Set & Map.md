@@ -465,6 +465,66 @@ let s = "abcabcbb";
 console.log(`Length of the longest substring without repeating characters: ${lengthOfLongestSubstring(s)}`);
 // Output: Length of the longest substring without repeating characters: 3
 
+Step-by-Step Explanation
+Initialization:
 
+charMap is an empty Map.
+left is 0.
+maxLength is 0.
+First Iteration (right = 0):
+
+currentChar is 'a'.
+'a' is not in charMap, so we skip the if block.
+charMap.set('a', 0) adds 'a' with index 0 to charMap.
+maxLength is updated to 1 (from right - left + 1 which is 0 - 0 + 1).
+Second Iteration (right = 1):
+
+currentChar is 'b'.
+'b' is not in charMap, so we skip the if block.
+charMap.set('b', 1) adds 'b' with index 1 to charMap.
+maxLength is updated to 2 (from right - left + 1 which is 1 - 0 + 1).
+Third Iteration (right = 2):
+
+currentChar is 'c'.
+'c' is not in charMap, so we skip the if block.
+charMap.set('c', 2) adds 'c' with index 2 to charMap.
+maxLength is updated to 3 (from right - left + 1 which is 2 - 0 + 1).
+Fourth Iteration (right = 3):
+
+currentChar is 'a'.
+'a' is in charMap and charMap.get('a') is 0 which is equal to left.
+left is updated to 1 (from charMap.get('a') + 1 which is 0 + 1).
+charMap.set('a', 3) updates the index of 'a' to 3 in charMap.
+maxLength remains 3 (from right - left + 1 which is 3 - 1 + 1).
 ```
-![image](https://github.com/user-attachments/assets/520d823f-beb7-451a-bf22-5a5087d3e813)
+Step-by-Step Explanation
+Initialization:
+
+charMap is an empty Map.
+left is 0.
+maxLength is 0.
+First Iteration (right = 0):
+
+currentChar is 'a'.
+'a' is not in charMap, so we skip the if block.
+charMap.set('a', 0) adds 'a' with index 0 to charMap.
+maxLength is updated to 1 (from right - left + 1 which is 0 - 0 + 1).
+Second Iteration (right = 1):
+
+currentChar is 'b'.
+'b' is not in charMap, so we skip the if block.
+charMap.set('b', 1) adds 'b' with index 1 to charMap.
+maxLength is updated to 2 (from right - left + 1 which is 1 - 0 + 1).
+Third Iteration (right = 2):
+
+currentChar is 'c'.
+'c' is not in charMap, so we skip the if block.
+charMap.set('c', 2) adds 'c' with index 2 to charMap.
+maxLength is updated to 3 (from right - left + 1 which is 2 - 0 + 1).
+Fourth Iteration (right = 3):
+
+currentChar is 'a'.
+'a' is in charMap and charMap.get('a') is 0 which is equal to left.
+left is updated to 1 (from charMap.get('a') + 1 which is 0 + 1).
+charMap.set('a', 3) updates the index of 'a' to 3 in charMap.
+maxLength remains 3 (from right - left + 1 which is 3 - 1 + 1).
