@@ -258,30 +258,68 @@ console.log(`Length of the longest consecutive sequence: ${longestConsecutive(nu
 ## Happy Number
 ```JavaScript
 function isHappy(n) {
-    let seen = new Set();
+    let seen = new Set(); // Initialize a new set to track seen numbers
     
-    while (n !== 1 && !seen.has(n)) {
+    while (n !== 1 && !seen.has(n)) {// Continue loop if n is not 1 and n has not been seen before
         seen.add(n);
-        n = getNext(n);
+        console.log( seen.add(n)) // Add n to the set of seen numbers
+        n = getNext(n); // Update n to the next value in the sequence
     }
     
-    return n === 1;
+    return n === 1; // Return true if n is 1 (happy number), otherwise false (cycle detected)
 }
 
 function getNext(n) {
     let sum = 0;
     while (n > 0) {
-        let digit = n % 10;
-        sum += digit * digit;
-        n = Math.floor(n / 10);
+        let digit = n % 10; // Get the last digit of n
+  
+        sum  += digit * digit; // Add the square of the digit to the sum
+        console.log(sum)
+        n = Math.floor(n / 10); // Remove the last digit from n
     }
-    return sum;
+    return sum; // Return the sum of the squares of the digits
 }
 
-// Example usage:
-let number = 19;
-console.log(`Is ${number} a happy number? ${isHappy(number)}`);
-// Output: Is 19 a happy number? true
+// Example usage
+ 
+
+let number1 = 19;
+console.log(`Is ${number1} a happy number? ${isHappy(number1)}`); // Output: true
+// console.log( seen.add(n))
+//Set(1) { 19 }
+// Set(2) { 19, 82 }
+// Set(3) { 19, 82, 68 }
+// Set(4) { 19, 82, 68, 100 }
+// Initialization:
+
+// n = 122
+// sum = 0
+// First iteration of the while loop:
+
+// n > 0 is true (122 > 0)
+// digit = 122 % 10 = 2 (extract the last digit)
+// sum += 2 * 2 = 4 (add the square of the digit to sum)
+// console.log(sum) prints 4
+// n = Math.floor(122 / 10) = 12 (remove the last digit)
+// Second iteration of the while loop:
+
+// n > 0 is true (12 > 0)
+// digit = 12 % 10 = 2 (extract the last digit)
+// sum += 2 * 2 = 4 + 4 = 8 (add the square of the digit to sum)
+// console.log(sum) prints 8
+// n = Math.floor(12 / 10) = 1 (remove the last digit)
+// Third iteration of the while loop:
+
+// n > 0 is true (1 > 0)
+// digit = 1 % 10 = 1 (extract the last digit)
+// sum += 1 * 1 = 8 + 1 = 9 (add the square of the digit to sum)
+// console.log(sum) prints 9
+// n = Math.floor(1 / 10) = 0 (remove the last digit)
+// Exit the loop:
+
+// n > 0 is false (0 > 0 is false)
+// The loop exits
 ```
 ## First Unique Character In A String
 ```JavaScript
