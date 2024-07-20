@@ -63,3 +63,22 @@ const obj = {
 };
 console.log(obj, JSON.stringify(obj));
 ```
+## Concatenate Strings
+```JavaScript
+const lastName = "Rajput";
+console.log(firstName + lastName);
+console.log(`${firstName} ${lastName} is a Best Developer`);
+console.log(firstName.concat(lastName, " is a", " Best"));
+```
+## Find the Index of the First Occurrence in a String
+```JavaScript
+ function findFirstOccurrence(mainString, subString) {
+  return mainString.indexOf(subString);
+}
+
+console.log(findFirstOccurrence('hello world', 'world')); // Outputs: 6
+console.log(findFirstOccurrence('hello world', 'foo'));   // Outputs: -1
+
+```
+## Reverse String
+
