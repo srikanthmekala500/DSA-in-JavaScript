@@ -339,6 +339,8 @@ function commonChars(A) {
 let A = ["bella", "label", "roller"];
 console.log(`Common characters: ${commonChars(A)}`);
 // Output: Common characters: ["e","l","l"]
+
+minCount is an array of size 26 (one slot for each letter in the English alphabet) and is initialized with Infinity. This will be used to keep track of the minimum frequency of each character across all the words in A.
 ```
 ## Sort Characters By Frequency
 ```JavaScript
