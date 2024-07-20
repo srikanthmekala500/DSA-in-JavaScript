@@ -487,6 +487,65 @@ let matrix = [
 ];
 let target = 3;
 console.log(`Does the matrix contain ${target}? ${searchMatrix(matrix, target)}`); // Output: Does the matrix contain 3? true
+// Step-by-Step Example
+// Example Matrix:
+
+// csharp
+// Copy code
+// [
+//   [1, 3, 5, 7],
+//   [10, 11, 16, 20],
+//   [23, 30, 34, 60]
+// ]
+// Target: 3
+
+// Initial State: left = 0, right = 11 (since 
+// 3
+// ×
+// 4
+// −
+// 1
+// =
+// 11
+// 3×4−1=11)
+// Iteration 1:
+
+// Calculate mid: mid = Math.floor((0 + 11) / 2) = 5
+// Convert mid to 2D: midRow = Math.floor(5 / 4) = 1, midCol = 5 % 4 = 1
+// matrix[1][1] = 11, which is greater than the target 3.
+// Move right to mid - 1 = 4.
+// Iteration 2:
+
+// Calculate mid: mid = Math.floor((0 + 4) / 2) = 2
+// Convert mid to 2D: midRow = Math.floor(2 / 4) = 0, midCol = 2 % 4 = 2
+// matrix[0][2] = 5, which is greater than the target 3.
+// Move right to mid - 1 = 1.
+// Iteration 3:
+
+// Calculate mid: mid = Math.floor((0 + 1) / 2) = 0
+// Convert mid to 2D: midRow = Math.floor(0 / 4) = 0, midCol = 0 % 4 = 0
+// matrix[0][0] = 1, which is less than the target 3.
+// Move left to mid + 1 = 1.
+// Iteration 4:
+
+// Calculate mid: mid = Math.floor((1 + 1) / 2) = 1
+// Convert mid to 2D: midRow = Math.floor(1 / 4) = 0, midCol = 1 % 4 = 1
+// matrix[0][1] = 3, which matches the target 3.
+// Return true.
+// Therefore, the target 3 is found in the matrix.
+
+// This code efficiently searches for the target in the 2D matrix using binary search, ensuring a time complexity of 
+// 𝑂
+// (
+// log
+// ⁡
+// (
+// 𝑚
+// ⋅
+// 𝑛
+// )
+// )
+// O(log(m⋅n)).
 ```
 ![image](https://github.com/srikanthmekala500/-ECOMMERCE/assets/125475567/370c19da-63a0-4268-9eab-95e4d6520508)
 ## Find Peak Element
