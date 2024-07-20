@@ -428,6 +428,50 @@ let nums = [1, 2, 3, 1];
 let peakIndex = findPeakElement(nums);
 console.log(`Peak element index is: ${peakIndex}, peak element is: ${nums[peakIndex]}`);
  // Output: Peak element index is: 2, peak element is: 3
+
+// Initial Setup
+// // nums = [1, 2, 3, 1]
+// // left = 0 (first index)
+// // right = 3 (last index)
+
+// Calculate Midpoint:
+
+// let mid = Math.floor((left + right) / 2);
+// mid = Math.floor((0 + 3) / 2);
+// mid = 1;
+// nums[mid] = 2;
+// nums[mid + 1] = 3;
+
+// Compare nums[mid] with nums[mid + 1]
+
+// if (nums[mid] > nums[mid + 1]) {
+//     // nums[mid] = 2 is not greater than nums[mid + 1] = 3
+//     // so, move the left pointer to the right side
+// } else {
+//     left = mid + 1;
+//     left = 2;
+// }
+
+
+// Iteration 2
+// Calculate Midpoint
+
+// let mid = Math.floor((left + right) / 2);
+// mid = Math.floor((2 + 3) / 2);
+// mid = 2;
+// nums[mid] = 3;
+// nums[mid + 1] = 1;
+
+// Compare nums[mid] with nums[mid + 1]
+
+// if (nums[mid] > nums[mid + 1]) {
+//     // nums[mid] = 3 is greater than nums[mid + 1] = 1
+//     // so, move the right pointer to the left side
+//     right = mid;
+//     right = 2;
+// } else {
+//     left = mid + 1;
+// }
 ```
 ## Search in Rotated Sorted Array
 ```JavaScript
