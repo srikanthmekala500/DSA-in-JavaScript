@@ -464,4 +464,6 @@ function lengthOfLongestSubstring(s) {
 let s = "abcabcbb";
 console.log(`Length of the longest substring without repeating characters: ${lengthOfLongestSubstring(s)}`);
 // Output: Length of the longest substring without repeating characters: 3
+![image](https://github.com/user-attachments/assets/520d823f-beb7-451a-bf22-5a5087d3e813)
+
 ```
