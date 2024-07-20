@@ -419,6 +419,63 @@ console.log(`Common characters: ${commonChars(A)}`);
 let words = ["bella", "label", "roller"];
 console.log(`Common characters: ${commonChars(words)}`);
 // Output: Common characters: ["e","l","l"]
+
+
+
+let commonChars = function(words) {
+    const array = [];
+    let firstWord = words[0];
+
+    for (const letter of firstWord) {
+        if (words.every(word => word.includes(letter))) {
+            array.push(letter);
+            words = words.map(word => {
+                let index = word.indexOf(letter);
+                return word.slice(0, index) + word.slice(index + 1);
+            });
+        }
+    }
+    return array;
+};
+
+// Example usage:
+let words = ["bella", "label", "roller"];
+console.log(`Common characters: ${commonChars(words)}`); // Output: ["e","l","l"]
+
+
+
+// Initial Setup
+// words = ["bella", "label", "roller"]
+// const array = []; (to store the common characters)
+// let firstWord = "bella"; (to iterate through its characters)
+
+// Iteration and Checks
+// 1st Character: 'b'
+// Check if 'b' is in all words:
+// words.every(word => word.includes('b')); // false (not in "roller")
+// b' is not in all words, so it is not added to array.
+
+// 2nd Character: 'e'
+// Check if 'e' is in all words:
+// words.every(word => word.includes('e')); // true
+// 'e' is in all words, so it is added to array:
+// array.push('e'); // array = ['e']
+
+
+// Remove 'e' from all words:
+//   words = words.map(word => {
+//     let index = word.indexOf('e');
+//     return word.slice(0, index) + word.slice(index + 1);
+//   });
+//   // words = ["blla", "labl", "rollr"]
+
+// 3rd Character: 'l'
+// Check if 'l' is in all words:
+// words.every(word => word.includes('l')); // true
+// 'l' is in all words, so it is added to array:
+// array.push('l'); // array = ['e', 'l']
+
+
 ```
 ## Sort Characters By Frequency
 ```JavaScript
