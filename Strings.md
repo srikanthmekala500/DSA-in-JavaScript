@@ -167,3 +167,140 @@ function mergeAlternately(str1, str2) {
 console.log(mergeAlternately('abc', '12345')); // Outputs: 'a1b2c345'
 console.log(mergeAlternately('hello', 'world')); // Outputs: 'hweolrllod'
 ```
+## Length of Last Word
+```JavaScript
+function lengthOfLastWord(s) {
+  // Trim the string to remove any leading or trailing spaces
+  const trimmedString = s.trim();
+
+  // Split the string by spaces to get an array of words
+  const words = trimmedString.split(' ');
+
+  // Get the last word from the array
+  const lastWord = words[words.length - 1];
+
+  // Return the length of the last word
+  return lastWord.length;
+}
+
+console.log(lengthOfLastWord('Hello World'));   // Outputs: 5
+console.log(lengthOfLastWord('   fly me   to   the moon  ')); // Outputs: 4
+console.log(lengthOfLastWord('a ')); // Outputs: 1
+console.log(lengthOfLastWord('')); // Outputs: 0
+```
+## Valid Palindrome
+```JavaScript
+function isPalindrome(s) {
+  // Remove non-alphanumeric characters and convert to lowercase
+  const cleanedString = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+  // Check if the cleaned string is the same forwards and backwards
+  const reversedString = cleanedString.split('').reverse().join('');
+  
+  return cleanedString === reversedString;
+}
+
+console.log(isPalindrome('A man, a plan, a canal: Panama')); // Outputs: true
+console.log(isPalindrome('race a car')); // Outputs: false
+console.log(isPalindrome(' ')); // Outputs: true
+```
+## String Compression
+```JavaScript
+function compressString(s) {
+  if (s.length === 0) return '';
+
+  let compressed = '';
+  let count = 1;
+
+  for (let i = 1; i < s.length; i++) {
+    if (s[i] === s[i - 1]) {
+      count++;
+    } else {
+      compressed += s[i - 1] + count;
+      count = 1;
+    }
+  }
+
+  // Append the last character and its count
+  compressed += s[s.length - 1] + count;
+
+  // Return the shorter of the original or compressed string
+  return compressed.length < s.length ? compressed : s;
+}
+
+console.log(compressString('aabcccccaaa')); // Outputs: 'a2b1c5a3'
+console.log(compressString('abc'));          // Outputs: 'abc'
+console.log(compressString('aabb'));         // Outputs: 'aabb'
+```
+## Reverse Words in a String
+```JavaScript
+function reverseWords(s) {
+  // Trim the string and split it into words
+  const words = s.trim().split(/\s+/);
+
+  // Reverse the array of words
+  const reversedWords = words.reverse();
+
+  // Join the reversed array into a single string with spaces
+  return reversedWords.join(' ');
+}
+
+console.log(reverseWords('  Hello World  ')); // Outputs: 'World Hello'
+console.log(reverseWords('The quick brown fox')); // Outputs: 'fox brown quick The'
+console.log(reverseWords('  a good example  ')); // Outputs: 'example good a'
+```
+## Reverse Vowels of a String
+```JavaScript
+function reverseVowels(s) {
+  const vowels = 'aeiouAEIOU';
+  const chars = s.split('');
+  const vowelIndices = [];
+  const vowelChars = [];
+
+  // Collect the vowels and their indices
+  for (let i = 0; i < chars.length; i++) {
+    if (vowels.includes(chars[i])) {
+      vowelIndices.push(i);
+      vowelChars.push(chars[i]);
+    }
+  }
+
+  // Reverse the collected vowels
+  vowelChars.reverse();
+
+  // Place the reversed vowels back into their original positions
+  for (const index of vowelIndices) {
+    chars[index] = vowelChars.shift();
+  }
+
+  return chars.join('');
+}
+
+console.log(reverseVowels('hello')); // Outputs: 'holle'
+console.log(reverseVowels('leetcode')); // Outputs: 'leotcede'
+console.log(reverseVowels('aA')); // Outputs: 'Aa'
+```
+## Rotate String
+```JavaScript
+function rotateString(s, k) {
+  const len = s.length;
+
+  if (len === 0) return s;
+
+  // Normalize the rotation count to handle cases where k is greater than the string length
+  k = k % len;
+
+  // Split and concatenate the string
+  const part1 = s.slice(0, len - k);
+  const part2 = s.slice(len - k);
+
+  return part2 + part1;
+}
+
+console.log(rotateString('abcdef', 2)); // Outputs: 'efabcd'
+console.log(rotateString('abcdef', 8)); // Outputs: 'efabcd' (8 % 6 = 2)
+console.log(rotateString('hello', 0));  // Outputs: 'hello'
+console.log(rotateString('hello', 5));  // Outputs: 'hello'
+```
+
+
