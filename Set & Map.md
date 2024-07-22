@@ -709,4 +709,64 @@ minPrice = 1
 maxProfit = 5
 Finally, the function returns maxProfit which is 5. This means the best profit we can make is by buying at 1 and selling at 6 -->
 ```
+# Product of Array Except Self
+```JavaScript
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function(nums) {
+    const n = nums.length;
+    const result = new Array(n).fill(1);
 
+    // Calculate left products
+    let leftProduct = 1;
+    for (let i = 0; i < n; i++) {
+        result[i] = leftProduct;
+        leftProduct *= nums[i];
+    }
+
+    // Calculate right products and multiply with left products
+    let rightProduct = 1;
+    for (let i = n - 1; i >= 0; i--) {
+        result[i] *= rightProduct;
+        rightProduct *= nums[i];
+    }
+
+    return result;
+};
+
+// Example usage:
+let nums = [1, 2, 3, 4];
+let result = productExceptSelf(nums);
+console.log(result); // Output: [24, 12, 8, 6]
+
+//////////////////////////////////
+Left Products Calculation:
+
+leftProduct starts at 1.
+Iterate through nums:
+result[0] = 1 (initial leftProduct)
+leftProduct = 1 * 1 = 1
+result[1] = 1
+leftProduct = 1 * 2 = 2
+result[2] = 2
+leftProduct = 2 * 3 = 6
+result[3] = 6
+The result array becomes [1, 1, 2, 6].
+
+Right Products Calculation:
+
+rightProduct starts at 1.
+Iterate through nums from the end:
+result[3] = 6 * 1 = 6
+rightProduct = 1 * 4 = 4
+result[2] = 2 * 4 = 8
+rightProduct = 4 * 3 = 12
+result[1] = 1 * 12 = 12
+rightProduct = 12 * 2 = 24
+result[0] = 1 * 24 = 24
+The result array becomes [24, 12, 8, 6].
+
+Thus, the function productExceptSelf(nums) correctly outputs [24, 12, 8, 6], which represents the product of all elements except the one at each index.
+```
