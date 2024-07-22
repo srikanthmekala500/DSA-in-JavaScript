@@ -770,3 +770,82 @@ The result array becomes [24, 12, 8, 6].
 
 Thus, the function productExceptSelf(nums) correctly outputs [24, 12, 8, 6], which represents the product of all elements except the one at each index.
 ```
+## Maximum Subarray
+![image](https://github.com/user-attachments/assets/9ac376db-f452-43d0-bf33-78cdb3c01b92)
+![image](https://github.com/user-attachments/assets/356ec9f7-50be-4a4f-83bd-8e986a468278)
+
+```JavaScript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+    // Initialize current subarray sum and maximum sum
+    let currentSum = nums[0];
+    let maxSum = nums[0];
+
+    // Iterate through the array starting from the second element
+    for (let i = 1; i < nums.length; i++) {
+        // Update the current subarray sum
+        currentSum = Math.max(nums[i], currentSum + nums[i]);
+
+        // Update the maximum sum encountered so far
+        maxSum = Math.max(maxSum, currentSum);
+    }
+
+    return maxSum;
+};
+
+// Example usage:
+let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+let result = maxSubArray(nums);
+console.log(result); // Output: 6
+Example Walkthrough
+Given the input array [-2, 1, -3, 4, -1, 2, 1, -5, 4]:
+
+Initial State:
+
+currentSum = -2
+maxSum = -2
+Iteration 1 (i = 1):
+
+nums[i] = 1
+currentSum = Math.max(1, -2 + 1) = 1
+maxSum = Math.max(-2, 1) = 1
+Iteration 2 (i = 2):
+
+nums[i] = -3
+currentSum = Math.max(-3, 1 + -3) = -2
+maxSum = Math.max(1, -2) = 1
+Iteration 3 (i = 3):
+
+nums[i] = 4
+currentSum = Math.max(4, -2 + 4) = 4
+maxSum = Math.max(1, 4) = 4
+Iteration 4 (i = 4):
+
+nums[i] = -1
+currentSum = Math.max(-1, 4 + -1) = 3
+maxSum = Math.max(4, 3) = 4
+Iteration 5 (i = 5):
+
+nums[i] = 2
+currentSum = Math.max(2, 3 + 2) = 5
+maxSum = Math.max(4, 5) = 5
+Iteration 6 (i = 6):
+
+nums[i] = 1
+currentSum = Math.max(1, 5 + 1) = 6
+maxSum = Math.max(5, 6) = 6
+Iteration 7 (i = 7):
+
+nums[i] = -5
+currentSum = Math.max(-5, 6 + -5) = 1
+maxSum = Math.max(6, 1) = 6
+Iteration 8 (i = 8):
+
+nums[i] = 4
+currentSum = Math.max(4, 1 + 4) = 5
+maxSum = Math.max(6, 5) = 6
+Finally, the function returns maxSum, which is 6. This is the largest sum of any contiguous subarray in the given array, specifically the subarray [4, -1, 2, 1]
+```
