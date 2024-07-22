@@ -744,31 +744,31 @@ console.log(result); // Output: [24, 12, 8, 6]
 //////////////////////////////////
 Left Products Calculation:
 
-leftProduct starts at 1.
-Iterate through nums:
-result[0] = 1 (initial leftProduct)
-leftProduct = 1 * 1 = 1
-result[1] = 1
-leftProduct = 1 * 2 = 2
-result[2] = 2
-leftProduct = 2 * 3 = 6
-result[3] = 6
-The result array becomes [1, 1, 2, 6].
+// leftProduct starts at 1.
+// Iterate through nums:
+// result[0] = 1 (initial leftProduct)
+// leftProduct = 1 * 1 = 1
+// result[1] = 1
+// leftProduct = 1 * 2 = 2
+// result[2] = 2
+// leftProduct = 2 * 3 = 6
+// result[3] = 6
+// The result array becomes [1, 1, 2, 6].
 
-Right Products Calculation:
+// Right Products Calculation:
 
-rightProduct starts at 1.
-Iterate through nums from the end:
-result[3] = 6 * 1 = 6
-rightProduct = 1 * 4 = 4
-result[2] = 2 * 4 = 8
-rightProduct = 4 * 3 = 12
-result[1] = 1 * 12 = 12
-rightProduct = 12 * 2 = 24
-result[0] = 1 * 24 = 24
-The result array becomes [24, 12, 8, 6].
+// rightProduct starts at 1.
+// Iterate through nums from the end:
+// result[3] = 6 * 1 = 6
+// rightProduct = 1 * 4 = 4
+// result[2] = 2 * 4 = 8
+// rightProduct = 4 * 3 = 12
+// result[1] = 1 * 12 = 12
+// rightProduct = 12 * 2 = 24
+// result[0] = 1 * 24 = 24
+// The result array becomes [24, 12, 8, 6].
 
-Thus, the function productExceptSelf(nums) correctly outputs [24, 12, 8, 6], which represents the product of all elements except the one at each index.
+// Thus, the function productExceptSelf(nums) correctly outputs [24, 12, 8, 6], which represents the product of all elements except the one at each index.
 ```
 ## Maximum Subarray
 ![image](https://github.com/user-attachments/assets/9ac376db-f452-43d0-bf33-78cdb3c01b92)
@@ -801,54 +801,75 @@ var maxSubArray = function(nums) {
 let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 let result = maxSubArray(nums);
 console.log(result); // Output: 6
-Example Walkthrough
-Given the input array [-2, 1, -3, 4, -1, 2, 1, -5, 4]:
 
-Initial State:
+function LSS(list) {
+    const len = list.length;
+    let max = list[0];
+    let min = 0;
+    let sum = 0;
+    for (let i = 0; i < len; i++) {
+      sum += list[i];
+      if (sum - min > max) max = sum - min;
+      if (sum < min) {
+        min = sum;
+      }
+    }
+  
+    return max;
+  }
+  let nums=[-2,1,-3,4,-1,2,1,-5,4]
+  console.log(LSS(nums))
 
-currentSum = -2
-maxSum = -2
-Iteration 1 (i = 1):
 
-nums[i] = 1
-currentSum = Math.max(1, -2 + 1) = 1
-maxSum = Math.max(-2, 1) = 1
-Iteration 2 (i = 2):
 
-nums[i] = -3
-currentSum = Math.max(-3, 1 + -3) = -2
-maxSum = Math.max(1, -2) = 1
-Iteration 3 (i = 3):
+// Example Walkthrough
+// Given the input array [-2, 1, -3, 4, -1, 2, 1, -5, 4]:
 
-nums[i] = 4
-currentSum = Math.max(4, -2 + 4) = 4
-maxSum = Math.max(1, 4) = 4
-Iteration 4 (i = 4):
+// Initial State:
 
-nums[i] = -1
-currentSum = Math.max(-1, 4 + -1) = 3
-maxSum = Math.max(4, 3) = 4
-Iteration 5 (i = 5):
+// currentSum = -2
+// maxSum = -2
+// Iteration 1 (i = 1):
 
-nums[i] = 2
-currentSum = Math.max(2, 3 + 2) = 5
-maxSum = Math.max(4, 5) = 5
-Iteration 6 (i = 6):
+// nums[i] = 1
+// currentSum = Math.max(1, -2 + 1) = 1
+// maxSum = Math.max(-2, 1) = 1
+// Iteration 2 (i = 2):
 
-nums[i] = 1
-currentSum = Math.max(1, 5 + 1) = 6
-maxSum = Math.max(5, 6) = 6
-Iteration 7 (i = 7):
+// nums[i] = -3
+// currentSum = Math.max(-3, 1 + -3) = -2
+// maxSum = Math.max(1, -2) = 1
+// Iteration 3 (i = 3):
 
-nums[i] = -5
-currentSum = Math.max(-5, 6 + -5) = 1
-maxSum = Math.max(6, 1) = 6
-Iteration 8 (i = 8):
+// nums[i] = 4
+// currentSum = Math.max(4, -2 + 4) = 4
+// maxSum = Math.max(1, 4) = 4
+// Iteration 4 (i = 4):
 
-nums[i] = 4
-currentSum = Math.max(4, 1 + 4) = 5
-maxSum = Math.max(6, 5) = 6
-Finally, the function returns maxSum, which is 6. This is the largest sum of any contiguous subarray in the given array, specifically the subarray [4, -1, 2, 1]
+// nums[i] = -1
+// currentSum = Math.max(-1, 4 + -1) = 3
+// maxSum = Math.max(4, 3) = 4
+// Iteration 5 (i = 5):
+
+// nums[i] = 2
+// currentSum = Math.max(2, 3 + 2) = 5
+// maxSum = Math.max(4, 5) = 5
+// Iteration 6 (i = 6):
+
+// nums[i] = 1
+// currentSum = Math.max(1, 5 + 1) = 6
+// maxSum = Math.max(5, 6) = 6
+// Iteration 7 (i = 7):
+
+// nums[i] = -5
+// currentSum = Math.max(-5, 6 + -5) = 1
+// maxSum = Math.max(6, 1) = 6
+// Iteration 8 (i = 8):
+
+// nums[i] = 4
+// currentSum = Math.max(4, 1 + 4) = 5
+// maxSum = Math.max(6, 5) = 6
+// Finally, the function returns maxSum, which is 6. This is the largest sum of any contiguous subarray in the given array, specifically the subarray [4, -1, 2, 1]
 ```
 ## Maximum Product Subarray
 ![image](https://github.com/user-attachments/assets/942c08e5-320b-42fb-9d55-53c96f59d63e)
