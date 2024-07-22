@@ -657,57 +657,57 @@ var maxProfit = function(prices) {
     return maxProfit;
 };
 
-// Example usage:
-let prices = [7, 1, 5, 3, 6, 4];
-let profit = maxProfit(prices);
-console.log(profit); // Output: 5
+// // Example usage:
+// let prices = [7, 1, 5, 3, 6, 4];
+// let profit = maxProfit(prices);
+// console.log(profit); // Output: 5
 
-<!-- Initial State:
-minPrice = Infinity
-maxProfit = 0
-Iteration 1 (i = 0):
+// <!-- Initial State:
+// minPrice = Infinity
+// maxProfit = 0
+// Iteration 1 (i = 0):
 
-prices[i] = 7
-minPrice = min(Infinity, 7) = 7
-No update to maxProfit since 7 - 7 = 0 is not greater than 0.
-minPrice = 7
-maxProfit = 0
-Iteration 2 (i = 1):
+// prices[i] = 7
+// minPrice = min(Infinity, 7) = 7
+// No update to maxProfit since 7 - 7 = 0 is not greater than 0.
+// minPrice = 7
+// maxProfit = 0
+// Iteration 2 (i = 1):
 
-prices[i] = 1
-minPrice = min(7, 1) = 1
-No update to maxProfit since 1 - 1 = 0 is not greater than 0.
-minPrice = 1
-maxProfit = 0
-Iteration 3 (i = 2):
+// prices[i] = 1
+// minPrice = min(7, 1) = 1
+// No update to maxProfit since 1 - 1 = 0 is not greater than 0.
+// minPrice = 1
+// maxProfit = 0
+// Iteration 3 (i = 2):
 
-prices[i] = 5
-minPrice = min(1, 5) = 1
-maxProfit = max(0, 5 - 1) = 4
-minPrice = 1
-maxProfit = 4
-Iteration 4 (i = 3):
+// prices[i] = 5
+// minPrice = min(1, 5) = 1
+// maxProfit = max(0, 5 - 1) = 4
+// minPrice = 1
+// maxProfit = 4
+// Iteration 4 (i = 3):
 
-prices[i] = 3
-minPrice = min(1, 3) = 1
-No update to maxProfit since 3 - 1 = 2 is not greater than 4.
-minPrice = 1
-maxProfit = 4
-Iteration 5 (i = 4):
+// prices[i] = 3
+// minPrice = min(1, 3) = 1
+// No update to maxProfit since 3 - 1 = 2 is not greater than 4.
+// minPrice = 1
+// maxProfit = 4
+// Iteration 5 (i = 4):
 
-prices[i] = 6
-minPrice = min(1, 6) = 1
-maxProfit = max(4, 6 - 1) = 5
-minPrice = 1
-maxProfit = 5
-Iteration 6 (i = 5):
+// prices[i] = 6
+// minPrice = min(1, 6) = 1
+// maxProfit = max(4, 6 - 1) = 5
+// minPrice = 1
+// maxProfit = 5
+// Iteration 6 (i = 5):
 
-prices[i] = 4
-minPrice = min(1, 4) = 1
-No update to maxProfit since 4 - 1 = 3 is not greater than 5.
-minPrice = 1
-maxProfit = 5
-Finally, the function returns maxProfit which is 5. This means the best profit we can make is by buying at 1 and selling at 6 -->
+// prices[i] = 4
+// minPrice = min(1, 4) = 1
+// No update to maxProfit since 4 - 1 = 3 is not greater than 5.
+// minPrice = 1
+// maxProfit = 5
+// Finally, the function returns maxProfit which is 5. This means the best profit we can make is by buying at 1 and selling at 6 -->
 ```
 # Product of Array Except Self
 ```JavaScript
@@ -902,32 +902,32 @@ let nums = [2, 3, -2, 4];
 let result = maxProduct(nums);
 console.log(result); // Output: 6
 
-Example Walkthrough:
+// Example Walkthrough:
 
-Given the array [2, 3, -2, 4]:
+// Given the array [2, 3, -2, 4]:
 
-Initial State:
+// Initial State:
 
-maxProduct = 2
-minProduct = 2
-result = 2
-Iteration 1 (i = 1):
+// maxProduct = 2
+// minProduct = 2
+// result = 2
+// Iteration 1 (i = 1):
 
-nums[i] = 3
-maxProduct = Math.max(3, 3 * 2, 3 * 2) = 6
-minProduct = Math.min(3, 3 * 2, 3 * 2) = 3
-result = Math.max(2, 6) = 6
-Iteration 2 (i = 2):
+// nums[i] = 3
+// maxProduct = Math.max(3, 3 * 2, 3 * 2) = 6
+// minProduct = Math.min(3, 3 * 2, 3 * 2) = 3
+// result = Math.max(2, 6) = 6
+// Iteration 2 (i = 2):
 
-nums[i] = -2
-maxProduct = Math.max(-2, -2 * 6, -2 * 3) = -2
-minProduct = Math.min(-2, -2 * 6, -2 * 3) = -12
-result = Math.max(6, -2) = 6
-Iteration 3 (i = 3):
+// nums[i] = -2
+// maxProduct = Math.max(-2, -2 * 6, -2 * 3) = -2
+// minProduct = Math.min(-2, -2 * 6, -2 * 3) = -12
+// result = Math.max(6, -2) = 6
+// Iteration 3 (i = 3):
 
-nums[i] = 4
-maxProduct = Math.max(4, 4 * -2, 4 * -12) = 4
-minProduct = Math.min(4, 4 * -2, 4 * -12) = -48
-result = Math.max(6, 4) = 6
+// nums[i] = 4
+// maxProduct = Math.max(4, 4 * -2, 4 * -12) = 4
+// minProduct = Math.min(4, 4 * -2, 4 * -12) = -48
+// result = Math.max(6, 4) = 6
 
 ```
