@@ -772,7 +772,8 @@ Thus, the function productExceptSelf(nums) correctly outputs [24, 12, 8, 6], whi
 ```
 ## Maximum Subarray
 ![image](https://github.com/user-attachments/assets/9ac376db-f452-43d0-bf33-78cdb3c01b92)
-![image](https://github.com/user-attachments/assets/356ec9f7-50be-4a4f-83bd-8e986a468278)
+ ![image](https://github.com/user-attachments/assets/a7723bf5-7ca4-4a72-b48f-c304aa50613c)
+
 
 ```JavaScript
 /**
@@ -848,4 +849,62 @@ nums[i] = 4
 currentSum = Math.max(4, 1 + 4) = 5
 maxSum = Math.max(6, 5) = 6
 Finally, the function returns maxSum, which is 6. This is the largest sum of any contiguous subarray in the given array, specifically the subarray [4, -1, 2, 1]
+```
+## Maximum Product Subarray
+
+```JavaScript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxProduct = function(nums) {
+    if (nums.length === 0) return 0;
+
+    let maxProduct = nums[0];
+    let minProduct = nums[0];
+    let result = nums[0];
+
+    for (let i = 1; i < nums.length; i++) {
+        let tempMax = maxProduct; // Store the previous maxProduct
+        maxProduct = Math.max(nums[i], nums[i] * maxProduct, nums[i] * minProduct);
+        minProduct = Math.min(nums[i], nums[i] * tempMax, nums[i] * minProduct);
+        result = Math.max(result, maxProduct);
+    }
+
+    return result;
+};
+
+// Example usage:
+let nums = [2, 3, -2, 4];
+let result = maxProduct(nums);
+console.log(result); // Output: 6
+
+Example Walkthrough:
+
+Given the array [2, 3, -2, 4]:
+
+Initial State:
+
+maxProduct = 2
+minProduct = 2
+result = 2
+Iteration 1 (i = 1):
+
+nums[i] = 3
+maxProduct = Math.max(3, 3 * 2, 3 * 2) = 6
+minProduct = Math.min(3, 3 * 2, 3 * 2) = 3
+result = Math.max(2, 6) = 6
+Iteration 2 (i = 2):
+
+nums[i] = -2
+maxProduct = Math.max(-2, -2 * 6, -2 * 3) = -2
+minProduct = Math.min(-2, -2 * 6, -2 * 3) = -12
+result = Math.max(6, -2) = 6
+Iteration 3 (i = 3):
+
+nums[i] = 4
+maxProduct = Math.max(4, 4 * -2, 4 * -12) = 4
+minProduct = Math.min(4, 4 * -2, 4 * -12) = -48
+result = Math.max(6, 4) = 6
+
 ```
