@@ -1,3 +1,20 @@
+1) Maximum Product Subarray
+2) Maximum Subarray
+3) Product of Array Except Self
+4) Best Time to Buy and Sell Stock
+5) Longest Substring Without Repeating Characters
+6) First Unique Character in a String
+7) Valid Sudoku
+8) Sort Characters By Frequency
+9) Find Common Characters
+10) First Unique Character In A String
+11) Happy Number
+12) Length of the longest consecutive sequence menas
+13) Distribute Candies
+14) Intersection of Two Arrays
+15) Contains Duplicate
+
+
 ## Set in JavaScript:
 ```JavaScript
 // Creating a Set
