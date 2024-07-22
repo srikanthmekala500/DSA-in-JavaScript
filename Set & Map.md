@@ -851,6 +851,8 @@ maxSum = Math.max(6, 5) = 6
 Finally, the function returns maxSum, which is 6. This is the largest sum of any contiguous subarray in the given array, specifically the subarray [4, -1, 2, 1]
 ```
 ## Maximum Product Subarray
+![image](https://github.com/user-attachments/assets/942c08e5-320b-42fb-9d55-53c96f59d63e)
+![Uploading image.png…]()
 
 ```JavaScript
 /**
