@@ -635,4 +635,78 @@ console.log(`Length of the longest substring without repeating characters: ${len
 // charMap.set('a', 3) updates the index of 'a' to 3 in charMap.
 // maxLength remains 3 (from right - left + 1 which is 3 - 1 + 1).
 ```
- 
+ ## Best Time to Buy and Sell Stock
+```JavaScript
+
+ /**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let minPrice = Infinity;
+    let maxProfit = 0;
+    
+    for (let i = 0; i < prices.length; i++) {
+        if (prices[i] < minPrice) {
+            minPrice = prices[i];
+        } else if (prices[i] - minPrice > maxProfit) {
+            maxProfit = prices[i] - minPrice;
+        }
+    }
+    
+    return maxProfit;
+};
+
+// Example usage:
+let prices = [7, 1, 5, 3, 6, 4];
+let profit = maxProfit(prices);
+console.log(profit); // Output: 5
+
+<!-- Initial State:
+minPrice = Infinity
+maxProfit = 0
+Iteration 1 (i = 0):
+
+prices[i] = 7
+minPrice = min(Infinity, 7) = 7
+No update to maxProfit since 7 - 7 = 0 is not greater than 0.
+minPrice = 7
+maxProfit = 0
+Iteration 2 (i = 1):
+
+prices[i] = 1
+minPrice = min(7, 1) = 1
+No update to maxProfit since 1 - 1 = 0 is not greater than 0.
+minPrice = 1
+maxProfit = 0
+Iteration 3 (i = 2):
+
+prices[i] = 5
+minPrice = min(1, 5) = 1
+maxProfit = max(0, 5 - 1) = 4
+minPrice = 1
+maxProfit = 4
+Iteration 4 (i = 3):
+
+prices[i] = 3
+minPrice = min(1, 3) = 1
+No update to maxProfit since 3 - 1 = 2 is not greater than 4.
+minPrice = 1
+maxProfit = 4
+Iteration 5 (i = 4):
+
+prices[i] = 6
+minPrice = min(1, 6) = 1
+maxProfit = max(4, 6 - 1) = 5
+minPrice = 1
+maxProfit = 5
+Iteration 6 (i = 5):
+
+prices[i] = 4
+minPrice = min(1, 4) = 1
+No update to maxProfit since 4 - 1 = 3 is not greater than 5.
+minPrice = 1
+maxProfit = 5
+Finally, the function returns maxProfit which is 5. This means the best profit we can make is by buying at 1 and selling at 6 -->
+```
+
