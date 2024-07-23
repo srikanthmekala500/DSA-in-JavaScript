@@ -252,8 +252,43 @@ function sortColors(nums) {
     
     return nums;
 }
-
 // Example usage:
 let nums = [2, 0, 2, 1, 1, 0];
 console.log(sortColors(nums)); // Output: [0, 0, 1, 1, 2, 2]
 ```
+## climbing-stairs
+```JavaScript
+// For each step i, set dp[i] = dp[i-1] + dp[i-2]
+ 
+var climbStairs = function(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+
+    let dp = new Array(n + 1);
+    dp[0] = 1;
+    dp[1] = 1;
+
+    for (let i = 2; i <= n; i++) {
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+
+    return dp[n];
+};
+
+// Example usage:
+let n = 5;
+let result = climbStairs(n);
+console.log(result); // Output: 8
+
+Example Walkthrough
+// For n = 5:
+
+// dp[0] = 1
+// dp[1] = 1
+// dp[2] = dp[1] + dp[0] = 1 + 1 = 2
+// dp[3] = dp[2] + dp[1] = 2 + 1 = 3
+// dp[4] = dp[3] + dp[2] = 3 + 2 = 5
+// dp[5] = dp[4] + dp[3] = 5 + 3 = 8
+```
+
