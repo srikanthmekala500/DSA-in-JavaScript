@@ -293,18 +293,18 @@ Example Walkthrough
 ```
 ## Coin Change
 ```JavaScript
-Certainly! The Coin Change problem is a classic algorithmic problem that
-can be solved using dynamic programming. The problem usually comes in two flavors:
+// Certainly! The Coin Change problem is a classic algorithmic problem that
+// can be solved using dynamic programming. The problem usually comes in two flavors:
 
-Minimum Coins Required: Given a set of coin denominations and a total amount,
- find the minimum number of coins needed to make that amount.
-Number of Combinations: Given a set of coin denominations and a total amount,
-find the number of ways to make that amount using the given coins.
-I'll provide you with solutions for both variants in JavaScript.
+// Minimum Coins Required: Given a set of coin denominations and a total amount,
+//  find the minimum number of coins needed to make that amount.
+// Number of Combinations: Given a set of coin denominations and a total amount,
+// find the number of ways to make that amount using the given coins.
+// I'll provide you with solutions for both variants in JavaScript.
 
-1. Minimum Coins Required
-Here's how you can solve the problem of finding the minimum number
- of coins required to make a given amount:
+// 1. Minimum Coins Required
+// Here's how you can solve the problem of finding the minimum number
+//  of coins required to make a given amount:
 
 function coinChange(coins, amount) {
     // Initialize dp array with Infinity
@@ -329,9 +329,9 @@ const amount = 11;
 console.log(coinChange(coins, amount)); // Output: 3 (11 = 5 + 5 + 1)
 
 
-## 2.Number of Combinations
-Here's how you can solve the problem of finding the number of
-combinations to make a given amount:
+// ## 2.Number of Combinations
+// Here's how you can solve the problem of finding the number of
+// combinations to make a given amount:
 
 function coinChangeCombinations(coins, amount) {
     // Initialize dp array with 0
