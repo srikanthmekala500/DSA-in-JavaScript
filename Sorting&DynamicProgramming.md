@@ -828,3 +828,47 @@ const n = 3;
 console.log(generateParenthesis(n));
 // Output: ["((()))", "(()())", "(())()", "()(())", "()()()"]
 ```
+##  Jump Game II 
+https://www.youtube.com/watch?v=pvg0yrD-E5w&ab_channel=codestorywithMIK
+// You are given a 0-indexed array of integers 
+// nums of length n. You are initially positioned at nums[0].
+
+// Each element nums[i] represents the maximum length
+// of a forward jump from index i. In other words, if you are at nums[i], 
+// you can jump to any nums[i + j] where:
+
+// 0 <= j <= nums[i] and
+// i + j < n
+// Return the minimum number of jumps to reach nums[n - 1]. The test cases are generated such that you can reach nums[n - 1].
+
+// Example 1:
+// Input: nums = [2,3,1,1,4]
+// Output: 2
+// Explanation: The minimum number of jumps to reach the last index is 2.
+// Jump 1 step from index 0 to 1, then 3 steps to the last index.
+ 
+```JavaScript
+function jump(nums) {
+    const n = nums.length;
+    if (n <= 1) return 0;  // No jumps needed if there's 1 or fewer elements
+    
+    let jumps = 0;  // Count of jumps needed
+    let currentEnd = 0;  // End of the range that can be reached with current number of jumps
+    let farthest = 0;  // Farthest point that can be reached in the next jump
+    
+    for (let i = 0; i < n - 1; i++) {  // Traverse the array up to the second last element
+        farthest = Math.max(farthest, i + nums[i]);  // Update the farthest reachable index
+        
+        if (i === currentEnd) {  // When we reach the end of the current jump range
+            jumps++;  // Increment the jump counter
+            currentEnd = farthest;  // Update the end of the range to the farthest point
+            
+            if (currentEnd >= n - 1) {  // If the currentEnd reaches or exceeds the last index
+                break;
+            }
+        }
+    }
+    
+    return jumps;
+}
+```
