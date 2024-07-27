@@ -487,3 +487,83 @@ const s = "leetcode";
 const wordDict = ["leet", "code"];
 console.log(wordBreak(s, wordDict)); // Output: true (The string can be segmented as "leet code")
 ```
+## Combination Sum
+```JavaScript
+// // Input: candidates = [2,3,6,7], target = 7
+// Output: [[2,2,3],[7]]
+// Explanation:
+// 2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.
+// 7 is a candidate, and 7 = 7.
+// These are the only two combinations.
+
+
+function combinationSum(candidates, target) {
+    const result = [];
+
+    // Helper function for backtracking
+    function backtrack(start, target, combination) {
+        if (target === 0) {
+            // If target is zero, we found a valid combination
+            result.push([...combination]);
+            return;
+        }
+        if (target < 0) {
+            // If target is negative, terminate this path
+            return;
+        }
+
+        // Explore further with each candidate starting from 'start'
+        for (let i = start; i < candidates.length; i++) {
+            combination.push(candidates[i]);
+            backtrack(i, target - candidates[i], combination); // Not i + 1 because we can reuse the same element
+            combination.pop(); // Backtrack to explore other combinations
+        }
+    }
+
+    // Start backtracking from the beginning of the candidates array
+    backtrack(0, target, []);
+    return result;
+}
+
+// Example usage
+const candidates = [2, 3, 6, 7];
+const target = 7;
+console.log(combinationSum(candidates, target)); 
+// Output: [[2, 2, 3], [7]]
+
+et's use candidates = [2, 3, 6, 7] and target = 7 to illustrate the backtracking process:
+
+// Initialization:
+
+// result will store the final combinations.
+// Start backtracking with startIndex = 0, target = 7, and an empty combination.
+// Recursive Exploration:
+
+// Start with 2:
+
+// Target = 7 - 2 = 5: Add 2 to the combination and continue.
+// Next Call: startIndex = 0, target = 5, combination = [2].
+// Add another 2: Target = 5 - 2 = 3.
+// Next Call: startIndex = 0, target = 3, combination = [2, 2].
+// Add another 2: Target = 3 - 2 = 1.
+// Next Call: startIndex = 0, target = 1, combination = [2, 2, 2].
+// Add another 2: Target = 1 - 2 = -1 (Not valid, backtrack).
+// Backtrack: Remove last 2, explore next candidates.
+// Add 3: Target = 1 - 3 = -2 (Not valid, backtrack).
+// Backtrack: Remove last 3, no more candidates.
+// Backtrack: Remove last 2, continue exploring.
+// Add 3: Target = 3 - 3 = 0. Valid combination [2, 2, 3] found.
+// Continue with other candidates.
+// Continue with other candidates (3, 6, 7):
+
+// For 3: Target = 7 - 3 = 4.
+// Add another 3: Target = 4 - 3 = 1.
+// Next Call: startIndex = 1, target = 1, combination = [3, 3].
+// Add 3: Target = 1 - 3 = -2 (Not valid).
+// Backtrack and continue exploring.
+// For 7: Target = 7 - 7 = 0. Valid combination [7] found.
+
+// Result:
+
+// The final result is [[2, 2, 3], [7]].
+```
