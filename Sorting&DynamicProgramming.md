@@ -758,3 +758,73 @@ console.log(generate(numRows));
 //   [1, 4, 6, 4, 1]
 // ]
 ```
+## Jump Game
+```JavaScript
+function canJump(nums) {
+    // Step 1: Initialize maxReach
+    let maxReach = 0;
+    const n = nums.length;
+
+    // Step 2: Iterate through the array
+    for (let i = 0; i < n; i++) {
+        // If the current index is beyond the maximum reachable index, return false
+        if (i > maxReach) {
+            return false;
+        }
+        
+        // Update maxReach to the maximum of its current value and i + nums[i]
+        maxReach = Math.max(maxReach, i + nums[i]);
+        
+        // If maxReach is beyond or equal to the last index, return true
+        if (maxReach >= n - 1) {
+            return true;
+        }
+    }
+    
+    // Step 3: If loop completes and maxReach is not sufficient, return false
+    return false;
+}
+
+// Example usage
+const nums = [2, 3, 1, 1, 4];
+console.log(canJump(nums)); // Output: true
+```
+
+### Generate Parentheses
+// Given n pairs of parentheses, 
+ // write a function to generate all combinations of well-formed parentheses.
+// Example 1:
+// Input: n = 3
+// Output: ["((()))","(()())","(())()","()(())","()()()"]
+
+```JavaScript
+function generateParenthesis(n) {
+    const result = [];
+    
+    function backtrack(currentCombination, openCount, closeCount) {
+        // Base case: if current combination is valid
+        if (currentCombination.length === 2 * n) {
+            result.push(currentCombination);
+            return;
+        }
+        
+        // Add opening parenthesis if we still have some to add
+        if (openCount < n) {
+            backtrack(currentCombination + '(', openCount + 1, closeCount);
+        }
+        
+        // Add closing parenthesis if it won't exceed the number of opening ones
+        if (closeCount < openCount) {
+            backtrack(currentCombination + ')', openCount, closeCount + 1);
+        }
+    }
+    
+    backtrack('', 0, 0); // Start with an empty combination and zero counts
+    return result;
+}
+
+// Example usage
+const n = 3;
+console.log(generateParenthesis(n));
+// Output: ["((()))", "(()())", "(())()", "()(())", "()()()"]
+```
