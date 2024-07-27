@@ -291,4 +291,68 @@ Example Walkthrough
 // dp[4] = dp[3] + dp[2] = 3 + 2 = 5
 // dp[5] = dp[4] + dp[3] = 5 + 3 = 8
 ```
+## Coin Change
+```JavaScript
+Certainly! The Coin Change problem is a classic algorithmic problem that
+can be solved using dynamic programming. The problem usually comes in two flavors:
 
+Minimum Coins Required: Given a set of coin denominations and a total amount,
+ find the minimum number of coins needed to make that amount.
+Number of Combinations: Given a set of coin denominations and a total amount,
+find the number of ways to make that amount using the given coins.
+I'll provide you with solutions for both variants in JavaScript.
+
+1. Minimum Coins Required
+Here's how you can solve the problem of finding the minimum number
+ of coins required to make a given amount:
+
+function coinChange(coins, amount) {
+    // Initialize dp array with Infinity
+    const dp = new Array(amount + 1).fill(Infinity);
+    dp[0] = 0; // Base case: 0 amount requires 0 coins
+    
+    // Iterate over each coin
+    for (const coin of coins) {
+        // Update dp array for each amount that can be formed with this coin
+        for (let i = coin; i <= amount; i++) {
+            dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+        }
+    }
+    
+    // Return result: If amount can't be made, return -1
+    return dp[amount] === Infinity ? -1 : dp[amount];
+}
+
+// Example usage
+const coins = [1, 2, 5];
+const amount = 11;
+console.log(coinChange(coins, amount)); // Output: 3 (11 = 5 + 5 + 1)
+
+
+## 2.Number of Combinations
+Here's how you can solve the problem of finding the number of
+combinations to make a given amount:
+
+function coinChangeCombinations(coins, amount) {
+    // Initialize dp array with 0
+    const dp = new Array(amount + 1).fill(0);
+    dp[0] = 1; // Base case: there's one way to make 0 amount (using no coins)
+    
+    // Iterate over each coin
+    for (const coin of coins) {
+        // Update dp array for each amount that can be formed with this coin
+        for (let i = coin; i <= amount; i++) {
+            dp[i] += dp[i - coin];
+        }
+    }
+    
+    return dp[amount];
+}
+
+// Example usage
+const coins = [1, 2, 5];
+const amount = 5;
+console.log(coinChangeCombinations(coins, amount)); // Output: 4 (5 = 1+1+1+1+1, 1+1+1+2, 1+2+2, 5)
+
+
+````
