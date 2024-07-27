@@ -567,3 +567,194 @@ et's use candidates = [2, 3, 6, 7] and target = 7 to illustrate the backtracking
 
 // The final result is [[2, 2, 3], [7]].
 ```
+## House Robber
+You are a professional robber planning to rob houses along a street. 
+// Each house has a certain amount of money stashed, 
+// the only constraint stopping you from robbing each of them is that adjacent houses have security 
+// systems connected and it will automatically contact the police 
+// if two adjacent houses were broken into on the same night.
+
+// Given an integer array nums representing the amount of money 
+// of each house, return the maximum amount of money you 
+// can rob tonight without alerting the police.
+
+// Example 1:
+// Input: nums = [1,2,3,1]
+// Output: 4
+// Explanation: Rob house 1 (money = 1) 
+// and then rob house 3 (money = 3).
+// Total amount you can rob = 1 + 3 = 4.
+```JavaScript
+function rob(nums) {
+    if (nums.length === 0) return 0;
+    if (nums.length === 1) return nums[0];
+    
+    let prev1 = 0; // dp[i-2]
+    let prev2 = 0; // dp[i-1]
+    
+    for (let num of nums) {
+        const temp = prev1; // Store the value of dp[i-2]
+        prev1 = Math.max(prev2, prev1 + num); // dp[i] = max(dp[i-1], dp[i-2] + nums[i])
+        prev2 = temp; // Update dp[i-2] to the old dp[i-1]
+    }
+    
+    return prev1;
+}
+
+// Example usage
+const nums = [2, 3, 2];
+console.log(rob(nums)); // Output: 5 (Rob houses with amounts 2 and 2)
+```
+## House Robber II
+
+//You are a professional robber planning to rob houses along a street. 
+// Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. 
+// That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security 
+// system connected, and it will automatically contact the police if
+// two adjacent houses were broken into on the same night.
+
+// Given an integer array nums representing the amount of money of each house,
+// return the maximum amount of money you can rob tonight without alerting the police.
+
+// Example 1:
+
+// Input: nums = [2,3,2]
+// Output: 3
+// Explanation: You cannot rob house 1 (money = 2) and 
+// then rob house 3 (money = 2), because they are adjacent houses.
+```JavaScript
+function rob(nums) {
+    // Helper function to handle the linear house robber problem
+    function robLinear(houses) {
+        if (houses.length === 0) return 0;
+        if (houses.length === 1) return houses[0];
+        
+        let n = houses.length;
+        let dp = new Array(n).fill(0);
+        dp[0] = houses[0];
+        dp[1] = Math.max(houses[0], houses[1]);
+        
+        for (let i = 2; i < n; i++) {
+            dp[i] = Math.max(dp[i-1], dp[i-2] + houses[i]);
+        }
+        
+        return dp[n-1];
+    }
+    
+    if (nums.length === 1) return nums[0];
+    
+    // Case 1: Rob from the 1st to the second-to-last house
+    let case1 = robLinear(nums.slice(0, -1));
+    // Case 2: Rob from the 2nd to the last house
+    let case2 = robLinear(nums.slice(1));
+    
+    return Math.max(case1, case2);
+}
+
+// Example usage
+const houses = [2, 3, 2];
+console.log(rob(houses));  // Output: 3
+```
+## Unique Paths
+```JavaScript
+function uniquePaths(m, n) {
+    // Create a 2D array with dimensions m x n
+    const dp = Array.from({ length: m }, () => Array(n).fill(0));
+    
+    // Initialize the first row and first column to 1
+    for (let i = 0; i < m; i++) {
+        dp[i][0] = 1; // There's only one way to get to any cell in the first column
+    }
+    
+    for (let j = 0; j < n; j++) {
+        dp[0][j] = 1; // There's only one way to get to any cell in the first row
+    }
+    
+    // Fill the rest of the dp table
+    for (let i = 1; i < m; i++) {
+        for (let j = 1; j < n; j++) {
+            dp[i][j] = dp[i-1][j] + dp[i][j-1]; // Sum of paths from top and left
+        }
+    }
+    
+    // The bottom-right corner has the number of unique paths
+    return dp[m-1][n-1];
+}
+
+// Example usage
+const m = 3; // Number of rows
+const n = 7; // Number of columns
+console.log(uniquePaths(m, n));  // Output: 28
+```
+## Decode Ways
+
+https://www.youtube.com/watch?v=HW-y3gvQTVQ&ab_channel=codestorywithMIK
+```JavaScript
+function numDecodings(s) {
+    // Edge case: if the string is empty, return 0
+    if (s.length === 0) return 0;
+    
+    const n = s.length;
+    // dp array to store the number of ways to decode up to each index
+    const dp = new Array(n + 1).fill(0);
+    
+    // Base cases
+    dp[0] = 1; // There's one way to decode an empty string
+    
+    // If the first character is '0', no valid decoding exists
+    dp[1] = s[0] === '0' ? 0 : 1;
+    
+    for (let i = 2; i <= n; i++) {
+        // Check if the single digit is valid
+        const oneDigit = s.substring(i - 1, i);
+        if (oneDigit !== '0') {
+            dp[i] += dp[i - 1];
+        }
+        
+        // Check if the two digits are valid
+        const twoDigits = s.substring(i - 2, i);
+        if (twoDigits >= '10' && twoDigits <= '26') {
+            dp[i] += dp[i - 2];
+        }
+    }
+    
+    return dp[n];
+}
+
+// Example usage
+const s = "226";
+console.log(numDecodings(s)); // Output: 3
+```
+## Pascal's Triangle
+![Uploading image.png…]()
+
+```JavaScript
+function generate(numRows) {
+    const result = [];
+    
+    for (let i = 0; i < numRows; i++) {
+        const row = Array(i + 1).fill(1); // Start with all elements as 1
+        
+        // Fill the middle elements
+        for (let j = 1; j < i; j++) {
+            row[j] = result[i - 1][j - 1] + result[i - 1][j];
+        }
+        
+        result.push(row);
+    }
+    
+    return result;
+}
+
+// Example usage
+const numRows = 5;
+console.log(generate(numRows));
+// Output:
+// [
+//   [1],
+//   [1, 1],
+//   [1, 2, 1],
+//   [1, 3, 3, 1],
+//   [1, 4, 6, 4, 1]
+// ]
+```
