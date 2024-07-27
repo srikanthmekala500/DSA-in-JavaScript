@@ -354,5 +354,136 @@ const coins = [1, 2, 5];
 const amount = 5;
 console.log(coinChangeCombinations(coins, amount)); // Output: 4 (5 = 1+1+1+1+1, 1+1+1+2, 1+2+2, 5)
 
+````
+## Longest Increasing Subsequence   
+```JavaScript
+function lengthOfLIS(nums) {
+    if (nums.length === 0) return 0;
+    
+    const dp = new Array(nums.length).fill(1); // Initialize dp array with 1
+    
+    // Fill the dp array
+    for (let i = 1; i < nums.length; i++) {
+        for (let j = 0; j < i; j++) {
+            if (nums[i] > nums[j]) {
+                dp[i] = Math.max(dp[i], dp[j] + 1);
+            }
+        }
+    }
+    
+    // The length of the longest increasing subsequence
+    return Math.max(...dp);
+}
+
+// Example usage
+const nums = [10, 9, 2, 5, 3, 7, 101, 18];
+console.log(lengthOfLIS(nums)); // Output: 4 (The LIS is [2, 3, 7, 101])
+// Detailed Walkthrough:
+
+// For i = 1 (element 9):
+
+// Compare with element at index 0 (element 10):
+// Since 9 < 10, update dp[1] = Math.max(dp[1], dp[0] + 1) = 2.
+// dp after processing 9: [1, 2, 1, 1, 1, 1, 1, 1].
+// For i = 2 (element 2):
+
+// Compare with elements at indices 0 and 1 (elements 10 and 9):
+// Both are greater than 2, so no update is made.
+// dp after processing 2: [1, 2, 1, 1, 1, 1, 1, 1].
+// For i = 3 (element 5):
+
+// Compare with elements at indices 0, 1, and 2 (elements 10, 9, and 2):
+// 5 > 2: Update dp[3] = Math.max(dp[3], dp[2] + 1) = 2.
+// 5 is not greater than 10 or 9, so no further update.
+// dp after processing 5: [1, 2, 1, 2, 1, 1, 1, 1].
+// For i = 4 (element 3):
+
+// Compare with elements at indices 0, 1, 2, and 3 (elements 10, 9, 2, and 5):
+// 3 > 2: Update dp[4] = Math.max(dp[4], dp[2] + 1) = 2.
+// 3 is not greater than 10 or 9, and 5.
+// dp after processing 3: [1, 2, 1, 2, 2, 1, 1, 1].
+// For i = 5 (element 7):
+
+// Compare with elements at indices 0, 1, 2, 3, and 4 (elements 10, 9, 2, 5, and 3):
+// 7 > 2, update dp[5] = Math.max(dp[5], dp[2] + 1) = 2.
+// 7 > 5, update dp[5] = Math.max(dp[5], dp[3] + 1) = 3.
+// 7 > 3, update dp[5] = Math.max(dp[5], dp[4] + 1) = 3.
+// dp after processing 7: [1, 2, 1, 2, 2, 3, 1, 1].
+// For i = 6 (element 101):
+
+// Compare with elements at indices 0, 1, 2, 3, 4, and 5 (elements 10, 9, 2, 5, 3, and 7):
+// 101 > 2: Update dp[6] = Math.max(dp[6], dp[2] + 1) = 2.
+// 101 > 5: Update dp[6] = Math.max(dp[6], dp[3] + 1) = 3.
+// 101 > 7: Update dp[6] = Math.max(dp[6], dp[5] + 1) = 4.
+// dp after processing 101: [1, 2, 1, 2, 2, 3, 4, 1].
+// For i = 7 (element 18):
+
+// Compare with elements at indices 0, 1, 2, 3, 4, 5, and 6 (elements 10, 9, 2, 5, 3, 7, and 101):
+// 18 > 2: Update dp[7] = Math.max(dp[7], dp[2] + 1) = 2.
+// 18 > 5: Update dp[7] = Math.max(dp[7], dp[3] + 1) = 3.
+// 18 > 7: Update dp[7] = Math.max(dp[7], dp[5] + 1) = 4.
+// 18 < 101, so no further update.
+// dp after processing 18: [1, 2, 1, 2, 2, 3, 4, 4].
+// Result:
+
+// The maximum value in dp is 4, which is the length of the longest increasing subsequence.
 
 ````
+## Longest Common Subsequence
+https://www.youtube.com/watch?v=NytCTDzpHo0&ab_channel=DataStructuresandAlgotelugu
+```JavaScript
+function longestCommonSubsequence(X, Y) {
+    const m = X.length;
+    const n = Y.length;
+
+    // Create a 2D DP array initialized with 0
+    const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+
+    // Fill the DP array
+    for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+            if (X[i - 1] === Y[j - 1]) {
+                dp[i][j] = dp[i - 1][j - 1] + 1;
+            } else {
+                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+            }
+        }
+    }
+
+    // The length of the LCS is in dp[m][n]
+    return dp[m][n];
+}
+
+// Example usage
+const X = "ABCBDAB";
+const Y = "BDCAB";
+console.log(longestCommonSubsequence(X, Y)); // Output: 4 (The LCS is "BCAB")
+````
+## Word Break Problem
+
+![image](https://github.com/user-attachments/assets/b8344c5f-dcce-425b-9924-b34e6bcd7715)
+```JavaScript
+function wordBreak(s, wordDict) {
+    const wordSet = new Set(wordDict); // Convert wordDict to a set for quick lookup
+    const dp = Array(s.length + 1).fill(false); // Initialize dp array
+    dp[0] = true; // Base case: empty string can always be segmented
+
+    // Fill the dp array
+    for (let i = 1; i <= s.length; i++) {
+        for (let j = 0; j < i; j++) {
+            if (dp[j] && wordSet.has(s.substring(j, i))) {
+                dp[i] = true;
+                break;
+            }
+        }
+    }
+
+    // The result is whether the whole string can be segmented
+    return dp[s.length];
+}
+
+// Example usage
+const s = "leetcode";
+const wordDict = ["leet", "code"];
+console.log(wordBreak(s, wordDict)); // Output: true (The string can be segmented as "leet code")
+```
