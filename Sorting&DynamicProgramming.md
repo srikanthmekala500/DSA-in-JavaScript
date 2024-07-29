@@ -64,6 +64,81 @@ const insertionSort = (arr) => {
 }
 
 console.log(insertionSort(arr)) // -7, -2 , 5, 1000
+
+const insertionSort = (arr) => {
+    for (let i = 1; i < arr.length; i++) {
+        let current = arr[i];
+        let j = i - 1;
+        while (j >= 0 && arr[j] > current) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = current;
+    }
+    return arr;
+}
+
+let arr = [1, 2, 4, 5, 9, 7, 8];
+console.log(insertionSort(arr)); // Output: [1, 2, 4, 5, 7, 8, 9]
+
+// Step-by-Step Sorting:
+// Initial Array: [1, 2, 4, 5, 9, 7, 8]
+
+// First Iteration (i = 1):
+
+// current = 2
+// j = 0
+// Compare current (2) with arr[j] (arr[0] = 1)
+// Since 1 <= 2, no shifting needed
+// Array remains [1, 2, 4, 5, 9, 7, 8]
+// Second Iteration (i = 2):
+
+// current = 4
+// j = 1
+// Compare current (4) with arr[j] (arr[1] = 2)
+// Since 2 <= 4, no shifting needed
+// Array remains [1, 2, 4, 5, 9, 7, 8]
+// Third Iteration (i = 3):
+
+// current = 5
+// j = 2
+// Compare current (5) with arr[j] (arr[2] = 4)
+// Since 4 <= 5, no shifting needed
+// Array remains [1, 2, 4, 5, 9, 7, 8]
+// Fourth Iteration (i = 4):
+
+// current = 9
+// j = 3
+// Compare current (9) with arr[j] (arr[3] = 5)
+// Since 5 <= 9, no shifting needed
+// Array remains [1, 2, 4, 5, 9, 7, 8]
+// Fifth Iteration (i = 5):
+
+// current = 7
+// j = 4
+// Compare current (7) with arr[j] (arr[4] = 9)
+// Since 9 > 7, shift 9 to the right
+// Decrement j to 3
+// Compare current (7) with arr[j] (arr[3] = 5)
+// Since 5 <= 7, stop shifting
+// Insert 7 at arr[j + 1] (index 4)
+// Array becomes [1, 2, 4, 5, 7, 9, 8]
+// Sixth Iteration (i = 6):
+
+// current = 8
+// j = 5
+// Compare current (8) with arr[j] (arr[5] = 9)
+// Since 9 > 8, shift 9 to the right
+// Decrement j to 4
+// Compare current (8) with arr[j] (arr[4] = 7)
+// Since 7 <= 8, stop shifting
+// Insert 8 at arr[j + 1] (index 5)
+// Array becomes [1, 2, 4, 5, 7, 8, 9]
+// Final Sorted Array:
+// The array [1, 2, 4, 5, 9, 7, 8] is now sorted to [1, 2, 4, 5, 7, 8, 9].
+
+
+
 ```
 ## Merge Sort in JavaScript
 ```JavaScript
