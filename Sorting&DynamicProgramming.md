@@ -299,6 +299,26 @@ function largestNumber(nums) {
 // Example usage:
 let nums = [3, 30, 34, 5, 9];
 console.log(`Largest number: ${largestNumber(nums)}`); // Output: Largest number: 9534330
+
+Pairs to Compare:
+
+// Compare 30 and 3:
+
+// order1 = "303"
+// order2 = "330"
+// Result: '330'.localeCompare('303') returns 1, so 3 should come before 30.
+// Compare 34 and 5:
+
+// order1 = "345"
+// order2 = "534"
+// Result: '534'.localeCompare('345') returns 1, so 5 should come before 34.
+// Compare 9 and 34:
+
+// order1 = "934"
+// order2 = "349"
+// Result: '934'.localeCompare('349') returns 1, so 9 should come before 34.
+// Final Sorted Order: [9, 5, 34, 3, 30]
+// Largest Number: 9534330
 ```
 ## Sort Color
 ```JavaScript
