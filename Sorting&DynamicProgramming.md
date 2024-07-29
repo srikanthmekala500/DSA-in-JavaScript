@@ -137,10 +137,8 @@ console.log(insertionSort(arr)); // Output: [1, 2, 4, 5, 7, 8, 9]
 // Final Sorted Array:
 // The array [1, 2, 4, 5, 9, 7, 8] is now sorted to [1, 2, 4, 5, 7, 8, 9].
 
-![image](https://github.com/user-attachments/assets/ca3d8d45-3d81-4820-89c4-e12a7a754953)
-
-
 ```
+![image](https://github.com/user-attachments/assets/ca3d8d45-3d81-4820-89c4-e12a7a754953)
 ## Merge Sort in JavaScript
 ```JavaScript
 const mergeSort = (arr) => {
