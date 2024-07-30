@@ -813,3 +813,4 @@ function trap(height) {
 const height = [0,1,0,2,1,0,1,3,2,1,2,1];
 console.log(trap(height)); // Output: 6
 ```
+![image](https://github.com/user-attachments/assets/90fc0309-b565-4cb8-afd5-f72d7c6eaa7d)
