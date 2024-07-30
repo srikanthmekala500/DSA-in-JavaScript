@@ -466,3 +466,135 @@ console.log(result); // Output: [0, 1]
 // Thus, the function twoSum(nums, target) correctly outputs [0, 1],
 //  indicating that the numbers at indices 0 and 1 add up to the target 9
 ````
+### Two Sum - II
+```javascript
+var twoSum = function(numbers, target) {
+    let left = 0;
+    let right = numbers.length - 1;
+
+    while (left < right) {
+        const sum = numbers[left] + numbers[right];
+
+        if (sum === target) {
+            return [left + 1, right + 1]; // Return 1-based indices
+        } else if (sum < target) {
+            left++; // Move the left pointer to the right
+        } else {
+            right--; // Move the right pointer to the left
+        }
+    }
+
+    return [];
+};
+
+// Example usage:
+let numbers = [2, 7, 11, 15];
+let target = 9;
+let result = twoSum(numbers, target);
+console.log(result); // Output: [1, 2]
+
+Given the input array [2, 7, 11, 15] and target 9:
+
+// Initial State:
+
+// left = 0
+// right = 3
+// Iteration 1:
+
+// sum = numbers[0] + numbers[3] = 2 + 15 = 17
+// sum (17) is greater than target (9), so move the right pointer to the left:
+// right = 2
+// Iteration 2:
+
+// sum = numbers[0] + numbers[2] = 2 + 11 = 13
+// sum (13) is greater than target (9), so move the right pointer to the left:
+// right = 1
+// Iteration 3:
+
+// sum = numbers[0] + numbers[1] = 2 + 7 = 9
+// sum (9) equals target (9), so return [left + 1, right + 1] = [1, 2]
+// Thus, the function twoSum(numbers, target) correctly outputs [1, 2], 
+// indicating that the numbers at indices 1 and 2 (1-based) add up to the target 
+```
+## 3sum
+// Example 1:
+// Input: nums = [-1,0,1,2,-1,-4]
+// Output: [[-1,-1,2],[-1,0,1]]
+// Explanation: 
+// nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+// nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+// nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+// The distinct triplets are [-1,0,1] and [-1,-1,2].
+// Notice that the order of the output and the order of the triplets does not matter.
+
+```javascript
+var threeSum = function(nums) {
+    nums.sort((a, b) => a - b); // Step 1: Sort the array
+    const result = [];
+    
+    for (let i = 0; i < nums.length - 2; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) continue; // Skip duplicate elements
+        
+        let left = i + 1;
+        let right = nums.length - 1;
+        
+        while (left < right) {
+            const sum = nums[i] + nums[left] + nums[right];
+            
+            if (sum === 0) {
+                result.push([nums[i], nums[left], nums[right]]);
+                
+                // Skip duplicates for left and right pointers
+                while (left < right && nums[left] === nums[left + 1]) left++;
+                while (left < right && nums[right] === nums[right - 1]) right--;
+                
+                left++;
+                right--;
+            } else if (sum < 0) {
+                left++; // Move the left pointer to the right
+            } else {
+                right--; // Move the right pointer to the left
+            }
+        }
+    }
+    
+    return result;
+};
+
+// Example usage:
+let nums = [-1, 0, 1, 2, -1, -4];
+let result = threeSum(nums);
+console.log(result); // Output: [[-1, -1, 2], [-1, 0, 1]]
+Example Walkthrough
+// Given the input array [-1, 0, 1, 2, -1, -4]:
+
+// Sorted Array:
+
+// [-4, -1, -1, 0, 1, 2]
+// Iteration 1 (i = 0):
+
+// Fixed element: -4
+// left = 1, right = 5
+// Sum: -4 + (-1) + 2 = -3 (Move left pointer to the right)
+// Sum: -4 + 0 + 2 = -2 (Move left pointer to the right)
+// Sum: -4 + 1 + 2 = -1 (Move left pointer to the right)
+// Iteration 2 (i = 1):
+
+// Fixed element: -1
+// left = 2, right = 5
+// Sum: -1 + (-1) + 2 = 0 (Add [-1, -1, 2] to result)
+// Move left pointer to avoid duplicates: left = 3
+// Move right pointer to avoid duplicates: right = 4
+// Sum: -1 + 0 + 1 = 0 (Add [-1, 0, 1] to result)
+// Move left pointer: left = 4
+// Move right pointer: right = 3
+// Iteration 3 (i = 2):
+
+// Fixed element: -1 (skip because it's the same as the previous element)
+// Iteration 4 (i = 3):
+
+// Fixed element: 0
+// left = 4, right = 5
+// Sum: 0 + 1 + 2 = 3 (Move right pointer to the left)
+// The result will be [[ -1, -1, 2], [ -1, 0, 1 ]].
+```
