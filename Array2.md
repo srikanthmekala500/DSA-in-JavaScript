@@ -776,3 +776,40 @@ Example Walkthrough
 // Compare w (0) with r (2): 0 - 2 = -2 (incorrect order)
 // Since the second comparison fails, the function returns false.
 ```
+## Trapping Rain Water
+ ```javascript
+function trap(height) {
+    const n = height.length;
+    if (n === 0) return 0; // Edge case: empty array
+
+    // Step 1: Initialize the left_max and right_max arrays
+    const left_max = new Array(n).fill(0);
+    const right_max = new Array(n).fill(0);
+
+    // Step 2: Fill the left_max array
+    left_max[0] = height[0]; // The first element is just its height
+    for (let i = 1; i < n; i++) {
+        left_max[i] = Math.max(left_max[i - 1], height[i]);
+    }
+
+    // Step 3: Fill the right_max array
+    right_max[n - 1] = height[n - 1]; // The last element is just its height
+    for (let i = n - 2; i >= 0; i--) {
+        right_max[i] = Math.max(right_max[i + 1], height[i]);
+    }
+
+    // Step 4: Calculate the total amount of trapped water
+    let totalWater = 0;
+    for (let i = 0; i < n; i++) {
+        // The amount of water above the current bar is the minimum of left_max and right_max minus the bar's height
+        const waterAtCurrentBar = Math.min(left_max[i], right_max[i]) - height[i];
+        totalWater += waterAtCurrentBar; // Accumulate the total water
+    }
+
+    return totalWater; // Return the total amount of trapped water
+}
+
+// Example usage
+const height = [0,1,0,2,1,0,1,3,2,1,2,1];
+console.log(trap(height)); // Output: 6
+```
