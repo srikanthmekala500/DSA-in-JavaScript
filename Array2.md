@@ -699,3 +699,80 @@ console.log(result); // Output: 49
 // The loop ends because left is no longer less than right. 
 // The function returns 49, which is the maximum area that can be formed.
 ```
+## Verifying an Alien Dictionary
+// In an alien language, surprisingly, they also use English lowercase letters, 
+// but possibly in a different order. The order of the alphabet is some permutation of lowercase letters.
+
+// Given a sequence of words written in the alien language, and the order of the alphabet,
+// return true if and only if the given words are sorted lexicographically in this alien language.
+// Example 1:
+// Input: words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz"
+// Output: true
+// Explanation: As 'h' comes before 'l' in this language, then the sequence is sorted.
+
+ ```javascript
+var isAlienSorted = function(words, order) {
+    // Create a map of character to its order in the alien dictionary
+    const orderMap = {};
+    for (let i = 0; i < order.length; i++) {
+        orderMap[order[i]] = i;
+    }
+
+    // Function to compare two words based on the alien dictionary order
+    const compare = (word1, word2) => {
+        const len = Math.min(word1.length, word2.length);
+        for (let i = 0; i < len; i++) {
+            if (word1[i] !== word2[i]) {
+                return orderMap[word1[i]] - orderMap[word2[i]];
+            }
+        }
+        // If we reach here, the words are equal up to the length of the shorter word
+        return word1.length - word2.length;
+    };
+
+    // Compare each word with the next one in the list
+    for (let i = 0; i < words.length - 1; i++) {
+        if (compare(words[i], words[i + 1]) > 0) {
+            return false;
+        }
+    }
+
+    return true;
+};
+
+// Example usage:
+let words = ["hello", "leetcode"];
+let order = "hlabcdefgijkmnopqrstuvwxyz";
+let result = isAlienSorted(words, order);
+console.log(result); // Output: true
+
+words = ["word", "world", "row"];
+order = "worldabcefghijkmnpqstuvxyz";
+result = isAlienSorted(words, order);
+console.log(result); // Output: false
+
+Example Walkthrough
+// Given the input ["hello", "leetcode"] and order "hlabcdefgijkmnopqrstuvwxyz":
+
+// Create Order Map:
+
+// {'h': 0, 'l': 1, 'a': 2, ..., 'z': 25}
+// Compare "hello" and "leetcode":
+
+// Compare h (0) with l (1): 0 - 1 = -1 (correct order)
+// Given the input ["word", "world", "row"] and order "worldabcefghijkmnpqstuvxyz":
+
+// Create Order Map:
+
+// {'w': 0, 'o': 1, 'r': 2, ..., 'z': 25}
+// Compare "word" and "world":
+
+// Compare w (0) with w (0): continue
+// Compare o (1) with o (1): continue
+// Compare r (2) with r (2): continue
+// Compare d (3) with l (5): 3 - 5 = -2 (correct order)
+// Compare "world" and "row":
+
+// Compare w (0) with r (2): 0 - 2 = -2 (incorrect order)
+// Since the second comparison fails, the function returns false.
+```
