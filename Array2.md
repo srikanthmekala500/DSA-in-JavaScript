@@ -598,3 +598,104 @@ Example Walkthrough
 // Sum: 0 + 1 + 2 = 3 (Move right pointer to the left)
 // The result will be [[ -1, -1, 2], [ -1, 0, 1 ]].
 ```
+## Container With Most Water
+![image](https://github.com/user-attachments/assets/022cc473-54d3-4ae1-9975-5e35fca8ad3b)
+
+Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. 
+In this case, the max area of water (blue section) the container can contain is 49.
+```javascript
+var maxArea = function(height) {
+    let left = 0;
+    let right = height.length - 1;
+    let maxWater = 0;
+
+    while (left < right) {
+        const width = right - left;
+        const minHeight = Math.min(height[left], height[right]);
+        const currentArea = width * minHeight;
+
+        maxWater = Math.max(maxWater, currentArea);
+
+        if (height[left] < height[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return maxWater;
+};
+
+// Example usage:
+let height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+let result = maxArea(height);
+console.log(result); // Output: 49
+
+// Given the input array [1, 8, 6, 2, 5, 4, 8, 3, 7]:
+
+// Initial State:
+
+// left = 0
+// right = 8
+// maxWater = 0
+// Iteration 1:
+
+// width = 8 - 0 = 8
+// minHeight = Math.min(1, 7) = 1
+// currentArea = 8 * 1 = 8
+// maxWater = Math.max(0, 8) = 8
+// Move left to the right: left = 1
+// Iteration 2:
+
+// width = 8 - 1 = 7
+// minHeight = Math.min(8, 7) = 7
+// currentArea = 7 * 7 = 49
+// maxWater = Math.max(8, 49) = 49
+// Move right to the left: right = 7
+// Iteration 3:
+
+// width = 7 - 1 = 6
+// minHeight = Math.min(8, 3) = 3
+// currentArea = 6 * 3 = 18
+// maxWater = Math.max(49, 18) = 49
+// Move right to the left: right = 6
+// Iteration 4:
+
+// width = 6 - 1 = 5
+// minHeight = Math.min(8, 8) = 8
+// currentArea = 5 * 8 = 40
+// maxWater = Math.max(49, 40) = 49
+// Move right to the left: right = 5
+// Iteration 5:
+
+// width = 5 - 1 = 4
+// minHeight = Math.min(8, 4) = 4
+// currentArea = 4 * 4 = 16
+// maxWater = Math.max(49, 16) = 49
+// Move right to the left: right = 4
+// Iteration 6:
+
+// width = 4 - 1 = 3
+// minHeight = Math.min(8, 5) = 5
+// currentArea = 3 * 5 = 15
+// maxWater = Math.max(49, 15) = 49
+// Move right to the left: right = 3
+// Iteration 7:
+
+// width = 3 - 1 = 2
+// minHeight = Math.min(8, 2) = 2
+// currentArea = 2 * 2 = 4
+// maxWater = Math.max(49, 4) = 49
+// Move right to the left: right = 2
+// Iteration 8:
+
+// width = 2 - 1 = 1
+// minHeight = Math.min(8, 6) = 6
+// currentArea = 1 * 6 = 6
+// maxWater = Math.max(49, 6) = 49
+// Move right to the left: right = 1
+// The loop ends because left is no longer less than right. 
+// The function returns 49, which is the maximum area that can be formed.
+```
