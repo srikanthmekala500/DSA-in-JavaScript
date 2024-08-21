@@ -1,25 +1,25 @@
-1) ## Map in JavaScript
-2) ## Polyfill of map()
-3) ## Filter In JavaScript
-4) ## Reduce in JavaScript
-5) ## Polyfill of reduce()
-6) ## Find the longest word length
-7) ## Find the longest word
-8) ## Calculate the factorial of the largest number in the array
-9) ## Calculate the average score of students who scored above 90
-10) ## Capitalize the first letter of each word in the array
-11) ## Majority Element
-12) ## Squares of a Sorted Array
-13) ## Find Pivot Index
-14) ## Move All Zeros in an Array to End of the Array
-15) ## Max Consecutive Ones
-16) ## Best Time to Buy and Sell Stock
-17) ## Two Sum
-18) ## Two Sum - II
-19) ## 3sum
-20) ## Container With Most Water
-21) ## Verifying an Alien Dictionary
-22) ## Trapping Rain Water
+1)  Map in JavaScript
+2)  Polyfill of map()
+3)  Filter In JavaScript
+4)  Reduce in JavaScript
+5)  Polyfill of reduce()
+6)  Find the longest word length
+7)  Find the longest word
+8)  Calculate the factorial of the largest number in the array
+9)  Calculate the average score of students who scored above 90
+10) Capitalize the first letter of each word in the array
+11) Majority Element
+12) Squares of a Sorted Array
+13) Find Pivot Index
+14) Move All Zeros in an Array to End of the Array
+15) Max Consecutive Ones
+16) Best Time to Buy and Sell Stock
+17) Two Sum
+18) Two Sum - II
+19) 3sum
+20) Container With Most Water
+21) Verifying an Alien Dictionary
+22) Trapping Rain Water
 
 *************************************************************************
 
