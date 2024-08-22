@@ -139,6 +139,20 @@ const longestWord = words.reduce((longestWord, word) => {
 }, "");
 
 console.log(longestWord); // Output: 'dragonfruit'
+
+const words = ['apple', 'banana', 'cherry', 'dragonfruit', 'elderberry'];
+
+const result = words.reduce((acc, word) => {
+    const currentLength = word.length;
+    if (currentLength > acc.maxLength) {
+        acc.maxLength = currentLength;
+        acc.longestWord = word;
+    }
+    return acc;
+}, { maxLength: 0, longestWord: '' });
+
+console.log(`Longest word: ${result.longestWord}, Length: ${result.maxLength}`);
+s
 ````
  
 ## Question 3: Calculate the factorial of the largest number in the array
