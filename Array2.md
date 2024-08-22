@@ -163,18 +163,22 @@ s
  
 ## Question 3: Calculate the factorial of the largest number in the array
 ```javascript
-const numbers = [5, 2, , 4, 3];
+const numbers = [5, 2, 4, 3, 8];
 
-const largestFactorial = numbers.reduce((largest, num) => {
-    const currentFactorial = Array
-    .from({ length: num })
-    .map((_, i) => i + 1)
-    .reduce((fact, val) => fact * val, 1);
+// Step 1: Find the largest number
+const largestNumber = Math.max(...numbers);
 
-    return currentFactorial > largest ? currentFactorial : largest;
-}, 1);
+// Step 2: Calculate the factorial of the largest number
+const factorial = (num) => {
+    if (num === 0 || num === 1) return 1;
+    return num * factorial(num - 1);
+};
 
-console.log(largestFactorial);// Output: 40320 (8!)
+const largestNumberFactorial = factorial(largestNumber);
+
+console.log(`The largest number is ${largestNumber}`);
+console.log(`The factorial of the largest number is ${largestNumberFactorial}`);
+
  ```
 
 ## Question 4: Calculate the average score of students who scored above 90
