@@ -301,30 +301,36 @@ console.log(sortedSquares([-4,-1,0,3,10]))
         // Explanation:
         // There is no index that satisfies the conditions in the problem statement.
 
-function Pivot (index){
+ function pivotIndex(nums) {
+    const totalSum = nums.reduce((sum, num) => sum + num, 0);
+    let leftSum = 0;
 
-    // initialize the sums, 0 because we don't know the sums yet.
-
-    let totalSum = 0; 
-    let leftSum = 0; 
-
-    // now let's calculate the total sum
-
-    nums.forEach((element) => totalSum += element);
-
-/* 
-now we have the sum, so we want to check for the condition.
-but before that, we need to loop through each element in the array.
-*/
-
-    for(let e=0; e<nums.length; e++){
-        if(totalSum - leftSum - index[e] === leftSum){
-        return e;
+    for (let i = 0; i < nums.length; i++) {
+        const rightSum = totalSum - leftSum - nums[i];
+        if (leftSum === rightSum) {
+            return i;
         }
-        leftSum += index[e]
+        leftSum += nums[i];
     }
+
     return -1;
 }
+//Example Execution
+// For the array [1, 7, 3, 6, 5, 6]:
+
+// At index 0: leftSum = 0, rightSum = 27 (not equal)
+// At index 1: leftSum = 1, rightSum = 26 (not equal)
+// At index 2: leftSum = 8, rightSum = 20 (not equal)
+// At index 3: leftSum = 11, rightSum = 11 (equal, so return 3)
+// Example
+// Let’s take the array [1, 7, 3, 6, 5, 6] and find the right sum at index 3:
+
+// totalSum: (1 + 7 + 3 + 6 + 5 + 6 = 28)
+// leftSum: (1 + 7 + 3 = 11)
+// nums[3]: (6)
+// So, the right sum at index 3 is:
+
+// [ \text{rightSum} = 28 - 11 - 6 = 11 ]
 
 ````
 ## Question 10  : Move All Zeros in an Array to End of the Array
