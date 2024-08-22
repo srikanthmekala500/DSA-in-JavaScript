@@ -338,24 +338,27 @@ console.log(sortedSquares([-4,-1,0,3,10]))
 // A JavaScript program to move all zeroes at the end of array 
 
 // Function which pushes all zeros to end of an array. 
-function pushZerosToEnd(arr, n) 
-{ 
-	let count = 0; // Count of non-zero elements 
+ function moveZerosToEnd(nums) {
+    let count = 0; // Count of non-zero elements
 
-	// Traverse the array. If element encountered is non- 
-	// zero, then replace the element at index 'count' 
-	// with this element 
-	for (let i = 0; i < n; i++) 
-		if (arr[i] != 0) 
-			arr[count++] = arr[i]; // here count is 
-								// incremented 
+    // Traverse the array. If the element is not zero, place it at the 'count' index.
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            nums[count++] = nums[i];
+        }
+    }
 
-	// Now all non-zero elements have been shifted to 
-	// front and 'count' is set as index of first 0. 
-	// Make all elements 0 from count to end. 
-	while (count < n) 
-		arr[count++] = 0; 
-} 
+    // After all non-zero elements have been moved to the front, fill the remaining positions with zeros.
+    while (count < nums.length) {
+        nums[count++] = 0;
+    }
+}
+
+// Example usage:
+const nums = [1, 7, 0, 3, 0, 6, 5, 0];
+moveZerosToEnd(nums);
+console.log(nums); // Output: [1, 7, 3, 6, 5, 0, 0, 0]
+
 
 // Driver code 
 	let arr = [1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9]; 
