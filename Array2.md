@@ -123,6 +123,12 @@ console.log(totalAmount); // 5294
 
 ## Question 1: Find the longest word length
 ```javascript
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+
 const words = ['apple', 'banana', 'cherry', 'dragonfruit', 'elderberry'];
 
 const longestWordLength = words.reduce((maxLength, word) => {
