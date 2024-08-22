@@ -183,6 +183,7 @@ console.log(`The factorial of the largest number is ${largestNumberFactorial}`);
 
 ## Question 4: Calculate the average score of students who scored above 90
 ```javascript
+
 const students = [
     { name: 'John', score: 85 },
     { name: 'Sarah', score: 92 },
@@ -191,11 +192,14 @@ const students = [
     { name: 'Daniel', score: 90 },
 ];
 
-const above90StudentsAverage = students
-    .filter((student) => student.score > 90)
-    .reduce((acc, student, i, arr) => acc + student.score / arr.length, 0);
+// Step 1: Filter students who scored above 90
+const highScorers = students.filter(student => student.score > 90);
 
-console.log(above90StudentsAverage); // Output: 93.5 (average of 95 and 92)
+// Step 2: Calculate the average score of these students
+const totalScore = highScorers.reduce((sum, student) => sum + student.score, 0);
+const averageScore = totalScore / highScorers.length;
+
+console.log(`The average score of students who scored above 90 is ${averageScore}`);
 
 // Question 5: Filter out books published before the year 2000 and return their titles
 
