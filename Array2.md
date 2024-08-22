@@ -200,6 +200,7 @@ const totalScore = highScorers.reduce((sum, student) => sum + student.score, 0);
 const averageScore = totalScore / highScorers.length;
 
 console.log(`The average score of students who scored above 90 is ${averageScore}`);
+The average score of students who scored above 90 is 93.5
 
 // Question 5: Filter out books published before the year 2000 and return their titles
 
