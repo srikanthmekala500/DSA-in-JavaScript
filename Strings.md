@@ -23,6 +23,7 @@
 23) Reverse Vowels of a String
 24) Rotate String
 ======================================================================================================================================================================
+ 
 ## Longest Common Prefix in javacript 
 ```JavaScript
 function longestCommonPrefix(strs) {
@@ -41,7 +42,36 @@ console.log(longestCommonPrefix(strs1)); // Output: "fl"
 const strs2 = ["dog", "racecar", "car"];
 console.log(longestCommonPrefix(strs2)); // Output: ""
 ````
+## Group Anagrams
+```JavaScript
+function groupAnagrams(strs) {
+    let map = {};
 
+    for (let str of strs) {
+        // Sort the string
+        let sortedStr = str.split('').sort().join('');
+        
+        // Use the sorted string as a key
+        if (!map[sortedStr]) {
+            map[sortedStr] = [];
+        }
+        map[sortedStr].push(str);
+    }
+
+    // Convert the hash map values into an array of arrays
+    return Object.values(map);
+}
+
+console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]));
+// Output: [["eat","tea","ate"],["tan","nat"],["bat"]]
+
+console.log(groupAnagrams([""]));
+// Output: [[""]]
+
+console.log(groupAnagrams(["a"]));
+// Output: [["a"]]
+
+```
 
 
 
