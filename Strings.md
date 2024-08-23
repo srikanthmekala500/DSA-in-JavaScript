@@ -108,42 +108,6 @@ Output: true
 Input: s = "(]"
 Output: false
 ```
-## Valid Palindrome
-```JavaScript
-function isPalindrome(s) {
-    let left = 0;
-    let right = s.length - 1;
-
-    while (left < right) {
-        // Move left pointer to the next alphanumeric character
-        while (left < right && !isAlphanumeric(s[left])) {
-            left++;
-        }
-
-        // Move right pointer to the previous alphanumeric character
-        while (left < right && !isAlphanumeric(s[right])) {
-            right--;
-        }
-
-        // Compare the characters at the two pointers
-        if (s[left].toLowerCase() !== s[right].toLowerCase()) {
-            return false;
-        }
-
-        // Move both pointers towards the center
-        left++;
-        right--;
-    }
-
-    return true;
-}
-
-function isAlphanumeric(char) {
-    return /^[a-z0-9]+$/i.test(char);
-}
-console.log(isPalindrome("A man, a plan, a canal: Panama")); // Output: true
-console.log(isPalindrome("race a car"));                    // Output: false
-console.log(isPalindrome(" "));                             // Output: true
 
 ```
 ## Longest Palindromic Substring
