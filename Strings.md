@@ -555,6 +555,17 @@ function reverseVowels(s) {
 console.log(reverseVowels('hello')); // Outputs: 'holle'
 console.log(reverseVowels('leetcode')); // Outputs: 'leotcede'
 console.log(reverseVowels('aA')); // Outputs: 'Aa'
+.........
+
+const getStringsWithVowels = (array) => {
+  const vowel = ['a','e','i','o','u']
+  const fliter = array.filter((e)=>{
+      return vowel.includes(e.charAt(0).toLowerCase())
+  })
+  return fliter
+}
+
+console.log(getStringsWithVowels(['apple', 'banana', 'orange', 'pear']))
 ```
 ## Rotate String
 ```JavaScript
