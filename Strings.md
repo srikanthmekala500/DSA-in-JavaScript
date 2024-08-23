@@ -179,11 +179,45 @@ console.log(longestPalindrome("babad")); // Output: "bab" or "aba"
 console.log(longestPalindrome("cbbd"));  // Output: "bb"
 console.log(longestPalindrome("a"));     // Output: "a"
 console.log(longestPalindrome("ac"));    // Output: "a" or "c"
+```
+## Letter Combinations of a Phone Number
+```JavaScript
+function letterCombinations(digits) {
+    if (digits.length === 0) return [];
+
+    const phoneMap = {
+        '2': 'abc',
+        '3': 'def',
+        '4': 'ghi',
+        '5': 'jkl',
+        '6': 'mno',
+        '7': 'pqrs',
+        '8': 'tuv',
+        '9': 'wxyz'
+    };
+
+    const result = [];
+
+    function backtrack(index, currentCombination) {
+        if (index === digits.length) {
+            result.push(currentCombination);
+            return;
+        }
+
+        const letters = phoneMap[digits[index]];
+        for (let i = 0; i < letters.length; i++) {
+            backtrack(index + 1, currentCombination + letters[i]);
+        }
+    }
+
+    backtrack(0, '');
+    return result;
+}
+console.log(letterCombinations("23")); // Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+console.log(letterCombinations(""));    // Output: []
+console.log(letterCombinations("2"));   // Output: ["a","b","c"]
 
 ```
-
-
-
 
 
 
