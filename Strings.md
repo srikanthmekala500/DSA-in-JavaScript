@@ -108,6 +108,81 @@ Output: true
 Input: s = "(]"
 Output: false
 ```
+## Valid Palindrome
+```JavaScript
+function isPalindrome(s) {
+    let left = 0;
+    let right = s.length - 1;
+
+    while (left < right) {
+        // Move left pointer to the next alphanumeric character
+        while (left < right && !isAlphanumeric(s[left])) {
+            left++;
+        }
+
+        // Move right pointer to the previous alphanumeric character
+        while (left < right && !isAlphanumeric(s[right])) {
+            right--;
+        }
+
+        // Compare the characters at the two pointers
+        if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+            return false;
+        }
+
+        // Move both pointers towards the center
+        left++;
+        right--;
+    }
+
+    return true;
+}
+
+function isAlphanumeric(char) {
+    return /^[a-z0-9]+$/i.test(char);
+}
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // Output: true
+console.log(isPalindrome("race a car"));                    // Output: false
+console.log(isPalindrome(" "));                             // Output: true
+
+```
+## Longest Palindromic Substring
+```JavaScript
+function longestPalindrome(s) {
+    if (s.length === 0) return "";
+
+    let start = 0;
+    let end = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        let len1 = expandAroundCenter(s, i, i); // Odd length palindrome
+        let len2 = expandAroundCenter(s, i, i + 1); // Even length palindrome
+        let len = Math.max(len1, len2);
+
+        if (len > end - start) {
+            start = i - Math.floor((len - 1) / 2);
+            end = i + Math.floor(len / 2);
+        }
+    }
+
+    return s.substring(start, end + 1);
+}
+
+function expandAroundCenter(s, left, right) {
+    while (left >= 0 && right < s.length && s[left] === s[right]) {
+        left--;
+        right++;
+    }
+    return right - left - 1;
+}
+console.log(longestPalindrome("babad")); // Output: "bab" or "aba"
+console.log(longestPalindrome("cbbd"));  // Output: "bb"
+console.log(longestPalindrome("a"));     // Output: "a"
+console.log(longestPalindrome("ac"));    // Output: "a" or "c"
+
+```
+
+
 
 
 
