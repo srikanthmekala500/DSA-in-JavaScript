@@ -505,6 +505,13 @@ function isPalindrome(s) {
   return cleanedString === reversedString;
 }
 
+function Palindromes(string){
+  string = string.toLowerCase()
+  return string === string.split('').reverse().join()
+
+}
+  console.log(Palindromes("racecar"))
+
 console.log(isPalindrome('A man, a plan, a canal: Panama')); // Outputs: true
 console.log(isPalindrome('race a car')); // Outputs: false
 console.log(isPalindrome(' ')); // Outputs: true
