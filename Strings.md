@@ -72,8 +72,40 @@ console.log(groupAnagrams(["a"]));
 // Output: [["a"]]
 
 ```
+## Valid Parentheses
+```JavaScript
+function isValid(s) {
+    const stack = [];
+    const bracketMap = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
 
+    for (let char of s) {
+        if (char === '(' || char === '{' || char === '[') {
+            // If it's an opening bracket, push onto the stack
+            stack.push(char);
+        } else {
+            // If it's a closing bracket, check if it matches the top of the stack
+            if (stack.length === 0 || stack.pop() !== bracketMap[char]) {
+                return false;
+            }
+        }
+    }
 
+    // If the stack is empty, all brackets were matched correctly
+    return stack.length === 0;
+}
+Input: s = "()"
+Output: true
+
+Input: s = "()[]{}"
+Output: true
+
+Input: s = "(]"
+Output: false
+```
 
 
 
