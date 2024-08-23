@@ -97,12 +97,14 @@ function isValid(s) {
     // If the stack is empty, all brackets were matched correctly
     return stack.length === 0;
 }
+console.log(isValid("()"));        // Output: true
+console.log(isValid("()[]{}"));    // Output: true
+console.log(isValid("(]"));        // Output: false
+console.log(isValid("([)]"));      // Output: false
+console.log(isValid("{[]}"));      // Output: true
+
 Input: s = "()"
 Output: true
-
-Input: s = "()[]{}"
-Output: true
-
 Input: s = "(]"
 Output: false
 ```
