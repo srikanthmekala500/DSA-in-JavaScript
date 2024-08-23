@@ -218,6 +218,86 @@ console.log(letterCombinations(""));    // Output: []
 console.log(letterCombinations("2"));   // Output: ["a","b","c"]
 
 ```
+## Palindromic Substrings
+```JavaScript
+function countSubstrings(s) {
+    let count = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        // Count odd-length palindromes (single character center)
+        count += expandAroundCenter(s, i, i);
+        // Count even-length palindromes (two character center)
+        count += expandAroundCenter(s, i, i + 1);
+    }
+
+    return count;
+}
+
+function expandAroundCenter(s, left, right) {
+    let count = 0;
+    while (left >= 0 && right < s.length && s[left] === s[right]) {
+        count++;
+        left--;
+        right++;
+    }
+    return count;
+}
+console.log(countSubstrings("abc")); // Output: 3 ("a", "b", "c")
+console.log(countSubstrings("aaa")); // Output: 6 ("a", "a", "a", "aa", "aa", "aaa")
+console.log(countSubstrings("racecar")); // Output: 10 ("r", "a", "c", "e", "c", "a", "r", "cec", "aceca", "racecar")
+
+````
+### Encode and Decode Strings
+## Encode Function
+```JavaScript
+function encode(strs) {
+    let encodedString = "";
+
+    for (let str of strs) {
+        encodedString += str.length + "#" + str;
+    }
+
+    return encodedString;
+}
+```
+## Decode Function
+```JavaScript
+function decode(s) {
+    let decodedStrings = [];
+    let i = 0;
+
+    while (i < s.length) {
+        let j = i;
+
+        // Find the delimiter to extract the length
+        while (s[j] !== '#') {
+            j++;
+        }
+
+        // Extract the length of the string
+        let length = parseInt(s.substring(i, j));
+        // Move to the start of the string
+        i = j + 1;
+        // Extract the string based on the length
+        decodedStrings.push(s.substring(i, i + length));
+        // Move to the next string
+        i += length;
+    }
+
+    return decodedStrings;
+}
+let strs = ["hello", "world"];
+let encoded = encode(strs);
+console.log(encoded); // Output: "5#hello5#world"
+
+let decoded = decode(encoded);
+console.log(decoded); // Output: ["hello", "world"]
+
+```
+
+
+
+
 
 
 
