@@ -1,3 +1,27 @@
+1) Longest Common Prefix
+2) Minimum Window Substring
+3) Valid Anagram
+4) Group Anagrams
+5) Valid Parentheses
+6) Valid Palindrome
+7) Longest Palindromic Substring
+8) Letter Combinations of a Phone Number
+9) Palindromic Substrings
+10) Encode and Decode Strings (Leetcode Premium)
+11)  Palindrome Linked List
+12) Text Justification
+13) Convert Number and Object to String
+14) Concatenate Strings
+15) Find the Index of the First Occurrence in a String
+16)  Reverse String
+17) Longest Common Prefix
+18) Merge Strings Alternately
+19) Length of Last Word
+20) Valid Palindrome
+21) String Compression
+22) Reverse Words in a String
+23) Reverse Vowels of a String
+24) Rotate String
 ## Length of a String
 ```JavaScript
 let firstName = "Vaishali";
