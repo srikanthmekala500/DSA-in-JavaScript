@@ -4,7 +4,9 @@
 4)  Check if a number is palindrome
 5)  Find nth Fibonacci number
 6)  Find nth Fibonacci number
-7)   Missing Number in an Array
+7)  Missing Number in an Array
+8)  detect squares
+9)  
 ## Question 1: Sum of all natural numbers from 1 to n
  ```javascript
 function sumOfNaturalNumber(num){
@@ -105,4 +107,31 @@ let missingNumber = (nums) => nums.length*(nums.length+1)/2 - nums.reduce((acc, 
 
 console.log(missingNumber([3,0,1])); // 2
 console.log(missingNumber([9,6,4,2,3,5,7,0,1])); // 8
+```
+## Multiply Strings
+
+```javascript
+function multiply(num1, num2) {
+    if (num1 === "0" || num2 === "0") return "0";
+
+    const result = Array(num1.length + num2.length).fill(0);
+
+    for (let i = num1.length - 1; i >= 0; i--) {
+        for (let j = num2.length - 1; j >= 0; j--) {
+            const mul = (num1[i] - '0') * (num2[j] - '0');
+            const sum = mul + result[i + j + 1];
+            result[i + j + 1] = sum % 10;
+            result[i + j] += Math.floor(sum / 10);
+        }
+    }
+
+    while (result[0] === 0) {
+        result.shift();
+    }
+
+    return result.join('');
+}
+
+// Example usage:
+console.log(multiply("123", "456")); // Output: "56088"
 ```
