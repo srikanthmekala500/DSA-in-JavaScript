@@ -1,6 +1,4 @@
-![image](https://github.com/user-attachments/assets/c15c92cd-05d4-4fa1-93fe-3559366684af)https://www.youtube.com/@LeetCodeWithMonu
-![image](https://github.com/user-attachments/assets/a492e026-256d-49e1-8746-e8c14476e4c2)
-
+ 
 
 ### find count of all players
 
