@@ -1,3 +1,10 @@
+1) Sum of all natural numbers from 1 to n
+2)  Sum of digits of a number
+3)  Count the number of digits of a number
+4)  Check if a number is palindrome
+5)  Find nth Fibonacci number
+6)  Find nth Fibonacci number
+7)   Missing Number in an Array
 ## Question 1: Sum of all natural numbers from 1 to n
  ```javascript
 function sumOfNaturalNumber(num){
