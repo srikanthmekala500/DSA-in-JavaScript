@@ -10,6 +10,8 @@
 10)  Pow(x, n)
 11)  Plus One
 12)  Set Matrix Zeroes
+13)  Spiral Matrix
+
 
 ## Question 1: Sum of all natural numbers from 1 to n
  ```javascript
