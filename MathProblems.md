@@ -9,6 +9,7 @@
 9)  Multiply Strings
 10)  Pow(x, n)
 11)  Plus One
+12)  Set Matrix Zeroes
 
 ## Question 1: Sum of all natural numbers from 1 to n
  ```javascript
@@ -183,4 +184,70 @@ function plusOne(digits) {
 // Example usage:
 console.log(plusOne([1, 2, 3])); // Output: [1, 2, 4]
 console.log(plusOne([9, 9, 9])); // Output: [1, 0, 0, 0]
+```
+## Set Matrix Zeroes
+
+```javascript
+function setZeroes(matrix) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+    let firstRowZero = false;
+    let firstColZero = false;
+
+    // Determine if the first row or first column needs to be zeroed
+    for (let i = 0; i < rows; i++) {
+        if (matrix[i][0] === 0) {
+            firstColZero = true;
+            break;
+        }
+    }
+
+    for (let j = 0; j < cols; j++) {
+        if (matrix[0][j] === 0) {
+            firstRowZero = true;
+            break;
+        }
+    }
+
+    // Use first row and column to mark zero rows and columns
+    for (let i = 1; i < rows; i++) {
+        for (let j = 1; j < cols; j++) {
+            if (matrix[i][j] === 0) {
+                matrix[i][0] = 0;
+                matrix[0][j] = 0;
+            }
+        }
+    }
+
+    // Set matrix cells to zero based on marks
+    for (let i = 1; i < rows; i++) {
+        for (let j = 1; j < cols; j++) {
+            if (matrix[i][0] === 0 || matrix[0][j] === 0) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+
+    // Handle the first row and column separately
+    if (firstRowZero) {
+        for (let j = 0; j < cols; j++) {
+            matrix[0][j] = 0;
+        }
+    }
+
+    if (firstColZero) {
+        for (let i = 0; i < rows; i++) {
+            matrix[i][0] = 0;
+        }
+    }
+}
+
+// Example usage:
+const matrix = [
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1]
+];
+setZeroes(matrix);
+console.log(matrix); // Output: [[1, 0, 1], [0, 0, 0], [1, 0, 1]]
 ```
