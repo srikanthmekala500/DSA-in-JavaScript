@@ -1,4 +1,16 @@
- 
+
+1) find count of all players
+2) Prototype and Inheritance in JavaScript Objects
+3) Group Anagrams
+4) Number of good pairs
+5) Count the Number of Consistent Strings
+6) Two Sum
+7) Sum of Unique Elements
+8) Unique Number of Occurrences
+9) Integer to Roman
+10) Longest Substring Without Repeating Characters
+11) Group Anagrams
+12) Find All Anagrams in a String 
 
 ### find count of all players
 
