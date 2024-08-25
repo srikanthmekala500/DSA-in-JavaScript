@@ -8,6 +8,8 @@
 8)  detect squares
 9)  Multiply Strings
 10)  Pow(x, n)
+11)  Plus One
+
 ## Question 1: Sum of all natural numbers from 1 to n
  ```javascript
 function sumOfNaturalNumber(num){
@@ -162,4 +164,23 @@ function pow(x, n) {
 console.log(pow(2, 10));  // Output: 1024
 console.log(pow(2, -2));  // Output: 0.25
 console.log(pow(3, 5));   // Output: 243
+```
+## Plus One
+
+```javascript
+function plusOne(digits) {
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i]++;
+            return digits;
+        }
+        digits[i] = 0;
+    }
+    digits.unshift(1);
+    return digits;
+}
+
+// Example usage:
+console.log(plusOne([1, 2, 3])); // Output: [1, 2, 4]
+console.log(plusOne([9, 9, 9])); // Output: [1, 0, 0, 0]
 ```
