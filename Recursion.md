@@ -1,3 +1,22 @@
+1) Factorial of a Number
+2) Sum of Array
+3) Fibonacci Number
+4) Check whether a string is palindrome or not
+5) Create pow(x, n) function which returns x^n
+6) Create a function which returns the sum of digits of a number (e.g., sumOfDigits(453) is 12)
+7) Create a function which returns the number of digits in a number (e.g., countDigits(453) is 3)
+8) Create a function to find the LCM of two numbers
+9) Create a function to find the GCD of two numbers
+10) Create a function to reverse a string
+
+
+
+
+
+
+
+
+
 ## JavaScript Recursion
 Recursion is a programming technique where a function calls itself repeatedly to solve a problem
 Recursion in JavaScript is a powerful technique where a function calls itself to solve smaller instances of the same problem until it reaches a base case. Understanding recursion is essential for solving problems where the solution can be built off simpler versions of the same problem.
