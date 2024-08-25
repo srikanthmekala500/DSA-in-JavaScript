@@ -1,3 +1,27 @@
+1) Sort an Array
+2) Bubble Sort In JavaScript
+3) Insertion Sort In JavaScrip
+4) Merge Sort in JavaScript
+5) Merge Sort in JavaScript (Space Optimised)
+6) Quick Sort in JavaScript
+7) How Many Numbers are smaller than the current number
+8) Largest Number
+9) Sort Color
+10) climbing-stairs
+11) Coin Change
+12) Longest Increasing Subsequence
+13) Longest Common Subsequence
+14) Word Break Problem
+15) Combination Sum
+16) House Robber
+17) House Robber II
+18) Unique Paths
+19) Decode Ways
+20) Pascal's Triangle
+21) Jump Game
+22) Generate Parentheses
+23) Jump Game II
+    
 ## Sort an Array
 ```JavaScript
 const arr = [-2, -7, 1000, 5]
