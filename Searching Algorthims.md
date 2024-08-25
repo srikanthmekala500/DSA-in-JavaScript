@@ -1,3 +1,20 @@
+1)  Linear Search in JavaScript
+2)  Binary Search In JavaScript
+3)  Binary Search using Recursion
+4)  Sqrt(x)
+5)  First Bad Version
+6)  Find the Index of the First Occurrence in a String
+7)  Binary Search
+8)  Search Insert Position
+9)  Find Minimum in Rotated Sorted Array
+10)  Find First and Last Position of Element in Sorted Array
+11)  Single Element in a Sorted Array
+12)  Search a 2D Matrix
+13)  Find Peak Element
+14)  Search in Rotated Sorted Array
+
+
+
 ## Linear Search in JavaScript
 ```JavaScript
 function linearSearch(arr, target) {
