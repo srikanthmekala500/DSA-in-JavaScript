@@ -6,7 +6,8 @@
 6)  Find nth Fibonacci number
 7)  Missing Number in an Array
 8)  detect squares
-9)  
+9)  Multiply Strings
+10)  Pow(x, n)
 ## Question 1: Sum of all natural numbers from 1 to n
  ```javascript
 function sumOfNaturalNumber(num){
@@ -134,4 +135,31 @@ function multiply(num1, num2) {
 
 // Example usage:
 console.log(multiply("123", "456")); // Output: "56088"
+```
+## Pow(x, n)
+```javascript
+function pow(x, n) {
+    // Handle the base case of n being zero
+    if (n === 0) return 1;
+
+    // Handle the case of n being negative
+    if (n < 0) {
+        x = 1 / x;
+        n = -n;
+    }
+
+    // Recursive function for Exponentiation by Squaring
+    const half = pow(x, Math.floor(n / 2));
+
+    if (n % 2 === 0) {
+        return half * half;
+    } else {
+        return half * half * x;
+    }
+}
+
+// Example Usage:
+console.log(pow(2, 10));  // Output: 1024
+console.log(pow(2, -2));  // Output: 0.25
+console.log(pow(3, 5));   // Output: 243
 ```
