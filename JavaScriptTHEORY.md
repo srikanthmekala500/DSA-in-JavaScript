@@ -5,6 +5,8 @@ JavaScript is a **scripting language and is used for client-side and server-side
   JavaScript is a **dynamic language**. This means that variables in JavaScript can change type at runtime.
 - JavaScript is a **single-threaded language**. This means that it can only execute one task at a time.
 2) ##  What are the various data types that exist in JavaScript?
+  **Primitive Data Types:** They can hold a single simple value. String, Number, BigInt, Boolean, undefined, null, and Symbol are primitive data types.
+**Non-Primitive Data Types: ** They can hold multiple values. Objects are non-primitive data types.
   
 **primitive data type**s are basic types that store single values, while
 **non-primitive data types** are more complex and can store multiple values
@@ -20,8 +22,7 @@ Here's a brief overview of the main data types in JavaScript:
    The BigInt data type in javascript is used to represent numeric values that exceed the largest safe integer limit. It is basically used to represent 
      numbers greater than 
 The **JavaScript ES6 introduced a new primitive data type called Symbol**. Symbols are immutable (cannot be changed) and are unique. For example,
-**Primitive Data Types:** They can hold a single simple value. String, Number, BigInt, Boolean, undefined, null, and Symbol are primitive data types.
-**Non-Primitive Data Types: **They can hold multiple values. Objects are non-primitive data types.
+
 ```javascript
 // two symbols with the same description
 const value1 = Symbol('hello');
