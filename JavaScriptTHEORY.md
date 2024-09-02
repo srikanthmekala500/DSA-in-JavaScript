@@ -6,7 +6,7 @@ JavaScript is a **scripting language and is used for client-side and server-side
 - JavaScript is a **single-threaded language**. This means that it can only execute one task at a time.
 2) ##  What are the various data types that exist in JavaScript?
 ![image](https://github.com/user-attachments/assets/2777c9e5-9e80-42c4-aeec-68c228ec110b)
-
+**primitive data type**s are basic types that store single values, while **non-primitive data types** are more complex and can store multiple values
 Here's a brief overview of the main data types in JavaScript:
 - **Number**: This data type is used to represent numerical values. Numbers can be integers (whole numbers) or floating-point numbers (decimal numbers).
 - **String**: This data type is used to represent textual data. Strings are sequences of characters enclosed in quotes (either single or double).
