@@ -5,7 +5,9 @@ JavaScript is a **scripting language and is used for client-side and server-side
   JavaScript is a **dynamic language**. This means that variables in JavaScript can change type at runtime.
 - JavaScript is a **single-threaded language**. This means that it can only execute one task at a time.
 2) ##  What are the various data types that exist in JavaScript?
-**primitive data type**s are basic types that store single values, while **non-primitive data types** are more complex and can store multiple values
+  
+**primitive data type**s are basic types that store single values, while
+**non-primitive data types** are more complex and can store multiple values
 Here's a brief overview of the main data types in JavaScript:
 - **Number**: This data type is used to represent numerical values. Numbers can be integers (whole numbers) or floating-point numbers (decimal numbers).
 - **String**: This data type is used to represent textual data. Strings are sequences of characters enclosed in quotes (either single or double).
@@ -18,6 +20,8 @@ Here's a brief overview of the main data types in JavaScript:
    The BigInt data type in javascript is used to represent numeric values that exceed the largest safe integer limit. It is basically used to represent 
      numbers greater than 
 The **JavaScript ES6 introduced a new primitive data type called Symbol**. Symbols are immutable (cannot be changed) and are unique. For example,
+**Primitive Data Types:** They can hold a single simple value. String, Number, BigInt, Boolean, undefined, null, and Symbol are primitive data types.
+**Non-Primitive Data Types: **They can hold multiple values. Objects are non-primitive data types.
 ```javascript
 // two symbols with the same description
 const value1 = Symbol('hello');
@@ -25,4 +29,6 @@ const value2 = Symbol('hello');
 console.log(value1 === value2); // false
 ```
 ![image](https://github.com/user-attachments/assets/2777c9e5-9e80-42c4-aeec-68c228ec110b)
+## Undefined data type in JavaScript ?
+## Null in JavaScript
 
