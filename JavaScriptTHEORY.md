@@ -33,5 +33,15 @@
  It is called undefined if you declare a **variable but don't assign the value.** The variable has no value, but it will have later on. 
  ## 4) Null in JavaScript ?
  if a variable can **not contain a value** other than null, it is called a null datatype.
-
+## 5) Difference between var, let and const keywords in JavaScript
+ **Function scope:** Variables that are declared inside a function are called local variables and in the function scope. Local variables are accessible 
+                     anywhere inside the function. 
+ **Block scope:** Variable that is declared inside a specific block & can't be accessed outside of that block.
  
+**JavaScript var keyword:** The var is the oldest keyword to declare a variable in JavaScript. 
+**Scope: Global scoped or function scoped.** The scope of the var keyword is the global or function scope. It means variables defined outside the function 
+  can be accessed globally, and variables defined inside a particular function can be accessed within the function.  
+**JavaScript let keyword:** The let keyword is an improved version of the var keyword. 
+**Scope:** block scoped: The scope of a let variable is only block scoped. It can’t be accessible outside the particular block ({block}). Let’s see the below example.
+**const keyword in JavaScript:** The const keyword has all the properties that are the same as the let keyword, except the user cannot update it.
+**Scope:** block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot update the const variable once it is declared
