@@ -30,4 +30,4 @@ console.log(value1 === value2); // false
 ## Undefined data type in JavaScript ?
    It is called undefined if you declare a **variable but don't assign the value**. The variable has no value, but it will have later on.
 ## Null in JavaScript
- if a variable can** not contain a value ** other than null, it is called a null datatype.
+ if a variable can **not contain a value** other than null, it is called a null datatype.
