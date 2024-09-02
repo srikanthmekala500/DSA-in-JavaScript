@@ -18,11 +18,11 @@ Here's a brief overview of the main data types in JavaScript:
    The BigInt data type in javascript is used to represent numeric values that exceed the largest safe integer limit. It is basically used to represent 
      numbers greater than 
 The **JavaScript ES6 introduced a new primitive data type called Symbol**. Symbols are immutable (cannot be changed) and are unique. For example,
-![image](https://github.com/user-attachments/assets/2777c9e5-9e80-42c4-aeec-68c228ec110b)
-
 ```javascript
 // two symbols with the same description
 const value1 = Symbol('hello');
 const value2 = Symbol('hello');
 console.log(value1 === value2); // false
+![image](https://github.com/user-attachments/assets/2777c9e5-9e80-42c4-aeec-68c228ec110b)
+
 ```
