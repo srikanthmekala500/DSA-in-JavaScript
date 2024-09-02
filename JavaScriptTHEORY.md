@@ -8,14 +8,14 @@ JavaScript is a **scripting language and is used for client-side and server-side
 ![image](https://github.com/user-attachments/assets/2777c9e5-9e80-42c4-aeec-68c228ec110b)
 
 Here's a brief overview of the main data types in JavaScript:
-- Number: This data type is used to represent numerical values. Numbers can be integers (whole numbers) or floating-point numbers (decimal numbers).
-- String: This data type is used to represent textual data. Strings are sequences of characters enclosed in quotes (either single or double).
-- Boolean: This data type is used to represent logical values. Boolean values can be either true or false.
-- Undefined: This data type represents a variable that has not been assigned a value.
-- Null: This data type represents a deliberate absence of any object value.
-- Object: This data type represents complex data structures, including arrays, functions, and objects.
-- Symbol: This data type represents unique values that can be used as object keys.
--  BigInt Type
+- **Number**: This data type is used to represent numerical values. Numbers can be integers (whole numbers) or floating-point numbers (decimal numbers).
+- **String**: This data type is used to represent textual data. Strings are sequences of characters enclosed in quotes (either single or double).
+- **Boolean**: This data type is used to represent logical values. Boolean values can be either true or false.
+- **Undefined**: This data type represents a variable that has not been assigned a value.
+- **Null**: This data type represents a deliberate absence of any object value.
+- **Object**: This data type represents complex data structures, including arrays, functions, and objects.
+- **Symbol**: This data type represents unique values that can be used as object keys.
+-  **BigInt** Type
    The BigInt data type in javascript is used to represent numeric values that exceed the largest safe integer limit. It is basically used to represent 
      numbers greater than 
 The **JavaScript ES6 introduced a new primitive data type called Symbol**. Symbols are immutable (cannot be changed) and are unique. For example,
