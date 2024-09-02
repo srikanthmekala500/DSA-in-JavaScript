@@ -50,3 +50,5 @@
 **const keyword in JavaScript:** The const keyword has all the properties that are the same as the let keyword, except the user cannot update it.
 
 **Scope:** block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot update the const variable once it is declared
+![image](https://github.com/user-attachments/assets/ba80573b-1a8b-4c2d-8e4f-63d26d62c17d)
+
