@@ -30,10 +30,8 @@
     ```
     ![image](https://github.com/user-attachments/assets/2777c9e5-9e80-42c4-aeec-68c228ec110b)
  ## 3) Undefined data type in JavaScript ?
- 
-     It is called undefined if you declare a variable but don't assign the value. The variable has no value, but it will have later on. 
+ It is called undefined if you declare a variable but don't assign the value. The variable has no value, but it will have later on. 
  ## 4) Null in JavaScript ?
- 
-    if a variable can not contain a value other than null, it is called a null datatype.
+ if a variable can not contain a value other than null, it is called a null datatype.
 
  
