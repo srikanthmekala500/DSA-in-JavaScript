@@ -55,17 +55,17 @@
 ```javascript
 x = 8
 console.log(x)
-let x
+let x //ReferenceError: x is not defined
 ```
 **Reassign** 
 ```javascript
 const v1 = 30
 v1 = 30
-console.log(v1)
+console.log(v1) //30
  ```
 **Redeclaration**  
 ```javascript
 let v1 = 1
 let v1 = 30
-console.log(v1)
+console.log(v1) //SyntaxError: Identifier 'v1' has already been declared
 ``` 
