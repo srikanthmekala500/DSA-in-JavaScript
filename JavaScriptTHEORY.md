@@ -194,14 +194,15 @@ Var y = "3";
 x - y    //Returns 0 since the variable y (string type) is converted to a number type
 ```
 **Logical operators:**
-Logical operators in javascript, unlike operators in other programming languages, do not return true or false. 
+- Logical operators in javascript, unlike operators in other programming languages, do not return true or false. 
 They always return one of the operands.
 
-OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise,
+**OR ( | | ) operator -** If the first value is truthy, then the first value is returned. Otherwise,
 always the second value gets returned.
 
-AND ( && ) operator - If both the values are truthy, always the second value is returned.
-If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
+**AND( && ) operator -** If both the values are truthy, always the second value is returned.
+-If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
+
 ```javascript
 var x = 220;
 var y = "Hello";
