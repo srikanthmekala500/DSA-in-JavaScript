@@ -51,4 +51,21 @@
 
 **Scope:** block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot update the const variable once it is declared
 ![image](https://github.com/user-attachments/assets/ba80573b-1a8b-4c2d-8e4f-63d26d62c17d)
-
+**Hoisting**
+```javascript
+x = 8
+console.log(x)
+let x
+```
+**Reassign** 
+```javascript
+const v1 = 30
+v1 = 30
+console.log(v1)
+ ```
+**Redeclaration**  
+```javascript
+let v1 = 1
+let v1 = 30
+console.log(v1)
+``` 
