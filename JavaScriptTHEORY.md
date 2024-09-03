@@ -142,3 +142,23 @@ const i = function () {
 
 console.log(typeof i); // "function"
 ```
+## What is an Unary operator?
+The unary(+) operator is used to convert a variable to a number. If the variable cannot be converted, it will still become a number but with the value NaN.
+
+```javascript
+Example:
+
+var x = "100";
+var y = +x;
+console.log(typeof x, typeof y); // string, number
+
+var a = "Hello";
+var b = +a;
+console.log(typeof a, typeof b, b); // string, number, NaN
+```
+## What are undeclared and undefined variables?
+****Undeclared** variables are those that do not exist in a program and are not declared**. 
+If the program tries to read the value of an undeclared variable, then a **runtime error is encountered**.
+
+**Undefined variables are those that are declared in the program but have not been given any value.** 
+If the program tries to read the value of an undefined variable, an undefined value is returned.
