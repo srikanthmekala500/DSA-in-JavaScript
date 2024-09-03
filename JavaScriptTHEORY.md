@@ -69,3 +69,10 @@ let v1 = 1
 let v1 = 30
 console.log(v1) //SyntaxError: Identifier 'v1' has already been declared
 ``` 
+## what is the different between the == and === ?
+The == operator compares the values of two operands and return true if they are equal ,while  performing type coercion  if necessary
+coercion means బలవంతం
+// consloe.log(2=="2") //true
+The ===operator compares the values of two operands but it dose not perform type coercion .it only returns true  if the values are of  the same data type and have the same value 
+//consloe.log(2 ==="2") //fasle 
+//consloe.log(2 ===2) //true 
