@@ -99,3 +99,46 @@ ECMAScript (/ˈɛkməskrɪpt/; ES) is a JavaScript standard intended to ensure t
 - Modules
 - Ternary Operator
 - Spread Operator
+## What is NaN property in JavaScript?
+NaN property represents the “Not-a-Number” value. It indicates a value that is not a legal number.
+
+typeof of NaN will return a Number.
+
+To check if a value is NaN, we use the isNaN() function,
+## What is typeof operator?
+In JavaScript, the typeof operator returns the data type of its operand in the form of a string. The operand can be any object, function, or variable.
+```javascript
+
+//Example:
+console.log(typeof undeclaredVariable); // "undefined"
+
+let a;
+console.log(typeof a); // "undefined"
+
+const b = "Hello World";
+console.log(typeof b); // "string"
+
+const c = 42;
+console.log(typeof c); // "number"
+
+const d = 3.1415;
+console.log(typeof d); // "number"
+
+const e = true;
+console.log(typeof e); // "boolean"
+
+const f = null;
+console.log(typeof f); // "object"
+
+const g = undefined;
+console.log(typeof g); // "undefined"
+
+const h = { b: "c" };
+console.log(typeof h); // "object"
+
+const i = function () {
+  return 10;
+};
+
+console.log(typeof i); // "function"
+```
