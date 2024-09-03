@@ -81,3 +81,21 @@ The ===operator compares the values of two operands but it dose not perform type
 //consloe.log(2 ==="2") //fasle 
 
 //consloe.log(2 ===2) //true 
+## what is the ECMAScript  ? What is ES6?
+JavaScript ES6 (also known as ECMAScript 2015 or ECMAScript 6) is the newer version of JavaScript that was introduced in 2015.
+
+ECMAScript is the standard that **JavaScript programming language uses**. ECMAScript provides the specification on how **JavaScript programming language should work**
+
+ECMAScript (/ˈɛkməskrɪpt/; ES) is a JavaScript standard intended to ensure the interoperability of web pages across different web browsers. It is standardized by Ecma International in the document ECMA-262. ECMAScript. Paradigm. Multi-paradigm: prototype-based, functional, imperative.
+
+## Why Should I Learn ES6?
+**React uses ES6, and you should be familiar with some of the new features like**:
+
+- Classes
+- Arrow Functions
+- Variables (let, const, var)
+- Array Methods like .map()
+- Destructuring
+- Modules
+- Ternary Operator
+- Spread Operator
