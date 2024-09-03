@@ -224,3 +224,11 @@ if( x || z ){
   console.log("Code runs");  // This block runs because x || y returns 220(Truthy)
 }
 ```
+## Is javascript a statically typed or a dynamically typed language?
+JavaScript is a dynamically typed language, which means that data types of variables are determined by the value they hold at runtime and can change throughout the program as we assign different values to them.
+
+**Dynamically typed language:** These are the **languages that do not require any pre-defined data type for any variable as it is interpreted at runtime by the machine itself.** In these languages, interpreters assign the data type to a variable at runtime depending on its value
+**static Typed Languages**
+![image](https://github.com/user-attachments/assets/bd17d98f-8125-4797-b674-b1f7487d5af5)
+**Dynamic Typed Language**
+![image](https://github.com/user-attachments/assets/49869087-ed52-4f7e-b042-f77302144452)
