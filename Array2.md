@@ -120,6 +120,7 @@ const myTotalAmount = orders.myReduce(function (accumulator, order) {
 
 console.log(totalAmount); // 5294
 ```
+![image](https://github.com/user-attachments/assets/a1436584-ce59-4fd1-965e-956d294bb31f)
 
 ## Question 1: Find the longest word length
 ```javascript
