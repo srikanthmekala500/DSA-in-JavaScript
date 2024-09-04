@@ -173,25 +173,26 @@ console.log(longestWordLength); // Output: 11
 
     // Fourth Iteration:
     // Word: 'dragonfruit'
-
     // currentLength: word.length = 11
-
     // maxLength: 6 (from the previous iteration)
-
     // Comparison: currentLength > maxLength → 11 > 6 → true
-
     // Since the comparison is true, maxLength is updated to 11.
-
     // Fifth Iteration:
     // Word: 'elderberry'
-
     // currentLength: word.length = 10
-
     // maxLength: 11 (from the previous iteration)
-
     // Comparison: currentLength > maxLength → 10 > 11 → false
-
     // Since the comparison is false, maxLength remains 11.
+//Breakdown:
+// Condition:
+
+// currentLength > maxLength: This checks if the length of the current word (currentLength) is greater than the current maximum length (maxLength).
+// True Case:
+
+// currentLength: If the condition (currentLength > maxLength) is true, the ternary operator returns currentLength, meaning the length of the current word becomes the new maxLength.
+// False Case:
+
+// maxLength: If the condition is false (meaning the current word's length is not greater than the current maxLength), the ternary operator returns maxLength, leaving it unchanged.
 ```
 ## Question 2: Find the longest word
 ```javascript
