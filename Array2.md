@@ -221,6 +221,8 @@ s
 ````
  
 ## Question 3: Calculate the factorial of the largest number in the array
+![image](https://github.com/user-attachments/assets/6ba925dc-3d80-4299-9d77-e4d3d7034146)
+
 ```javascript
 const numbers = [5, 2, 4, 3, 8];
 
