@@ -346,6 +346,8 @@ const sortedSquares = (A) => {
 console.log(sortedSquares([-4,-1,0,3,10]))
 ````
 ## Question 9 : Find Pivot Index
+![image](https://github.com/user-attachments/assets/f4380106-a4b3-47b5-bcbe-6c307ce01076)
+
 ```javascript
         // The pivot index can be defined as the index where the sum of the numbers to the left of the index is equal to the sum of the numbers to the right of the index.
           // Example 1:
