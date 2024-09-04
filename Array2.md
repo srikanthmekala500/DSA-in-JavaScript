@@ -138,6 +138,60 @@ const longestWordLength = words.reduce((maxLength, word) => {
 }, 0);
 
 console.log(longestWordLength); // Output: 11
+    // Step-by-Step Execution:
+
+    // First Iteration:
+
+    // word = 'apple'
+    // currentLength = word.length = 5
+    // maxLength = 0 (initial value)
+    // Comparison: currentLength > maxLength → 5 > 0 → true
+    // maxLength is updated to 5.
+    // Second Iteration:
+
+    // word = 'banana'
+    // currentLength = word.length = 6
+    // maxLength = 5
+    // Comparison: currentLength > maxLength → 6 > 5 → true
+    // maxLength is updated to 6.
+    // Third Iteration:
+
+    // word = 'cherry'
+    // currentLength = word.length = 6
+    // maxLength = 6
+    // Comparison: currentLength > maxLength → 6 > 6
+    // Third Iteration:
+    // Word: 'cherry'
+
+    // currentLength: word.length = 6
+
+    // maxLength: 6 (from the previous iteration)
+
+    // Comparison: currentLength > maxLength → 6 > 6 → false
+
+    // Since the comparison is false, maxLength remains 6.
+
+    // Fourth Iteration:
+    // Word: 'dragonfruit'
+
+    // currentLength: word.length = 11
+
+    // maxLength: 6 (from the previous iteration)
+
+    // Comparison: currentLength > maxLength → 11 > 6 → true
+
+    // Since the comparison is true, maxLength is updated to 11.
+
+    // Fifth Iteration:
+    // Word: 'elderberry'
+
+    // currentLength: word.length = 10
+
+    // maxLength: 11 (from the previous iteration)
+
+    // Comparison: currentLength > maxLength → 10 > 11 → false
+
+    // Since the comparison is false, maxLength remains 11.
 ```
 ## Question 2: Find the longest word
 ```javascript
