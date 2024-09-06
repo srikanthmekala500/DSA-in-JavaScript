@@ -125,6 +125,20 @@ let missingNumber = (nums) => nums.length*(nums.length+1)/2 - nums.reduce((acc, 
 
 console.log(missingNumber([3,0,1])); // 2
 console.log(missingNumber([9,6,4,2,3,5,7,0,1])); // 8
+
+var missingNumber = function(nums) {
+    let map = new Set(nums);
+
+    let expectedLength = nums.length + 1
+
+    for (let number = 0; number < expectedLength; number++) {
+        if (!map.has(number)) {
+            return number
+        }
+    }
+
+    return -1
+};
 ```
 ## Multiply Strings
 
