@@ -40,6 +40,18 @@ function sumOfDigits(num){
 }
 
 console.log(sumOfDigits(1287)); // 18
+// The expression 1287 % 10 uses the modulus operator % to
+//  find the remainder when 1287 is divided by 10.
+
+// // Calculation
+// // When you divide 1287 by 10, you get 128 with a remainder of 7.
+// // Therefore, 1287 % 10 equals 7.
+// // Explanation
+// // The modulus operator % returns the remainder of a division operation.
+// // In this case, 1287 % 10 gives the last digit of the number 1287,
+//  which is 7.
+// // This is useful in the sumOfDigits function to extract each digit of
+//  the number one by one. If you have any more questions or need further clarification, feel free to ask!
 ```
 ## Question 3: Count the number of digits of a number
 ```javascript
