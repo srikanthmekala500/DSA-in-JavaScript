@@ -25,6 +25,8 @@
 ======================================================================================================================================================================
  
 ## Longest Common Prefix in javacript 
+![image](https://github.com/user-attachments/assets/e831cdc3-5f44-4f50-b95e-3d6ca403b0ff)
+
 ```JavaScript
 function longestCommonPrefix(strs) {
     if (strs.length === 0) return "";
