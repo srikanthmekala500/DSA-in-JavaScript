@@ -23,7 +23,17 @@
 23) Reverse Vowels of a String
 24) Rotate String
 ======================================================================================================================================================================
- 
+
+
+Why This Happens
+Shortening the Prefix: The prefix is shortened character by character from the end until it matches the start of the current string strs[i].
+Matching the Start: The goal is to find the longest common prefix that all strings in the array share from the beginning.
+In this case:
+
+"flow" is the common prefix for "flower" and "flow".
+"fl" is the common prefix for "flow" and "flight".
+Thus, the prefix becomes "fl" after the second iteration because "fl" is the longest common prefix for all strings in the array.
+
 ## Longest Common Prefix in javacript 
 ![image](https://github.com/user-attachments/assets/e831cdc3-5f44-4f50-b95e-3d6ca403b0ff)
 ![image](https://github.com/user-attachments/assets/4dd816b2-8abb-4ac7-ad69-98215e96eb92)
