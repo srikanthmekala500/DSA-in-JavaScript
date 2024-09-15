@@ -368,30 +368,33 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
 - eval function to create a variable
 
 
-- Duplicate property names of an object:
-  
+- **Duplicate property names of an object:**
+  ```javascript
     "use strict";
     var myObj = { myProp: 100, myProp:"test strict mode" }; // error
-- Duplicate parameters:
-  
+  ```
+- **Duplicate parameters:**
+  ```javascript  
     "use strict";
     function Sum(val, val){return val + val }; // error
-- Assign values to read-only property
-  
+  ```
+- **Assign values to read-only property**
+    ```javascript
       "use strict";
     
     var arr = [1 ,2 ,3 ,4, 5];
     arr.length = 10; // error
-  
- - Use of reserved keyword as name:
-   
+  ```
+ - **Use of reserved keyword as name**:
+     ```javascript
       "use strict";
     
     var for = 1; // error
     var if = 1; // error
-   
- - Use of undefined variables
-   
+  ``` 
+- ****Use of undefined variables**** 
+     ```javascript
     "use strict";
     
     x = 1; // error
+```
