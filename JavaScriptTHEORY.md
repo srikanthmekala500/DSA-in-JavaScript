@@ -423,11 +423,10 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
     ![image](https://github.com/user-attachments/assets/8d6eb936-31a2-4dcb-a7b5-c1081cf759f1)
 
 **Difference:**
-    - Slice	             
+    - Slice	 
+    
         1) Doesn't modify the original array(immutable)	 
-        
         2) Returns the subset of original array
-         
         3) Used to pick the elements from array	 
         
  - Splice
