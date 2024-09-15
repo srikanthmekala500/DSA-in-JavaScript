@@ -366,7 +366,8 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
 - Octal numeric literals
 - with statement
 - eval function to create a variable
-=========
+
+
 - Duplicate property names of an object:
   
     "use strict";
