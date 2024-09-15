@@ -594,9 +594,10 @@ while(i <= 5);
 - The while loop differs from the do-while loop in one important way — with a while loop, **the condition to be evaluated is tested at the beginning of each loop iteration**, so if the conditional expression evaluates to false, the loop will never be executed.
 
 - With a do-while loop, on the other hand, **the loop will always be executed once even if the conditional expression evaluates to false**, because unlike the while loop, the condition is evaluated at the end of the loop iteration rather than the beginning.
+  
 **The for Loop**
   
-  The for loop repeats a block of code as long as a certain condition is met. It is typically used to execute a block of code for certain number of times. Its syntax is:
+- The for loop repeats a block of code as long as a certain condition is met. It is typically used to execute a block of code for certain number of times. Its syntax is:
 ```javascript
    for(initialization; condition; increment) {
     // Code to be executed
@@ -610,3 +611,32 @@ while(i <= 5);
 - **condition** — it is evaluated at the beginning of each iteration. If it evaluates to true, the loop statements execute. If it evaluates to false, the execution of the loop ends.
 
 - **increment**— it updates the loop counter with a new value each time the loop runs.
+```javascript
+for(var i=1; i<=5; i++) {
+    document.write("<p>The number is " + i + "</p>");
+}
+```
+**The for...in Loop**
+- The for-in loop is a special type of a **loop that iterates over the properties of an object**, or the elements of an array.
+  
+- **Note:** The for-in loop should not be used to iterate over an array where the index order is important. You should better use a for loop with a numeric index.
+
+**The for...of Loop**
+
+- ES6 introduces a new for-of **loop which allows us to iterate over arrays or other iterable objects (e.g. strings) very easily**. Also, the code inside the loop is executed for each element of the iterable object.
+```javascript
+
+   // Iterating over array
+let letters = ["a", "b", "c", "d", "e", "f"];
+
+for(let letter of letters) {
+    console.log(letter); // a,b,c,d,e,f
+}
+
+// Iterating over string
+let greet = "Hello World!";
+
+for(let character of greet) {
+    console.log(character); // H,e,l,l,o, ,W,o,r,l,d,!
+}
+```
