@@ -240,3 +240,7 @@ JavaScript is a dynamically typed language, which means that data types of varia
 ## Explain passed by value and passed by reference.
  - In JavaScript, primitive data types are passed by value 
 - and non-primitive data types are passed by reference.
+## What is Hoisting ? 
+-    Hoisting is a JavaScript mechanism where **variables,function declarations and classes are moved to the top of their scope before code execution**. Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of variable hoisting,
+    
+-    However, JavaScript only **hoists declarations, not initializations. That means if a variable is declared and initialized after using it**,
