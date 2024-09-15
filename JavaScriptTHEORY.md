@@ -683,6 +683,7 @@ registration "123465"
 name "Sandeep"
 
 age 33
+*/
 //////////////////
 const student = {
     registration: "123456",
