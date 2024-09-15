@@ -247,5 +247,39 @@ JavaScript is a dynamically typed language, which means that data types of varia
 - Types of Hoisting
     **Variable Hoisting** : Only variable declared with **var** is hoisted (not let and const)
     **Function Hoisting** : Only Simple functions is hoisted (not function expressions)
+- Variable Hoisting
+    Similarly, the variable declarations are also hoisted to the top of their current scope automatically.
+    This means that if the variable is declared inside a function block, it will be moved at the top of the function, but if it is declared outside any function it will be moved to top of the script and become globally available. Take a look at the following example, to see how this works:
+  ```javascript
+      str = "Hello World!";
+    alert(str); // Outputs: Hello World!
+    var str;
+  ```
+  However, JavaScript **only hoists declarations, not initializations**. **That means if a variable is declared and initialized after using it**, the value will be **undefined**. For example:
+    ```javascript
+      alert(str); // Outputs: undefined
+    var str;
+    str = "Hello World!"
+  ```
+- Function Hoisting:
+   **function declaration is hosited to the top of the scope.**
+   ```javascript
+    myFunction();
 
+function myFunction(){
+console.log("i am learning hoisting");
+}
+//"i am learning hoisting"
+  ```
+- Now we will **store function in **variable** then It will treat as variable.
 
+ ```javascript
+  myFunction();
+
+var myFunction= function(){
+console.log("i am learning hoisting");
+}
+```
+This myFunction is considered as a variable and so only declaration is hoisted and as we are trying to execute the function, we are getting myFunction is not a function.
+If we change this to let, we get the same result as variables,
+“cannot access myFunction before initialization.”
