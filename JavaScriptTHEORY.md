@@ -323,11 +323,14 @@ If we change this to let, we get the same result as variables,
     
   -  **document.cookie =
       "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";**
+     
     Note: You should define the cookie path option to ensure that you delete the right cookie. Some browsers doesn't allow to delete a cookie unless you specify a path parameter.
+    
 ## What is the main difference between localStorage and sessionStorage ?
   -  LocalStorage is the same as SessionStorage but it **persists the data** even when the **browser is closed and reopened** **(i.e it has **no expiration time**) **
     
  - whereas in **sessionStorage data gets cleared when the page session ends**.
+ - 
 ## How do you access web storage ?
 - The Window object implements the **WindowLocalStorage and WindowSessionStorage** objects which has **localStorage(window.localStorage) and sessionStorage(window.sessionStorage)** properties respectively. 
 - These properties create an instance of the Storage object, through which data items can be set, retrieved and removed for a specific domain and storage type (session or local). For example, you can read and write on local storage objects as below
