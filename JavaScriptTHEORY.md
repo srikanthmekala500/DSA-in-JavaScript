@@ -730,3 +730,84 @@ console.log("i: " + i); // 2
 console.log("j: " + j); // 4
 console.log("k: " + k); // 6
 ```
+## When to use reduce(), map(), foreach() and filter() in JavaScript?
+- **foreach()**
+  -  **The forEach() method is used to loop through each element of an array or object. The forEach() method takes a callback function as an argument. The callback function is invoked for each element of the array or object.**
+
+- The forEach() method is similar to the for loop, but it does not have a return value
+```javascript
+  let numbers = [10, 20, 30];
+
+numbers.forEach(function (number, index) {
+  console.log(number + " comes at " + index);
+});
+
+// Output
+10 comes at 0
+20 comes at 1
+30 comes at 2
+```
+- **map()**
+- **The map() method is used to loop through each element of an array or object. The map() method takes a callback function as an argument. The callback function is invoked for each element of the array or object.**
+
+- The map() method is similar to the forEach() method, but it returns a new array.
+
+- map() like filter() & forEach() takes a callback and run it against every element on the array but **whats makes it unique is it generate a new array based on your existing array.**
+```javascript
+  const newArray = originalArray.map((currentValue, index, array) => {
+  // return the new value of the current element
+});
+```
+
+- **Like filter(), map() also returns an array. The provided callback to map modifies the array elements and save them into the new array upon completion that array get returned as the mapped array**
+```javascript
+const newArray = originalArray.filter((currentValue, index, array) => {
+  // return true if the current element should be included in the new array
+});
+////
+let numbers = [10, 20, 30];
+
+let mapped = numbers.map(function (number) {
+  return number * 10;
+});
+
+console.log(mapped);
+
+// Output
+[100, 200, 300]
+```
+- **reduce()**
+- To use the reduce function, you must provide a **callback function that takes two arguments**:
+-  the **accumulator** and the current value. The accumulator is the result of the **previous call to the callback function** and
+-  the **current value** is the value of the current element in the array.
+-   The callback function should return a new value that will be used as the accumulator in the next call to the callback function.
+-   **initial value** .
+```javascript
+const result = originalArray.reduce((accumulator, currentValue, index, array) => {
+  // return the new value of the accumulator
+}, initialValue);
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+
+console.log(sum); // 15
+///////////////
+const words = ['apple', 'banana', 'apple', 'cherry'];
+
+const frequency = words.reduce((acc, curr) => {
+  acc[curr] = (acc[curr] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(frequency); // { apple: 2, banana: 1, cherry: 1 }
+//////////
+const arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+const flattened = arrays.reduce((acc, curr) => acc.concat(curr), []);
+
+console.log(flattened); // [1, 2, 3, 4, 5, 6, 7, 8, 9
+
+```
+![image](https://github.com/user-attachments/assets/c30d2c5c-f7a9-43e1-bc5f-fc14d0cd7cd9)
