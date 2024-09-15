@@ -281,6 +281,8 @@ var myFunction= function(){
 console.log("i am learning hoisting");
 }
 ```
-This myFunction is considered as a variable and so only declaration is hoisted and as we are trying to execute the function, we are getting myFunction is not a function.
+![image](https://github.com/user-attachments/assets/b6b2680e-04e4-46ae-8869-a5721558a9b1)
+
+**This myFunction is considered as a variable and so only declaration is hoisted and as we are trying to execute the function, we are getting myFunction is not a function.**
 If we change this to let, we get the same result as variables,
 “cannot access myFunction before initialization.”
