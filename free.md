@@ -146,3 +146,29 @@ let commonChars = function(words) {
 let words = ["bella", "label", "roller"];
 console.log(`Common characters: ${commonChars(words)}`); // Output: ["e", "l", "l"]
 ```
+## Sort Characters By Frequency
+```javascript
+function frequencySort(s) {
+    // Step 1: Count frequency of each character
+    let charCount = new Map();
+    for (let char of s) {
+        charCount.set(char, (charCount.get(char) || 0) + 1);
+    }
+    
+    // Step 2: Sort characters based on frequency (descending)
+    let sortedChars = Array.from(charCount.entries()).sort((a, b) => b[1] - a[1]);
+    
+    // Step 3: Construct sorted string
+    let result = '';
+    for (let [char, count] of sortedChars) {
+        result += char.repeat(count);
+    }
+    
+    return result;
+}
+
+// Example usage:
+let s = "tree";
+console.log(`Sorted characters by frequency: ${frequencySort(s)}`);
+// Output: Sorted characters by frequency: "eert" or "eetr"
+```
