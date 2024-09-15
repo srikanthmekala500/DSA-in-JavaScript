@@ -304,14 +304,51 @@ If we change this to let, we get the same result as variables,
  -  Web storage is used when the server doesn't need to know the data stored
 ## Here are some differences between cookies and web storage: 
 -    **Data size:** Cookies are good for small amounts of data. Web storage is better for larger amounts of data.
--    
-    **Data persistence:** Cookies expire. Web storage data is available any time the user opens the website.
-     
-     **Data access:** Cookies are primarily for reading server-side. Web storage can only be read by the client-side.
-     
-    **Security:** Web storage is more secure.
+-  **Data persistence:** Cookies expire. Web storage data is available any time the user opens the website.
+-   **Data access:** Cookies are primarily for reading server-side. Web storage can only be read by the client-side.
+-  **Security:** Web storage is more secure.
+-  **Website performance:** Web storage doesn't affect website performance
+## What is a post message
+    Post message is a method that **enables cross-origin communication between Window objects**.(i.e, between a page and a pop-up that it spawned, or between a page and an iframe embedded within it). Generally, scripts on different pages are allowed to access each other if and only if the pages follow same-origin policy(i.e, pages share the same protocol, port number, and host).
+## What is a Cookie ?
+- A cookie is a **piece of data that is stored on your computer to be accessed by your browser**. Cookies are saved as **key/value pairs**. For example, you can create a cookie named username as below,
+- document.cookie = "username=John";
+## Why do you need a Cookie ?
+    - Cookies are used to remember information about the user profile(such as username). It basically involves two steps,
+    - When a user visits a web page, the user profile can be stored in a cookie.
+    - Next time the user visits the page, the cookie remembers the user profile.
+
+## How do you delete a cookie ?
+    You can delete a cookie by setting the expiry date as a passed date. You don't need to specify a cookie value in this case. For example, you can delete a username cookie in the current page as below.
     
-   **Website performance:** Web storage doesn't affect website performance
+  -  **document.cookie =
+      "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";**
+    Note: You should define the cookie path option to ensure that you delete the right cookie. Some browsers doesn't allow to delete a cookie unless you specify a path parameter.
+## What is the main difference between localStorage and sessionStorage ?
+  -  LocalStorage is the same as SessionStorage but it **persists the data** even when the **browser is closed and reopened** **(i.e it has **no expiration time**) **
+    
+ - whereas in **sessionStorage data gets cleared when the page session ends**.
+## How do you access web storage ?
+- The Window object implements the **WindowLocalStorage and WindowSessionStorage** objects which has **localStorage(window.localStorage) and sessionStorage(window.sessionStorage)** properties respectively. 
+- These properties create an instance of the Storage object, through which data items can be set, retrieved and removed for a specific domain and storage type (session or local). For example, you can read and write on local storage objects as below
 
+        localStorage.setItem("logo", document.getElementById("logo").value);
+        localStorage.getItem("logo")
+-**Storage event:**
+
+Triggers on **setItem, removeItem, clear calls**.
+Contains all the data about the operation (key/oldValue/newValue), the document url and the storage object storageArea.
+Triggers on all window objects that have access to the storage except the one that generated it (within a tab for sessionStorage, globally for localStorage).
 ![image](https://github.com/user-attachments/assets/20e6238b-be08-486c-b17d-d1bda33f290e)
-
+## What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
+In JavaScript, **'use strict**'; states that the code should be executed in 'strict mode'. This makes it easier to write good and secure JS code. For example,
+- **The strict mode in JavaScript does not allow following things**:
+- Use of undefined variables
+- Use of reserved keywords as variable or function name
+- Duplicate properties of an object
+- Duplicate parameters of function
+- Assign values to read-only properties
+- Modifying arguments object
+- Octal numeric literals
+- with statement
+- eval function to create a variable
