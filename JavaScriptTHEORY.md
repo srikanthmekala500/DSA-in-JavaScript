@@ -332,17 +332,23 @@ If we change this to let, we get the same result as variables,
  - whereas in **sessionStorage data gets cleared when the page session ends**.
  - 
 ## How do you access web storage ?
-- The Window object implements the **WindowLocalStorage and WindowSessionStorage** objects which has **localStorage(window.localStorage) and sessionStorage(window.sessionStorage)** properties respectively. 
+
+- The Window object implements the **WindowLocalStorage and WindowSessionStorage** objects which has **localStorage(window.localStorage) and sessionStorage(window.sessionStorage)** properties respectively.
+- 
 - These properties create an instance of the Storage object, through which data items can be set, retrieved and removed for a specific domain and storage type (session or local). For example, you can read and write on local storage objects as below
 
         localStorage.setItem("logo", document.getElementById("logo").value);
         localStorage.getItem("logo")
+  
 -**Storage event:**
 
 Triggers on **setItem, removeItem, clear calls**.
+
 Contains all the data about the operation (key/oldValue/newValue), the document url and the storage object storageArea.
 Triggers on all window objects that have access to the storage except the one that generated it (within a tab for sessionStorage, globally for localStorage).
+
 ![image](https://github.com/user-attachments/assets/20e6238b-be08-486c-b17d-d1bda33f290e)
+
 ## What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
 In JavaScript, **'use strict**'; states that the code should be executed in 'strict mode'. This makes it easier to write good and secure JS code. For example,
 - **The strict mode in JavaScript does not allow following things**:
