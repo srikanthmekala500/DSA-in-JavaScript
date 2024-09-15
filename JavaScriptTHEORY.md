@@ -569,6 +569,7 @@ for (let key in employees) {
 - **for…of** — loops over iterable objects such as arrays, strings, etc.
   
 **The while Loop**
+
     - The while loop loops through a block of code as long as the specified condition evaluates to true. As soon as the condition fails, the loop is stopped. The generic syntax of the while loop is:
   ```javascript
     var i = 1;
@@ -593,3 +594,19 @@ while(i <= 5);
 - The while loop differs from the do-while loop in one important way — with a while loop, **the condition to be evaluated is tested at the beginning of each loop iteration**, so if the conditional expression evaluates to false, the loop will never be executed.
 
 - With a do-while loop, on the other hand, **the loop will always be executed once even if the conditional expression evaluates to false**, because unlike the while loop, the condition is evaluated at the end of the loop iteration rather than the beginning.
+**The for Loop**
+  
+  The for loop repeats a block of code as long as a certain condition is met. It is typically used to execute a block of code for certain number of times. Its syntax is:
+```javascript
+   for(initialization; condition; increment) {
+    // Code to be executed
+
+}
+```
+**The parameters of the for loop statement have following meanings:**
+
+- **initialization** — it is used to initialize the counter variables, and evaluated once unconditionally before the first execution of the body of the loop.
+
+- **condition** — it is evaluated at the beginning of each iteration. If it evaluates to true, the loop statements execute. If it evaluates to false, the execution of the loop ends.
+
+- **increment**— it updates the loop counter with a new value each time the loop runs.
