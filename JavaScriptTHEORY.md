@@ -237,3 +237,6 @@ JavaScript is a dynamically typed language, which means that data types of varia
 
 - In dynamically typed language, the type of a variable is checked during **run-time** whereas...
 - In statically typed language, the type of a variable is checked during **compile-time.**
+## Explain passed by value and passed by reference.
+ - In JavaScript, primitive data types are passed by value 
+- and non-primitive data types are passed by reference.
