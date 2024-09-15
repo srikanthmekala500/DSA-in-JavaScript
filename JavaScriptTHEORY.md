@@ -338,7 +338,7 @@ If we change this to let, we get the same result as variables,
 ## How do you access web storage ?
 
 - The Window object implements the **WindowLocalStorage and WindowSessionStorage** objects which has **localStorage(window.localStorage) and sessionStorage(window.sessionStorage)** properties respectively.
-- 
+ 
 - These properties create an instance of the Storage object, through which data items can be set, retrieved and removed for a specific domain and storage type (session or local). For example, you can read and write on local storage objects as below
 
         localStorage.setItem("logo", document.getElementById("logo").value);
@@ -354,6 +354,7 @@ Triggers on all window objects that have access to the storage except the one th
 ![image](https://github.com/user-attachments/assets/20e6238b-be08-486c-b17d-d1bda33f290e)
 
 ## What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
+
 In JavaScript, **'use strict**'; states that the code should be executed in 'strict mode'. This makes it easier to write good and secure JS code. For example,
 - **The strict mode in JavaScript does not allow following things**:
 - Use of undefined variables
@@ -365,3 +366,25 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
 - Octal numeric literals
 - with statement
 - eval function to create a variable
+
+- Duplicate property names of an object:
+    "use strict";
+    var myObj = { myProp: 100, myProp:"test strict mode" }; // error
+- Duplicate parameters:
+    "use strict";
+    function Sum(val, val){return val + val }; // error
+- Assign values to read-only property
+      "use strict";
+    
+    var arr = [1 ,2 ,3 ,4, 5];
+    arr.length = 10; // error
+ - Use of reserved keyword as name:
+      "use strict";
+    
+    var for = 1; // error
+    var if = 1; // error
+ - Use of undefined variables
+ 
+    "use strict";
+    
+    x = 1; // error
