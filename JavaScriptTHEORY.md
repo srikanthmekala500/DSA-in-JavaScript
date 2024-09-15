@@ -391,10 +391,24 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
     
     var for = 1; // error
     var if = 1; // error
-  ``` 
+  ```
 - ****Use of undefined variables**** 
      ```javascript
     "use strict";
     
     x = 1; // error
+```
+ ## What is the difference between slice and splice?
+ -  slice():
+    The slice() method **returns a new array with a copied slice from the original array**.
+    The first optional argument is the beginning **index and the second optional argument is the ending index** (non-inclusive).
+ ```javascript
+      let languages = [ "JavaScript", "Python", "Java", "PHP" ];
+
+    languages.slice(1,3); // ["Python", "Java"]
+    languages.slice(2); // (from index 2 until the end of the array).
+    // ["Java", "PHP"]
+    
+    console.log(languages); // the original array is not mutated.
+    // [ "JavaScript", "Python", "Java", "PHP" ]
 ```
