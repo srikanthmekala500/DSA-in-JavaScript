@@ -486,3 +486,34 @@ str.includes('Node', 5) //true
         eval('x + y + 1'); // returns 31
         eval(z);           // returns 50
     ```
+## Explain arrays in JavaScript?
+JavaScript **array is an object that represents a collection of similar type of elements**. It can holds values (of any type) not particularly in named properties/keys, but rather in numerically indexed positions.
+
+**Array.length - 1 is the last element of a zero-indexed array.
+  A one element array has a length of 1, 
+  but that single element is found at index 0.**
+**Example 01: Creating an array**
+```javascript 
+  // array of numbers
+const numbers = [10, 20, 30, 40, 50];
+
+// using new keyword
+const numbers = new Array(10, 20, 30, 40, 50);
+
+// array of strings
+let fruits = ["Apple", "Orange", "Plum", "Mango"];
+```
+Example 02: Accessing array elements
+```javascript
+let fruits = ["Apple", "Orange", "Plum", "Mango"];
+
+fruits[0]; // Apple
+fruits[fruits.length - 1] // Mango
+
+// Iterate array elements
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+// Adding new array elements
+let fruits = ["Apple", "Orange", "Plum", "Mango"]; fruits.push("Grapes"); // Adds a new element (Grapes) to fruits
+```
