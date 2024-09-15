@@ -199,3 +199,52 @@ let s = "abcabcbb";
 console.log(`Length of the longest substring without repeating characters: ${lengthOfLongestSubstring(s)}`);
 // Output: Length of the longest substring without repeating characters: 3
 ```
+## Maximum Subarray
+```javascript
+var maxSubArray = function(nums) {
+    // Initialize current subarray sum and maximum sum
+    let currentSum = nums[0];
+    let maxSum = nums[0];
+
+    // Iterate through the array starting from the second element
+    for (let i = 1; i < nums.length; i++) {
+        // Update the current subarray sum
+        currentSum = Math.max(nums[i], currentSum + nums[i]);
+
+        // Update the maximum sum encountered so far
+        maxSum = Math.max(maxSum, currentSum);
+    }
+
+    return maxSum;
+};
+
+// Example usage:
+let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+let result = maxSubArray(nums);
+console.log(result); // Output: 6
+```
+## Maximum Product Subarray
+
+```javascript
+var maxProduct = function(nums) {
+    if (nums.length === 0) return 0;
+
+    let maxProduct = nums[0];
+    let minProduct = nums[0];
+    let result = nums[0];
+
+    for (let i = 1; i < nums.length; i++) {
+        let tempMax = maxProduct; // Store the previous maxProduct
+        maxProduct = Math.max(nums[i], nums[i] * maxProduct, nums[i] * minProduct);
+        minProduct = Math.min(nums[i], nums[i] * tempMax, nums[i] * minProduct);
+        result = Math.max(result, maxProduct);
+    }
+
+    return result;
+};
+
+// Example usage:
+let nums = [2, 3, -2, 4];
+let result = maxProduct(nums);
+console.log(result); // Output: 6
+```
