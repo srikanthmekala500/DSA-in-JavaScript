@@ -785,6 +785,13 @@ console.log(mapped);
 -  the **current value** is the value of the current element in the array.
 -   The callback function should return a new value that will be used as the accumulator in the next call to the callback function.
 -   **initial value** .
+  
+  ```javascript
+const result = originalArray.reduce((accumulator, currentValue, index, array) => {
+  // return the new value of the accumulator
+}, initialValue);
+`````
+
 ```javascript
 const result = originalArray.reduce((accumulator, currentValue, index, array) => {
   // return the new value of the accumulator
