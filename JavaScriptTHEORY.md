@@ -264,13 +264,14 @@ JavaScript is a dynamically typed language, which means that data types of varia
 - Function Hoisting:
    **function declaration is hosited to the top of the scope.**
    ```javascript
-    myFunction();
-
-function myFunction(){
-console.log("i am learning hoisting");
-}
-//"i am learning hoisting"
+            myFunction();
+        
+        function myFunction(){
+        console.log("i am learning hoisting");
+        }
+        //"i am learning hoisting"
   ```
+
 - Now we will **store function in **variable** then It will treat as variable.
 
  ```javascript
