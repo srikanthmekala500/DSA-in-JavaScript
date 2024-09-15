@@ -81,3 +81,28 @@ console.log(`Is ${number1} a happy number? ${isHappy(number1)}`); // Output: tru
 // Set(3) { 19, 82, 68 }
 // Set(4) { 19, 82, 68, 100 }
 ```
+## First Unique Character In A String
+```javascript
+function firstUniqueChar(s) {
+    // Step 1: Count frequencies of each character
+    let charCount = new Map();
+    for (let char of s) {
+        charCount.set(char, charCount.get(char) + 1 || 1);
+    }
+    
+    // Step 2: Find the first unique character
+    for (let i = 0; i < s.length; i++) {
+        if (charCount.get(s[i]) === 1) {
+            return i;
+        }
+    }
+    
+    // Step 3: Return -1 if no unique character found
+    return -1;
+}
+
+// Example usage:
+let s = "leetcode";
+console.log(`Index of the first unique character: ${firstUniqueChar(s)}`);
+ // Output: Index of the first unique character: 0
+```
