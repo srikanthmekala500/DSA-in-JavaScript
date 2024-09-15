@@ -712,3 +712,21 @@ age 33
 
 // marks key does not show up in the for...in loop result.
 ```
+## What are default values in destructuring assignment?
+- A variable can be assigned a default value **when the value unpacked from the array or object is undefined during destructuring assignment**. It helps to avoid setting default values separately for each assignment.
+- Array Destructuring:
+```javascript
+const [x = 2, y = 4, z = 6] = [10];
+
+console.log("x: " + x); // 10
+console.log("y: " + y); // 4
+console.log("z: " + z); // 6
+```
+- Object Destructuring:
+```javascript
+const { i = 2, j = 4, k = 6 } = { n: 10 };
+
+console.log("i: " + i); // 2
+console.log("j: " + j); // 4
+console.log("k: " + k); // 6
+```
