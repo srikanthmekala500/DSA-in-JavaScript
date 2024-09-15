@@ -127,3 +127,22 @@ let words = ["bella", "label", "roller"];
 console.log(`Common characters: ${commonChars(words)}`); // Output: ["e", "l", "l"]
 
 ```
+## Find Common Characters
+```javascript
+let commonChars = function(words) {
+    const array = []; // Initialize an empty array to store common characters
+    
+    for (const letter of words[0]) { // Iterate over each character in the first word
+        if (words.every(word => word.includes(letter))) { // Check if every word contains the current letter
+            array.push(letter); // Add the common letter to the array
+            words = words.map(word => word.replace(letter, '')); // Remove the letter from each word
+        }
+    }
+    
+    return array; // Return the array of common characters
+}
+
+// Example usage:
+let words = ["bella", "label", "roller"];
+console.log(`Common characters: ${commonChars(words)}`); // Output: ["e", "l", "l"]
+```
