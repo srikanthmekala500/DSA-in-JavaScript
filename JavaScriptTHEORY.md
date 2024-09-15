@@ -313,12 +313,15 @@ If we change this to let, we get the same result as variables,
 ## What is a Cookie ?
 - A cookie is a **piece of data that is stored on your computer to be accessed by your browser**. Cookies are saved as **key/value pairs**. For example, you can create a cookie named username as below,
 - document.cookie = "username=John";
+- 
 ## Why do you need a Cookie ?
+
     - Cookies are used to remember information about the user profile(such as username). It basically involves two steps,
     - When a user visits a web page, the user profile can be stored in a cookie.
     - Next time the user visits the page, the cookie remembers the user profile.
 
 ## How do you delete a cookie ?
+
     You can delete a cookie by setting the expiry date as a passed date. You don't need to specify a cookie value in this case. For example, you can delete a username cookie in the current page as below.
     
   -  **document.cookie =
@@ -327,6 +330,7 @@ If we change this to let, we get the same result as variables,
     Note: You should define the cookie path option to ensure that you delete the right cookie. Some browsers doesn't allow to delete a cookie unless you specify a path parameter.
     
 ## What is the main difference between localStorage and sessionStorage ?
+
   -  LocalStorage is the same as SessionStorage but it **persists the data** even when the **browser is closed and reopened** **(i.e it has **no expiration time**) **
     
  - whereas in **sessionStorage data gets cleared when the page session ends**.
