@@ -820,4 +820,20 @@ const flattened = arrays.reduce((acc, curr) => acc.concat(curr), []);
 console.log(flattened); // [1, 2, 3, 4, 5, 6, 7, 8, 9
 
 ```
-![image](https://github.com/user-attachments/assets/c30d2c5c-f7a9-43e1-bc5f-fc14d0cd7cd9)
+## What happens if you do not use rest parameter as a last argument?
+The rest parameter should be the last argument, as its job is to collect all the remaining arguments into an array.
+Example: If you define a function like below it does not make any sense and will throw an SyntaxError.
+```javascript
+function display(a, ...args, b) {
+  console.log(a);
+  for (let i = 0; i < args.length; i++) {
+    console.log(args[i]);
+  }
+  console.log(b);
+}
+
+display(10, 20, 30, 40, 50);
+
+// Output
+SyntaxError: Rest element must be last element
+```
