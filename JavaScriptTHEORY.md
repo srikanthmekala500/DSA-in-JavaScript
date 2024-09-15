@@ -558,13 +558,38 @@ for (let key in employees) {
    **Loops are used to execute the same block of code again and again, as long as a certain condition is met.** 
    -The basic idea behind a loop is to automate the repetitive tasks within a program to save the time and effort.
    
-  - **while**— loops through a block of code as long as the condition specified evaluates to true.
+- **while**— loops through a block of code as long as the condition specified evaluates to true.
 
-    -**do…while** — loops through a block of code once; then the condition is evaluated. If the condition is true, the statement is repeated as long as the specified condition is true.
+-**do…while** — loops through a block of code once; then the condition is evaluated. If the condition is true, the statement is repeated as long as the specified condition is true.
 
-    -**for** — loops through a block of code until the counter reaches a specified number.
+-**for** — loops through a block of code until the counter reaches a specified number.
 
-    -**for…in** — loops through the properties of an object.
+-**for…in** — loops through the properties of an object.
 
-    - **for…of** — loops over iterable objects such as arrays, strings, etc.
+- **for…of** — loops over iterable objects such as arrays, strings, etc.
   
+**The while Loop**
+    - The while loop loops through a block of code as long as the specified condition evaluates to true. As soon as the condition fails, the loop is stopped. The generic syntax of the while loop is:
+  ```javascript
+    var i = 1;
+while(i <= 5) {    
+    document.write("<p>The number is " + i + "</p>");
+    i++;
+}
+```
+**The do...while Loop**
+   -  The do-while loop is a variant of the while loop, which evaluates the condition at the end of each loop iteration. 
+   - With a**do-while** loop the **block of code executed once**, and then the **condition is evaluated**, if the condition is true, the statement is repeated as long as the specified condition evaluated to is true.
+```javascript
+var i = 1;
+do {
+    document.write("<p>The number is " + i + "</p>");
+    i++;
+}
+while(i <= 5);
+```
+**Difference Between while and do...while Loop**
+
+The while loop differs from the do-while loop in one important way — with a while loop, **the condition to be evaluated is tested at the beginning of each loop iteration**, so if the conditional expression evaluates to false, the loop will never be executed.
+
+With a do-while loop, on the other hand, **the loop will always be executed once even if the conditional expression evaluates to false**, because unlike the while loop, the condition is evaluated at the end of the loop iteration rather than the beginning.
