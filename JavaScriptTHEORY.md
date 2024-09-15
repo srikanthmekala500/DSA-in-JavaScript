@@ -315,14 +315,14 @@ If we change this to let, we get the same result as variables,
 - document.cookie = "username=John";
 - 
 ## Why do you need a Cookie ?
-
-    - Cookies are used to remember information about the user profile(such as username). It basically involves two steps,
-    - When a user visits a web page, the user profile can be stored in a cookie.
-    - Next time the user visits the page, the cookie remembers the user profile.
+ - Cookies are used to remember information about the user profile(such as username). It basically involves two steps,
+ - When a user visits a web page, the user profile can be stored in a cookie.
+- Next time the user visits the page, the cookie remembers the user profile.
 
 ## How do you delete a cookie ?
 
-    You can delete a cookie by setting the expiry date as a passed date. You don't need to specify a cookie value in this case. For example, you can delete a username cookie in the current page as below.
+ -   You can delete a cookie by setting the expiry date as a passed date.
+-    You don't need to specify a cookie value in this case. For example, you can delete a username cookie in the current page as below.
     
   -  **document.cookie =
       "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";**
