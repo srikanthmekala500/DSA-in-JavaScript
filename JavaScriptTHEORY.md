@@ -244,3 +244,8 @@ JavaScript is a dynamically typed language, which means that data types of varia
 -    Hoisting is a JavaScript mechanism where **variables,function declarations and classes are moved to the top of their scope before code execution**. Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of variable hoisting,
     
 -    However, JavaScript only **hoists declarations, not initializations. That means if a variable is declared and initialized after using it**,
+- Types of Hoisting
+    **Variable Hoisting** : Only variable declared with **var** is hoisted (not let and const)
+    **Function Hoisting** : Only Simple functions is hoisted (not function expressions)
+
+
