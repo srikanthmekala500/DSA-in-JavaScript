@@ -366,25 +366,31 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
 - Octal numeric literals
 - with statement
 - eval function to create a variable
-
+=========
 - Duplicate property names of an object:
+  
     "use strict";
     var myObj = { myProp: 100, myProp:"test strict mode" }; // error
 - Duplicate parameters:
+  
     "use strict";
     function Sum(val, val){return val + val }; // error
 - Assign values to read-only property
+  
       "use strict";
     
     var arr = [1 ,2 ,3 ,4, 5];
     arr.length = 10; // error
+  
  - Use of reserved keyword as name:
+   
       "use strict";
     
     var for = 1; // error
     var if = 1; // error
+   
  - Use of undefined variables
- 
+   
     "use strict";
     
     x = 1; // error
