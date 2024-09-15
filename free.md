@@ -172,3 +172,30 @@ let s = "tree";
 console.log(`Sorted characters by frequency: ${frequencySort(s)}`);
 // Output: Sorted characters by frequency: "eert" or "eetr"
 ```
+## Longest Substring Without Repeating Characters
+```javascript
+
+function lengthOfLongestSubstring(s) {
+    let charMap = new Map(); // to store character and its index
+    let maxLength = 0;
+    let left = 0; // left pointer of the sliding window
+    
+    for (let right = 0; right < s.length; right++) {
+        let currentChar = s[right];
+        
+        if (charMap.has(currentChar) && charMap.get(currentChar) >= left) {
+            left = charMap.get(currentChar) + 1;
+        }
+        
+        charMap.set(currentChar, right);
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+    
+    return maxLength;
+}
+
+// Example usage:
+let s = "abcabcbb";
+console.log(`Length of the longest substring without repeating characters: ${lengthOfLongestSubstring(s)}`);
+// Output: Length of the longest substring without repeating characters: 3
+```
