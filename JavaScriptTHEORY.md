@@ -431,5 +431,7 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
         
  - Splice
  	 1 ) Modifies the original array(mutable)
+   
      2 )Returns the deleted elements as array
+   
      3)Used to insert or delete elements to/from array
