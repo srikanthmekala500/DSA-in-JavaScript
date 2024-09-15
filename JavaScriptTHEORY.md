@@ -640,3 +640,74 @@ for(let character of greet) {
     console.log(character); // H,e,l,l,o, ,W,o,r,l,d,!
 }
 ```
+**for...of Loop**
+- The for...of statement creates a loop iterating over iterable objects, including: built-in String, Array, array-like objects (e.g., arguments or NodeList), TypedArray, Map, Set, and user-defined iterables.
+- **for...of loop works only with iterable objects**. In JavaScript, iterables are objects which can be looped over.
+
+- **String, Array, TypedArray, Map, and Set are all built-in iterables**, because each of their prototype objects implements an @@iterator method. So, for...of loop works on the mentioned object types.
+
+  - Object in JavaScript is not iterable by default. So, for...of loop does not work on objects.
+
+In simple words, for...of works with strings and arrays but not with objects.
+```javascript
+cosnt str = "Hello World";
+
+for(element of str) {
+  console.log(element);
+}
+// H e l l o " " W o r l d
+```
+**for...in Loop**
+- The for...in statement iterates over all enumerable properties of an object that are keyed by strings (ignoring ones keyed by Symbols), including inherited enumerable properties.
+  
+- So, for...of does not work with objects (non iterables), Then how do we loop over keys and values of an object? And the answer is for...in loop.
+
+- for...in works with those properties whose enumerable flag is set to true.
+
+- Enumerable flag for properties created via simple assignment or property initializer are by default true.
+  
+- Enumerable flag for properties created via Object.defineProperty are by default false.
+```javascript
+  const student = {
+    registration: "123456",
+    name: "Sandeep",
+    age: 33,
+}
+
+for(key in student) {
+  console.log(key, student[key]);
+}
+/*
+registration "123465"
+
+name "Sandeep"
+
+age 33
+//////////////////
+const student = {
+    registration: "123456",
+    name: "Sandeep",
+    age: 33,
+}
+
+Objec.defineProperty(student, "marks", {
+  value: 98,
+  enumerable: false,
+})
+
+console.log(student.marks);
+// 98
+
+for(key in student) {
+  console.log(key, student[key]);
+}
+/*
+registration "123465"
+
+name "Sandeep"
+
+age 33
+*/
+
+// marks key does not show up in the for...in loop result.
+```
