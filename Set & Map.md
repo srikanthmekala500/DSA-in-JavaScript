@@ -362,7 +362,51 @@ console.log(`Is ${number1} a happy number? ${isHappy(number1)}`); // Output: tru
 // Exit the loop:
 
 // n > 0 is false (0 > 0 is false)
-// The loop exits
+
+sum = 0;
+digit = 82 % 10; // 2
+sum += 2 * 2; // 4
+n = Math.floor(82 / 10); // 8
+digit = 8 % 10; // 8
+sum += 8 * 8; // 64 + 4 = 68
+n = Math.floor(8 / 10); // 0
+return 68;
+
+
+seen.add(68); // Set { 82, 68 }
+n = getNext(68);
+
+sum = 0;
+digit = 68 % 10; // 8
+sum += 8 * 8; // 64
+n = Math.floor(68 / 10); // 6
+digit = 6 % 10; // 6
+sum += 6 * 6; // 36 + 64 = 100
+n = Math.floor(6 / 10); // 0
+return 100;
+
+seen.add(100); // Set { 82, 68, 100 }
+n = getNext(100);
+
+
+sum = 0;
+digit = 100 % 10; // 0
+sum += 0 * 0; // 0
+n = Math.floor(100 / 10); // 10
+digit = 10 % 10; // 0
+sum += 0 * 0; // 0
+n = Math.floor(10 / 10); // 1
+digit = 1 % 10; // 1
+sum += 1 * 1; // 1
+n = Math.floor(1 / 10); // 0
+return 1;
+
+Fourth Iteration:
+n is now 1.
+The loop exits because n is 1.
+JavaScript
+
+return n === 1; // true
 ```
 ## First Unique Character In A String
 ```JavaScript
