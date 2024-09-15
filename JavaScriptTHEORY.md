@@ -300,5 +300,18 @@ If we change this to let, we get the same result as variables,
 -  The web storage provides two mechanisms for storing data on the client.
 **Local storage**: It stores data for current origin with **no expiration date**.
 **Session storage**: It stores data for one session and the **data is lost when the browser tab is closed**.
+  - cookies are used when data needs to be sent to a server.
+ -  Web storage is used when the server doesn't need to know the data stored
+## Here are some differences between cookies and web storage: 
+-    **Data size:** Cookies are good for small amounts of data. Web storage is better for larger amounts of data.
+    **Data persistence:** Cookies expire. Web storage data is available any time the user opens the website.
+     **Data access:** Cookies are primarily for reading server-side. Web storage can only be read by the client-side.
+    **Security:** Web storage is more secure.
+   **Website performance:** Web storage doesn't affect website performance
+Data size: Cookies are good for small amounts of data. Web storage is better for larger amounts of data.
+Data persistence: Cookies expire. Web storage data is available any time the user opens the website.
+Data access: Cookies are primarily for reading server-side. Web storage can only be read by the client-side.
+Security: Web storage is more secure.
+Website performance: Web storage doesn't affect website performance
 ![image](https://github.com/user-attachments/assets/20e6238b-be08-486c-b17d-d1bda33f290e)
 
