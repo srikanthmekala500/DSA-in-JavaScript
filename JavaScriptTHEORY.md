@@ -293,5 +293,12 @@ If we change this to let, we get the same result as variables,
 ![image](https://github.com/user-attachments/assets/17f47dfb-dee6-4e36-a71d-0cd941638f6c)
 
 - Lexical Scopes 
-     - In the example, we saw that the variable of the outer scope is easily accessible to the inner scope. **This is possible because of lexical scoping**. In the above example, the lexical scope of newFunction consists of the lexical scope of demoFunction and the global scope. In easy terms, **lexical scoping means that inside an inner scope, you can use the variable of the outer scope. It is called lexical scope as the engine determines the scopes during the lexing time**.
-     - 
+     - In the example, we saw that the variable of the outer scope is easily accessible to the inner scope. **This is possible because of lexical scoping**. In the above example, the lexical scope of newFunction consists of the lexical scope of demoFunction and the global scope.
+     -  In easy terms, **lexical scoping means that inside an inner scope, you can use the variable of the outer scope. It is called lexical scope as the engine determines the scopes during the lexing time**.
+## what is web storage ?
+- Web storage is an API that provides a mechanism by which browsers can store key/value pairs locally within the user's browser,
+- in a much more intuitive fashion than using cookies.
+-  The web storage provides two mechanisms for storing data on the client.
+
+**Local storage**: It stores data for current origin with **no expiration date**.
+**Session storage**: It stores data for one session and the **data is lost when the browser tab is closed**.
