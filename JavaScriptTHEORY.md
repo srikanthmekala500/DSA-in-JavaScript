@@ -732,9 +732,10 @@ console.log("k: " + k); // 6
 ```
 ## When to use reduce(), map(), foreach() and filter() in JavaScript?
 - **foreach()**
+- 
   -  **The forEach() method is used to loop through each element of an array or object. The forEach() method takes a callback function as an argument. The callback function is invoked for each element of the array or object.**
 
-- The forEach() method is similar to the for loop, but it does not have a return value
+- The forEach() method is similar to the for loop, but **it does not have a return value**
 ```javascript
   let numbers = [10, 20, 30];
 
@@ -750,16 +751,17 @@ numbers.forEach(function (number, index) {
 - **map()**
 - **The map() method is used to loop through each element of an array or object. The map() method takes a callback function as an argument. The callback function is invoked for each element of the array or object.**
 
-- The map() method is similar to the forEach() method, but it returns a new array.
+- The map() method is similar to the forEach() method,**but it returns a new array.**
 
 - map() like filter() & forEach() takes a callback and run it against every element on the array but **whats makes it unique is it generate a new array based on your existing array.**
-```javascript
+
+- **Like filter(), map() also returns an array. The provided callback to map modifies the array elements and save them into the new array upon completion that array get returned as the mapped array**
+  
+ ```javascript
   const newArray = originalArray.map((currentValue, index, array) => {
   // return the new value of the current element
 });
 ```
-
-- **Like filter(), map() also returns an array. The provided callback to map modifies the array elements and save them into the new array upon completion that array get returned as the mapped array**
 ```javascript
 const newArray = originalArray.filter((currentValue, index, array) => {
   // return true if the current element should be included in the new array
@@ -777,6 +779,7 @@ console.log(mapped);
 [100, 200, 300]
 ```
 - **reduce()**
+- reduce() method of the array object is used to reduce the array to one single value.
 - To use the reduce function, you must provide a **callback function that takes two arguments**:
 -  the **accumulator** and the current value. The accumulator is the result of the **previous call to the callback function** and
 -  the **current value** is the value of the current element in the array.
