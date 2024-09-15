@@ -517,3 +517,48 @@ for (let i = 0; i < fruits.length; i++) {
 // Adding new array elements
 let fruits = ["Apple", "Orange", "Plum", "Mango"]; fruits.push("Grapes"); // Adds a new element (Grapes) to fruits
 ```
+## What is the difference between Array and Array of Objects in JavaScript?
+- Objects represent a special data type that is mutable and can be used to **store a collection of data** (rather than just a single value). Arrays are a special type of variable that is also mutable and can also be used to**store a list of values.**
+
+**Example: Arrays**
+```javascript
+const numbers = [10, 20, 30];
+
+// Iterating through loop
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+// Pop an element from array
+numbers.pop();
+console.log("after pop(): " + numbers);
+```
+**Example: Array of Objects**
+```javascript
+const employees = [
+  { id: 101, name: "Sakshi Memon", email: "sakshi.memon@email.com" },
+  { id: 102, name: "Subhash Shukla", email: "subhash.shukla@email.com" },
+  { id: 103, name: "Mohini Karpe", email: "mohini.karpe@email.com" }
+];
+
+// Using DOT notation
+console.log(employees[0].name);
+
+// Using delete keyword
+delete employees[0];
+
+// Iterating using for..in loop
+for (let key in employees) {
+  console.log(employees[key]);
+}
+```
+![image](https://github.com/user-attachments/assets/6796ad59-49ea-48b8-89b9-d2b7db8d7efe)
+
+## Different Types of Loops in JavaScript ?
+   **Loops are used to execute the same block of code again and again, as long as a certain condition is met.** 
+   -The basic idea behind a loop is to automate the repetitive tasks within a program to save the time and effort.
+  - while — loops through a block of code as long as the condition specified evaluates to true.
+-do…while — loops through a block of code once; then the condition is evaluated. If the condition is true, the statement is repeated as long as the specified condition is true.
+-for — loops through a block of code until the counter reaches a specified number.
+-for…in — loops through the properties of an object.
+- for…of — loops over iterable objects such as arrays, strings, etc.
