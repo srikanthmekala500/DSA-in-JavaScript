@@ -399,7 +399,7 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
     x = 1; // error
 ```
  ## What is the difference between slice and splice?
- -  **slice()**:
+   **slice()**:
    
    -  The slice() method **returns a new array with a copied slice from the original array**.
    -  The first optional argument is the beginning **index and the second optional argument is the ending index** (non-inclusive).
@@ -414,10 +414,16 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
     // [ "JavaScript", "Python", "Java", "PHP" ]
 ```
 **splice():**
-  -  The splice() method **changes the content of the array in place and can be used to add or remove items from the array**. 
+  -  The splice() method **changes the content of the array in place and can be used to add or remove items from the array**.
+  -  
   - When only one argument is provided, all the items after the provided starting index are removed from the array.
+  - 
     ![image](https://github.com/user-attachments/assets/b1701598-388a-4069-9ca3-c47dd0adfb41)
     ![image](https://github.com/user-attachments/assets/ea2497ef-eda4-4123-91d9-0ef295f62304)
     ![image](https://github.com/user-attachments/assets/8d6eb936-31a2-4dcb-a7b5-c1081cf759f1)
 
-
+**Difference:**
+Slice	
+$Doesn't modify the original array(immutable)	 
+Returns the subset of original array	 
+Used to pick the elements from array	 
