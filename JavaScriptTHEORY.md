@@ -435,3 +435,37 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
      2 )Returns the deleted elements as array
    
      3)Used to insert or delete elements to/from array
+## How do you check whether a string contains a substring?
+   There are 3 fastest ways to check whether a string contains a substring or not,
+
+1) **Using RegEx**:
+
+The regular expression test() method checks if a match exists in a string. This method returns true if it finds a match, otherwise, it returns false.
+ ```javascript
+let str = "JavaScript, Node.js, Express.js, React.js, MongoDB";
+let exp1 = /MongoDB/g;
+let exp2 = /Ajax/;
+
+exp1.test(str); // true
+exp2.test(str); // false
+```
+2.**Using indexOf**:
+
+The indexOf() method is case-sensitive and accepts two parameters. The first parameter is the substring to search for, and the second optional parameter is the index to start the search from (default index is 0).
+ ```javascript
+let str = "JavaScript, Node.js, Express.js, React.js, MongoDB";
+
+str.indexOf('MongoDB') !== -1 // true
+str.indexOf('PHP') !== -1 // false
+str.indexOf('Node', 5) !== -1 // true
+```
+3. **Using includes**:
+
+The includes() is also case-sensitive and accepts an optional second parameter, an integer which indicates the position where to start searching for.
+ ```javascript
+let str = "JavaScript, Node.js, Express.js, React.js, MongoDB";
+
+str.includes('MongoDB') // true
+str.includes('PHP') // false
+str.includes('Node', 5) //true
+````
