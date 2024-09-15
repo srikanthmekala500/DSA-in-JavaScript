@@ -235,5 +235,5 @@ JavaScript is a dynamically typed language, which means that data types of varia
 **Note:**
 - It's totally the developers responsibility to take care of the variables type and on a safer side use const.
 
-- In dynamically typed language, the type of a variable is checked during run-time whereas...
-In statically typed language, the type of a variable is checked during compile-time.
+- In dynamically typed language, the type of a variable is checked during **run-time** whereas...
+- In statically typed language, the type of a variable is checked during **compile-time.**
