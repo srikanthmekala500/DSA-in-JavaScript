@@ -1215,3 +1215,25 @@ const person = { name: 'Charlie' };
 const boundGreet = greet.bind(person, 'Hey');
 boundGreet('!!'); // Logs 'Hey, Charlie!!'
 ```
+## What is callback() function in javascript?
+
+**Callback Functions**
+
+- A callback function is a function passed as an argument to another function and **executed after some operation is complete**. 
+- Callbacks are used to handle asynchronous operations, customize behavior, or perform actions once a function completes its task.
+- 
+ **In this example:**
+  
+- **fetchData** is a function that simulates an asynchronous operation.
+- 
+- **handleData** is a callback function passed to fetchData.
+- 
+- **Once the asynchronous operation (simulated with setTimeout) is complete, handleData is called with the data.**
+- 
+**Summary**
+  
+**Callback Function:** A function passed to another function and executed after a certain operation or event.
+    Used for handling asynchronous operations or customizing behavior.
+    
+**Higher-Order Function:** A function that either takes one or more functions as arguments or returns a function. 
+    It provides a way to use functions as first-class citizens and enables functional programming patterns.
