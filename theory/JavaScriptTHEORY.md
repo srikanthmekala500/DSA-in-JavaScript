@@ -1574,5 +1574,89 @@ async and await are two new keywords introduced in ES2017 that simplify asynchro
 - **async keyword** is used to define an **asynchronous function**, which returns a promise that is resolved with the function's return value.
 
 - **await keyword**is used to **pause the execution of an async function until a promise is resolved**.
-- 
-## What is difference between fetch() and XMLHttpRequest() in JavaScript?
+ 
+## Ajax & Fetch API &  XMLHttpRequest()
+
+- **Ajax sets up the communication with a server/database without the need for a postback or a complete page refresh.**
+
+- AJAX can be defined as * the method of exchanging data with a server and updating parts (e.g. the suggestion box in this case) of a web page – without reloading the entire page.* AJAX is the 
+  best solution whenever there is a need to update the webpages asynchronously by trading the data with the server.
+ 
+- **It updates the parts of the web application dynamically and asynchronously without reloading the complete webpage for the application**.
+ 
+-  AJAX is the combination of **XMLHttpRequest Object, JavaScript and HTML DOM**.
+  
+```javascript  
+  const xhr = new XMLHttpRequest(); // Create a new XMLHttpRequest object
+
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts'); // Initialize a GET request
+
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4) { // Check if the request is complete
+    if (xhr.status === 200) { // Check if the request was successful
+      const data = JSON.parse(xhr.responseText); // Parse JSON response
+      console.log(data); // Process the data
+    } else {
+      console.error('Error:', xhr.statusText); // Handle errors
+    }
+  }
+};
+
+xhr.send(); // Send the request
+```
+**Fetch API**
+ - **Fetch API is Promise based api used to fetch resource across web server**, almost same like AJAX but with easy syntax and more powerful features.
+
+ - Fetch API can also send and receive data like **XML, JSON, TEXT and HTML from web server without reloading.**
+   
+ ```javascript   
+   fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ title: 'foo', body: 'bar', userId: 1 })
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+```
+
+**Key Differences**
+
+**Syntax and Usability**
+
+
+**AJAX (XMLHttpRequest):** More verbose and has a more complex API.
+
+**Fetch:** Provides a simpler and more readable API with Promises, making it easier to work with asynchronous code.
+
+**Handling Responses**
+
+**AJAX:** Requires manual parsing of the response and checking for various states.
+
+**Fetch:** Provides methods like .json(), .text(), etc., for easier response handling. 
+Fetch promises are automatically rejected for network errors, making error handling more straightforward.
+
+**Error Handling**
+
+**AJAX:** Requires explicit checks for HTTP status codes and manual error handling.
+
+**Fetch:** Does not reject the promise on HTTP errors (e.g., 404 or 500); you need to check the response.ok property to determine if the request was successful.
+
+**Configuration**
+
+
+**AJAX:** Requires more manual configuration for different types of requests (e.g., POST, PUT) and sending data.
+
+**Fetch:** Simplifies the process of configuring requests with options like method, headers, and body.
+
+**Summary**
+
+**AJAX (XMLHttpRequest):** An older way to handle asynchronous HTTP requests. It’s more complex and verbose but still widely used in legacy code.
+
+**Fetch API:** A modern and cleaner approach to handling HTTP requests. It simplifies handling responses and errors using Promises and provides a more readable API.
