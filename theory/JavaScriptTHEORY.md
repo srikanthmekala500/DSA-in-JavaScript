@@ -1103,8 +1103,7 @@ These are pure methods:**
      
 ## What is the difference between a method and a function in javascript?
 **1. Function:**
-   
-    - A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object.
+   - A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object.
    It can be passed data to operate on (i.e. parameter) and can optionally return value.
    
 **Method:**
