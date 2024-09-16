@@ -1143,6 +1143,7 @@ console.log(employee.getName());
   **1. Object Method**:
   
   - When this is used inside an object method, it refers to the object that is calling the method.
+
         ```javascript    
         const person = {
           name: 'Alice',
@@ -1150,7 +1151,6 @@ console.log(employee.getName());
             console.log(this.name);
           }
         };
-        
         person.greet(); // Logs 'Alice'
         ```
     **Global Context**
@@ -1160,8 +1160,9 @@ console.log(employee.getName());
        -  In a browser, the global object is window.
      
        - In Node.js, it is global.
+         
    ```javascript    
-   console.log(this); // In a browser, this logs the Window object
+     console.log(this); // In a browser, this logs the Window object
     ```
    **Function Context**
   
