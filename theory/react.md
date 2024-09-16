@@ -75,9 +75,7 @@ function App() {
   -  **Definition:** These are simple JavaScript functions that accept props as an argument and return React elements (JSX).
     
   -  **State and Lifecycle:** Initially, functional components were **stateless**and **did not have lifecycle methods**. However, with the introduction of React Hooks **(e.g., useState, useEffect)**, functional components can now manage state and side effects.
-
-
- 
+- **Hooks:** Hooks like **useState and useEffect allow functional components to handle state and lifecycle events**
  ```javascript 
         function Greeting(props) {
       return <h1>Hello, {props.name}!</h1>;
