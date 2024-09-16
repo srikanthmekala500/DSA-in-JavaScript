@@ -950,7 +950,7 @@ console.log(result); // 314
         };
         obj.method(); // Logs: obj (in strict mode, `this` is `undefined`)
         //In this case, this inside regularFunction depends on how method is called.
-``
+```
 **Arrow Functions and this**
 
 - Arrow functions capture the this value from their surrounding scope at the time they are defined. They do not have their own this binding. For example:
