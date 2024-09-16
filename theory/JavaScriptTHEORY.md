@@ -1225,11 +1225,11 @@ boundGreet('!!'); // Logs 'Hey, Charlie!!'
  **In this example:**
   
 - **fetchData** is a function that simulates an asynchronous operation.
-- 
+ 
 - **handleData** is a callback function passed to fetchData.
-- 
+ 
 - **Once the asynchronous operation (simulated with setTimeout) is complete, handleData is called with the data.**
-- 
+ 
 **Summary**
   
 **Callback Function:** A function passed to another function and executed after a certain operation or event.
