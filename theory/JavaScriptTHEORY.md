@@ -1151,7 +1151,6 @@ console.log(employee.getName());
     console.log(this.name);
   }
 };
-
 person.greet(); // Logs 'Alice'
 ```
-**Global Context**
+ 
