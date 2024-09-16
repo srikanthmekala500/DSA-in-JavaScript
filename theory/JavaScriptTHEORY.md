@@ -940,36 +940,35 @@ console.log(result); // 314
 
 **Traditional Functions and this**
 - In traditional function expressions or declarations, this is dynamically determined by the way the function is invoked. For example:
-  ```javascript
-  function regularFunction() {
-  console.log(this);
-}
-
-const obj = {
-  method: regularFunction
-};
-
-obj.method(); // Logs: obj (in strict mode, `this` is `undefined`)
-//In this case, this inside regularFunction depends on how method is called.
+```javascript
+          function regularFunction() {
+          console.log(this);
+        }
+        
+        const obj = {
+          method: regularFunction
+        };
+        obj.method(); // Logs: obj (in strict mode, `this` is `undefined`)
+        //In this case, this inside regularFunction depends on how method is called.
 ``
 **Arrow Functions and this**
 
 - Arrow functions capture the this value from their surrounding scope at the time they are defined. They do not have their own this binding. For example:
+  
   ```javascript
-   class Counter {
-  constructor() {
-    this.count = 0;
-  }
-
-  increment() {
-    setInterval(() => {
-      this.count++; // `this` refers to the Counter instance
-      console.log(this.count);
-    }, 1000);
-  }
-}
-
-const counter = new Counter();
-counter.increment();
+           class Counter {
+          constructor() {
+            this.count = 0;
+          }
+        
+          increment() {
+            setInterval(() => {
+              this.count++; // `this` refers to the Counter instance
+              console.log(this.count);
+            }, 1000);
+          }
+        }
+        const counter = new Counter();
+        counter.increment();
 ``
 # What is Function?
