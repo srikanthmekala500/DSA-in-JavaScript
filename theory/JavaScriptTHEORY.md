@@ -972,3 +972,68 @@ console.log(result); // 314
         counter.increment();
  
 # What is Function?
+- A function is a **group of statements that perform specific tasks** and **can be kept and maintained separately form main program**.
+-  Functions provide a way to **create reusable code packages** which are more **portable and easier to debug**.
+-  Here are some advantages of using functions:
+-  Functions reduces the repetition of code within a program —
+-  Functions makes the code much easier to maintain
+-  Functions makes it easier to eliminate the errors
+
+  # Explain Higher Order Functions in Javascript ?
+  
+  **Definition**
+     **A higher-order function is a function that:**
+        - Accepts one or more functions as arguments, or
+        - Returns a function as its result.
+**Examples**
+**Function as an Argument**
+    - Many JavaScript functions accept other functions as arguments. Common examples are the methods of arrays such as **map, filter, and reduce**:
+        ```javascript
+                    // Using map to apply a function to each element in an array
+                const numbers = [1, 2, 3, 4];
+                const squares = numbers.map(x => x * x);
+                console.log(squares); // [1, 4, 9, 16]
+        ```
+    - Here,**map is a higher-order function that takes a function**(x => x * x) as an argument and applies it to each element of the array.
+    
+**Function as a Return Value**
+    Higher-order functions can also return other functions. For example:
+  ```javascript
+            // A function that returns another function
+        function makeMultiplier(multiplier) {
+          return function(x) {
+            return x * multiplier;
+          };
+        }
+        
+        const double = makeMultiplier(2);
+        console.log(double(5)); // 10
+        
+        const triple = makeMultiplier(3);
+        console.log(triple(5)); // 15
+```
+- Here,**makeMultiplier** is a higher-order function that returns a new function based on the **multiplier argument**.
+**Real-World Examples
+Array Methods**
+  **JavaScript arrays come with several higher-order functions:**
+ - **map:** Applies a function to each element and returns a new array.
+ - **filter:** Returns a new array with elements that pass a test.
+ - **reduce:** Applies a function against an accumulator and each element to reduce it to a single value.
+```javascript   
+  const numbers = [1, 2, 3, 4, 5];
+
+// Using filter to get even numbers
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); // [2, 4]
+
+// Using reduce to sum the numbers
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // 15
+```
+**Event Handling**
+In event-driven programming, you often pass functions (event handlers) to be executed when events occur:
+```javascript
+document.getElementById('myButton').addEventListener('click', function() {
+  alert('Button was clicked!');
+});
+```
