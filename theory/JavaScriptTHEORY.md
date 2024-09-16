@@ -1013,6 +1013,7 @@ console.log(result); // 314
         console.log(triple(5)); // 15
 ```
 - Here,**makeMultiplier** is a higher-order function that returns a new function based on the **multiplier argument**.
+  
 **Real-World Examples
 Array Methods**
   **JavaScript arrays come with several higher-order functions:**
