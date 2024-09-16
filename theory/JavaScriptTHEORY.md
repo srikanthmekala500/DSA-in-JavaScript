@@ -1422,3 +1422,157 @@ decodeURIComponent("%"); // URIError
 Javascript finally was introduced in ES2018 and using the finally() method, duplication of code can be avoided in the then() and catch() methods of the Promise.
 
 **The finally()** method is always executed whether the promise is fulfilled or rejected. In other words, the finally() method is executed when the promise is settled.
+
+## What is a promise?
+Promises are used to handle **asynchronous operations.** They provide an **alternative approach for callbacks** by**reducing the callback hell and writing the cleaner code**.
+
+**Promises have three states:**
+
+**pending:** initial state, neither fulfilled nor rejected.
+
+**fulfilled:** meaning that the operation was completed successfully.
+
+**rejected:** meaning that the operation failed.
+
+```javascript 
+const myPromise = new Promise((resolve, reject) => {
+  // Simulate an asynchronous operation
+  setTimeout(() => {
+    const success = true; // Simulate success or failure
+    if (success) {
+      resolve('Operation successful!');
+    } else {
+      reject('Operation failed.');
+    }
+  }, 1000);
+});
+/////////////
+myPromise
+  .then(result => {
+    console.log(result); // Logs 'Operation successful!' if resolved
+  })
+  .catch(error => {
+    console.error(error); // Logs 'Operation failed.' if rejected
+  })
+  .finally(() => {
+    console.log('Operation complete.');
+  });
+```
+
+
+## What is promise chaining?
+
+**The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining**. 
+It allows you to chain on another then call which will run when the second promise is fulfilled. The .catch() can still be called to handle any errors that might occur along the way.
+```javascript  
+// Promise Chain
+new Promise(function (resolve, reject) {
+  setTimeout(() => resolve(10), 1000);
+})
+  .then(function (result) {
+    console.log(result); // 10
+    return result + 20;
+  })
+  .then(function (result) {
+    console.log(result); // 30
+    return result + 30;
+  });
+```
+
+**Promise.all():** Resolves when all promises resolve;**rejects if any promise rejects**.
+
+**Promise.allSettled():** Resolves when all promises settle (fulfill or reject); **provides status and value/reason for each promise**.
+
+**Promise.any():** Resolves as soon as any promise resolves; **rejects with an AggregateError if all promises reject**.
+
+**Promise.race():** Resolves or rejects as soon as the **first promise resolves or rejects**.
+
+**Promise.reject():** Returns a promise that i**s immediately rejected with a given reason**.
+
+**Promise.resolve():** Returns a promise that is **immediately resolved with a given value**.
+
+//////////////
+
+**Promise.all(iterable)** This method takes an iterable of promises and resolves to a single promise that resolves when either all the promises in the iterable resolves or any one rejects.
+
+Case I: Resolves when all the promises resolve: In this case, the final resolved value will be an array containing aggregated values from all the promises from the iterable.
+
+Case II: Resolves when any one of the rejects: In this case, the reason for the rejected promise is the reason the first promise got rejected from the iterable.
+```javascript  
+const firstPromise = 60;
+const secondPromise = Promise.resolve(25);
+const thirdPromise = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'Resolved!');
+});
+
+Promise.all([firstPromise, secondPromise, thirdPromise])
+.then((values) => {
+  console.log(values);
+});
+// expected output: Array [60, 25, "Resolved!"]
+```
+
+**Promise.allSettled(iterable)**
+
+This method takes an iterable of promises and returns a new promise only **when all the promises get settled**, i.e., **are in fulfilled or rejected state.**
+This method is mainly used when the promises passed in the iterable are not connected to each other, and we just want to know what they result in.
+```javascript  
+const firstPromise = 60;
+const secondPromise = Promise.resolve(25);
+const thirdPromise = new Promise((resolve, reject) => {
+      setTimeout(reject, 100, 'Rejected');
+});
+
+Promise.allSettled([firstPromise, secondPromise, thirdPromise])
+.then((results) => results.forEach((result) => console.log(result.status)));
+// expected output: 
+// "fulfilled"
+// "fulfilled"
+// "rejected"
+```
+**Promise.any(iterable)**
+- This method takes an iterable of promises, and as soon as one of the **promises gets resolved, it gets resolved with the value of the first resolved promise.**
+
+- If none of the promises gets resolved, i.e., **all of them get rejected, then the promise gets rejected with an aggregated error formed by grouping all the individual errors**.
+```javascript  
+ const firstPromise = 60;
+const secondPromise = Promise.resolve(25);
+const thirdPromise = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'Resolved!');
+});
+
+Promise.any([firstPromise, secondPromise, thirdPromise])
+.then((value) => {
+  console.log(value);
+});
+// expected output: 60
+```
+**Promise.race(iterable)**
+
+- This method takes an iterable of promises and returns a promise that fulfills or rejects as soon as any one of the promises from the iterable gets fulfilled or rejected.
+
+- If fulfilled, the final returned promise has the value of the fulfilled promise. If rejected, it picks the reason from the rejected promise.
+```javascript  
+  const firstPromise = new Promise((resolve, reject) => {
+  setTimeout(resolve, 300, 'one');
+});
+
+const secondPromise = new Promise((resolve, reject) => {
+  setTimeout(resolve, 200, 'two');
+});
+
+Promise.race([firstPromise, secondPromise]).then((value) => {
+  console.log(value);
+  // Both resolve, but secondPromise is faster
+});
+// expected output: "two"
+```
+## What are async and await?
+
+async and await are two new keywords introduced in ES2017 that simplify asynchronous programming in JavaScript. The
+
+- **async keyword** is used to define an **asynchronous function**, which returns a promise that is resolved with the function's return value.
+
+- **await keyword**is used to **pause the execution of an async function until a promise is resolved**.
+- 
+## What is difference between fetch() and XMLHttpRequest() in JavaScript?
