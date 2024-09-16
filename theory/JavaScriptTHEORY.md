@@ -1259,3 +1259,14 @@ doSomething(param1, param2, function(err, paramx){
     });
 });
 ```
+**Techniques for avoiding callback hell:**
+
+    - Write comments
+    
+    - Split functions into smaller functions
+    
+    - Using Async.js
+    
+    - Using Promises
+    
+    - Using Async-Await
