@@ -903,3 +903,73 @@ let re2 = /you/;
 re1.exec("How are you?"); // null
 re2.exec("How are you?"); // ["you"]
 ```
+## What are the benefits of using arrow function over es6 function?
+
+- An arrow function is a shorter syntax for a**function expression and does not have its own this, arguments, super, or new.target**.
+-  These function are best suited for **non-method functions**, and they **cannot be used as constructors**.
+
+**Arrow functions in ES6 has two limitations:**
+
+    - Do not work with new
+    - Fixed this bound to scope at initialisation
+**Note:** Unlike regular functions, arrow functions do not have their own this. 
+The value of this inside an arrow function remains the same throughout the lifecycle 
+of the function and is always bound to the value of this in the closest non-arrow parent function
+**Example 01: Arrow Function with No Argument :** If a function doesn't take any argument, then you should use empty parentheses.
+
+**Example 02: Arrow Function with One Argument:** If a function has only one argument, you can omit the parentheses.
+
+**Example 03: Arrow Function as an Expression :**  You can also dynamically create a function and use it as an expression.
+
+**Example 04: Multiline Arrow Functions** If a function body has multiple statements, you need to put them inside curly brackets {}.
+```javascript
+let area = (r) => {
+  const pi = 3.14;
+  return pi * r * r;
+}
+
+let result = area(10);
+console.log(result); // 314
+```
+**No this Binding:**
+- Arrow functions do not have their own this context; instead, they capture the this value from the surrounding context at the time they are created.
+- This can simplify working with this in certain scenarios, such as when using methods inside callbacks or event handlers:
+ 
+**Arrow Functions and this**
+        - **Arrow functions do not have their own this** context. Instead, they lexically inherit **this** from their surrounding context, meaning they use the **this** value from the scope in which they were created. This behavior contrasts with traditional functions, which have their own this context determined by how the function is called.
+
+**Traditional Functions and this**
+- In traditional function expressions or declarations, this is dynamically determined by the way the function is invoked. For example:
+  ```javascript
+  function regularFunction() {
+  console.log(this);
+}
+
+const obj = {
+  method: regularFunction
+};
+
+obj.method(); // Logs: obj (in strict mode, `this` is `undefined`)
+//In this case, this inside regularFunction depends on how method is called.
+``
+**Arrow Functions and this**
+
+- Arrow functions capture the this value from their surrounding scope at the time they are defined. They do not have their own this binding. For example:
+  ```javascript
+   class Counter {
+  constructor() {
+    this.count = 0;
+  }
+
+  increment() {
+    setInterval(() => {
+      this.count++; // `this` refers to the Counter instance
+      console.log(this.count);
+    }, 1000);
+  }
+}
+
+const counter = new Counter();
+counter.increment();
+``
+# What is Function?
