@@ -1165,13 +1165,50 @@ console.log(employee.getName());
    **Function Context**
         -  In a regular function, this refers to the global object when the function is called in the global context (non-strict mode).
         -  However, in strict mode, this is undefined in a regular function if not explicitly set:
+  
  **call(), apply(), and bind()**
   
-    **call():** 
-      - Invokes the function immediately with a specified this value and arguments provided individually.
+ **call():** 
+       - Invokes the function immediately with a specified **this value and arguments provided individually**.
         
-    **apply():** 
-      - Invokes the function immediately with a specified this value and arguments provided as an array.
+**apply():** 
+      - Invokes the function immediately with a specified **this value and arguments provided as an array**.
         
-    **bind():** 
-       - Creates a new function with a specified this value and optional preset arguments, which can be called later.
+**bind():** 
+       - **Creates a new function with a specified this value and optional preset arguments**, which can be called later.
+       
+**call()**
+
+  - The call() method calls a function with a**specified this value and arguments provided individually**.
+    ```javascript  
+    function greet(greeting, punctuation) {
+      console.log(`${greeting}, ${this.name}${punctuation}`);
+    }
+    
+    const person = { name: 'Alice' };
+    greet.call(person, 'Hello', '!'); // Logs 'Hello, Alice!'
+    ```
+**apply()**
+
+- The apply() method is similar to call(), but it takes the arguments as an array (or an array-like object).
+ ```javascript  
+function greet(greeting, punctuation) {
+  console.log(`${greeting}, ${this.name}${punctuation}`);
+}
+
+const person = { name: 'Bob' };
+greet.apply(person, ['Hi', '!']); // Logs 'Hi, Bob!'
+```
+**bind()**
+
+- The bind() method creates a new function that, when called, has its this keyword set to a provided value.
+- It also allows you to preset initial arguments to the function.
+ ```javascript 
+  function greet(greeting, punctuation) {
+  console.log(`${greeting}, ${this.name}${punctuation}`);
+}
+
+const person = { name: 'Charlie' };
+const boundGreet = greet.bind(person, 'Hey');
+boundGreet('!!'); // Logs 'Hey, Charlie!!'
+```
