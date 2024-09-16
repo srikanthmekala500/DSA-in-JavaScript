@@ -1247,3 +1247,15 @@ boundGreet('!!'); // Logs 'Hey, Charlie!!'
    it becomes difficult to understand and keep track of the nesting once the size of the nesting is increased.
 
 - The below code will give you an idea of why this phenomenon is labelled as Hell/Doom.
+```javascript  
+doSomething(param1, param2, function(err, paramx){
+    doMore(paramx, function(err, result){
+        insertRow(result, function(err){
+            yetAnotherOperation(someparameter, function(s){
+                somethingElse(function(x){
+                });
+            });
+        });
+    });
+});
+```
