@@ -1085,4 +1085,17 @@ These are pure methods:**
     - Date.now()
     
     - Math.random(
+    
+**Benefits:**
 
+**Predictable:** It produces a predictable output for the same inputs.
+
+**Readable**: Anyone reading the function as a standalone unit can understand its purpose completely.
+
+**Reusable**: Can reuse the function at multiple places of the source code without altering its and the caller's behavior.
+
+**Testable**: We can test it as an independent unit.
+
+**Impure Functions**
+    - An impure function is a function that contains one or more side effects. 
+   -  It mutates data outside of its lexical scope and does not predictably produce the same output for the same input.
