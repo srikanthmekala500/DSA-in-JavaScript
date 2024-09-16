@@ -1405,3 +1405,20 @@ decodeURIComponent("%"); // URIError
 **7. EvalError:**
 
 "EvalError" exceptions are thrown when the eval() function is used improperly. These exceptions are not used in the most recent version of the EcmaScript standard. However, they are still supported in order to maintain backwards compatibility with older versions of the standard.
+
+## What are the various statements in error handling?
+ **Below are the list of statements used in an error handling,**
+ 
+**try:** This statement is used to test a block of code for errors
+
+**catch:** This statement is used to handle the error
+
+**throw:** This statement is used to create custom errors.
+
+**finally:** This statement is used to execute code after try and catch regardless of the result.
+
+**The finally()** method is used to return a Promise, when a promise is settled, Like then() and catch(), that is either fulfilled or rejected.
+
+Javascript finally was introduced in ES2018 and using the finally() method, duplication of code can be avoided in the then() and catch() methods of the Promise.
+
+**The finally()** method is always executed whether the promise is fulfilled or rejected. In other words, the finally() method is executed when the promise is settled.
