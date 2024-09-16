@@ -100,3 +100,5 @@ function App() {
       }
 
     ```
+  **Class Components**
+- **Definition:** These are ES6 classes that extend from React.Component and have a render method to return React elements.
