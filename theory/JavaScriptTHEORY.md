@@ -1300,3 +1300,50 @@ For example,**prevent form submission when clicking on submit button and prevent
 - That's why often React is used to take over for having controlled components by managing the state via React. The same applies for a form element which has a submit event that is invoked via a submit button element.
   
 - In the past, it was desired to refresh the browser to flush all state and to submit the data to a backend. Nowadays, a library such as React, gives us more flexibility to deal with the submit event ourselves. In this case, we deal with it by updating the list in our component's state
+ 
+## What is the difference between prototype and proto in JavaScript?
+ **Proto:**
+
+- It is an actual object that provides a way inherit to inherit properties from JavaScript with the help of an object which is created with new.
+Every object with behavior associated has internal property [[prototype]].
+```javascript  
+function Employee(id, name) {
+  this.id = id;
+  this.name = name;
+}
+const employee = new Employee(1090, "Sarvesh Ghose");
+
+// Object have proto property
+employee
+
+// Also if apply strict equal to check
+// if both point at the same
+// location then it will return true.
+Employee.prototype === employee._proto_ // false
+```
+**Prototype**:
+- It is a special object which means it holds shared attributes and behaviors of instances.
+   It is a way to inherit properties from javascript as it is available in every function declaration.
+
+- The prototype is an object that is **associated with every functions and objects by default in JavaScript**,
+   where function's prototype property is accessible and modifiable and object's prototype property (aka attribute) is not visible.
+   Every function includes prototype object by default.
+  
+ ```javascript  
+  // Constructor function
+function Employee(id, name) {
+  this.id = id;
+  this.name = name;
+}
+
+// Objects
+const employee = new Employee(3325, "Karishma Som");
+
+// Prototype
+Employee.prototype.getName = function () {
+  return this.name;
+};
+
+// Function call using object
+console.log(employee.getName());
+```
