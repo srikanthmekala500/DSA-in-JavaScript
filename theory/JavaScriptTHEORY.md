@@ -1628,37 +1628,71 @@ xhr.send(); // Send the request
 
 **Key Differences**
 
-        **Syntax and Usability**
+ **Syntax and Usability**
         
         
-        **AJAX (XMLHttpRequest):** More verbose and has a more complex API.
+  - **AJAX (XMLHttpRequest):** More verbose and has a more complex API.
         
-        **Fetch:** Provides a simpler and more readable API with Promises, making it easier to work with asynchronous code.
+  - **Fetch:** Provides a simpler and more readable API with Promises, making it easier to work with asynchronous code.
         
-        **Handling Responses**
+**Handling Responses**
         
-        **AJAX:** Requires manual parsing of the response and checking for various states.
+  - **AJAX:** Requires manual parsing of the response and checking for various states.
         
-        **Fetch:** Provides methods like .json(), .text(), etc., for easier response handling. 
+  - **Fetch:** Provides methods like .json(), .text(), etc., for easier response handling. 
         Fetch promises are automatically rejected for network errors, making error handling more straightforward.
         
-        **Error Handling**
+ **Error Handling**
         
-        **AJAX:** Requires explicit checks for HTTP status codes and manual error handling.
+  - **AJAX:** Requires explicit checks for HTTP status codes and manual error handling.
         
-        **Fetch:** Does not reject the promise on HTTP errors (e.g., 404 or 500); you need to check the response.ok property to determine if the request was successful.
+ - **Fetch:** Does not reject the promise on HTTP errors (e.g., 404 or 500); you need to check the response.ok property to determine if the request was successful.
+         
+ **Configuration**
         
-        **Configuration**
         
+  - **AJAX:** Requires more manual configuration for different types of requests (e.g., POST, PUT) and sending data.
         
-        **AJAX:** Requires more manual configuration for different types of requests (e.g., POST, PUT) and sending data.
+   - **Fetch:** Simplifies the process of configuring requests with options like method, headers, and body.
+   
+**Summary**
         
-        **Fetch:** Simplifies the process of configuring requests with options like method, headers, and body.
+ - **AJAX (XMLHttpRequest):** An older way to handle asynchronous HTTP requests. It’s more complex and verbose but still widely used in legacy code.
         
-        **Summary**
-        
-        **AJAX (XMLHttpRequest):** An older way to handle asynchronous HTTP requests. It’s more complex and verbose but still widely used in legacy code.
-        
-        **Fetch API:** A modern and cleaner approach to handling HTTP requests. It simplifies handling responses and errors using Promises and provides a more readable API.
+  -**Fetch API:** A modern and cleaner approach to handling HTTP requests. It simplifies handling responses and errors using Promises and provides a more readable API.
 
 **XMLHttpRequest ()**
+   - **The XMLHttpRequest object is a JavaScript API used to make HTTP requests to a server and receive responses from it**.
+    **It allows web pages to send and receive data asynchronously without having to reload the entire page**, making it a fundamental part of AJAX (Asynchronous JavaScript and XML).
+
+**Key Features**
+
+  **Asynchronous Communication:** Allows web applications to send and receive data in the background.
+  
+  **Synchronous Communication:** Can also operate in synchronous mode (though this is generally discouraged because it blocks the main thread).
+  
+  **Flexible Requests:** Supports various HTTP methods like GET, POST, PUT, DELETE, etc.
+  
+  **Event Handling:** Provides event handlers to track request progress and handle responses.
+
+  ![image](https://github.com/user-attachments/assets/5cf0faba-5d18-46de-a6b2-2827c02dd5f2)
+
+## What is an Iterator?**
+  An iterator is an object which defines a sequence and a return value upon its termination. It implements the Iterator protocol with a .next() method which returns an object with two properties:
+
+  **value:** The next value in the iteration sequence.
+   **done:** This is true if the last value in the sequence has already been consumed.
+
+## What is strict mode? 
+-   The Strict Mode is allows you to place a **program, or a function, in a strict operating context**. 
+   This strict context prevents certain actions from being taken and throws more exceptions.
+**Advantages:**
+
+- Makes it impossible to accidentally create global variables.
+- Makes assignments which would otherwise silently fail to throw an exception.
+- Makes attempts to delete undeletable properties throw (where before the attempt would simply have no effect).
+- Requires that function parameter names be unique.
+- this is undefined in the global context.
+- It catches some common coding bloopers, throwing exceptions.
+- It disables features that are confusing or poorly thought out.
+   
