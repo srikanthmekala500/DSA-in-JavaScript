@@ -1221,7 +1221,7 @@ boundGreet('!!'); // Logs 'Hey, Charlie!!'
 
 - A callback function is a function passed as an argument to another function and **executed after some operation is complete**. 
 - Callbacks are used to handle asynchronous operations, customize behavior, or perform actions once a function completes its task.
-- 
+ 
  **In this example:**
   
 - **fetchData** is a function that simulates an asynchronous operation.
@@ -1237,3 +1237,13 @@ boundGreet('!!'); // Logs 'Hey, Charlie!!'
     
 **Higher-Order Function:** A function that either takes one or more functions as arguments or returns a function. 
     It provides a way to use functions as first-class citizens and enables functional programming patterns.
+    
+## How to avoid callback hell in javascript?
+- Callback hell is a phenomenon where a Callback is called **inside another Callback**.
+- It is the**nesting of multiple Callbacks inside a function**. If you look at the design of the code, it seems just like a**pyramid**.
+- Thus the Callback hell is also referred to as the ‘**Pyramid of Doom**’.
+
+- Callback hell structurally is just a nesting of function calls inside a function. But,
+- it becomes difficult to understand and keep track of the nesting once the size of the nesting is increased.
+
+- The below code will give you an idea of why this phenomenon is labelled as Hell/Doom.
