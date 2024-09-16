@@ -1628,35 +1628,37 @@ xhr.send(); // Send the request
 
 **Key Differences**
 
-**Syntax and Usability**
+        **Syntax and Usability**
+        
+        
+        **AJAX (XMLHttpRequest):** More verbose and has a more complex API.
+        
+        **Fetch:** Provides a simpler and more readable API with Promises, making it easier to work with asynchronous code.
+        
+        **Handling Responses**
+        
+        **AJAX:** Requires manual parsing of the response and checking for various states.
+        
+        **Fetch:** Provides methods like .json(), .text(), etc., for easier response handling. 
+        Fetch promises are automatically rejected for network errors, making error handling more straightforward.
+        
+        **Error Handling**
+        
+        **AJAX:** Requires explicit checks for HTTP status codes and manual error handling.
+        
+        **Fetch:** Does not reject the promise on HTTP errors (e.g., 404 or 500); you need to check the response.ok property to determine if the request was successful.
+        
+        **Configuration**
+        
+        
+        **AJAX:** Requires more manual configuration for different types of requests (e.g., POST, PUT) and sending data.
+        
+        **Fetch:** Simplifies the process of configuring requests with options like method, headers, and body.
+        
+        **Summary**
+        
+        **AJAX (XMLHttpRequest):** An older way to handle asynchronous HTTP requests. It’s more complex and verbose but still widely used in legacy code.
+        
+        **Fetch API:** A modern and cleaner approach to handling HTTP requests. It simplifies handling responses and errors using Promises and provides a more readable API.
 
-
-**AJAX (XMLHttpRequest):** More verbose and has a more complex API.
-
-**Fetch:** Provides a simpler and more readable API with Promises, making it easier to work with asynchronous code.
-
-**Handling Responses**
-
-**AJAX:** Requires manual parsing of the response and checking for various states.
-
-**Fetch:** Provides methods like .json(), .text(), etc., for easier response handling. 
-Fetch promises are automatically rejected for network errors, making error handling more straightforward.
-
-**Error Handling**
-
-**AJAX:** Requires explicit checks for HTTP status codes and manual error handling.
-
-**Fetch:** Does not reject the promise on HTTP errors (e.g., 404 or 500); you need to check the response.ok property to determine if the request was successful.
-
-**Configuration**
-
-
-**AJAX:** Requires more manual configuration for different types of requests (e.g., POST, PUT) and sending data.
-
-**Fetch:** Simplifies the process of configuring requests with options like method, headers, and body.
-
-**Summary**
-
-**AJAX (XMLHttpRequest):** An older way to handle asynchronous HTTP requests. It’s more complex and verbose but still widely used in legacy code.
-
-**Fetch API:** A modern and cleaner approach to handling HTTP requests. It simplifies handling responses and errors using Promises and provides a more readable API.
+**XMLHttpRequest ()**
