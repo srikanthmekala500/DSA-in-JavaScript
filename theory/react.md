@@ -101,14 +101,18 @@ function App() {
       }
  ```
   **Class Components**
-      - **Definition:** These are ES6 classes that extend from React.Component and have a render method to return React elements.
-     -   Class components in React are typically **stateful**, meaning they can **manage and maintain their own state**. This is one of the key  features that distinguishes them from stateless functional components .
+    
+   - **Definition:** These are ES6 classes that extend from React.Component and have a render method to return React elements.
+     
+  -   Class components in React are typically **stateful**, meaning they can **manage and maintain their own state**. This is one of the key  features that distinguishes them from stateless functional components .
+  -   
 **Stateful Components**
   -  **State Management:** Class components can hold and manage local state using **this.state and this.setState**.
-  -  **Lifecycle Methods:** They have access to lifecycle methods like **componentDidMount, componentDidUpdate, and componentWillUnmount**, which allow you to run code at specific points in the component’s lifecycle.
-  -  **componentDidMount():** Called after the component is mounted.
-  - **componentDidUpdate(prevProps, prevState):** Called after the component updates.
-  - **componentWillUnmount():** Called before the component is unmounted and destroyed.
+  -  **Lifecycle Methods:** They have access to lifecycle methods like **componentDidMount, componentDidUpdate, and 
+       componentWillUnmount**, which allow you to run code at specific points in the component’s lifecycle.
+        -  **componentDidMount():** Called after the component is mounted.
+        - **componentDidUpdate(prevProps, prevState):** Called after the component updates.
+        - **componentWillUnmount():** Called before the component is unmounted and destroyed.
 ```javascript 
 import React, { Component } from 'react';
 
