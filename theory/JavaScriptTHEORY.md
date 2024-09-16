@@ -1261,15 +1261,15 @@ doSomething(param1, param2, function(err, paramx){
 ```
 **Techniques for avoiding callback hell:**
 
-    - Write comments
+- Write comments
     
-    - Split functions into smaller functions
+- Split functions into smaller functions
     
-    - Using Async.js
+- Using Async.js
     
-    - Using Promises
+- Using Promises
     
-    - Using Async-Await
+- Using Async-Await  
 
 **Here are some strategies to escape callback hell:**
 
@@ -1284,3 +1284,11 @@ This reduces the nesting level and makes your code more organized and easier to 
  
 **Named Functions:** Use named functions instead of anonymous functions for callbacks.
 Named functions provide clarity and make your code more readable.
+
+# What is the use of preventDefault method?
+
+**The preventDefault() method** is used to **prevent the browser from executing the default action of the selected element**. 
+It can prevent the user from processing the request by clicking the link.**a preventDefault is called on the event when submitting the form to prevent a browser reload/refresh**
+
+For example,**prevent form submission when clicking on submit button and prevent opening the page URL when clicking on hyper link are some common usecases.**
+
