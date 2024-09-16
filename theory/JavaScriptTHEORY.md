@@ -1168,12 +1168,10 @@ console.log(employee.getName());
  **call(), apply(), and bind()**
   
     **call():** 
-    
-        - Invokes the function immediately with a specified this value and arguments provided individually.
+      - Invokes the function immediately with a specified this value and arguments provided individually.
         
     **apply():** 
-    
-        - Invokes the function immediately with a specified this value and arguments provided as an array.
+      - Invokes the function immediately with a specified this value and arguments provided as an array.
         
     **bind():** 
        - Creates a new function with a specified this value and optional preset arguments, which can be called later.
