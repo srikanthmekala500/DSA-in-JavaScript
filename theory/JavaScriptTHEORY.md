@@ -1038,3 +1038,31 @@ document.getElementById('myButton').addEventListener('click', function() {
   alert('Button was clicked!');
 });
 ```
+**1- Pure Function:**
+    - Predictable
+    - Has no side-effects
+**2- Impure Function:**
+    - Unpredictable
+    - Has side-effects
+**Pure Function**
+    It always returns the same result if the same arguments are passed
+    It never depends on any state/data/change during the execution of a program
+    It always returns something
+Here, writing test cases will be straightforward
+**Impure Function**
+        Changing the internal state of any argument which has been passed
+        It may take effect without returning anything
+        Writing test cases will be a bit complicated as there may be side effects
+**Pure and Impure Methods
+These are pure methods:**
+    Array.map()
+    Array.reduce()
+    Array.filter()
+    Array.concat()
+    ... (spread syntax, which is mostly used to create copies)
+**These are impure methods:**
+    Array.splice()
+    Array.sort()
+    Date.now()
+    Math.random(
+
