@@ -1686,6 +1686,7 @@ xhr.send(); // Send the request
 ## What is strict mode? 
 -   The Strict Mode is allows you to place a **program, or a function, in a strict operating context**. 
    This strict context prevents certain actions from being taken and throws more exceptions.
+
 **Advantages:**
 
 - Makes it impossible to accidentally create global variables.
