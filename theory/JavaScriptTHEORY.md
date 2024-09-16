@@ -1240,10 +1240,10 @@ boundGreet('!!'); // Logs 'Hey, Charlie!!'
     
 ## How to avoid callback hell in javascript?
 - Callback hell is a phenomenon where a Callback is called **inside another Callback**.
-- It is the**nesting of multiple Callbacks inside a function**. If you look at the design of the code, it seems just like a**pyramid**.
+   It is the**nesting of multiple Callbacks inside a function**. If you look at the design of the code, it seems just like a**pyramid**.
 - Thus the Callback hell is also referred to as the ‘**Pyramid of Doom**’.
 
 - Callback hell structurally is just a nesting of function calls inside a function. But,
-- it becomes difficult to understand and keep track of the nesting once the size of the nesting is increased.
+   it becomes difficult to understand and keep track of the nesting once the size of the nesting is increased.
 
 - The below code will give you an idea of why this phenomenon is labelled as Hell/Doom.
