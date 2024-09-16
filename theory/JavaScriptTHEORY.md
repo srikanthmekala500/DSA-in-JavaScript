@@ -1292,3 +1292,11 @@ It can prevent the user from processing the request by clicking the link.**a pre
 
 For example,**prevent form submission when clicking on submit button and prevent opening the page URL when clicking on hyper link are some common usecases.**
 
+## Why is a form submit reloading the browser?
+
+- All native HTML elements come with their internal native behavior. For instance, input elements store their internal state.
+
+
+- That's why often React is used to take over for having controlled components by managing the state via React. The same applies for a form element which has a submit event that is invoked via a submit button element.
+  
+- In the past, it was desired to refresh the browser to flush all state and to submit the data to a backend. Nowadays, a library such as React, gives us more flexibility to deal with the submit event ourselves. In this case, we deal with it by updating the list in our component's state
