@@ -142,16 +142,22 @@ export default MyComponent;
 ```
 **Defining a Constructor**
  -  The constructor method is defined within a class and is called automatically when a **new instance of the class is created**.
+   
   - **Inside the constructor, the this keyword refers to the new object being created.** It is used to set properties on the object.
+    
   - In a derived class (a class that extends another class), you must call **super() before using this in the constructor. This calls the parent class’s constructor.**
+ 
   - The super keyword is used to call the **constructor of the parent class and to access its methods**.
+    
   - When you extend a class, you need to call the parent **class’s constructor using super() before you can use this in the derived class.**
+    
   - **Props**
       **Props are passed to class components in the same way as functional components**. They are accessed using **this.props.**
  - The **extends keyword**is a powerful feature in JavaScript that enhances object-oriented programming by allowing classes to inherit from other classes
- - 
+
 - **Static Methods and Properties**
         -Static methods and properties are also inherited by the child class.
+  
   -**render()**
   - **The render() method**returns the JSX (JavaScript XML) that describes the component’s layout. This JSX is then converted into actual HTML elements in the DOM.
   - The render() method is called whenever there is a **change in the component’s state or props**. This ensures that the UI is always **up-to-date with the latest data.**
