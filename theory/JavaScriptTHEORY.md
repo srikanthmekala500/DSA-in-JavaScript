@@ -850,3 +850,27 @@ On the other hand, new Array() is a constructor function that creates a new arra
 const myArray = new Array(); // create a new empty array
 const myOtherArray = new Array(3); // create a new array with a length of 3
 const myThirdArray = new Array("a", "b", "c"); // create a new array with three elements
+## What are the string method available in regular expression ?
+- Regular expressions are patterns used to match character combinations in strings.
+- In JavaScript, regular expressions are also objects.
+-  These patterns are used with the**exec() and test() methods of RegExp, and with the match(), matchAll(), replace(), replaceAll(), search(), and split()** methods of String.
+  **Example 01: test()**
+
+Tests for a match in a string. It returns true or false
+```javascript
+let exp = /Hello/;
+let res1 = exp.test("Hello World");
+let res2 = exp.test("Hi");
+
+console.log(res1); // true
+console.log(res2); // false
+```
+**Example 02: exec()**
+Executes a search for a match in a string. It returns an array of information or null on a mismatch.\
+```javascript
+let res1 = exp.exec("Hello World");
+let res2 = exp.exec("Hi");
+
+console.log(res1); // ['Hello', index: 0, input: 'Hello World', groups: undefined]
+console.log(res2); // null
+```
