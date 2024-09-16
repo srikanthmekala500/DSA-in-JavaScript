@@ -1139,11 +1139,12 @@ console.log(employee.getName());
 **call(), apply(), bind():** These methods explicitly set the value of this.
 
 - The this keyword in JavaScript is dynamic and its **value depends on the context** in which it is used.
+- 
   **1. Object Method**:
   
   - When this is used inside an object method, it refers to the object that is calling the method.
-  - 
-  ```javascript 
+   ```javascript 
+
   const person = {
   name: 'Alice',
   greet: function() {
