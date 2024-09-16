@@ -74,8 +74,9 @@ function App() {
 **functional Components**
   -  **Definition:** These are simple JavaScript functions that accept props as an argument and return React elements (JSX).
     
-  -  **State and Lifecycle:** Initially, functional components were **stateless**and **did not have lifecycle methods**. However, with the introduction of React Hooks **(e.g., useState, useEffect)**, functional components can now manage state and side effects.
-- **Hooks:** Hooks like **useState and useEffect allow functional components to handle state and lifecycle events**
+  -  **State and Lifecycle:** Initially, functional components were **stateless**and **did not have lifecycle methods**. However, with 
+          the introduction of React Hooks **(e.g., useState, useEffect)**, functional components can now manage state and side effects.
+-   **Hooks:** Hooks like **useState and useEffect allow functional components to handle state and lifecycle events**
  ```javascript 
         function Greeting(props) {
       return <h1>Hello, {props.name}!</h1>;
@@ -98,7 +99,46 @@ function App() {
           </div>
         );
       }
-
-    ```
+ ```
   **Class Components**
-- **Definition:** These are ES6 classes that extend from React.Component and have a render method to return React elements.
+      - **Definition:** These are ES6 classes that extend from React.Component and have a render method to return React elements.
+     -   Class components in React are typically **stateful**, meaning they can **manage and maintain their own state**. This is one of the key  features that distinguishes them from stateless functional components .
+**Stateful Components**
+  -  **State Management:** Class components can hold and manage local state using **this.state and this.setState**.
+  -  **Lifecycle Methods:** They have access to lifecycle methods like **componentDidMount, componentDidUpdate, and componentWillUnmount**, which allow you to run code at specific points in the component’s lifecycle.
+```javascript 
+import React, { Component } from 'react';
+
+class MyComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  incrementCount = () => {
+    this.setState({ count: this.state.count + 1 });
+  }
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.incrementCount}>Increment</button>
+      </div>
+    );
+  }
+}
+
+export default MyComponent;
+```
+**Defining a Constructor**
+ -  The constructor method is defined within a class and is called automatically when a **new instance of the class is created**.
+  - **Inside the constructor, the this keyword refers to the new object being created.** It is used to set properties on the object.
+  - In a derived class (a class that extends another class), you must call super() before using this in the constructor. This calls the parent class’s constructor.
+  - **The render() method**returns the JSX (JavaScript XML) that describes the component’s layout. This JSX is then converted into actual HTML elements in the DOM.
+  - The render() method is called whenever there is a **change in the component’s state or props**. This ensures that the UI is always **up-to-date with the latest data.**
+  - **The render() method** must return a **single root element**. If you need to return multiple elements, you should wrap them in a **single container element like a <div> or use React fragments**.
+  - **No Side Effects** :The render() method should be **pure, meaning it should not modify the component’s state or interact with the browser (e.g., making HTTP requests)**. It should only return the JSX representation of the component
+  - React uses a virtual DOM to optimize rendering. **When the render() method is called, React updates the virtual DOM first and then efficiently updates the actual DOM to match the virtual DOM**
