@@ -41,31 +41,61 @@ function App() {
 }
 ## What is the difference between Element and Component?
 **Elements**
-**Definition:** Elements are the **smallest building blocks of React applications**. They are plain objects that describe **what you want to see on the screen.**
-
-**Creation:** Typically created using **JSX (JavaScript XML) or React.createElement()**.
-
-**Immutability:** Elements are immutable. Once created, you cannot change their properties or children.
- ```javascript 
-  const element = <h1>Hello, React!</h1>;
-```
+      **Definition:** Elements are the **smallest building blocks of React applications**. They are plain objects that describe **what you want to see on the screen.**
+      
+      **Creation:** Typically created using **JSX (JavaScript XML) or React.createElement()**.
+      
+      **Immutability:** Elements are immutable. Once created, you cannot change their properties or children.
+           ```javascript 
+            const element = <h1>Hello, React!</h1>;
+          ```
 **Components**
-**Definition:** Components are **reusable and composable building blocks that return React elements**. They can be thought of as JavaScript functions or classes that take in inputs (called “props”) and return elements.
+          **Definition:** Components are **reusable and composable building blocks that return React elements**. They can be thought of as JavaScript functions or classes that take in inputs (called “props”) and return elements.
 
 **Types:** There are two types of components:
 
 **Functional Components:** These are JavaScript functions that return elements.
-```javascript 
-function Greeting(props) {
-  return <h1>Hello, {props.name}!</h1>;
-}
-```
+      ```javascript 
+      function Greeting(props) {
+        return <h1>Hello, {props.name}!</h1>;
+      }
+      ```
 **Class Components:** These are ES6 classes that extend React.Component and have a render method.
    - **State and Lifecycle:** Components can have state and lifecycle methods, allowing them to manage dynamic data and respond to user interactions.
-```javascript 
-class Greeting extends React.Component {
-  render() {
-    return <h1>Hello, {this.props.name}!</h1>;
-  }
+      ```javascript 
+      class Greeting extends React.Component {
+        render() {
+          return <h1>Hello, {this.props.name}!</h1>;
+        }
+      }
+      ```
+## What are the differences between functional and class components ? 
+  -  **Definition:** These are simple JavaScript functions that accept props as an argument and return React elements (JSX).
+    
+  -  **State and Lifecycle:** Initially, functional components were **stateless**and **did not have lifecycle methods**. However, with the introduction of React Hooks **(e.g., useState, useEffect)**, functional components can now manage state and side effects.
+
+- **Hooks:**Hooks like **useState and useEffect allow functional components to handle state and lifecycle events**
+ 
+          ```javascript 
+        function Greeting(props) {
+      return <h1>Hello, {props.name}!</h1>;
+    }
+  /////////
+  import React, { useState, useEffect } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  }, [count]);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
 }
-```
+
+    ```
