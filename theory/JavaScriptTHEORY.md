@@ -1270,3 +1270,17 @@ doSomething(param1, param2, function(err, paramx){
     - Using Promises
     
     - Using Async-Await
+
+**Here are some strategies to escape callback hell:**
+
+**Use Promises**: Promises provide a more structured way to handle asynchronous operations. 
+    You can chain .then() and .catch() methods to create a linear flow of code instead of deeply nested callbacks.
+ 
+**Async/Await:** async/await is even more readable than promises. 
+ It allows you to write asynchronous code that looks like synchronous code, making it easier to understand.
+ 
+**Modularization:** Break your code into smaller, reusable functions.
+This reduces the nesting level and makes your code more organized and easier to comprehend.
+ 
+**Named Functions:** Use named functions instead of anonymous functions for callbacks.
+Named functions provide clarity and make your code more readable.
