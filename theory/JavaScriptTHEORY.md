@@ -970,5 +970,5 @@ console.log(result); // 314
         }
         const counter = new Counter();
         counter.increment();
-``
+ 
 # What is Function?
