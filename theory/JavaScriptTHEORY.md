@@ -1154,7 +1154,8 @@ console.log(employee.getName());
         person.greet(); // Logs 'Alice'
         ```
     **Global Context**
-        When this is **used outside of any function or object method, in the global context (not in strict mode), it refers to the global object**.
+    
+     When this is **used outside of any function or object method, in the global context (not in strict mode), it refers to the global object**.
 
        -  In a browser, the global object is window.
      
@@ -1163,6 +1164,7 @@ console.log(employee.getName());
    console.log(this); // In a browser, this logs the Window object
     ```
    **Function Context**
+  
         -  In a regular function, this refers to the global object when the function is called in the global context (non-strict mode).
         -  However, in strict mode, this is undefined in a regular function if not explicitly set:
   
