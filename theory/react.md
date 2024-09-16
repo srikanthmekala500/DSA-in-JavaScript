@@ -54,13 +54,17 @@ function App() {
 **Types:** There are two types of components:
 
 **Functional Components:** These are JavaScript functions that return elements.
+```javascript 
 function Greeting(props) {
   return <h1>Hello, {props.name}!</h1>;
 }
+```
 **Class Components:** These are ES6 classes that extend React.Component and have a render method.
    - **State and Lifecycle:** Components can have state and lifecycle methods, allowing them to manage dynamic data and respond to user interactions.
+```javascript 
 class Greeting extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}!</h1>;
   }
 }
+```
