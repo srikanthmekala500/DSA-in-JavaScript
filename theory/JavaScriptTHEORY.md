@@ -1143,13 +1143,35 @@ console.log(employee.getName());
   **1. Object Method**:
   
   - When this is used inside an object method, it refers to the object that is calling the method.
-```javascript    
-const person = {
-  name: 'Alice',
-  greet: function() {
-    console.log(this.name);
-  }
-};
+        ```javascript    
+        const person = {
+          name: 'Alice',
+          greet: function() {
+            console.log(this.name);
+          }
+        };
+        
+        person.greet(); // Logs 'Alice'
+        ```
+    **Global Context**
+        When this is **used outside of any function or object method, in the global context (not in strict mode), it refers to the global object**.
 
-person.greet(); // Logs 'Alice'
-```
+       -  In a browser, the global object is window.
+     
+       - In Node.js, it is global.
+   ```javascript    
+   console.log(this); // In a browser, this logs the Window object
+    ```
+   **Function Context**
+        -  In a regular function, this refers to the global object when the function is called in the global context (non-strict mode).
+        -  However, in strict mode, this is undefined in a regular function if not explicitly set:
+ **call(), apply(), and bind()**
+  
+**call():** 
+    - Invokes the function immediately with a specified this value and arguments provided individually.
+    
+**apply():** 
+    - Invokes the function immediately with a specified this value and arguments provided as an array.
+    
+**bind():** 
+   - Creates a new function with a specified this value and optional preset arguments, which can be called later.
