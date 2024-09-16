@@ -1143,14 +1143,4 @@ console.log(employee.getName());
   **1. Object Method**:
   
   - When this is used inside an object method, it refers to the object that is calling the method.
-   ```javascript 
-
-  const person = {
-  name: 'Alice',
-  greet: function() {
-    console.log(this.name);
-  }
-};
-person.greet(); // Logs 'Alice'
-```
- 
+   
