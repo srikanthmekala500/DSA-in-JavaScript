@@ -1097,5 +1097,29 @@ These are pure methods:**
 **Testable**: We can test it as an independent unit.
 
 **Impure Functions**
+
     - An impure function is a function that contains one or more side effects. 
    -  It mutates data outside of its lexical scope and does not predictably produce the same output for the same input.
+     
+## What is the difference between a method and a function in javascript?
+**1. Function:**
+   
+    A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object.
+   It can be passed data to operate on (i.e. parameter) and can optionally return value.
+   
+**Method:**
+
+A JavaScript method is a property of an object that contains a function definition. Methods are functions stored as object properties.
+ 
+```javascript 
+let employee = {
+  firstName: "Ajay",
+  lastName: "Nagi",
+  getName: function () {
+    return "Employe Name: " + this.firstName + " " + this.lastName;
+  }
+};
+
+// Call the method
+console.log(employee.getName());
+```
