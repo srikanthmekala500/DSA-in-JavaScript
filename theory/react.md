@@ -70,32 +70,35 @@ function App() {
       }
       ```
 ## What are the differences between functional and class components ? 
+
+**functional Components**
   -  **Definition:** These are simple JavaScript functions that accept props as an argument and return React elements (JSX).
     
   -  **State and Lifecycle:** Initially, functional components were **stateless**and **did not have lifecycle methods**. However, with the introduction of React Hooks **(e.g., useState, useEffect)**, functional components can now manage state and side effects.
 
-- **Hooks:**Hooks like **useState and useEffect allow functional components to handle state and lifecycle events**
+**Hooks:**Hooks like **useState and useEffect allow functional components to handle state and lifecycle events**
  
           ```javascript 
         function Greeting(props) {
       return <h1>Hello, {props.name}!</h1>;
     }
   /////////
+  
   import React, { useState, useEffect } from 'react';
 
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  }, [count]);
-
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-    </div>
-  );
-}
+      function Counter() {
+        const [count, setCount] = useState(0);
+      
+        useEffect(() => {
+          document.title = `You clicked ${count} times`;
+        }, [count]);
+      
+        return (
+          <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>Click me</button>
+          </div>
+        );
+      }
 
     ```
