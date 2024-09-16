@@ -837,3 +837,16 @@ display(10, 20, 30, 40, 50);
 // Output
 SyntaxError: Rest element must be last element
 ```
+## What is difference between [] and new Array() ?
+- [] and new Array() are two different ways of creating an array, but they are functionally equivalent.
+
+ - The primary difference between them is in how they are created and in their behavior when used with certain methods.
+
+[] is a shorthand for creating a new array. It is the preferred way to create an array in most cases, because it's more concise and easier to read. For example:
+
+const myArray = []; // create a new empty array
+On the other hand, new Array() is a constructor function that creates a new array object. It can be used to create an array of a specific length or with specific elements. For example:
+
+const myArray = new Array(); // create a new empty array
+const myOtherArray = new Array(3); // create a new array with a length of 3
+const myThirdArray = new Array("a", "b", "c"); // create a new array with three elements
