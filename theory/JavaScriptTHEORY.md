@@ -874,3 +874,32 @@ let res2 = exp.exec("Hi");
 console.log(res1); // ['Hello', index: 0, input: 'Hello World', groups: undefined]
 console.log(res2); // null
 ```
+**Method**	     **Description**
+**exec()**	        Executes a search for a match in a string. It returns an array of information or null on a mismatch.
+**test()**        Tests for a match in a string. It returns true or false.
+**match()**	        Returns an array containing all of the matches, including capturing groups, or null if no match is found.
+**matchAll()**	    Returns an iterator containing all of the matches, including capturing groups.
+**search()**	    Tests for a match in a string. It returns the index of the match, or -1 if the search fails.
+**replace()**	    Executes a search for a match in a string, and replaces the matched substring with a replacement substring.
+**replaceAll()**	Executes a search for all matches in a string, and replaces the matched substrings with a replacement substring.
+**split()**	        Uses a regular expression or a fixed string to break a string into an array of substrings.
+
+## How do you search a string for a pattern?
+
+**1. Using test()** It searches a string for a pattern, and returns true or false, depending on the result.
+```javascript
+let re1 = /Hi/;
+let re2 = /you/;
+
+re1.test("How are you?"); // false
+re2.test("How are you?"); // true
+```
+
+**2. Using exec()** It searches a string for a specified pattern, and returns the found text as an object. If no match is found, it returns an empty (null) object.
+```javascript
+let re1 = /Hi/;
+let re2 = /you/;
+
+re1.exec("How are you?"); // null
+re2.exec("How are you?"); // ["you"]
+```
