@@ -1122,3 +1122,35 @@ let employee = {
 // Call the method
 console.log(employee.getName());
 ```
+# Explain how this works in JavaScript?
+ 
+ **Object Method:** this refers to the object the method is called on.
+ 
+**Global Context**: this refers to the global object (window in browsers, global in Node.js).
+
+**Function (Non-strict Mode):** this refers to the global object.
+
+**Function (Strict Mode):** this is undefined.
+
+**Event Handlers:** this refers to the element that triggered the event
+
+**Arrow Functions:** this is lexically inherited from the surrounding context.
+
+**call(), apply(), bind():** These methods explicitly set the value of this.
+
+- The this keyword in JavaScript is dynamic and its **value depends on the context** in which it is used.
+  **1. Object Method**:
+  
+  - When this is used inside an object method, it refers to the object that is calling the method.
+  - 
+  ```javascript 
+  const person = {
+  name: 'Alice',
+  greet: function() {
+    console.log(this.name);
+  }
+};
+
+person.greet(); // Logs 'Alice'
+```
+**Global Context**
