@@ -1946,16 +1946,21 @@ add(3) => 3 + add(2)
 -  The **Document Object Model** (DOM) is a programming interface for web documents. It **represents the structure of a document as a tree of objects**, allowing programs to dynamically **access and manipulate the content, structure, and style** of web pages.
   
 **Tree Structure:**
+
 - The DOM represents an **HTML or XML document** as a **tree structure where each node is an object representing a part of the document**.
+- 
 For example, an HTML document’s structure is represented as a hierarchy of nodes,**including elements, attributes, and text**.
 
 **Nodes and Objects:**
     - Each part of the document **(like elements, attributes, and text)** is represented as a node in the DOM tree.
 Nodes can be accessed and manipulated using JavaScript.
+
 **Dynamic Interaction:**
+
    - The DOM allows scripts to update the content, structure, and style of a document dynamically.
 This enables interactive web pages where content can change in response to user actions without needing to reload the entire page.
 **APIs and Methods:**
+
     - The DOM provides various methods and properties to interact with the document.
 For example, **document.getElementById, document.querySelector, and document.createElement** are commonly used methods to access and manipulate elements.
 
@@ -1995,7 +2000,7 @@ For example, **document.getElementById, document.querySelector, and document.cre
 
    - **Definition:** The Virtual DOM is a lightweight, **in-memory representation of the Real DOM**. It is used by libraries like React to optimize updates.
 
-   - **Updates:** When an element is updated, the changes are first made to the Virtual DOM. React then compares the **Virtual DOM with a snapshot of the previous Virtual DOM** (a process called “reconciliation”) and **updates only the changed elements in the Real DOM**.
+   - **Updates:** When an element is updated, the changes are first made to the Virtual DOM. React then compares the **Virtual DOM with a snapshot of the previous Virtual DOM** (a process called “**reconciliation**”) and **updates only the changed elements in the Real DOM**.
 
   - **Manipulation:** **Cannot directly update HTML elements**; it updates the Real DOM based on the differences.
 
@@ -2004,3 +2009,17 @@ necessary parts**.
 
  - **Memory Usage:** More efficient in terms of memory usage as it only keeps a lightweight representation of the DOM.
 
+## What do you mean by BOM?
+  - The **Browser Object Model(BOM)** provides the **properties and methods for JavaScript to interact with the browser**.
+
+  - BOM allows performing **actions to manipulate the browser window through BOM objects without affecting the contents of the page** i.e. the document. **BOM objects are global objects**. The BOM objects used to **manipulate the browser window**that is:
+    
+   - location
+ 
+  - history
+  
+  - navigator
+  
+  - screen
+ 
+ - document
