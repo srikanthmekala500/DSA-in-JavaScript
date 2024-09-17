@@ -1925,3 +1925,21 @@ function fib(n) {
 }
 ///0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
 ```
+## What is recursion in a programming language?
+
+  - Recursion is a technique to **iterate over an operation by having a function call itself repeatedly until it arrives at a result**.
+ ```javascript  
+    function add(number) {
+  if (number <= 0) {
+    return 0;
+  } else {
+    return number + add(number - 1);
+  }
+}
+add(3) => 3 + add(2)
+          3 + 2 + add(1)
+          3 + 2 + 1 + add(0)
+          3 + 2 + 1 + 0 = 6
+ ```
+ ## What is DOM?
+ 
