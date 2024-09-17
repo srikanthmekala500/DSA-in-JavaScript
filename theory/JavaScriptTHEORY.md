@@ -2026,20 +2026,46 @@ necessary parts**.
  
 ##  What is the distinction between client-side and server-side JavaScript?
 **Client-Side JavaScript**
+    
     * Execution Environment:
 
-Runs in the user’s browser.
-Directly interacts with the HTML and CSS to create dynamic and interactive web pages.
-Common Uses:
+**Runs in the user’s browser.**
+        - Directly interacts with the HTML and CSS to create dynamic and interactive web pages.
+**Common Uses:**
 
-Manipulating the DOM (Document Object Model) to update the UI.
-Handling user events like clicks, form submissions, and mouse movements.
-Validating user input before it is sent to the server.
-Making asynchronous requests to the server using AJAX or Fetch API to update parts of the web page without reloading.
-Advantages:
+   - **Manipulating the DOM** (Document Object Model) to update the UI.
+   - 
+   - Handling user events like **clicks, form submissions, and mouse movements**.
+   - 
+   - Validating user input before it is sent to the server.
+   - 
+   - Making **asynchronous requests to the server using AJAX or Fetch API to update parts of the web page without reloading**.
+   - 
+**Advantages:**
+    -  Reduces server load by handling tasks on the client side.
+    -  Provides a more responsive and interactive user experience.
+    - Immediate feedback to the user without needing to communicate with the server.
 
-Reduces server load by handling tasks on the client side.
-Provides a more responsive and interactive user experience.
-Immediate feedback to the user without needing to communicate with the server.
+**Server-Side JavaScript**
 
-## What is the distinction between client-side and server-side JavaScript?
+Execution Environment:
+
+**Runs on the server.**
+        - Typically used with **environments like Node.js**.
+**Common Uses:**
+
+   -  Handling database operations (**CRUD operations**).
+ 
+   - Managing server-side logic and business rules.
+  
+   - Authenticating and authorizing users.
+ 
+   - Serving dynamic content based on user requests.
+ 
+   - Performing complex calculations and data processing.
+   - 
+**Advantages:**
+
+   - Can access server resources like databases and file systems.
+   - Provides more security for sensitive operations and data.
+   - Centralized control over the application logic.
