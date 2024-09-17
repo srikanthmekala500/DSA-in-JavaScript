@@ -876,13 +876,21 @@ console.log(res2); // null
 ```
 **Method**	     **Description**
 **exec()**	        Executes a search for a match in a string. It returns an array of information or null on a mismatch.
+
 **test()**        Tests for a match in a string. It returns true or false.
+
 **match()**	        Returns an array containing all of the matches, including capturing groups, or null if no match is found.
+
 **matchAll()**	    Returns an iterator containing all of the matches, including capturing groups.
+
 **search()**	    Tests for a match in a string. It returns the index of the match, or -1 if the search fails.
+
 **replace()**	    Executes a search for a match in a string, and replaces the matched substring with a replacement substring.
+
 **replaceAll()**	Executes a search for all matches in a string, and replaces the matched substrings with a replacement substring.
+
 **split()**	        Uses a regular expression or a fixed string to break a string into an array of substrings.
+
 
 ## How do you search a string for a pattern?
 
@@ -973,12 +981,44 @@ console.log(result); // 314
  
 # What is Function?
 - A function is a **group of statements that perform specific tasks** and **can be kept and maintained separately form main program**.
--  Functions provide a way to **create reusable code packages** which are more **portable and easier to debug**.
--  Here are some advantages of using functions:
--  Functions reduces the repetition of code within a program —
--  Functions makes the code much easier to maintain
--  Functions makes it easier to eliminate the errors
 
+-  Functions provide a way to **create reusable code packages** which are more **portable and easier to debug**.
+ **Here are some advantages of using functions:**
+     - Functions reduces the repetition of code within a program —
+    -  Functions makes the code much easier to maintain
+    -  Functions makes it easier to eliminate the errors
+**Types of functions in javascript?**
+
+    - Named function
+    - Anonymous function
+    - Immediately invoked function expression. It runs as soon as the browser finds it.
+**Named function**
+        *Named function is the function that we define it in the code and then call it
+        *whenever we need it by referencing its name and passing some arguments to it.
+        *Named functions are useful if we need to call a function many times to pass different values to it or run it several times.
+```javascript
+   function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+greet("Alice"); // Output: Hello, Alice!
+```
+**Anonymous function**
+    - The anonymous functions don’t have names. They need to be tied to something: variable or an event to run.
+ ```javascript
+    const greet = function(name) {
+  console.log(`Hello, ${name}!`);
+};
+greet("Bob"); // Output: Hello, Bob!
+```
+**Immediately invoked function expression—
+IIFE**
+     -**Invoked function expression runs as soon as the browser encounters it**. The benefit of this**function is that it runs immediately** where it’s located in the code and produces a direct output. That means it is unaffected by code which appears further down in the script which can be useful.
+    -  Immediately Invoked Function Expressions (IIFE) is a JavaScript function that executes **immediately after it has been defined so there is no need to manually invoke IIFE**.
+ ```javascript
+    (function() {
+  console.log("IIFE Executed!");
+})();
+```
   # Explain Higher Order Functions in Javascript ?
   
   **Definition**
