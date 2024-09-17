@@ -1696,4 +1696,36 @@ xhr.send(); // Send the request
 - this is undefined in the global context.
 - It catches some common coding bloopers, throwing exceptions.
 - It disables features that are confusing or poorly thought out.
+ 
+##  Explain browser console logs features?
+
+1. console.table()
+3. console.log()
+4. console.warn()
+5. console.error()
    
+## What is a Polyfill?
+- **A polyfill is a piece of code (usually a JavaScript library) that provides modern functionality on older browsers that do not support it**. It is a way to bring **new features to old browsers by mimicking the behavior of modern JavaScript APIs**.
+  
+- For example, Object.values() was introduced in ES2017 and is not supported in some older browsers such as Internet Explorer and Safari 9. However, you can use a polyfill to add support for it in older browsers.
+```javascript   
+// polyfill for the Object.values()
+if (!Object.values) {
+  Object.values = function(obj) {
+    var values = [];
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        values.push(obj[key]);
+      }
+    }
+    return values;
+  };
+}
+
+// Now you can use Object.values() even in older browsers that don't support it natively
+const obj = { a: 1, b: 2, c: 3 };
+const values = Object.values(obj);
+
+console.log(values); // Output: [1, 2, 3]
+```
+What do you mean by Self Invoking Functions?
