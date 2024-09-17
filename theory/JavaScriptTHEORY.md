@@ -1904,11 +1904,12 @@ console.log(Object.getPrototypeOf(obj) === Object.prototype); // true
  - In programming, memoization is an optimization technique that makes**applications more efficient and hence faster**.
  
   - It does this by **storing computation results in cache,** and **retrieving**that same information from the cache the **next time it's needed instead of computing it again**.
-        - A cache is simply a **temporary data store that holds data so that future requests for that data can be served faster**.
+
+    - A **cache** is simply a **temporary data store that holds data so that future requests for that data can be served faster**.
     
 **The concept of memoization in JavaScript relies on two concepts:**
 
-  -**Closures:** The combination of a function and the lexical environment within which that function was declared. You can read more about them here and here.
+  - **Closures:** The combination of a function and the lexical environment within which that function was declared. You can read more about them here and here.
   
 - **Higher Order Functions:** Functions that operate on other functions, either by taking them as arguments or by returning them. You can read more about them here.
 
