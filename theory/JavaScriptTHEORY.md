@@ -1887,7 +1887,7 @@ alice.sayName(); // Output: Alice
 
 - Using **Object.getPrototypeOf**
 
-- You can use the **Object.getPrototypeOf method to get the prototype of an object**.
+  You can use the **Object.getPrototypeOf method to get the prototype of an object**.
 
 ```javascript
 const obj = {};
@@ -1899,4 +1899,28 @@ console.log(Object.getPrototypeOf(obj) === Object.prototype); // true
 - **Prototype Chain:** A chain of prototypes that JavaScript follows to find properties and methods.
  
 - **Adding to Prototypes:** You can add properties and methods to an object’s prototype to make them available to all objects that inherit from it.
-- 
+
+## What is Memoization?
+ - In programming, memoization is an optimization technique that makes**applications more efficient and hence faster**.
+ 
+  - It does this by **storing computation results in cache,** and **retrieving**that same information from the cache the **next time it's needed instead of computing it again**.
+        - A cache is simply a **temporary data store that holds data so that future requests for that data can be served faster**.
+    
+**The concept of memoization in JavaScript relies on two concepts:**
+
+  -**Closures:** The combination of a function and the lexical environment within which that function was declared. You can read more about them here and here.
+  
+- **Higher Order Functions:** Functions that operate on other functions, either by taking them as arguments or by returning them. You can read more about them here.
+
+**JavaScript Memoization Example**
+    - we'll use the classic example of the **Fibonacci sequence**.
+```javascript    
+function fib(n) {
+    if (n < 2){
+        return n;
+    }else{
+        return fibo(n-2) + fibo(n-1);
+    }
+}
+///0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
+```
