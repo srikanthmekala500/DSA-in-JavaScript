@@ -987,12 +987,17 @@ console.log(result); // 314
      - Functions reduces the repetition of code within a program —
     -  Functions makes the code much easier to maintain
     -  Functions makes it easier to eliminate the errors
+      
 **Types of functions in javascript?**
 
     - Named function
+    
     - Anonymous function
+    
     - Immediately invoked function expression. It runs as soon as the browser finds it.
+    
 **Named function**
+
         *Named function is the function that we define it in the code and then call it
         *whenever we need it by referencing its name and passing some arguments to it.
         *Named functions are useful if we need to call a function many times to pass different values to it or run it several times.
@@ -1002,7 +1007,9 @@ console.log(result); // 314
 }
 greet("Alice"); // Output: Hello, Alice!
 ```
+
 **Anonymous function**
+
     - The anonymous functions don’t have names. They need to be tied to something: variable or an event to run.
  ```javascript
     const greet = function(name) {
@@ -1010,15 +1017,19 @@ greet("Alice"); // Output: Hello, Alice!
 };
 greet("Bob"); // Output: Hello, Bob!
 ```
+
 **Immediately invoked function expression—
 IIFE**
-     -**Invoked function expression runs as soon as the browser encounters it**. The benefit of this**function is that it runs immediately** where it’s located in the code and produces a direct output. That means it is unaffected by code which appears further down in the script which can be useful.
-    -  Immediately Invoked Function Expressions (IIFE) is a JavaScript function that executes **immediately after it has been defined so there is no need to manually invoke IIFE**.
+
+-**Invoked function expression runs as soon as the browser encounters it**. The benefit of this**function is that it runs immediately** where it’s located in the code and produces a direct output. That means it is unaffected by code which appears further down in the script which can be useful.
+
+ -  Immediately Invoked Function Expressions (IIFE) is a JavaScript function that executes **immediately after it has been defined so there is no need to manually invoke IIFE**.
  ```javascript
     (function() {
   console.log("IIFE Executed!");
 })();
 ```
+
   # Explain Higher Order Functions in Javascript ?
   
   **Definition**
@@ -1056,10 +1067,15 @@ IIFE**
   
 **Real-World Examples
 Array Methods**
+
   **JavaScript arrays come with several higher-order functions:**
+  
  - **map:** Applies a function to each element and returns a new array.
+ - 
  - **filter:** Returns a new array with elements that pass a test.
+ - 
  - **reduce:** Applies a function against an accumulator and each element to reduce it to a single value.
+ - 
 ```javascript   
   const numbers = [1, 2, 3, 4, 5];
 
