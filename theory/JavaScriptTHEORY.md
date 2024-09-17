@@ -1993,14 +1993,14 @@ For example, **document.getElementById, document.querySelector, and document.cre
 
 **Virtual DOM**
 
-**Definition:** The Virtual DOM is a lightweight, **in-memory representation of the Real DOM**. It is used by libraries like React to optimize updates.
+   -**Definition:** The Virtual DOM is a lightweight, **in-memory representation of the Real DOM**. It is used by libraries like React to optimize updates.
 
-**Updates:** When an element is updated, the changes are first made to the Virtual DOM. React then compares the **Virtual DOM with a snapshot of the previous Virtual DOM** (a process called “reconciliation”) and **updates only the changed elements in the Real DOM**.
+   -**Updates:** When an element is updated, the changes are first made to the Virtual DOM. React then compares the **Virtual DOM with a snapshot of the previous Virtual DOM** (a process called “reconciliation”) and **updates only the changed elements in the Real DOM**.
 
-**Manipulation:** **Cannot directly update HTML elements**; it updates the Real DOM based on the differences.
+  - **Manipulation:** **Cannot directly update HTML elements**; it updates the Real DOM based on the differences.
 
-**Performance:** Faster because it **minimizes the number of updates to the Real DOM by batching changes and updating only the 
+ - **Performance:** Faster because it **minimizes the number of updates to the Real DOM by batching changes and updating only the 
 necessary parts**.
 
-**Memory Usage:** More efficient in terms of memory usage as it only keeps a lightweight representation of the DOM.
+ - **Memory Usage:** More efficient in terms of memory usage as it only keeps a lightweight representation of the DOM.
 
