@@ -1038,17 +1038,22 @@ IIFE**
         - Returns a function as its result.
 **Examples**
 **Function as an Argument**
-    - Many JavaScript functions accept other functions as arguments. Common examples are the methods of arrays such as **map, filter, and reduce**:
+
+- Many JavaScript functions accept other functions as arguments. Common examples are the methods of arrays such as **map, filter, and reduce**:
+    
         ```javascript
                     // Using map to apply a function to each element in an array
                 const numbers = [1, 2, 3, 4];
                 const squares = numbers.map(x => x * x);
                 console.log(squares); // [1, 4, 9, 16]
         ```
+   
     - Here,**map is a higher-order function that takes a function**(x => x * x) as an argument and applies it to each element of the array.
     
 **Function as a Return Value**
+
     Higher-order functions can also return other functions. For example:
+    
   ```javascript
             // A function that returns another function
         function makeMultiplier(multiplier) {
@@ -1065,17 +1070,16 @@ IIFE**
 ```
 - Here,**makeMultiplier** is a higher-order function that returns a new function based on the **multiplier argument**.
   
-**Real-World Examples
-Array Methods**
+**Real-World Examples Array Methods**
 
   **JavaScript arrays come with several higher-order functions:**
   
  - **map:** Applies a function to each element and returns a new array.
- - 
+ 
  - **filter:** Returns a new array with elements that pass a test.
- - 
+ 
  - **reduce:** Applies a function against an accumulator and each element to reduce it to a single value.
- - 
+ 
 ```javascript   
   const numbers = [1, 2, 3, 4, 5];
 
@@ -1087,7 +1091,9 @@ console.log(evens); // [2, 4]
 const sum = numbers.reduce((acc, num) => acc + num, 0);
 console.log(sum); // 15
 ```
+
 **Event Handling**
+
 In event-driven programming, you often pass functions (event handlers) to be executed when events occur:
 ```javascript
 document.getElementById('myButton').addEventListener('click', function() {
