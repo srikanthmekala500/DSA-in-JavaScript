@@ -1770,6 +1770,7 @@ xhr.send(); // Send the request
 - **A polyfill is a piece of code (usually a JavaScript library) that provides modern functionality on older browsers that do not support it**. It is a way to bring **new features to old browsers by mimicking the behavior of modern JavaScript APIs**.
   
 - For example, Object.values() was introduced in ES2017 and is not supported in some older browsers such as Internet Explorer and Safari 9. However, you can use a polyfill to add support for it in older browsers.
+  
 ```javascript   
 // polyfill for the Object.values()
 if (!Object.values) {
@@ -1790,4 +1791,112 @@ const values = Object.values(obj);
 
 console.log(values); // Output: [1, 2, 3]
 ```
-What do you mean by Self Invoking Functions?
+## What is currying in JavaScript?
+
+ - It is a technique in functional programming, **that transforms the function of multiple arguments into several functions of a single argument in sequence**.
+   
+   (or)
+   
+   - As we know, currying in JavaScript is a **function that takes multiple arguments. In it, the function is transformed into a number of functions, and each of these series of functions will accept one argument**
+      
+   
+   - Currying in JavaScript can be for the following reasons:
+     
+      - By using the currying function, we can **avoid passing the same variable many times**
+        
+      - Currying in JavaScript can be used to make a **higher-order function**.
+
+- It helps us to create a **higher-order function**
+ 
+- It **reduces the chances of error** in our function by dividing it into multiple smaller functions that can handle one responsibility.
+ 
+- It is very useful in **building modular and reusable code**
+
+- It helps us to avoid passing the same variable multiple times
+
+- It makes the **code more readable**
+  
+**simple function that will accept three parameters**
+        ```javascript
+            const addition =(x, y, z)=>{
+                return x+y+z
+            }
+            console.log(addition(2, 3, 5)) // 10
+        ```
+        
+ **Converting an Existing Function into a Curried Function**
+ 
+  ```javascript
+         function sum(x) {   // x is taken as argument here
+            return (y) => {
+                return (z) => { // this function will return the sum
+                    return x + y + z
+                }
+            }
+        }
+        console.log(sum(1)(2)(3)) // 6
+```
+## What are the types of errors in javascript?
+
+There are **two types of errors in javascript**.
+
+
+**Syntax error:** Syntax errors are **mistakes or spelling problems in the code** that cause the program to not execute at all or to stop running halfway through. Error messages are usually supplied as well.
+
+**Logical error:** Reasoning mistakes occur when the syntax is proper but the **logic or program is incorrect**. The application **executes without problems in this case**. However, the output findings are inaccurate. These are sometimes more difficult to correct than syntax issues since these applications do not display error signals for logic faults.
+
+## Mention some advantages of javascript.
+
+**There are many advantages of javascript. Some of them are**
+
+- Javascript is executed on the client-side as well as server-side also. There are a variety of Frontend Frameworks that you may study and utilize. However, if you want to use JavaScript on the backend, you'll need to learn NodeJS. It is currently the only
+  
+- JavaScript framework that may be used on the backend.
+- 
+-Javascript is a simple language to learn.
+
+- Web pages now have more functionality because of Javascript.
+- To the end-user, Javascript is quite quick.
+  
+##  What are object prototypes?
+  
+**All javascript objects inherit properties from a prototype. For example,**
+
+**Date objects**inherit properties from the Date prototype
+
+**Math objects** inherit properties from the Math prototype
+
+**Array objects** inherit properties from the Array prototype.
+
+On top of the chain is Object.prototype. Every prototype inherits properties and methods from the Object.prototype.
+
+**A prototype is a blueprint of an object**. The prototype allows us to use **properties and methods on an object even if the properties and methods do not exist on the current object**.
+  ```javascript
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.sayName = function() {
+    console.log(this.name);
+};
+
+const alice = new Person("Alice");
+alice.sayName(); // Output: Alice
+```
+- JavaScript’s **built-in objects like Array, Date, and Object also have prototypes**. For example, all arrays inherit from **Array.prototype**, which provides methods like **forEach, map, and filter**.
+
+- Using **Object.getPrototypeOf**
+
+- You can use the **Object.getPrototypeOf method to get the prototype of an object**.
+
+```javascript
+const obj = {};
+console.log(Object.getPrototypeOf(obj) === Object.prototype); // true
+```
+
+- **Prototype**: An object from which other objects inherit properties and methods.
+
+- **Prototype Chain:** A chain of prototypes that JavaScript follows to find properties and methods.
+ 
+- **Adding to Prototypes:** You can add properties and methods to an object’s prototype to make them available to all objects that inherit from it.
+- 
