@@ -1950,46 +1950,46 @@ add(3) => 3 + add(2)
 For example, an HTML document’s structure is represented as a hierarchy of nodes,**including elements, attributes, and text**.
 
 **Nodes and Objects:**
-- Each part of the document **(like elements, attributes, and text)** is represented as a node in the DOM tree.
+    - Each part of the document **(like elements, attributes, and text)** is represented as a node in the DOM tree.
 Nodes can be accessed and manipulated using JavaScript.
 **Dynamic Interaction:**
    - The DOM allows scripts to update the content, structure, and style of a document dynamically.
 This enables interactive web pages where content can change in response to user actions without needing to reload the entire page.
 **APIs and Methods:**
-    -The DOM provides various methods and properties to interact with the document.
+    - The DOM provides various methods and properties to interact with the document.
 For example, **document.getElementById, document.querySelector, and document.createElement** are commonly used methods to access and manipulate elements.
 
-**getElementById:** returns an element whose id matches a passed string. Since the ids of elements are unique, this is the fastest way to select an element.
+ - **getElementById:** returns an element whose id matches a passed string. Since the ids of elements are unique, this is the fastest way to select an element.
 
-**getElementsByTagName:** returns a collection of all the elements present in the document that have the specified tag name, in the order of their appearance in the document.
+ - **getElementsByTagName:** returns a collection of all the elements present in the document that have the specified tag name, in the order of their appearance in the document.
 
-**getElementsByClassName:** returns an HTMLCollection of elements that match the passed class name. Bypassing the class names separated by whitespace, we can search for multiple class names.
+ - **getElementsByClassName:** returns an HTMLCollection of elements that match the passed class name. Bypassing the class names separated by whitespace, we can search for multiple class names.
 
-**getElementsByName:** returns a NodeList Collection of the elements that match the value of the name attribute with the passed string.
+ - **getElementsByName:** returns a NodeList Collection of the elements that match the value of the name attribute with the passed string.
 
-**querySelector:** returns the very first element within the document that matches the given selector. It only returns the element that matches with one of the specified CSS selectors, or a group of selectors.
+ - **querySelector:** returns the very first element within the document that matches the given selector. It only returns the element that matches with one of the specified CSS selectors, or a group of selectors.
 
-**querySelectorAll:** returns a static NodeList of elements that matches with one or a group of selectors. If no element matches, an empty NodeList is returned.
+ - **querySelectorAll:** returns a static NodeList of elements that matches with one or a group of selectors. If no element matches, an empty NodeList is returned.
 
 **Why is the DOM Important?**
 
-**Interactivity:** The DOM allows web pages to be **interactive and responsive to user actions**.
+ - **Interactivity:** The DOM allows web pages to be **interactive and responsive to user actions**.
     
-**Dynamic Content:** It enables the creation of **dynamic content that can be updated without reloading the page**.
+ - **Dynamic Content:** It enables the creation of **dynamic content that can be updated without reloading the page**.
     
-**Cross-Platform:** The DOM is a **cross-platform and language-independent interface**, making it a standard way to interact with web documents.
+ - **Cross-Platform:** The DOM is a **cross-platform and language-independent interface**, making it a standard way to interact with web documents.
 
 **Real DOM**
 
-**Definition:** The Real DOM (Document Object Model) is the actual representation of the HTML document. It is a **tree-like structure** consisting of all the nodes in an HTML document.
+  -**Definition:** The Real DOM (Document Object Model) is the actual representation of the HTML document. It is a **tree-like structure** consisting of all the nodes in an HTML document.
 
-**Updates:** When an element is **updated, the entire DOM is re-rendered**, which can be slow and inefficient.
+ - **Updates:** When an element is **updated, the entire DOM is re-rendered**, which can be slow and inefficient.
 
-**Manipulation:** **Directly** updates the HTML elements.
+ - **Manipulation:** **Directly** updates the HTML elements.
 
-**Performance:** Slower due to the need to **re-render the entire DOM for any change**.
+ - **Performance:** Slower due to the need to **re-render the entire DOM for any change**.
 
-**Memory Usage:** Higher memory usage due to the need to keep the entire DOM in memory.
+ - **Memory Usage:** Higher memory usage due to the need to keep the entire DOM in memory.
 
 **Virtual DOM**
 
