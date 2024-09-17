@@ -2023,3 +2023,23 @@ necessary parts**.
   - screen
  
  - document
+ 
+##  What is the distinction between client-side and server-side JavaScript?
+**Client-Side JavaScript**
+    * Execution Environment:
+
+Runs in the user’s browser.
+Directly interacts with the HTML and CSS to create dynamic and interactive web pages.
+Common Uses:
+
+Manipulating the DOM (Document Object Model) to update the UI.
+Handling user events like clicks, form submissions, and mouse movements.
+Validating user input before it is sent to the server.
+Making asynchronous requests to the server using AJAX or Fetch API to update parts of the web page without reloading.
+Advantages:
+
+Reduces server load by handling tasks on the client side.
+Provides a more responsive and interactive user experience.
+Immediate feedback to the user without needing to communicate with the server.
+
+## What is the distinction between client-side and server-side JavaScript?
