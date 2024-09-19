@@ -2090,9 +2090,9 @@ Execution Environment:
 
 **Purpose** 
  
-    - **Rest Parameter:** Gathers multiple arguments into an array.
+   - **Rest Parameter:** Gathers multiple arguments into an array.
       
-    - **Spread Operator:** Spreads elements of an array or object into individual elements.
+   - **Spread Operator:** Spreads elements of an array or object into individual elements.
   
 **Usage**  
 
