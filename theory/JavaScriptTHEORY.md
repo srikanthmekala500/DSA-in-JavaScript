@@ -2130,3 +2130,73 @@ console.log(combined); // Output: [1, 2, 3, 4, 5, 6]
 -  **Rest parameter is used in function declaration whereas the spread operator is used in function calls.**
 
 - **Rest parameter should always be used at the last parameter of a function**:
+
+# Object-Oriented Programming (OOP) ?
+
+  - **Inheritance in javascript** aids a new class to have all the functionality of another class while having its own functionality as well.
+    
+  -  *The inheritance in javascript primarily involves two segments:
+    
+      - **Child class:** The class which inherits the properties of another class is known as the child class.
+
+      - **Parent class:** The class whose property is being inherited is known as the parent class.
+**Extends**
+    - The extends keyword is used for **developing the inheritance between two classes**.
+**Super()**
+    - The **super keyword** in javascript is used to **call functions of an object's parent class**.
+
+    - The super() method **refers to the parent class**.
+    
+ ```javascript
+        class Cat extends Animal {
+          constructor(name, color) {
+            super(name); // Call the parent constructor
+            this.color = color;
+          }
+        
+          speak() {
+            super.speak(); // Call the parent method
+            console.log(`${this.name} meows and is ${this.color}.`);
+          }
+        }
+        
+        const myCat = new Cat('Whiskers', 'gray');
+        myCat.speak(); 
+        // Whiskers makes a noise.
+        // Whiskers meows and is gray.
+```
+**Encapsulation**:
+    - Encapsulation is the **process of hiding and securing the properties of objects**. Direct access to encapsulated properties is **not possible and we have to provide other mechanisms to 
+    operate/read that data**. 
+    
+    - Typically, this is done by making class variable properties private and providing public class methods to access necessary data.
+ ```javascript   
+    function Animal(val){
+    var name = val;
+    var publicApi = {
+        setName: function (val){
+            name = val;
+        },
+        getName: function (){
+            return name;
+        }
+    }
+    
+    return publicApi;
+}
+var animal = new Animal("DOG");
+animal.setName("CAT");
+console.log(animal.getName());   output: CAT
+console.log(animal.name);        output: undefined
+```
+- In the above code, the **name** property of **Animal isn’t directly accessible** but only via **publicApi** methods.
+  
+-This is because we are returning **publicApi** object that doesn’t have a name property.**Its properties(setName and getName) utilize name property from its lexical scope**.
+
+**Abstraction:**
+   -  Abstraction means **hiding the implementation details** and showing only **behavior**.
+ 
+   -  It’s done on the **design level** as opposed to **encapsulation**
+
+       which is implemented at the application level. With abstraction, **only essential details are shown to the user**.
+**Polymorphism**
