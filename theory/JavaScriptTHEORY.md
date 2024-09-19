@@ -2086,4 +2086,47 @@ Execution Environment:
    - Centralized control over the application logic.
      
 ## What is the rest parameter and spread operator?
+![image](https://github.com/user-attachments/assets/17b85bf8-f70e-43d6-b957-5e76b8de4860)
+
+**Purpose** 
+ 
+ **Rest Parameter:** Gathers multiple arguments into an array.
+  
+  **Spread Operator:** Spreads elements of an array or object into individual elements.
+  
+**Usage**  
+
+**Rest Parameter:** Used in **function parameter lists**.
+
+**Spread Operator:** Used in **function calls**, array literals, and object literals.
+
+**Syntax:**
+
+Both use **three dots** (...), but their context determines their behavior
+
+**Rest Parameter**
+
+```javascript
+    function myFunction(a, b, ...rest) {
+        console.log(a); // Output: 1
+        console.log(b); // Output: 2
+        console.log(rest); // Output: [3, 4, 5]
+    }
     
+    myFunction(1, 2, 3, 4, 5);
+```
+**Spread Operator**
+
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combined = [...arr1, ...arr2];
+
+console.log(combined); // Output: [1, 2, 3, 4, 5, 6]
+```
+- **Rest Parameter collects all remaining elements into an array. Spread Operator expands collected elements such as arrays into 
+   single elements**
+
+-  **Rest parameter is used in function declaration whereas the spread operator is used in function calls.**
+
+- **Rest parameter should always be used at the last parameter of a function**:
