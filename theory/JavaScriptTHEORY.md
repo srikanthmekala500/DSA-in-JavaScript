@@ -70,8 +70,8 @@ let v1 = 30
 console.log(v1) //SyntaxError: Identifier 'v1' has already been declared
 ``` 
 ## what is the different between the == and === ?
-    - The == operator compares the values of two operands and return true if they are equal ,while  performing type coercion  if necessary
-    ```javascript
+- The == operator compares the values of two operands and return true if they are equal ,while  performing type coercion  if necessary
+  ```javascript
     coercion means బలవంతం
     
     // consloe.log(2=="2") //true
@@ -82,7 +82,7 @@ console.log(v1) //SyntaxError: Identifier 'v1' has already been declared
      //consloe.log(2 ==="2") //fasle 
     
      //consloe.log(2 ===2) //true 
-     ```
+   ```
 ## what is the ECMAScript  ? What is ES6?
     -JavaScript ES6 (also known as ECMAScript 2015 or ECMAScript 6) is the newer version of JavaScript that was introduced in 2015.
     
@@ -108,7 +108,8 @@ console.log(v1) //SyntaxError: Identifier 'v1' has already been declared
     
     To check if a value is NaN, we use the isNaN() function,
 ## What is typeof operator?
- - In JavaScript, the typeof operator returns the data type of its operand in the form of a string. The operand can be any object, 
+
+- In JavaScript, the typeof operator returns the data type of its operand in the form of a string. The operand can be any object, 
    function, or variable.
  ```javascript
 
@@ -146,7 +147,8 @@ const i = function () {
 console.log(typeof i); // "function"
 ```
 ## What is an Unary operator?
-    - The unary(+) operator is used to convert a variable to a number. If the variable cannot be converted, it will still become a number but with the value NaN.
+
+- The unary(+) operator is used to convert a variable to a number. If the variable cannot be converted, it will still become a number but with the value NaN.
     
     ```javascript
     Example:
@@ -2047,11 +2049,11 @@ necessary parts**.
 **Common Uses:**
 
    - **Manipulating the DOM** (Document Object Model) to update the UI.
-   - 
+  
    - Handling user events like **clicks, form submissions, and mouse movements**.
-   - 
+   
    - Validating user input before it is sent to the server.
-   - 
+    
    - Making **asynchronous requests to the server using AJAX or Fetch API to update parts of the web page without reloading**.
    - 
 **Advantages:**
@@ -2076,9 +2078,12 @@ Execution Environment:
    - Serving dynamic content based on user requests.
  
    - Performing complex calculations and data processing.
-   - 
+   
 **Advantages:**
 
    - Can access server resources like databases and file systems.
    - Provides more security for sensitive operations and data.
    - Centralized control over the application logic.
+     
+## What is the rest parameter and spread operator?
+    
