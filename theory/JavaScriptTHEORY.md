@@ -70,23 +70,25 @@ let v1 = 30
 console.log(v1) //SyntaxError: Identifier 'v1' has already been declared
 ``` 
 ## what is the different between the == and === ?
-The == operator compares the values of two operands and return true if they are equal ,while  performing type coercion  if necessary
-
-coercion means బలవంతం
-
-// consloe.log(2=="2") //true
-
-The ===operator compares the values of two operands but it dose not perform type coercion .it only returns true  if the values are of  the same data type and have the same value 
-
-//consloe.log(2 ==="2") //fasle 
-
-//consloe.log(2 ===2) //true 
+    - The == operator compares the values of two operands and return true if they are equal ,while  performing type coercion  if necessary
+    ```javascript
+    coercion means బలవంతం
+    
+    // consloe.log(2=="2") //true
+    ```  
+    - The ===operator compares the values of two operands but it dose not perform type coercion .it only returns true  if the values 
+    are of  the same data type and have the same value 
+      ```javascript
+     //consloe.log(2 ==="2") //fasle 
+    
+     //consloe.log(2 ===2) //true 
+     ```
 ## what is the ECMAScript  ? What is ES6?
-JavaScript ES6 (also known as ECMAScript 2015 or ECMAScript 6) is the newer version of JavaScript that was introduced in 2015.
-
-ECMAScript is the standard that **JavaScript programming language uses**. ECMAScript provides the specification on how **JavaScript programming language should work**
-
-ECMAScript (/ˈɛkməskrɪpt/; ES) is a JavaScript standard intended to ensure the interoperability of web pages across different web browsers. It is standardized by Ecma International in the document ECMA-262. ECMAScript. Paradigm. Multi-paradigm: prototype-based, functional, imperative.
+    -JavaScript ES6 (also known as ECMAScript 2015 or ECMAScript 6) is the newer version of JavaScript that was introduced in 2015.
+    
+   - ECMAScript is the standard that **JavaScript programming language uses**. ECMAScript provides the specification on how **JavaScript programming language should work**
+    
+   - ECMAScript (/ˈɛkməskrɪpt/; ES) is a JavaScript standard intended to ensure the interoperability of web pages across different web browsers. It is standardized by Ecma International in the document ECMA-262. ECMAScript. Paradigm. Multi-paradigm: prototype-based, functional, imperative.
 
 ## Why Should I Learn ES6?
 **React uses ES6, and you should be familiar with some of the new features like**:
@@ -100,18 +102,19 @@ ECMAScript (/ˈɛkməskrɪpt/; ES) is a JavaScript standard intended to ensure t
 - Ternary Operator
 - Spread Operator
 ## What is NaN property in JavaScript?
-NaN property represents the “Not-a-Number” value. It indicates a value that is not a legal number.
-
-typeof of NaN will return a Number.
-
-To check if a value is NaN, we use the isNaN() function,
+  -  NaN property represents the **“Not-a-Number”** value. It indicates a value that is not a legal number.
+    
+    typeof of NaN will return a Number.
+    
+    To check if a value is NaN, we use the isNaN() function,
 ## What is typeof operator?
-- In JavaScript, the typeof operator returns the data type of its operand in the form of a string. The operand can be any object, function, or variable.
-```javascript
+ - In JavaScript, the typeof operator returns the data type of its operand in the form of a string. The operand can be any object, 
+   function, or variable.
+ ```javascript
 
 //Example:
-console.log(typeof undeclaredVariable); // "undefined"
-
+ console.log(typeof undeclaredVariable); // "undefined"
+ 
 let a;
 console.log(typeof a); // "undefined"
 
@@ -143,29 +146,29 @@ const i = function () {
 console.log(typeof i); // "function"
 ```
 ## What is an Unary operator?
-- The unary(+) operator is used to convert a variable to a number. If the variable cannot be converted, it will still become a number but with the value NaN.
-
-```javascript
-Example:
-
-var x = "100";
-var y = +x;
-console.log(typeof x, typeof y); // string, number
-
-var a = "Hello";
-var b = +a;
-console.log(typeof a, typeof b, b); // string, number, NaN
-```
+    - The unary(+) operator is used to convert a variable to a number. If the variable cannot be converted, it will still become a number but with the value NaN.
+    
+    ```javascript
+    Example:
+    
+    var x = "100";
+    var y = +x;
+    console.log(typeof x, typeof y); // string, number
+    
+    var a = "Hello";
+    var b = +a;
+    console.log(typeof a, typeof b, b); // string, number, NaN
+    ```
 ## What are undeclared and undefined variables?
-- ****Undeclared** variables are those that do not exist in a program and are not declared**. 
-If the program tries to read the value of an undeclared variable, then a **runtime error is encountered**.
+  - ****Undeclared** variables are those that do not exist in a program and are not declared**. 
+     If the program tries to read the value of an undeclared variable, then a **runtime error is encountered**.
 
-- **Undefined variables are those that are declared in the program but have not been given any value.** 
-If the program tries to read the value of an undefined variable, an undefined value is returned.
+  - **Undefined variables are those that are declared in the program but have not been given any value.** 
+     If the program tries to read the value of an undefined variable, an undefined value is returned.
 
 ## Explain Implicit Type Coercion in javascript.
-- Implicit type coercion in javascript is the automatic conversion of value from one data type to another.
-- It takes place when the operands of an expression are of different data types.
+   - Implicit type coercion in **javascript is the automatic conversion of value from one data type to another**.
+   - It takes place when the operands of an expression are of different data types.
 
 **String coercion**
 - String coercion takes place while using the ‘ + ‘ operator. When a number is added to a string, the number type is always converted to the string type.
@@ -194,38 +197,38 @@ Var y = "3";
 x - y    //Returns 0 since the variable y (string type) is converted to a number type
 ```
 **Logical operators:**
-- Logical operators in javascript, unlike operators in other programming languages, do not return true or false. 
-They always return one of the operands.
+  - Logical operators in javascript, unlike operators in other programming languages, do not return true or false. 
+    They always return one of the operands.
 
-**OR ( | | ) operator -** If the first value is truthy, then the first value is returned. Otherwise,
-always the second value gets returned.
+  **OR ( | | ) operator -** If the first value is truthy, then the first value is returned. Otherwise,
+     always the second value gets returned.
 
-**AND( && ) operator -** If both the values are truthy, always the second value is returned.
--If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
+  **AND( && ) operator -** If both the values are truthy, always the second value is returned.
+   -If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
 
-```javascript
-var x = 220;
-var y = "Hello";
-var z = undefined;
-        
-x | | y    // Returns 220 since the first value is truthy
-        
-x | | z   // Returns 220 since the first value is truthy
-        
-x && y    // Returns "Hello" since both the values are truthy
-        
-y && z   // Returns undefined since the second value is falsy
-        
-if( x && y ){ 
-  console.log("Code runs" ); // This block runs because x && y returns "Hello" (Truthy)
-}   
-        
-if( x || z ){
-  console.log("Code runs");  // This block runs because x || y returns 220(Truthy)
-}
-```
+        ```javascript
+        var x = 220;
+        var y = "Hello";
+        var z = undefined;
+                
+        x | | y    // Returns 220 since the first value is truthy
+                
+        x | | z   // Returns 220 since the first value is truthy
+                
+        x && y    // Returns "Hello" since both the values are truthy
+                
+        y && z   // Returns undefined since the second value is falsy
+                
+        if( x && y ){ 
+          console.log("Code runs" ); // This block runs because x && y returns "Hello" (Truthy)
+        }   
+                
+        if( x || z ){
+          console.log("Code runs");  // This block runs because x || y returns 220(Truthy)
+        }
+        ```
 ## Is javascript a statically typed or a dynamically typed language?
-JavaScript is a dynamically typed language, which means that data types of variables are determined by the value they hold at runtime and can change throughout the program as we assign different values to them.
+  - JavaScript is a **dynamically typed language**, which means that data types of variables are determined by the value they hold at runtime and can change throughout the program as we assign different values to them.
 
 **Dynamically typed language:** These are the **languages that do not require any pre-defined data type for any variable as it is interpreted at runtime by the machine itself.** In these languages, interpreters assign the data type to a variable at runtime depending on its value
 **static Typed Languages**
@@ -238,24 +241,31 @@ JavaScript is a dynamically typed language, which means that data types of varia
 - In dynamically typed language, the type of a variable is checked during **run-time** whereas...
 - In statically typed language, the type of a variable is checked during **compile-time.**
 ## Explain passed by value and passed by reference.
- - In JavaScript, primitive data types are passed by value 
-- and non-primitive data types are passed by reference.
+  - In JavaScript, primitive data types are passed by value 
+ - and non-primitive data types are passed by reference.
 ## What is Hoisting ? 
--    Hoisting is a JavaScript mechanism where **variables,function declarations and classes are moved to the top of their scope before code execution**. Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of variable hoisting,
+  -    Hoisting is a JavaScript mechanism where **variables,function declarations and classes are moved to the top of their scope 
+      before code execution**. Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of 
+     variable hoisting,
     
--    However, JavaScript only **hoists declarations, not initializations. That means if a variable is declared and initialized after using it**,
-- Types of Hoisting
+-    However, JavaScript only **hoists declarations, not initializations. That means if a variable is declared and initialized after 
+     using it**,
+- **Types of Hoisting**
+  
     **Variable Hoisting** : Only variable declared with **var** is hoisted (not let and const)
+
     **Function Hoisting** : Only Simple functions is hoisted (not function expressions)
-- Variable Hoisting
-    Similarly, the variable declarations are also hoisted to the top of their current scope automatically.
-    This means that if the variable is declared inside a function block, it will be moved at the top of the function, but if it is declared outside any function it will be moved to top of the script and become globally available. Take a look at the following example, to see how this works:
+  
+-**Variable Hoisting**
+
+   -  Similarly, the variable declarations are also hoisted to the top of their current scope automatically.
+   -  This means that if the variable is declared inside a function block, it will be moved at the top of the function, but if it is declared outside any function it will be moved to top of the script and become globally available. Take a look at the following example, to see how this works:
   ```javascript
       str = "Hello World!";
     alert(str); // Outputs: Hello World!
     var str;
   ```
-  However, JavaScript **only hoists declarations, not initializations**. **That means if a variable is declared and initialized after using it**, the value will be **undefined**. For example:
+ -  However, JavaScript **only hoists declarations, not initializations**. **That means if a variable is declared and initialized after using it**, the value will be **undefined**. For example:
     ```javascript
       alert(str); // Outputs: undefined
     var str;
@@ -285,14 +295,17 @@ console.log("i am learning hoisting");
 
 **This myFunction is considered as a variable and so only declaration is hoisted and as we are trying to execute the function, we are getting myFunction is not a function.**
 If we change this to let, we get the same result as variables,
-“cannot access myFunction before initialization.”
+**“cannot access myFunction before initialization.”**
+
 ## What is a Closure?
+
   -  A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the **lexical     environment**). In other words, **a closure gives you access to an outer function’s scope from an inner function**.
+    
   -  Closures are useful because they let you associate data (the lexical environment) with a function that operates on that data. T**his has obvious parallels to object-oriented programming,** where objects allow you to associate data (the object's properties) with one or more methods.
     ![image](https://github.com/user-attachments/assets/645a2b90-a02c-4570-9882-8f256445f524)
 ![image](https://github.com/user-attachments/assets/17f47dfb-dee6-4e36-a71d-0cd941638f6c)
 
-- Lexical Scopes 
+- **Lexical Scopes**
      - In the example, we saw that the variable of the outer scope is easily accessible to the inner scope. **This is possible because of lexical scoping**. In the above example, the lexical scope of newFunction consists of the lexical scope of demoFunction and the global scope.
      -  In easy terms, **lexical scoping means that inside an inner scope, you can use the variable of the outer scope. It is called lexical scope as the engine determines the scopes during the lexing time**.
 ## what is web storage ?
