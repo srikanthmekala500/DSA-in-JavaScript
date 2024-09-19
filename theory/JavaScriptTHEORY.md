@@ -2090,19 +2090,19 @@ Execution Environment:
 
 **Purpose** 
  
- **Rest Parameter:** Gathers multiple arguments into an array.
-  
-  **Spread Operator:** Spreads elements of an array or object into individual elements.
+    - **Rest Parameter:** Gathers multiple arguments into an array.
+      
+    - **Spread Operator:** Spreads elements of an array or object into individual elements.
   
 **Usage**  
 
-**Rest Parameter:** Used in **function parameter lists**.
-
-**Spread Operator:** Used in **function calls**, array literals, and object literals.
+   - **Rest Parameter:** Used in **function parameter lists**.
+    
+   - **Spread Operator:** Used in **function calls**, array literals, and object literals.
 
 **Syntax:**
 
-Both use **three dots** (...), but their context determines their behavior
+   - Both use **three dots** (...), but their context determines their behavior
 
 **Rest Parameter**
 
