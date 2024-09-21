@@ -298,6 +298,7 @@ console.log("i am learning hoisting");
 }
 ```
 ![image](https://github.com/user-attachments/assets/b6b2680e-04e4-46ae-8869-a5721558a9b1)
+![image](https://github.com/user-attachments/assets/e69b6f83-19ce-402b-adfc-88d1ecd1e55f)
 
 **This myFunction is considered as a variable and so only declaration is hoisted and as we are trying to execute the function, we are getting myFunction is not a function.**
 If we change this to let, we get the same result as variables,
