@@ -38,41 +38,41 @@
  ## 4) Null in JavaScript ?
  if a variable can **not contain a value** other than null, it is called a null datatype.
 ## 5) Difference between var, let and const keywords in JavaScript
- **Function scope:** Variables that are declared inside a function are called local variables and in the function scope. Local variables are accessible 
+  - **Function scope:** Variables that are declared inside a function are called local variables and in the function scope. Local variables are accessible 
                      anywhere inside the function. 
- **Block scope:** Variable that is declared inside a specific block & can't be accessed outside of that block.
+  -  **Block scope:** Variable that is declared inside a specific block & can't be accessed outside of that block.
  
-**JavaScript var keyword:** The var is the oldest keyword to declare a variable in JavaScript.
+  - **JavaScript var keyword:** The var is the oldest keyword to declare a variable in JavaScript.
 
-**Scope: Global scoped or function scoped.** The scope of the var keyword is the global or function scope. It means variables defined outside the function 
+  - **Scope: Global scoped or function scoped.** The scope of the var keyword is the global or function scope. It means variables defined outside the function 
   can be accessed globally, and variables defined inside a particular function can be accessed within the function.  
   
-**JavaScript let keyword:** The let keyword is an improved version of the var keyword. 
+  - **JavaScript let keyword:** The let keyword is an improved version of the var keyword. 
 
-**Scope:** block scoped: The scope of a let variable is only block scoped. It can’t be accessible outside the particular block ({block}). Let’s see the below example.
+  - **Scope:** block scoped: The scope of a let variable is only block scoped. It can’t be accessible outside the particular block ({block}). Let’s see the below example.
 
-**const keyword in JavaScript:** The const keyword has all the properties that are the same as the let keyword, except the user cannot update it.
+  - **const keyword in JavaScript:** The const keyword has all the properties that are the same as the let keyword, except the user cannot update it.
 
-**Scope:** block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot update the const variable once it is declared
+  - **Scope:** block scoped: When users declare a const variable, they need to initialize it, otherwise, it returns an error. The user cannot update the const variable once it is declared
 ![image](https://github.com/user-attachments/assets/ba80573b-1a8b-4c2d-8e4f-63d26d62c17d)
-**Hoisting**
-```javascript
-x = 8
-console.log(x)
-let x //ReferenceError: x is not defined
-```
-**Reassign** 
-```javascript
-const v1 = 30
-v1 = 30
-console.log(v1) //30
- ```
-**Redeclaration**  
-```javascript
-let v1 = 1
-let v1 = 30
-console.log(v1) //SyntaxError: Identifier 'v1' has already been declared
-``` 
+  - **Hoisting**
+    ```javascript
+    x = 8
+    console.log(x)
+    let x //ReferenceError: x is not defined
+    ```
+  - **Reassign** 
+    ```javascript
+    const v1 = 30
+    v1 = 30
+    console.log(v1) //30
+     ```
+  - **Redeclaration**  
+    ```javascript
+    let v1 = 1
+    let v1 = 30
+    console.log(v1) //SyntaxError: Identifier 'v1' has already been declared
+    ``` 
 ## what is the different between the == and === ?
 - The == operator compares the values of two operands and return true if they are equal ,while  performing type coercion  if necessary
   ```javascript
