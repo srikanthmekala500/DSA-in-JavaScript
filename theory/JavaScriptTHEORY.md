@@ -455,7 +455,7 @@ In JavaScript, **'use strict**'; states that the code should be executed in 'str
 
 **Difference:**
 
-    - Slice	 
+- Slice	 
         1) Doesn't modify the original array(immutable)	 
         2) Returns the subset of original array
         3) Used to pick the elements from array	 
@@ -483,6 +483,8 @@ exp2.test(str); // false
 2.**Using indexOf**:
 
 The indexOf() method is case-sensitive and accepts two parameters. The first parameter is the substring to search for, and the second optional parameter is the index to start the search from (default index is 0).
+
+**Returns:** The index (a number) if found; otherwise, **it returns -1**.
  ```javascript
 let str = "JavaScript, Node.js, Express.js, React.js, MongoDB";
 
