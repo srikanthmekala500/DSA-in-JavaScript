@@ -603,8 +603,7 @@ for (let key in employees) {
 - **for…of** — loops over iterable objects such as arrays, strings, etc.
   
 **The while Loop**
-
-    - The while loop loops through a block of code as long as the specified condition evaluates to true. As soon as the condition fails, the loop is stopped. The generic syntax of the while loop is:
+    - **The while loop loops** through a block of code as long as the specified condition evaluates to true. As soon as the condition fails, the loop is stopped. The generic syntax of the while loop is:
   ```javascript
     var i = 1;
 while(i <= 5) {    
