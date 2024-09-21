@@ -272,13 +272,13 @@ x - y    //Returns 0 since the variable y (string type) is converted to a number
     var str;
   ```
  -  However, JavaScript **only hoists declarations, not initializations**. **That means if a variable is declared and initialized after using it**, the value will be **undefined**. For example:
-    ```javascript
+```javascript
       alert(str); // Outputs: undefined
     var str;
     str = "Hello World!"
   ```
-- Function Hoisting:
-   **function declaration is hosited to the top of the scope.**
+**Function Hoisting:**
+**function declaration is hosited to the top of the scope.**
    ```javascript
             myFunction();
         
