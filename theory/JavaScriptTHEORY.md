@@ -326,16 +326,21 @@ If we change this to let, we get the same result as variables,
 
 **Session storage**: It stores data for one session and the **data is lost when the browser tab is closed**.
 
-  - cookies are used when data needs to be sent to a server.
+- cookies are used when data needs to be sent to a server.
  -  Web storage is used when the server doesn't need to know the data stored
 ## Here are some differences between cookies and web storage: 
--    **Data size:** Cookies are good for small amounts of data. Web storage is better for larger amounts of data.
+-  **Data size:** Cookies are good for small amounts of data. Web storage is better for larger amounts of data.
 -  **Data persistence:** Cookies expire. Web storage data is available any time the user opens the website.
 -   **Data access:** Cookies are primarily for reading server-side. Web storage can only be read by the client-side.
+  
 -  **Security:** Web storage is more secure.
+  
 -  **Website performance:** Web storage doesn't affect website performance
+  
 ## What is a post message
-    Post message is a method that **enables cross-origin communication between Window objects**.(i.e, between a page and a pop-up that it spawned, or between a page and an iframe embedded within it). Generally, scripts on different pages are allowed to access each other if and only if the pages follow same-origin policy(i.e, pages share the same protocol, port number, and host).
+
+  -  Post message is a method that **enables cross-origin communication between Window objects**.(i.e, between a page and a pop-up that it spawned, or between a page and an iframe embedded within it). Generally, scripts on different pages are allowed to access each other if and only if the pages follow same-origin policy(i.e, pages share the same protocol, port number, and host).
+  -  
 ## What is a Cookie ?
 - A cookie is a **piece of data that is stored on your computer to be accessed by your browser**. Cookies are saved as **key/value pairs**. For example, you can create a cookie named username as below,
 - document.cookie = "username=John";
