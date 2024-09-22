@@ -360,3 +360,13 @@ return (
  -  **Prop drilling in react is the process of passing data from one component via several interconnected components to the component that needs it**.
  -  The name drilling refers to this process of forcing these components to take in **unnecessary data and pass it on to the following component**, which in **turn sends it on to the next component**, and so on until it reaches its intended destination. The reusability of components and app performance may suffer as a result in a significant way.
    ![image](https://github.com/user-attachments/assets/52158464-6dff-4769-ae53-ead30214b58b)
+
+# ReactJS Lifecycle of Components ?
+![image](https://github.com/user-attachments/assets/63c38d8f-a446-4299-bec4-16665515c9ed)
+
+**Mounting**: The component is ready to mount in the browser DOM. This phase covers initialization from constructor(), getDerivedStateFromProps(), render(), and componentDidMount() lifecycle methods.
+
+**Updating**: In this phase, the component gets updated in two ways, sending the new props and updating the state either from setState() or forceUpdate(). This phase covers getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate() and componentDidUpdate() lifecycle methods.
+
+**Unmounting**: In this last phase, the component is not needed and gets unmounted from the browser DOM. This phase includes componentWillUnmount() lifecycle method.  All the cleanups such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount() should be coded in the componentWillUnmount() method block.
+
