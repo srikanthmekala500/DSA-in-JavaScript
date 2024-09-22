@@ -310,3 +310,48 @@ function Counter() {
 
 export default Counter;
 ```
+## What are inline conditional expressions?
+
+**Ternary Operator**
+     - The ternary operator is a concise way to include or exclude elements based on a condition
+```javascript
+const isLoggedIn = true;
+
+return (
+    <div>
+        {isLoggedIn ? <p>Welcome back!</p> : <p>Please log in.</p>}
+    </div>
+);
+```
+**Logical AND (&&) Operator**
+  - The logical AND operator can be used to conditionally render an element only if the condition is true.
+ 
+```javascript
+const hasMessages = true;
+
+return (
+    <div>
+        {hasMessages && <p>You have new messages.</p>}
+    </div>
+);
+```
+ **Inline If-Else with IIFE (Immediately Invoked Function Expression)**
+     - For more complex conditions, you can use an IIFE to handle inline if-else logic.
+```javascript
+
+const userRole = 'admin';
+
+return (
+    <div>
+        {(() => {
+            if (userRole === 'admin') {
+                return <p>Admin Dashboard</p>;
+            } else if (userRole === 'user') {
+                return <p>User Dashboard</p>;
+            } else {
+                return <p>Guest Dashboard</p>;
+            }
+        })()}
+    </div>
+);
+```
