@@ -276,3 +276,37 @@ function ChildComponent(props) {
 
 export default ChildComponent;
 ```
+## What Is ‘State’ in ReactJS?
+
+ - **Definition:** State is a built-in object that allows components to create and manage their own data internally.
+ - **Mutability:** State is mutable, meaning it can be changed within the component using the setState method (in class components) or 
+     the useState hook (in functional components).
+ - **Usage:** State is used to manage data that can change over time, typically in response to user actions or other events.
+
+ In ReactJS, state is a built-in object that allows components to create and manage their own data internally. It is a fundamental concept for building dynamic and interactive user interfaces. Here are some key points about state:
+ 
+ - **Dynamic Data Storage:** State is used to store data that can change over time. This data can be anything from user inputs, responses from an API, or any other dynamic data.
+
+ -  **Component-Specific:** Unlike props, which are passed from parent to child components, state is local to the component where it is defined. Each component can have its own state.
+
+ - **Triggers Re-Renders:** When the state of a component changes, React automatically re-renders the component to reflect the new state. This ensures that the UI is always in sync with the state.
+```javascript
+   import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    const increment = () => {
+        setCount(count + 1);
+    };
+
+    return (
+        <div>
+            <p>Count: {count}</p>
+            <button onClick={increment}>Increment</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
