@@ -399,3 +399,22 @@ return (
  - **super(props):** This calls the constructor of the **parent class** (React.Component), allowing the component to access **this.props**.
 
  - **this.state = { date: new Date() }:** This sets the **initial state of the component** with the current date.
+ - 
+ - **render():** The only required method in a class component. It returns the JSX that **represents the component’s UI**.
+   
+**Mounting**
+
+  **componentWillMount() Function:** As the name clearly suggests, this function is invoked right before the component is mounted on the DOM i.e.**this function gets invoked once before the render() function is executed for the first time**.
+  
+ - The componentWillMount() lifecycle hook is primarily used to implement server-side logic before the actual rendering happens, such as making an API call to the server.
+ 
+ - The componentWillMount() method allows us to **execute the React code synchronously** when the component **gets loaded or mounted in the DOM** (Document Object Model). This method is called during the mounting phase of the React Life-cycle.
+
+- **ComponentWillMount()** is generally used to **show a loader when the component is being loaded or when the data from the server is being fetched**.
+  
+ **componentDidMount() Function:** Similarly to the previous one this function is invoked right after the component is mounted on the DOM i.e.**this function gets invoked once after the render() function is executed for the first time**
+ 
+   -   The componentDidMount() method is used to **fetch data from an API**.
+     
+   -   The fetched data is then stored in the **component’s state, triggering a re-render to display the data**.
+ 
