@@ -359,14 +359,43 @@ return (
  -  Prop drilling occurs when you need to **pass a prop through several layers of nested components to reach a deeply nested child component** that actually needs the prop. Each intermediary component in the hierarchy has to pass the prop down, even if it doesn’t use the prop itself.
  -  **Prop drilling in react is the process of passing data from one component via several interconnected components to the component that needs it**.
  -  The name drilling refers to this process of forcing these components to take in **unnecessary data and pass it on to the following component**, which in **turn sends it on to the next component**, and so on until it reaches its intended destination. The reusability of components and app performance may suffer as a result in a significant way.
-   ![image](https://github.com/user-attachments/assets/52158464-6dff-4769-ae53-ead30214b58b)
+![image](https://github.com/user-attachments/assets/1d097f86-d1ea-46d3-949b-822d4e7704c3)
 
 # ReactJS Lifecycle of Components ?
 ![image](https://github.com/user-attachments/assets/63c38d8f-a446-4299-bec4-16665515c9ed)
 
-**Mounting**: The component is ready to mount in the browser DOM. This phase covers initialization from constructor(), getDerivedStateFromProps(), render(), and componentDidMount() lifecycle methods.
+**Initialization**: This is the stage where the component is constructed with the given Props and default state. This is done in the **constructor of a Component Class**.
 
-**Updating**: In this phase, the component gets updated in two ways, sending the new props and updating the state either from setState() or forceUpdate(). This phase covers getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate() and componentDidUpdate() lifecycle methods.
+**Mounting**: The component is ready to mount in the browser DOM. 
+ - This phase covers **initialization from constructor(), getDerivedStateFromProps(), render(), and componentDidMount()** lifecycle methods.
 
-**Unmounting**: In this last phase, the component is not needed and gets unmounted from the browser DOM. This phase includes componentWillUnmount() lifecycle method.  All the cleanups such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount() should be coded in the componentWillUnmount() method block.
+**Updating**: In this phase, the component gets updated in two ways, **sending the new props and updating the state either from setState() or forceUpdate(). This phase covers getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate()** and componentDidUpdate() lifecycle methods.
 
+**Unmounting**: In this last phase, the component is not needed and gets unmounted from the browser DOM. This phase includes **componentWillUnmount() lifecycle method**.  All the cleanups such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount() should be coded in the componentWillUnmount() method block.
+
+- **Initialization**: In this phase, the developer has to define the props and initial state of the component this is generally done in the constructor of the component. The following code snippet describes the initialization process.
+```javascript
+    class Clock extends React.Component { 
+    constructor(props) { 
+        // Calling the constructor of Parent Class React.Component 
+        super(props); 
+        
+        // Setting the initial state 
+        this.state = { date: new Date() }; 
+    } 
+}
+
+```
+**Lifecycle Methods in Initialization**
+
+  - **constructor():** Initializes the component’s state and binds methods.
+
+ - **getDerivedStateFromProps():** Can be used to update the state based on initial props, though it’s less commonly used in the initialization phase.
+
+ - **class Clock extends React.Component:** This defines a new class **Clock** that **extends** **React.Component,** making it a React component.
+
+ - **constructor(props):** The constructor method is called when an instance of the **class is created**.
+
+ - **super(props):** This calls the constructor of the **parent class** (React.Component), allowing the component to access **this.props**.
+
+ - **this.state = { date: new Date() }:** This sets the **initial state of the component** with the current date.
