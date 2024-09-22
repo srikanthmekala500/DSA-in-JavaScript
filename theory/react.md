@@ -452,7 +452,7 @@ return (
   - **Enhanced Composition:** HOCs can be composed together to build complex functionality from simple, reusable pieces
  
  ##  What are stateless and stateful  components?
- components can be classified into two main types: stateless (or functional) components and stateful (or class) components. Let’s explore the differences between them:
+ components can be classified into two main types: **stateless (or functional) components and stateful (or class) components**. Let’s explore the differences between them:
 
 **Stateless Components**
  - **Definition**: Stateless components, also known as functional components, do not manage their own state. They simply receive data via props and render UI elements based on that data.
@@ -478,6 +478,40 @@ return (
 ```javascript
 
    class Counter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+    }
+
+    increment = () => {
+        this.setState({ count: this.state.count + 1 });
+    };
+
+    render() {
+        return (
+            <div>
+                <p>Count: {this.state.count}</p>
+                <button onClick={this.increment}>Increment</button>
+            </div>
+        );
+    }
+}
+```
+## What is the purpose of render() in React. ?
+**Purpose of render() in React**
+
+  - **Returning JSX:** The primary purpose of the **render() method is to return JSX**, which **describes the structure of the component’s UI**. This JSX is then transformed into **actual HTML elements by React**.
+
+  - **Updating the Virtual DOM:** The render() method updates the virtual DOM, which is a lightweight copy of the actual DOM. React uses this virtual DOM to determine what changes need to be made to the actual DOM, ensuring efficient updates.
+
+     - When the state or props of a component change, the render() method is called to update the virtual DOM with the new UI structure1.
+     - 
+**Reactivity:** The render() method is called whenever there is a change in the component’s state or props. This ensures that the UI is always in sync with the current state and props
+**Functional Components and render()**
+  -  In functional components, **there is no explicit render() method**. Instead, the function itself **returns the JSX**, which serves the same purpose as the render() method in class components.
+     
+```javascript
+class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.state = { count: 0 };
