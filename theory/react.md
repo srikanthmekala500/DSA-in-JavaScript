@@ -420,7 +420,7 @@ return (
 
 **Updation**
 
-**setState() Function:** This is not particularly a Lifecycle function and can be invoked explicitly at any instant. This function is used to update the state of a component. 
+- **setState() Function:** This is not particularly a Lifecycle function and can be invoked explicitly at any instant. This function is used to update the state of a component. 
 
 **shouldComponentUpdate() Function:** By default, every state or props update re-renders the page but this may not always be the desired outcome, sometimes it is desired that updating the page will not be repainted. 
 - The shouldComponentUpdate() Function fulfills the requirement by letting React know whether the component’s output will be affected by the update or not. shouldComponentUpdate() is invoked before rendering an already mounted component when new props or states are being received.
@@ -430,3 +430,11 @@ return (
 **componentWillUpdate() Function:** As the name clearly suggests, this function is invoked before the component is rerendered i.e. this function gets invoked once before the render() function is executed after the updation of State or Props.
 
 **componentDidUpdate() Function:** Similarly this function is invoked after the component is rerendered i.e. this function gets invoked once after the render() function is executed after the updation of State or Props.
+
+ **Unmounting:**  : **This phase occurs when a component is being removed from the DOM**.
+
+  - **componentWillUnmount():** Called right before the component is **unmounted and destroyed**. It’s a good place to clean up subscriptions or cancel network requests.
+    
+   -  This is the final phase of the lifecycle of the component which is the phase of unmounting the component from the DOM. The following function is the sole member of this phase.
+
+**componentWillUnmount() Function:** This function is invoked before the component is finally unmounted from the DOM i.e. this function gets invoked once before the component is removed from the page and this denotes the end of the lifecycle.
