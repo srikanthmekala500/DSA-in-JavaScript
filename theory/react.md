@@ -199,9 +199,9 @@ const MyComponent = React.memo((props) => {
     }
     ```
 **imPure Functions**   
-**Side Effects:** Impure functions cause side effects, meaning they can **modify external state or interact with the outside world**. This **includes changing global variables**, modifying objects or arrays passed by reference, performing I/O operations like logging to the console, or making network requests.
+ - **Side Effects:** Impure functions cause side effects, meaning they can **modify external state or interact with the outside world**. This **includes changing global variables**, modifying objects or arrays passed by reference, performing I/O operations like logging to the console, or making network requests.
 
-**Non-Deterministic:** Impure functions do not always return the same output for the same input. Their output can depend on external factors or the state of the system, making them unpredictable.
+ - **Non-Deterministic:** Impure functions do not always return the same output for the same input. Their output can depend on external factors or the state of the system, making them unpredictable.
 ```javascript
 let counter = 0;
 
