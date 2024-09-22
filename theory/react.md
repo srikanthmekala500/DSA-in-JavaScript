@@ -210,5 +210,69 @@ function increment() {
     return counter;
 }
 ```
+## What is Props? In React, props (short for “properties”) 
 
+  -  **Immutability:** Props are **read-only**. Once a parent component passes props to a child component, the **child component cannot modify them**. This ensures that **data flows in a single direction**, from **parent to child**.
+   -  **Usage:** Props are used to **pass data and configuration settings to child components**. They allow components to be **dynamic and reusable by providing different data inputs**.
+   - **Accessing Props:** In a functional component, **props are accessed directly as function arguments**. In a **class component, they are accessed via @this.props.**
 
+**how to change props**
+
+  - **props are immutable**, meaning they **cannot be changed directly by the child component**. However, you can achieve the desired **effect by updating the state in the parent component and passing the new state as props to the child component**.
+    
+ **Using Callbacks to Update Props**
+ 
+  **Define a State in the Parent Component:**
+    
+     - The parent component holds the state that will be passed as props to the child component.
+     
+  **Pass a Callback Function to the Child Component:**
+  
+   -  This callback function will be used by the child component to request changes to the state in the parent component.
+
+**Update the State in the Parent Component:**
+
+   -  When the callback function is called, the parent component updates its state, which in turn updates the props passed to the child component.
+
+**Parent Component**
+```javascript
+import React, { useState } from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+    const [name, setName] = useState('Alice');
+
+    const handleNameChange = (newName) => {
+        setName(newName);
+    };
+
+    return (
+        <div>
+            <h1>Parent Component</h1>
+            <ChildComponent name={name} onNameChange={handleNameChange} />
+        </div>
+    );
+}
+
+export default ParentComponent;
+```
+**Child Component**
+```javascript
+import React from 'react';
+
+function ChildComponent(props) {
+    const changeName = () => {
+        props.onNameChange('Bob');
+    };
+
+    return (
+        <div>
+            <h2>Child Component</h2>
+            <p>Name: {props.name}</p>
+            <button onClick={changeName}>Change Name</button>
+        </div>
+    );
+}
+
+export default ChildComponent;
+```
