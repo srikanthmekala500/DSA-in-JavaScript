@@ -164,3 +164,28 @@ export default MyComponent;
   - **The render() method** must return a **single root element**. If you need to return multiple elements, you should wrap them in a **single container element like a <div> or use React fragments**.
   - **No Side Effects** :The render() method should be **pure, meaning it should not modify the component’s state or interact with the browser (e.g., making HTTP requests)**. It should only return the JSX representation of the component
   - React uses a virtual DOM to optimize rendering. **When the render() method is called, React updates the virtual DOM first and then efficiently updates the actual DOM to match the virtual DOM**
+    
+## What are Pure Components?
+  - Pure Components are components that render the same output for the same state and props. **They are designed to optimize performance by preventing unnecessary re-renders. Here are some key points about Pure Components**
+    
+  - **Definition:** A Pure Component is a **component that does not re-render if the props and state have not changed**.
+    This is achieved by implementing a shallow comparison of the current and next props and state.
+    
+  - **Class-Based Pure Components:** In class-based components, you can create a Pure Component by extending **React.PureComponent** instead of **React.Component**. This automatically implements the **shouldComponentUpdate lifecycle method** with a shallow comparison.
+```javascript 
+    import React from 'react';
+
+class MyComponent extends React.PureComponent {
+    render() {
+        return <div>{this.props.value}</div>;
+    }
+}
+```
+- **Functional Pure Components:** For functional components, you can achieve similar behavior using **React.memo**. **This higher-order component memoizes the result and only re-renders if the props change**.
+```javascript
+    import React from 'react';
+
+const MyComponent = React.memo((props) => {
+    return <div>{props.value}</div>;
+});
+```
