@@ -1,5 +1,9 @@
-imp
+## imp
+
+https://www.cleanroomtechnology.com/news/article_page/Choosing_the_most_suitable_particle_sample_point_locations_in_the_cleanroom/205610
+
 https://pharmabeginers.com/guideline-environmental-monitoring-em/
+
 https://pharmabeginers.com/lal-test-bacterial-endotoxin/
 
 
