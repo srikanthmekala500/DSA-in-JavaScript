@@ -438,3 +438,62 @@ return (
    -  This is the final phase of the lifecycle of the component which is the phase of unmounting the component from the DOM. The following function is the sole member of this phase.
 
 **componentWillUnmount() Function:** This function is invoked before the component is finally unmounted from the DOM i.e. this function gets invoked once before the component is removed from the page and this denotes the end of the lifecycle.
+
+**what is Higher-Order Components (HOCs) ?**
+      - An HOC is a **function that takes a component and returns a new component with additional functionality**.
+- Higher-Order Components (HOCs) in React are functions that take a component and return a new component with additional features or functionality. This “wrapping” allows you to enhance the original component by **adding extra props, state, or behavior.**
+- 
+**Benefits of Using HOCs with Functional Components**
+
+  - **Code Reusability:** HOCs allow you to reuse logic across multiple components, reducing code duplication.
+
+  - **Separation of Concerns:** They help separate different concerns, making your components more focused and easier to maintain.
+
+  - **Enhanced Composition:** HOCs can be composed together to build complex functionality from simple, reusable pieces
+ 
+ ##  What are stateless and stateful  components?
+ components can be classified into two main types: stateless (or functional) components and stateful (or class) components. Let’s explore the differences between them:
+
+**Stateless Components**
+ - **Definition**: Stateless components, also known as functional components, do not manage their own state. They simply receive data via props and render UI elements based on that data.
+
+**Characteristics:**
+
+ - **No State Management:** They do not have their own state.
+   
+ - **Simpler and More Readable:** They are usually simpler and easier to read and maintain.
+   
+ - **No Lifecycle Methods**: They do not have lifecycle methods like class components, but with the introduction of Hooks usestate ,useeffect, they can now use state and other React features.
+
+**Stateful Components**
+  -   **Definition**: Stateful components, traditionally class components, manage their own state. They keep track of changing data that affects the render output of the component.
+
+**Characteristics:**
+
+ - **State Management:** They have a state object that stores data and can update this state.
+   
+ - **Lifecycle Methods:** They have lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount.
+   
+ - **More Complex:** They are usually more complex than stateless components due to state management and lifecycle methods.
+```javascript
+
+   class Counter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+    }
+
+    increment = () => {
+        this.setState({ count: this.state.count + 1 });
+    };
+
+    render() {
+        return (
+            <div>
+                <p>Count: {this.state.count}</p>
+                <button onClick={this.increment}>Increment</button>
+            </div>
+        );
+    }
+}
+```
