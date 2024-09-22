@@ -2,10 +2,13 @@
 
 https://www.cleanroomtechnology.com/news/article_page/Choosing_the_most_suitable_particle_sample_point_locations_in_the_cleanroom/205610
 
+https://antoandoluong.com/Files/Docs/20203181613304.pdf
+
 https://pharmabeginers.com/guideline-environmental-monitoring-em/
 
 https://pharmabeginers.com/lal-test-bacterial-endotoxin/
 
+///////////////////////////////////////////////////
 
 https://drive.google.com/drive/mobile/folders/1sl0umG1gaeIx4G_qlCPpTEFzF1AHIJGc?utm_source=en&pli=1&sort=13&direction=a
 [Adobe Scan 4 Jul 2022.pdf](https://github.com/user-attachments/files/16723812/Adobe.Scan.4.Jul.2022.pdf)
