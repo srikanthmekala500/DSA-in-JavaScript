@@ -355,3 +355,8 @@ return (
     </div>
 );
 ```
+## What is Prop Drilling? 
+ -  Prop drilling occurs when you need to **pass a prop through several layers of nested components to reach a deeply nested child component** that actually needs the prop. Each intermediary component in the hierarchy has to pass the prop down, even if it doesn’t use the prop itself.
+ -  **Prop drilling in react is the process of passing data from one component via several interconnected components to the component that needs it**.
+ -  The name drilling refers to this process of forcing these components to take in **unnecessary data and pass it on to the following component**, which in **turn sends it on to the next component**, and so on until it reaches its intended destination. The reusability of components and app performance may suffer as a result in a significant way.
+   ![image](https://github.com/user-attachments/assets/52158464-6dff-4769-ae53-ead30214b58b)
