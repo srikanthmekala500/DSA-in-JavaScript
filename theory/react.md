@@ -189,3 +189,26 @@ const MyComponent = React.memo((props) => {
     return <div>{props.value}</div>;
 });
 ```
+## What is Pure Functions? and What is imPure Functions?
+**Pure Functions**
+  - **Deterministic:** Given the **same inputs, a pure function will always return the same output**. This means the function’s output is entirely dependent on its input parameters and nothing else.
+ - **No Side Effects:** Pure functions do not cause any side effects. **They do not modify any external state, such as global variables, or perform any I/O operations like logging to the console or making network requests**.
+    ```javascript
+    function add(a, b) {
+        return a + b;
+    }
+    ```
+**imPure Functions**   
+**Side Effects:** Impure functions cause side effects, meaning they can **modify external state or interact with the outside world**. This **includes changing global variables**, modifying objects or arrays passed by reference, performing I/O operations like logging to the console, or making network requests.
+
+**Non-Deterministic:** Impure functions do not always return the same output for the same input. Their output can depend on external factors or the state of the system, making them unpredictable.
+```javascript
+let counter = 0;
+
+function increment() {
+    counter += 1;
+    return counter;
+}
+```
+
+
