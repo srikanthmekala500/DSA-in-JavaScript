@@ -7,7 +7,9 @@ https://antoandoluong.com/Files/Docs/20203181613304.pdf
 https://pharmabeginers.com/guideline-environmental-monitoring-em/
 
 https://pharmabeginers.com/lal-test-bacterial-endotoxin/
-youtube 
+
+**youtube **
+
 https://www.youtube.com/watch?v=q2ADC9YLJ4E&ab_channel=PharmGrow
 ///////////////////////////////////////////////////
 
