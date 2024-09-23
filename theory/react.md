@@ -795,3 +795,26 @@ const Counter = () => {
 
 export default Counter;
 ```
+**Custom hooks**
+
+    - Custom hooks in React are reusable functions that encapsulate stateful logic, allowing you to share code between components without changing the component hierarchy. 
+    
+        They are built on top of existing hooks (like useState, useEffect, etc.) and can help you abstract and organize your logic more effectively.
+**Why should we use custom hooks?**
+     **The main reasons to use customs hooks are:**
+
+    - It helps you to separate your logic from the user interface
+      
+    - It allows you to create re-usable logic blocks
+      
+    - It makes your component more understandable
+      
+    - It increases the modularity of your code
+  
+**When should we use custom hooks?**
+
+    -  When you are using the same logic in different components
+      
+    -  When your logic is very complex
+      
+    -  When you are working on a large-scale project
