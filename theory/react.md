@@ -734,9 +734,9 @@ function FetchEmployees() {
 ```
 ## Use React useReducer() Hook ?
 
-    - useReducer hook in React is used to **store and update states**, particularly in situations where the state management logic is **complex or involves multiple related values**
+ - useReducer hook in React is used to **store and update states**, particularly in situations where the state management logic is **complex or involves multiple related values**
     
-  - The useReducer(**reducer, initialState**) hook accepts **2 arguments**: the **reducer function** and the **initial state**. The hook then **returns an array of 2 items**: the **current state** and the **dispatch function**.
+ - The useReducer(**reducer, initialState**) hook accepts **2 arguments**: the **reducer function** and the **initial state**. The hook then **returns an array of 2 items**: the **current state** and the **dispatch function**.
 
 ```javascript 
       const [state, dispatch] = useReducer(reducer, initialState)
@@ -800,7 +800,8 @@ export default Counter;
 
 - Custom hooks in React are reusable functions that encapsulate stateful logic, allowing you to share code between components without changing the component hierarchy. 
     
-        They are built on top of existing hooks (like useState, useEffect, etc.) and can help you abstract and organize your logic more effectively.
+- They are built on top of existing hooks (like useState, useEffect, etc.) and can help you abstract and organize your logic more effectively.
+
 **Why should we use custom hooks?**
      **The main reasons to use customs hooks are:**
 
