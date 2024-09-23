@@ -1,4 +1,4 @@
-## What is ReactJS?
+  ## What is ReactJS?
 - React is a **front-end and open-source JavaScript library** which is useful in developing user interfaces specifically for applications with a **single page**. It is helpful in building complex and **reusable user interface(UI) components** of mobile and web applications as it follows the **component-based approach**.
 
 **The important features of React are:**
@@ -881,26 +881,48 @@ const App = () => {
 
 **Type of Value:**
 
-  - useCallback memoizes a function.
+  - useCallback **memoizes a function**.
 
-  - useMemo memoizes a computed value.
+  - useMemo **memoizes a computed value**.
     
 **Use Cases:**
 
-  - Use useCallback to prevent re-creating functions that are passed as props to child components.
+  - Use useCallback to **prevent re-creating functions** that are passed as props to child components.
  
-  - Use useMemo to optimize expensive calculations or to memoize values that depend on other state or props.
+  - Use useMemo to **optimize expensive calculations** or to **memoize values** that depend on other state or props.
   - 
 **Return Value:**
 
-  - useCallback(fn, deps) returns the memoized version of fn.
+  - useCallback(fn, deps) returns the **memoized version of fn**.
   
-  - useMemo(() => value, deps) returns the memoized value.
+  - useMemo(() => value, deps) returns the **memoized value**.
     
 **Summary**
 
-- Use useCallback to memoize functions to prevent unnecessary re-creations.
+- Use useCallback to **memoize functions** to prevent **unnecessary re-creations**.
 
-- Use useMemo to memoize values to avoid expensive calculations on every render.
+- Use useMemo to **memoize values** to avoid expensive **calculations on every render**.
 
 Both hooks help improve performance in functional components, especially in larger applications.
+
+# What is Redux?
+
+  - The main feature of Redux is to **manage and update the state of an application**.
+    
+ ![image](https://github.com/user-attachments/assets/5ea67496-1530-4833-8304-b4b0d374c9ff)
+
+ **useSelector** and **useDispatch** in React Components
+ 
+**What is useSelector?**
+- The useSelector hooks allow you to **extract data or the state from the Redux store using a selector function**. 
+
+- when an **action is performed**, the **useSelector() hook will compare the results of the previous and current selector values and if they are different then the component is bound to re-render otherwise it stays the same**.
+
+- The function will be called with the entire redux store state as an argument and runs whenever the functional components render the page. The useSelector() hook will subscribe to the redux store and runs whenever an action is dispatched.
+
+**useSelector**
+ - I mentioned before that if you want to get the state you will use a selector. This is how you can access the redux state.
+
+**useDispatch**
+ - Lastly, if we want to modify the global state we need to useDispatch and the action that we already created in slice.
+
