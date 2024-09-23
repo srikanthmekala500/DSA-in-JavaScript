@@ -822,3 +822,85 @@ export default Counter;
 -  When your logic is very complex
       
 -  When you are working on a large-scale project
+  
+## useCallback vs useMemo ?
+
+ **useCallback**
+ 
+   - **Purpose**: useCallback is used to **memoize functions**. It returns a **memoized version of the callback function** that **only changes if one of the dependencies has changed**.
+ 
+   - **When to Use:** Use useCallback when you want to avoid **re-creating a function on every render**, particularly if that function is passed as a prop to a child component that relies on reference equality to prevent unnecessary renders.
+```javascript 
+ import React, { useState, useCallback } from 'react';
+
+const Counter = ({ onIncrement }) => {
+  console.log('Counter rendered');
+  return <button onClick={onIncrement}>Increment</button>;
+};
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = useCallback(() => {
+    setCount((prev) => prev + 1);
+  }, []);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <Counter onIncrement={increment} />
+    </div>
+  );
+};
+````
+## useMemo
+
+- **Purpose:** useMemo is used to **memoize the result of a computation (like a value or an object)**. It returns a memoized value that only **recalculates if one of the dependencies has changed**.
+
+- **When to Use:** Use useMemo when you want to **optimize expensive calculations that don’t need to run on every render**.
+```javascript 
+import React, { useState, useMemo } from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const squared = useMemo(() => {
+    console.log('Calculating square...');
+    return count * count;
+  }, [count]);
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <h2>Squared: {squared}</h2>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+};
+```
+
+**Type of Value:**
+
+  - useCallback memoizes a function.
+
+  - useMemo memoizes a computed value.
+    
+**Use Cases:**
+
+  - Use useCallback to prevent re-creating functions that are passed as props to child components.
+ 
+  - Use useMemo to optimize expensive calculations or to memoize values that depend on other state or props.
+  - 
+**Return Value:**
+
+  - useCallback(fn, deps) returns the memoized version of fn.
+  
+  - useMemo(() => value, deps) returns the memoized value.
+    
+**Summary**
+
+- Use useCallback to memoize functions to prevent unnecessary re-creations.
+
+- Use useMemo to memoize values to avoid expensive calculations on every render.
+
+Both hooks help improve performance in functional components, especially in larger applications.
