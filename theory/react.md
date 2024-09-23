@@ -43,9 +43,10 @@ function App() {
 **Elements**
       **Definition:** Elements are the **smallest building blocks of React applications**. They are plain objects that describe **what you want to see on the screen.**
       
-      **Creation:** Typically created using **JSX (JavaScript XML) or React.createElement()**.
+ -    **Creation:** Typically created using **JSX (JavaScript XML) or React.createElement()**.
       
-      **Immutability:** Elements are immutable. Once created, you cannot change their properties or children.
+-   **Immutability:** Elements are immutable. Once created, you cannot change their properties or children.
+  
            ```javascript 
             const element = <h1>Hello, React!</h1>;
           ```
