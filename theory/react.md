@@ -625,3 +625,119 @@ export default Counter;
    -   To **interact with browser APIs** (that is, to use document or window directly
      
    -   Using unpredictable timing functions like **setTimeout or setInterval**
+     
+**useEffect() arguments**
+
+- useEffect() hook accepts 2 arguments
+  
+ ```javascript
+     useEffect(callback[, dependencies])
+ ``` 
+- callback is a function that contains the **side-effect logic**. callback is **executed right after the DOM update**.
+  
+- dependencies is an optional **array of dependencies**. useEffect() executes callback only if the **dependencies have changed between renderings**.
+  
+- Put your side-effect logic into the callback function, then use the dependencies argument to control when you want the side-effect to run. That's the sole purpose of useEffect().
+  
+ ```javascript  
+  useEffect(() => {
+  document.title = `Greetings to ${name}`;
+}, [name]);
+```
+**Dependencies argument**
+
+    - Dependencies argument of useEffect(callback, dependencies) lets you control when the side-effect runs.
+    
+   **A) Not provided:** the side-effect runs **after every rendering**.  
+```javascript 
+ import { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // Runs after EVERY rendering
+  });  
+}
+```
+**B) An empty array []:** the side-effect runs **once after the initial rendering**.
+```javascript 
+import { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // Runs ONCE after initial rendering
+  }, []);
+}
+```
+**C) Has props or state values [prop1, prop2, ..., state1, state2]:** the side-effect runs **once after initial rendering and then only when any dependency value changes**.
+```javascript 
+import { useEffect, useState } from 'react';
+
+function MyComponent({ prop }) {
+  const [state, setState] = useState('');
+  useEffect(() => {
+    // Runs ONCE after initial rendering
+    // and after every rendering ONLY IF `prop` or `state` changes
+  }, [prop, state]);
+}
+```
+![image](https://github.com/user-attachments/assets/7f2600d7-b134-496a-b27e-32872e638975)
+
+**Component lifecycle**
+    - The dependencies argument of the useEffect() lets you catch certain component lifecycle events: when the component has been mounted or a **specific prop or state value has changed**.
+        
+  **Component did mount**
+  
+      -Use an empty dependencies array to **invoke a side-effect once after component mounting**
+      
+ **Component did update**
+ 
+  - Each time the **side-effect uses props or state values, you must indicate these values as dependencies**:
+    
+        -   useEffect(callback, [prop, state]) invokes the callback once after mounting, and again after committing the changes to the DOM, if and only if any value in the dependencies array [prop, state] has changed.
+    
+**Side-effect cleanup**
+    - Some side-effects need cleanup: close a socket, clear timers.
+
+  If the callback of useEffect(callback, deps) returns a function, then useEffect() considers that function as an effect cleanup
+
+**Cleanup works the following way:**
+
+A) After initial rendering, useEffect() invokes the callback with the side-effect. cleanup function is not invoked.
+
+B) On later renderings, before invoking the next side-effect callback, useEffect() invokes the cleanup function from the previous side-effect execution (to clean up everything after the previous side-effect), then invokes the current side-effect.
+
+C) Finally, after unmounting the component, useEffect() invokes the cleanup function from the latest side-effect.
+
+**Fetching data**
+```javascript 
+import { useEffect, useState } from 'react';
+
+function FetchEmployees() {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    async function fetchEmployees() {
+      const response = await fetch('/employees');
+      const fetchedEmployees = await response.json();
+      setEmployees(fetchedEmployees);
+    }
+
+    fetchEmployees();
+  }, []);
+
+  return (
+    <div>
+      {employees.map(name => <div>{name}</div>)}
+    </div>
+  );
+}
+```
+**Use React useReducer() Hook**
+    -useReducer hook in React is used to **store and update states**, particularly in situations where the state management logic is **complex or involves multiple related values**
+    
+  - The useReducer(**reducer, initialState**) hook accepts **2 arguments**: the **reducer function** and the **initial state**. The hook then **returns an array of 2 items**: the **current state** and the **dispatch function**.
+    
+```javascript 
+      const [state, dispatch] = useReducer(reducer, initialState);
+```
+    ![image](https://github.com/user-attachments/assets/acc967fa-b4f1-461f-9bf9-d8e6587e16d4)
