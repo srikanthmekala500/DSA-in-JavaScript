@@ -752,7 +752,7 @@ function FetchEmployees() {
   
 **Action object**
 
-  - An action object is an object that describes how to update the state.
+- An action object is an object that describes how to update the state.
 
  **The dispatch method**
  
@@ -763,3 +763,35 @@ function FetchEmployees() {
     
     -  The actions that will be dispatched by our components should always be represented as one object with the **type and payload key**, where **type** stands as the **identifier of the 
        dispatched action**  and **payload** is the **piece of information that this action will add to the state**.
+```javascript 
+import React, { useReducer } from 'react';
+
+// Initial state
+const initialState = { count: 0 };
+
+// Reducer function
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    case 'DECREMENT':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+const Counter = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrement</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
