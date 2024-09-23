@@ -607,3 +607,21 @@ function Counter() {
 
 export default Counter;
 ```
+## what is useEffect() ?
+**What are side effects in React?**
+    - Side effects are **not predictable** because they are actions which are performed with the "**outside world.**"
+    
+   - We perform a side effect when we need to reach outside of our React components to do something. **Performing a side effect**,
+     however, will not give us a predictable result.
+
+  - Think about if we were to request data (like blog posts) from a server that has failed and instead of our post data, gives us a 500 status code response.
+    
+   - Virtually all applications rely on side effects to work in one way or another, aside from the simplest applications.
+
+**Common side effects include:**
+
+   -   Making a request to an **API for data from a backend server**
+     
+   -   To **interact with browser APIs** (that is, to use document or window directly
+     
+   -   Using unpredictable timing functions like **setTimeout or setInterval**
