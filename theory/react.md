@@ -736,8 +736,30 @@ function FetchEmployees() {
     -useReducer hook in React is used to **store and update states**, particularly in situations where the state management logic is **complex or involves multiple related values**
     
   - The useReducer(**reducer, initialState**) hook accepts **2 arguments**: the **reducer function** and the **initial state**. The hook then **returns an array of 2 items**: the **current state** and the **dispatch function**.
-    
+
 ```javascript 
-      const [state, dispatch] = useReducer(reducer, initialState);
+      const [state, dispatch] = useReducer(reducer, initialState)
 ```
-    ![image](https://github.com/user-attachments/assets/acc967fa-b4f1-461f-9bf9-d8e6587e16d4)
+ ![image](https://github.com/user-attachments/assets/acc967fa-b4f1-461f-9bf9-d8e6587e16d4)
+ 
+-  The reducer is a pure function that **accepts 2 parameters**: the **current state** and an **action object**. Depending on the action object, the reducer function must update the state in an immutable manner, and return the new state.
+  
+- The reducer function itself accepts two parameters and returns one value. The first parameter is the current state, and the second is the action. The state is the data we are manipulating. The reducer function receives an action, which is executed by a dispatch function
+  
+**Initial state**
+
+    - The initial state is the value the state is initialized with.
+  
+**Action object**
+
+  - An action object is an object that describes how to update the state.
+
+ **The dispatch method**
+ 
+  - The dispatch **function accepts an object that represents the type of action we want to execute when it is called**. Basically, it sends the type of **action to the reducer function to perform 
+        its job, which, of course, is updating the state**.
+    
+    -  The action to be executed is specified in our reducer function, which in turn, is passed to the useReducer. **The reducer function will then return the updated state**.
+    
+    -  The actions that will be dispatched by our components should always be represented as one object with the **type and payload key**, where **type** stands as the **identifier of the 
+       dispatched action**  and **payload** is the **piece of information that this action will add to the state**.
