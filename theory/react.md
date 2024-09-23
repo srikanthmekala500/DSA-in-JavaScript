@@ -543,7 +543,9 @@ class Counter extends React.Component {
           ```javascript
              const [state, setState] = useState(initialValue);
           ```
+    
    ![image](https://github.com/user-attachments/assets/c43e83c4-bc4e-4535-aa8f-c084c6973523)
+   
 
   - Here, the initialValue is the value you want to start with, and state is the current state value that can be used in your component. The setState function can be used 
     to **update the state, triggering a re-render of your component**.
