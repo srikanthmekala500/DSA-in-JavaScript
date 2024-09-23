@@ -938,14 +938,17 @@ Both hooks help improve performance in functional components, especially in larg
 
 **Simple State Management:**
 
- - If your application has a relatively simple state or only needs to pass data down through a few levels of components, React Context can be an elegant solution without the overhead of Redux.
-Avoiding Prop Drilling:
+ - If your application has a **relatively simple state or only needs to pass data down through a few levels of components**, React Context can be an elegant solution without the overhead of Redux.
 
-- Context is great for avoiding "prop drilling," where you have to pass props through many layers of components just to get data to a deeply nested component.
+**Avoiding Prop Drilling:**
+
+- Context is great for avoiding "**prop drilling**," where you have to pass props through many layers of components just to get data to a deeply nested component.
+  
 **Local State:**
 
 - If you only need to manage local state that doesn’t require complex actions or side effects, Context is a good fit. It’s built into React, making it easy to use without additional libraries.
-Theming and Global Settings:
+
+**Theming and Global Settings:**
 
 - Context is often used for global settings like themes, localization, or user authentication, where data needs to be accessible throughout the application.
   
@@ -953,15 +956,17 @@ Theming and Global Settings:
 
 **Complex State Management:**
 
-- Redux is more suitable for applications with complex state management needs, where multiple components may need to read or modify the same state.
-Predictable State Changes:
+- Redux is more suitable for applications with complex **state management needs**, where multiple components may need to read or modify the same state.
+  
+**Predictable State Changes:**
 
-- Redux provides a clear structure for managing state changes through actions and reducers, making it easier to trace how state changes over time.
-- 
+- Redux provides a clear structure for **managing state changes through actions and reducers**, making it easier to trace **how state changes over time**.
+ 
 **Middleware for Side Effects:**
 
-- If your application involves complex side effects (like API calls, data fetching, etc.), Redux's middleware (like Redux Thunk or Redux Saga) offers a powerful way to handle those.
-Developer Tools:
+- If your application involves **complex side effects (like API calls, data fetching, etc.)**, Redux's middleware **(like Redux Thunk or Redux Saga)** offers a powerful way to handle those.
+  
+**Developer Tools:**
 
 - Redux has excellent developer tools that allow for time-travel debugging, logging actions, and inspecting state changes, which can be very helpful during development.
 - 
@@ -970,3 +975,4 @@ Developer Tools:
 - **React Context:** Best for simple state management, avoiding prop drilling, and sharing global data/settings across components.
   
 - **Redux:** Ideal for complex state management needs, predictable state changes, handling side effects, and needing robust developer tools.
+  
