@@ -683,20 +683,22 @@ function MyComponent({ prop }) {
 ![image](https://github.com/user-attachments/assets/7f2600d7-b134-496a-b27e-32872e638975)
 
 **Component lifecycle**
-    - The dependencies argument of the useEffect() lets you catch certain component lifecycle events: when the component has been mounted or a **specific prop or state value has changed**.
+
+ - The dependencies argument of the useEffect() lets you catch certain component lifecycle events: when the component has been mounted or a **specific prop or state value has changed**.
         
   **Component did mount**
   
-      -Use an empty dependencies array to **invoke a side-effect once after component mounting**
+ - Use an empty dependencies array to **invoke a side-effect once after component mounting**
       
  **Component did update**
  
   - Each time the **side-effect uses props or state values, you must indicate these values as dependencies**:
     
-        -   useEffect(callback, [prop, state]) invokes the callback once after mounting, and again after committing the changes to the DOM, if and only if any value in the dependencies array [prop, state] has changed.
+ -   useEffect(callback, [prop, state]) invokes the callback once after mounting, and again after committing the changes to the DOM, if and only if any value in the dependencies array [prop, state] has changed.
     
 **Side-effect cleanup**
-    - Some side-effects need cleanup: close a socket, clear timers.
+
+ - Some side-effects need cleanup: close a socket, clear timers.
 
   If the callback of useEffect(callback, deps) returns a function, then useEffect() considers that function as an effect cleanup
 
