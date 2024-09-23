@@ -531,3 +531,77 @@ class Counter extends React.Component {
     }
 }
 ```
+## What is the useState Hook?
+
+   - The useState() hook works by **handling and managing state** in your applications.
+ 
+  -  **UseState** is React Hook that allows you to **add state to a functional component**.
+
+  -  It returns an array with two values: the **current state** and a **function to update it**.
+    
+  - The Hook takes an initial state value as an argument and returns an updated state value whenever the setter function is called. It can be used like this:
+          ```javascript
+             const [state, setState] = useState(initialValue);
+          ```
+   ![image](https://github.com/user-attachments/assets/c43e83c4-bc4e-4535-aa8f-c084c6973523)
+
+  - Here, the initialValue is the value you want to start with, and state is the current state value that can be used in your component. The setState function can be used 
+    to **update the state, triggering a re-render of your component**.
+    
+ -   In React, **each component can maintain its own state, and when this state changes, the component re-renders to reflect the updated data in the user interface**. This 
+       is a core concept in React that makes it powerful for building dynamic and interactive UIs.
+
+**How It Works**
+
+-   **Component State:** Each React component can have its own state, which is managed using hooks like useState or useReducer.
+  
+-   **State Update:** When the state is updated using the state updater function (e.g., setState from useState), React schedules a re-render of the component.
+  
+-   **Re-rendering:** During the re-render, React compares the new state with the previous state and updates the DOM to reflect any changes. This process is called reconciliation.
+ ```javascript
+import React, { useState } from 'react';
+
+function SignIn() {
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
+  const handleSignIn = () => setIsSignedIn(true);
+  const handleSignOut = () => setIsSignedIn(false);
+
+  return (
+    <div>
+      {isSignedIn ? (
+        <div>
+          <button onClick={handleSignOut}>Sign Out</button>
+          <p>Welcome back!</p>
+        </div>
+      ) : (
+        <div>
+          <button onClick={handleSignIn}>Sign In</button>
+          <p>Please sign in</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default SignIn;
+```
+ ```javascript
+import React, { useState } from 'react';
+
+function Counter() {
+  // Declare a state variable named "count" with an initial value of 0
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
+```
