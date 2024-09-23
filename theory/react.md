@@ -748,7 +748,7 @@ function FetchEmployees() {
   
 **Initial state**
 
-    - The initial state is the value the state is initialized with.
+- The initial state is the value the state is initialized with.
   
 **Action object**
 
