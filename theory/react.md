@@ -46,10 +46,9 @@ function App() {
  -    **Creation:** Typically created using **JSX (JavaScript XML) or React.createElement()**.
       
 -   **Immutability:** Elements are immutable. Once created, you cannot change their properties or children.
-  
-           ```javascript 
+  ```javascript 
             const element = <h1>Hello, React!</h1>;
-          ```
+  ```
 **Components**
           **Definition:** Components are **reusable and composable building blocks that return React elements**. They can be thought of as JavaScript functions or classes that take in inputs (called “props”) and return elements.
 
