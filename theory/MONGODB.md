@@ -26,3 +26,13 @@
 -  Indexing (Any field in MongoDB can be indexed)
 -  MongoDB Replica Set (Provides high availability)
 -  Supports Multiple Storage Engines
+  
+**Scaling horizontally** ===> Thousands of minions will do the work together for you.
+
+**Scaling vertically** ===> One big hulk will do all the work for you.
+
+Horizontal scaling means that you scale by adding more machines into your pool of resources whereas Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing machine.Scaling horizontally ===> Thousands of minions will do the work together for you.
+
+Scaling vertically ===> One big hulk will do all the work for you.
+
+Horizontal scaling means that you scale by adding more machines into your pool of resources whereas Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing machine.
