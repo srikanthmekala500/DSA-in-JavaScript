@@ -1144,6 +1144,12 @@ document.getElementById('myButton').addEventListener('click', function() {
     - Has side-effects
     
 **Pure Function**
+```javascript
+function add(a,b) { 
+  return a + b
+}
+console.log(add(4,5))
+```
 
    - It always returns the same result if the same arguments are passed
     
@@ -1152,6 +1158,17 @@ document.getElementById('myButton').addEventListener('click', function() {
    - It always returns something
     
 **Impure Function**
+
+```javascript
+var addNew = 0;
+
+function add(a,b){ 
+  addNew =1; 
+  return a + b + addNew
+}
+
+console.log(add(4,5))
+````
 
        - Changing the internal state of any argument which has been passed
         
@@ -1195,7 +1212,7 @@ These are pure methods:**
 
     - An impure function is a function that contains one or more side effects. 
    -  It mutates data outside of its lexical scope and does not predictably produce the same output for the same input.
-     
+
 ## What is the difference between a method and a function in javascript?
 **1. Function:**
    - A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object.
