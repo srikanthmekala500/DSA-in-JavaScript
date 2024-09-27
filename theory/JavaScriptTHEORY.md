@@ -1416,6 +1416,8 @@ For example,**prevent form submission when clicking on submit button and prevent
 ## What is the difference between prototype and proto in JavaScript?
  **Proto:**
 
+ - `__proto__` is a property of an object that points to its prototype. This property is used internally by the JavaScript engine to search for properties and methods on an object's prototype chain.
+
 - It is an actual object that provides a way inherit to inherit properties from JavaScript with the help of an object which is created with new.
 Every object with behavior associated has internal property [[prototype]].
 ```javascript  
@@ -1434,8 +1436,13 @@ employee
 Employee.prototype === employee._proto_ // false
 ```
 **Prototype**:
+
+imp 
+- In JavaScript, when you create an object from a constructor function, it comes with a built-in property called `prototype`. This is like a blueprint for all the objects created from that constructor function. It defines the shared properties and methods that all instances of that object will have.
+
 - It is a special object which means it holds shared attributes and behaviors of instances.
    It is a way to inherit properties from javascript as it is available in every function declaration.
+  - 
 
 - The prototype is an object that is **associated with every functions and objects by default in JavaScript**,
    where function's prototype property is accessible and modifiable and object's prototype property (aka attribute) is not visible.
