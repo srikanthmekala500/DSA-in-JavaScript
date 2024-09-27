@@ -1442,8 +1442,7 @@ imp
 
 - It is a special object which means it holds shared attributes and behaviors of instances.
    It is a way to inherit properties from javascript as it is available in every function declaration.
-  - 
-
+ 
 - The prototype is an object that is **associated with every functions and objects by default in JavaScript**,
    where function's prototype property is accessible and modifiable and object's prototype property (aka attribute) is not visible.
    Every function includes prototype object by default.
