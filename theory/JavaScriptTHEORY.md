@@ -386,7 +386,7 @@ Triggers on **setItem, removeItem, clear calls**.
 Contains all the data about the operation (key/oldValue/newValue), the document url and the storage object storageArea.
 Triggers on all window objects that have access to the storage except the one that generated it (within a tab for sessionStorage, globally for localStorage).
 
-**localStorage  real time uses exples**
+## localStorage  real time uses exples
 
   **Persisting User Preferences**
   
@@ -462,7 +462,7 @@ function loadGameState() {
   
 - **Secure Storage:** If you must use localStorage, ensure your application is free from XSS vulnerabilities. Regularly audit your code and use Content Security Policy (CSP) to mitigate risks3.
 
-**Session storage real time uses exples**
+## Session storage real time uses exples 
 
  **Storing Form Data Temporarily**
  
@@ -523,7 +523,7 @@ const token = sessionStorage.getItem("authToken");
 console.log(token); // Outputs: your-authentication-token
 
 ```
-**Cookies real time uses exples**
+ ## Cookies real time uses exples 
 
 **Cookies**
 - Cookies are small text files stored on the **user’s device by the web server**. They are sent back to the **server with every HTTP request**, making them useful for **storing information that needs to be accessed by the server**, such as session data, user preferences, and tracking information.
