@@ -453,6 +453,9 @@ function loadGameState() {
 
 **User Authentication**
 - While not the most secure method, localStorage can be used to store authentication tokens to keep users logged in between sessions. However, be **cautious of XSS vulnerabilities**.
+- What is XSS vulnerability?
+
+- Cross-site scripting (XSS) is an attack in which an attacker injects malicious executable scripts into the code of a trusted application or website
 
 **Best Practices for Storing Tokens**
 
