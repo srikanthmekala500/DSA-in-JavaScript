@@ -523,6 +523,36 @@ const token = sessionStorage.getItem("authToken");
 console.log(token); // Outputs: your-authentication-token
 
 ```
+**Cookies real time uses exples**
+**User Authentication**
+- Cookies are commonly used to store authentication tokens. When a user logs in, the server sends a cookie containing a session ID or JWT (JSON Web Token). This cookie is then sent with every subsequent request to authenticate the user.
+```javascript
+  res.cookie('authToken', 'your-authentication-token', {
+  httpOnly: true,
+  secure: true, // Ensure this is true in production
+  maxAge: 3600000 // 1 hour
+});
+```
+**Tracking and Analytics**
+
+- Cookies are widely used for tracking user behavior and collecting analytics data. This helps website owners understand how users interact with their site and improve user experience.
+```javascript
+// Setting a tracking cookie
+document.cookie = "trackingId=abc123; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";
+```
+**Session Management**
+- Cookies are used to manage user sessions. When a user logs in, a session cookie is created to keep the user logged in as they navigate through different pages of the site
+  
+**Shopping Cart**
+
+- For e-commerce websites, cookies can store shopping cart data. This allows users to continue shopping where they left off, even if they navigate away from the site and return later.
+  
+**Personalized Content**
+
+- Cookies can be used to deliver personalized content based on user behavior and preferences. For example, showing recommended products or articles based on previous interactions.
+  
+**User Preferences**
+- Cookies can store user preferences such as language settings, theme (dark mode/light mode), and other customizable options. This ensures a personalized experience every time the user visits the site.
 
 ![image](https://github.com/user-attachments/assets/20e6238b-be08-486c-b17d-d1bda33f290e)
 
