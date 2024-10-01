@@ -386,6 +386,68 @@ Triggers on **setItem, removeItem, clear calls**.
 Contains all the data about the operation (key/oldValue/newValue), the document url and the storage object storageArea.
 Triggers on all window objects that have access to the storage except the one that generated it (within a tab for sessionStorage, globally for localStorage).
 
+**localStorage  real time uses exples**
+
+  **Persisting User Preferences**
+  
+- You can use localStorage to save user settings like **theme preferences (dark mode/light mode)**, language settings, or other customizable options. This ensures that the user’s **preferences are retained even after they close and reopen the browser**.
+ ```javascript
+  // Save theme preference
+localStorage.setItem("theme", "dark");
+
+// Retrieve theme preference
+const theme = localStorage.getItem("theme");
+if (theme) {
+    document.body.classList.add(theme);
+}
+```
+**Form Data Persistence**   
+
+- If a user is **filling out a form and accidentally closes the browser, you can save the form data in localStorage to prevent data loss**. When the user returns, the form can be repopulated with the saved data.
+ ```javascript
+   // Save form data
+document.querySelector("form").addEventListener("input", (event) => {
+    localStorage.setItem(event.target.name, event.target.value);
+});
+
+// Retrieve form data
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("form input").forEach((input) => {
+        input.value = localStorage.getItem(input.name) || "";
+    });
+});
+
+```
+**Shopping Cart Data**
+- For e-commerce websites, **localStorage can be used to store shopping cart items**. This allows users to continue shopping where they left off, even if they close the browser.
+```javascript
+   // Add item to cart
+function addToCart(item) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Retrieve cart items
+function getCartItems() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+```
+**Game State Persistence**
+- Games like Wordle use localStorage to save the game state. This allows players to resume their game from where they left off, even if they close the browser.
+ ```javascript 
+  // Save game state
+function saveGameState(state) {
+    localStorage.setItem("gameState", JSON.stringify(state));
+}
+
+// Retrieve game state
+function loadGameState() {
+    return JSON.parse(localStorage.getItem("gameState")) || {};
+}
+
+```
 ![image](https://github.com/user-attachments/assets/20e6238b-be08-486c-b17d-d1bda33f290e)
 
 ## What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
