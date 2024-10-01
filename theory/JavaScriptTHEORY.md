@@ -524,6 +524,20 @@ console.log(token); // Outputs: your-authentication-token
 
 ```
 **Cookies real time uses exples**
+
+**Cookies**
+- Cookies are small text files stored on the **user’s device by the web server**. They are sent back to the **server with every HTTP request**, making them useful for **storing information that needs to be accessed by the server**, such as session data, user preferences, and tracking information.
+
+**Characteristics:**
+
+- **Size Limit:**  Up to 4 KB.
+
+-  **Expiration:** Can be set to expire at a specific time or when the browser session ends.
+  
+-  **Accessibility:** Accessible by both client-side scripts (JavaScript) and server-side scripts.
+  
+-  **Security:** Can be flagged as **HttpOnly to prevent access by JavaScript**, and Secure to ensure they are only sent over HTTPS.
+
 **User Authentication**
 - Cookies are commonly used to store authentication tokens. When a user logs in, the server sends a cookie containing a session ID or JWT (JSON Web Token). This cookie is then sent with every subsequent request to authenticate the user.
 ```javascript
