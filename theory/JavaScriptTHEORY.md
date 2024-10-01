@@ -57,6 +57,7 @@
 ![image](https://github.com/user-attachments/assets/ba80573b-1a8b-4c2d-8e4f-63d26d62c17d)
   - **Hoisting**
             **var	         let        	    const**
+    
             Allowed	        Not allowed	    Not allowed
     ```javascript
     x = 8
