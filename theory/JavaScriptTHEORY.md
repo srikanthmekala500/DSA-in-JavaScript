@@ -419,6 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ```
 **Shopping Cart Data**
+
 - For e-commerce websites, **localStorage can be used to store shopping cart items**. This allows users to continue shopping where they left off, even if they close the browser.
 ```javascript
    // Add item to cart
@@ -435,6 +436,7 @@ function getCartItems() {
 
 ```
 **Game State Persistence**
+
 - Games like Wordle use localStorage to save the game state. This allows players to resume their game from where they left off, even if they close the browser.
  ```javascript 
   // Save game state
@@ -448,6 +450,80 @@ function loadGameState() {
 }
 
 ```
+
+**User Authentication**
+- While not the most secure method, localStorage can be used to store authentication tokens to keep users logged in between sessions. However, be **cautious of XSS vulnerabilities**.
+
+**Best Practices for Storing Tokens**
+
+   -**Use HttpOnly Cookies**: Whenever possible, store authentication tokens in HttpOnly cookies. This prevents JavaScript from accessing the tokens, **reducing the risk of XSS attacks1**.
+   
+- **In-Memory Storage: For SPAs, consider storing tokens in memory. This approach is more secure but may require re-authentication if the page is refreshed2.**
+  
+- **Secure Storage:** If you must use localStorage, ensure your application is free from XSS vulnerabilities. Regularly audit your code and use Content Security Policy (CSP) to mitigate risks3.
+
+**Session storage real time uses exples**
+
+ **Storing Form Data Temporarily**
+ 
+ - When users fill out multi-step forms, you can use sessionStorage to save their progress. This ensures that if they navigate away from the form and return within the same session, their data is still available.
+```javascript 
+      // Save form data
+function saveFormData(step, data) {
+    sessionStorage.setItem(`formStep${step}`, JSON.stringify(data));
+}
+
+// Retrieve form data
+function getFormData(step) {
+    return JSON.parse(sessionStorage.getItem(`formStep${step}`)) || {};
+}
+```
+**Saving Shopping Cart Contents**
+
+- For e-commerce websites, sessionStorage can be used to store shopping cart items during an active session. This ensures that the cart data is available as long as the user is on the site, but it will be cleared once the user closes the tab.
+```javascript 
+// Add item to cart
+function addToCart(item) {
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    cart.push(item);
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Retrieve cart items
+function getCartItems() {
+    return JSON.parse(sessionStorage.getItem("cart")) || [];
+}
+
+```
+**Caching API Responses**
+
+- To improve performance and reduce the number of network requests, you can cache API responses in sessionStorage. This is particularly useful for data that is needed only for the duration of the session.
+```javascript 
+// Fetch and cache API data
+async function fetchData(url) {
+    const cachedData = sessionStorage.getItem(url);
+    if (cachedData) {
+        return JSON.parse(cachedData);
+    } else {
+        const response = await fetch(url);
+        const data = await response.json();
+        sessionStorage.setItem(url, JSON.stringify(data));
+        return data;
+    }
+}
+```
+**Temporary Authentication State**
+- For applications that require temporary authentication, such as a single sign-on (SSO) session, you can use sessionStorage to store the authentication token. This ensures that the user remains authenticated as long as the tab is open.
+```javascript 
+// Save authentication token
+sessionStorage.setItem("authToken", "your-authentication-token");
+
+// Retrieve authentication token
+const token = sessionStorage.getItem("authToken");
+console.log(token); // Outputs: your-authentication-token
+
+```
+
 ![image](https://github.com/user-attachments/assets/20e6238b-be08-486c-b17d-d1bda33f290e)
 
 ## What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
