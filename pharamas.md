@@ -30,3 +30,44 @@
 - Environmental conditions (e.g., temperature, humidity) exceeding acceptable limits in cleanroom or storage areas.
     
 **Action:** Deviations require a formal investigation to identify the cause and assess the impact on product quality or patient safety. Corrective and preventive actions (CAPAs) are typically required to prevent future deviations.
+
+**Incidents** are unexpected events with no direct quality impact.
+
+**Deviations** are more serious, involving departures from approved processes that could affect quality or compliance.
+
+**What Are the Different Types of Deviation ?**
+   - In general, your organization will encounter two types of deviations:
+
+- Planned Deviations
+- Unplanned Deviations
+
+**1.Planned Deviations:**
+
+ - Planned deviations refer to pre-approved and intentional deviations from standard procedures or processes.
+
+- These deviations are **planned and justified in advance, serving various purposes, such as process improvement, method validation, and temporary process changes**.
+
+**Some examples of planned deviations include:**
+
+- Implementing a temporary manufacturing process change to test and validate potential efficiency improvements.
+  
+- Using an alternative raw material as part of a trial to assess its suitability without affecting product quality.
+  
+- Temporarily adopting an alternative testing method to validate its accuracy and reliability compared to the standard method
+
+**2.Unplanned Deviations:**
+
+- Unplanned deviations refer to a departure from approved procedures without prior notice or intention.
+
+- Various factors, such as equipment malfunction, employee error, environmental events, or others, can cause them.
+
+- Unplanned deviations can significantly impact product quality and safety, and such deviations should be investigated promptly to identify the root cause and prevent them from happening again.
+
+**Some examples of unplanned deviations include:**
+
+- The sudden breakdown of manufacturing equipment leads to deviations from standard operating conditions and affects product quality.
+  
+- Deviations are caused by unforeseen events like power outages, extreme weather conditions, or natural disasters that disrupt manufacturing.
+  
+- Accidental introduction of foreign materials into the production process, leading to material contamination and deviation from product specifications.
+  
