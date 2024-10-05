@@ -11,7 +11,7 @@
   - A temporary power failure that didn’t affect production or testing.
   
   - Minor equipment malfunctions that are quickly resolved with no impact on processes or results.
-  - 
+  
 **Action:** Incidents are usually logged and monitored to ensure that they don’t escalate into deviations. Repeated incidents may require corrective actions or preventive measures.
 
 **2. Deviation**
@@ -23,10 +23,10 @@
   - **Nature:** A deviation involves non-conformance to approved procedures, specifications, or standards.
   
 **Examples:**
-    - A batch process not following the validated steps of production.
+ - A batch process not following the validated steps of production.
   
-    - Use of incorrect materials or failure to follow SOPs during testing or production.
+ - Use of incorrect materials or failure to follow SOPs during testing or production.
       
-    - Environmental conditions (e.g., temperature, humidity) exceeding acceptable limits in cleanroom or storage areas.
+- Environmental conditions (e.g., temperature, humidity) exceeding acceptable limits in cleanroom or storage areas.
     
 **Action:** Deviations require a formal investigation to identify the cause and assess the impact on product quality or patient safety. Corrective and preventive actions (CAPAs) are typically required to prevent future deviations.
