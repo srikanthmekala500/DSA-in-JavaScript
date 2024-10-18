@@ -197,3 +197,59 @@ https://drive.google.com/drive/mobile/folders/1sl0umG1gaeIx4G_qlCPpTEFzF1AHIJGc?
 86. In addition, the pH of the sample to be tested should be checked and should be in the range of 6.0 – 8.0. A pH outside of this range is one of the most common causes of product inhibition in the LAL test. The PYROGENT™ Gel Clot LAL reagent does have a certain amount of buffering capacity, but it must be assured that a product, when added to the PYROGENT™ Gel Clot LAL reagent, does not exceed that capacity. An easy way to determine whether or not a given product will require pH adjustment is simply add a volume of the product in question to an equal volume of rehydrated PYROGENT™ Gel Clot LAL reagent and check the pH to determine if it falls between 6.0 and 8.0. Remember that because of PYROGENT™ Gel Clot LAL reagent’s buffering capacity, there is no need to adjust the pH of WFI or Saline for Injection USP. If a pH adjustment is necessary, Lonza Tris Buffer (Lonza Catalog No: S50-642) is available for this use. Tris Buffer is a convenient way to adjust pH when the buffering capacity of the sample will allow it.
 
 87. Category II: Problem Sources • The majority of Category II problems is caused by failure to observe proper handling technique, failure to use adequate equipment preparation procedures, and/or use of contaminated water in the test. • The extreme sensitivity of LAL to endotoxin is regarded as its greatest virtue, but this sensitivity can also be a source of problems when careless technique is used. • Care in preparation and handling of PYROGENT™ Gel Clot LAL reagent and test samples is essential. Any surface or substance that could come into contact with either the LAL or the sample must be free of endotoxins. This need was discussed previously and is re-emphasized here. Remember that endotoxin is virtually everywhere in nature. As a rule, when testing parenteral pharmaceutical products, if a firm gel appears in the LAL test, it must be assumed that endotoxin is present. • Use of a negative control as part of the test will help you determine if positive results are obtained due to endotoxin in the test sample or to inadvertent contamination. • During inhibition/enhancement testing, another indication of contamination may appear when you have prepared a series of dilutions of endotoxin in a product and another series of endotoxin in LRW. If the endpoint of the LAL assay of endotoxin in product is more than a two-fold dilution lower in concentration than the endpoint of the water-endotoxin dilution series, contamination of the product might be suspected. Further testing is necessary to exclude enhancement.
+
+RESUME
+SRIKANTH.G					Email: srikanthsp3578@gmail.com
+Contact Numbers: +91 9133237199
+---------------------------------------------------------------------------------------------------------------------
+OBJECTIVE:
+To obtain a progressive career and be a part of the organization where my skills are used up to the mark. Based on my qualification and my experience, will contribute my best efforts for the organization.
+ACADEMIC PROFILE;
+•	Post-graduation from Osmania University in the stream of microbiology. Year of pass out 2020.
+•	Bachelor of Sciencefrom Osmania University, in the stream of microbiology. Year of pass out2018.
+TOTAL WORK EXPERIENCE (4 years);
+•	JODAS Expoim pvt.ltd is a well-esteemed organization in manufacturing  of Oral solid dosages and sterile products having a facility of Vial filling (Lyophilized – Products& liquid vials),  Dry powder filling, PFS,Mini vial, as a executive. Working from Dec- 2020 to Till Date.
+JOB PROFILE:
+•	Sterility analysis & Method validation for finished products by closed method.
+•	Routine BET testing & BET method validation for Raw materials, finished samples.
+•	MLT analysis of raw materials and OSD samples.
+•	Method suitability and validation for in-process bulk samples (Bioburden test).
+•	Preparation of microbiological standard operating procedures, protocols and reports.
+•	Environmental monitoring by settle plate, air sampling, surface monitoring, and personal monitoring & Gowning qualification of new and existing employees as per schedule.
+•	Analyst qualifications for MLT, Sterility, BET, Plate reading, Media fill vials observation.
+•	Analysis of potable water, Purified Water, Water for Injection for ‘Total Microbiological Count and Pathogens.
+•	Cleaning validation sample analysis.
+•	Receipt, storage, maintenance, enumeration and inoculation of Biological indicators.
+
+
+VALIDATIONS:
+•	Qualification of clean rooms.
+•	Process validations & Media fill validations for aseptic processing.
+STRENGTHS:
+•	Friendly manner, Honest, Strong determination &Self-motivation.
+•	Smart work, Potency, Teamwork, Positive attitude.
+•	Punctuality & hard working towards work.
+AUDITS FACED:
+•	Successfully faced WHO-cGMP, CDSCO, ANVISA, Europe and several customer audits.
+PERSONAL PROFILE:
+Name				: G.Srikanth
+Fathers Name			: G.Narsimhulu
+Date of Birth			: 14-06-1998
+Sex				: Male
+Nationality			: Indian
+Marital status			: Un Married
+
+PERMANENT ADDRESS:
+G.Srikanth
+S/O Narsimhulu,
+Vill:Peerlapally,
+Mdl:Jagadevpur, 
+Dist: Siddipet,
+Telangana.
+502281
+
+DECLARATION:
+	 I hereby declare that the details specified above are the best of my knowledge and belief. 
+PLACE: 
+DATE:							(G.Srikanth)
+
