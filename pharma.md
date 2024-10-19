@@ -215,12 +215,12 @@ JOB PROFILE:
 •	MLT analysis of raw materials and OSD samples.
 •	Method suitability and validation for in-process bulk samples (Bioburden test).
 •	Preparation of microbiological standard operating procedures, protocols and reports.
-•	Environmental monitoring by settle plate, air sampling, surface monitoring, and personal monitoring & Gowning qualification of new and existing employees as per schedule.
+•	Environmental monitoring by settle plate, air sampling, surface monitoring, and personal monitoring & Gowning qualification of new and existing 
+        employees as per schedule.
 •	Analyst qualifications for MLT, Sterility, BET, Plate reading, Media fill vials observation.
 •	Analysis of potable water, Purified Water, Water for Injection for ‘Total Microbiological Count and Pathogens.
 •	Cleaning validation sample analysis.
 •	Receipt, storage, maintenance, enumeration and inoculation of Biological indicators.
-
 
 VALIDATIONS:
 •	Qualification of clean rooms.
