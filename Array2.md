@@ -294,6 +294,12 @@ const capitalizedStrings = strings.map(capitalizeWords);
 
 console.log(capitalizedStrings);
 
+
+Why .map?
+Iterates over each item: .map automatically iterates through each element in the strings array, applying the capitalizeWords function to each one.
+Returns a new array: Unlike forEach, which only executes a function but doesn’t return anything, .map returns a new array with the modified results, which in this case are the capitalized strings.
+Immutable operation: .map does not change the original strings array, which makes it useful if you want to keep the original data intact.
+
 ```
 
 ///////////////////////////
