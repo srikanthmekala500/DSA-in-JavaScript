@@ -180,6 +180,56 @@ class MyComponent extends React.PureComponent {
         return <div>{this.props.value}</div>;
     }
 }
+
+import React, { Component } from 'react';
+import axios from 'axios';
+
+class DataFetcher extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      loading: true,
+      error: null,
+    };
+  }
+
+  componentDidMount() {
+    axios.get('https://api.example.com/data')
+      .then(response => {
+        this.setState({ data: response.data, loading: false });
+      })
+      .catch(error => {
+        this.setState({ error: error.message, loading: false });
+      });
+  }
+
+  render() {
+    const { data, loading, error } = this.state;
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
+    if (error) {
+      return <div>Error: {error}</div>;
+    }
+
+    return (
+      <div>
+        <h1>Data from API</h1>
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default DataFetcher;
+
 ```
 - **Functional Pure Components:** For functional components, you can achieve similar behavior using **React.memo**. **This higher-order component memoizes the result and only re-renders if the props change**.
 ```javascript
