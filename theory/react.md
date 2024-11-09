@@ -330,15 +330,24 @@ export default ChildComponent;
 - In ReactJS, state is a built-in object that holds data or information about a component. When the state changes, the component re-renders, meaning it updates its output on the screen
 
 **Purpose**:
+
 - State allows components to dynamically manage and respond to changes in data, such as user input, API responses, or internal calculations.
+  
 **Data Storage**:
+  
 - State is a plain JavaScript object that stores component-specific data.
+  
 **Component Re-rendering**:
+  
 - When the state of a component changes, React triggers a re-render, ensuring that the UI reflects the updated data.
+  
 **Updating State**:
+  
 - The setState() method is used to update the state object. It's important to note that setState() is asynchronous.
+  
 **Data Flow**:
 - State is typically managed within a component, but it can be passed down to child components as props
+  
 
  - **Definition:** State is a built-in object that allows components to create and manage their own data internally.
  - **Mutability:** State is mutable, meaning it can be changed within the component using the setState method (in class components) or 
