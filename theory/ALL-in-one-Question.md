@@ -13,5 +13,9 @@
  7 >>  max-Characters
  
  8 >>  Palindrome checker
+ 
+ 9 >>  removeValues arr1,arr2
+
+ 10 >>  Get strings starting with a vowel
 
   
