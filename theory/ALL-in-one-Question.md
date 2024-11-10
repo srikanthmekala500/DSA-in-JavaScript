@@ -1,4 +1,5 @@
 ## 1 >> longestnumbet
 ## 2 >>  Sortstrings
 ## 3 >>  getFibonacci
-## 2 >>  Sortstrings
+## 4 >>  First non-repeating character
+## 5 >>  Longest string in the array
