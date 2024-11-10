@@ -11,5 +11,7 @@
  6 >>  Sum numbers from a string
 
  7 >>  max-Characters
+ 
+ 8 >>  Palindrome checker
 
   
