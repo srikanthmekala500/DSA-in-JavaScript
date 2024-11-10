@@ -9,4 +9,7 @@
  5 >>  Longest string in the array
  
  6 >>  Sum numbers from a string
- 
+
+ 7 >>  max-Characters
+
+  
