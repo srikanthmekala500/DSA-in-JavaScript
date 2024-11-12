@@ -1781,7 +1781,9 @@ myPromise
     console.log('Operation complete.');
   });
 ```
+![image](https://github.com/user-attachments/assets/2d457a1f-2782-4ddf-a957-b93f37648047)
 
+![image](https://github.com/user-attachments/assets/52fd5c20-36fc-4766-b847-31f81f0789f2)
 
 ## What is promise chaining?
 
