@@ -1472,9 +1472,18 @@ console.log(employee.getName());
         -  However, in strict mode, this is undefined in a regular function if not explicitly set:
   
  **call(), apply(), and bind()**
+ 
+-  In JavaScript, **this** normally refers to the object that’s calling the function. But with .**call(), .apply(), or .bind(),** you can manually set what this **should refer to**. This is helpful when you want a function to run in the **context of a different object**.
+  
+-  Sure! It means you can control what this refers to inside a function, even if the function isn't part of that object.
+
+- Using call, apply, or bind, you "borrow" a function for a specific object, telling it what this should point to.
+
+-  In JavaScript, this usually refers to the object that owns the function. But sometimes, you want a function to behave as if it belongs to a different object. Using .call(), .apply(), or .bind(), you can tell the function exactly what this should refer to
   
  **call():** 
        - Invokes the function immediately with a specified **this value and arguments provided individually**.
+       
        -Call( ): The call() method invokes a function with a given 'this' value and arguments provided one by one. This means that we can call any function, and explicitly specify what 'this' should reference within the calling function.
         
 **apply():** 
@@ -1482,6 +1491,9 @@ console.log(employee.getName());
         
 **bind():** 
        - **Creates a new function with a specified this value and optional preset arguments**, which can be called later.
+
+        - .bind(thisArg): Creates a new function with a specified this value. This method doesn't immediately invoke the function but rather returns a new function that can be called later with this bound.
+       
        -returns a new function, allowing you to pass in an array and any number of arguments.
 **call()**
 
