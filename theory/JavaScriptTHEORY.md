@@ -1475,13 +1475,14 @@ console.log(employee.getName());
   
  **call():** 
        - Invokes the function immediately with a specified **this value and arguments provided individually**.
+       -Call( ): The call() method invokes a function with a given 'this' value and arguments provided one by one. This means that we can call any function, and explicitly specify what 'this' should reference within the calling function.
         
 **apply():** 
       - Invokes the function immediately with a specified **this value and arguments provided as an array**.
         
 **bind():** 
        - **Creates a new function with a specified this value and optional preset arguments**, which can be called later.
-       
+       -returns a new function, allowing you to pass in an array and any number of arguments.
 **call()**
 
   - The call() method calls a function with a**specified this value and arguments provided individually**.
