@@ -1,3 +1,94 @@
+* What is UST Hook :> Pointers*
+- 58:52 :> useEffect
+-- 1:00:42 :> dataFetching example 
+-- 1:03:44 :> managing loading state
+-- 1:04:04 >  concept prop drilling
+----------------------------------------------------------------------------------
+-- 1:06:21 :> ContextAPI > solution to prop drilling
+-- 1:08:45 :> Context API > useContext
+-- 1:10:10 :> Context API > updating context values
+-- 1:11:53 :> Context API > Multiple context
+-- 1:13:13 :> Context API advantages over prop drilling
+----------------------------------------------------------------------------------
+- 1:14:38 :> useReducer
+-- 1:18:32 :> useReducer : Complex example
+-- 1:19:34 :> useReducer : additional argument {type:"type", payload:{}}
+-- 1:21:06 :> useReducer : handle sideEffect
+----------------------------------------------------------------------------------
+- 1:22:55 :> useRef 
+-- 1:25:05 :> useRef > store mutable
+-- 1:26:06 :> forwardRef
+- 1:28:23 :> Forms in React
+----------------------------------------------------------------------------------
+- 1:31:26 :> Custom Hook
+-- 1:33:37 :> useFetch
+-- 1:35:40 :> useWindowResize
+----------------------------------------------------------------------------------
+- 1:37:32 :> React Router Dom
+-- 1:38:30 :> Basic Routing
+-- 1:41:59 :> Link Component
+-- 1:43:07 :> Params in route / path
+-- 1:45:25 :> Navigate Component
+-- 1:46:30 :> Routes
+-- 1:47:27 :> Nested Route
+-- 1:49:39 :>  " * " (all / any route) mapping aka NotFound 
+----------------------------------------------------------------------------------
+- 1:50:34 :> useNavigate, navigate via code progmatically
+- 1:52:09 :> useCallback
+- 1:54:21 :> useMemo
+- 1:56:52 :> React.Memo 
+- 1:58:15 :> Explain the Reconciliation process in React 
+- 1:59:32 :> PureComponent
+- 2:00:40 :> Explain HOC
+----------------------------------------------------------------------------------
+- 2:02:06 : > Redux
+-- 2:03:24 :> Redux : what is action in redux
+-- 2:04:33 :> Redux : explain reducer in Redux
+-- 2:05:26 :> Redux : Role of redux
+-- 2:06:41 :> Redux: react-redux > connect ( mapStateToProps, mapDispatchToProps)(Component) > old way to use redux
+-- 2:08:30 :> Redux: react-redux > useSelector & useDispatch > latest way to use redux
+-- 2:10:07 :> Redux Toolkit 
+-- 2:10:43 :> Redux Toolkit > How to configure
+-- 2:12:00 :> Redux Toolkit > createSlice ({name:"xxx", initialSlicer:"xxx", reducers:{ ... }})
+----------------------------------------------------------------------------------
+- 2:13:36 :> Controlled Components
+- 2:14:30 :> UnControlled Components
+----------------------------------------------------------------------------------
+- 2:15:34 :> Optimising performance in React Apps
+- 2:16:31 :> Code splitting > lazy() & suspense() 
+- 2:17:50 :> Render props in React > Example
+- 2:18:40 :> Portals in React
+- 2:22:05 :> Suspense & Lazy Loading
+----------------------------------------------------------------------------------
+TypeScript with React
+- 2:20:44 :> props in functional component
+- 2:21:42 :> useState hook
+- 2:22:18 :> specifying type for event handler > https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+- 2:23:19 :> optional props
+- 2:24:03 :> useReducer
+- 2:25:11 :> ContextAPI
+----------------------------------------------------------------------------------
+Jest / React Testing Library
+- 2:26:10 :> Simple test case
+- 2:27:46 :> Rendering component in test case
+- 2:28:28 :> Finding element in Jest DOM > screen.{ getByText, getByTestId , getByRole }
+- 2:29:53 :> Simulating user event in test case > fireEvent.click / userEvent.click 
+- 2:31:08 :> Testing props in test case
+----------------------------------------------------------------------------------
+HANDS ON QUESTIONS :> TRY YOURSELF
+- 2:31:53 :> Controlled Input Component
+- 2:32:43 :> Toggle Visibility of a component
+- 2:32:21 :> Fetch Data from an API & Display in component
+- 2:33:53 :> Create a reusable Button Component
+- 2:35:05 :> Component that have useEffect with cleanup 
+- 2:35:47 :> ContextAPI + useReducer + global state management
+- 2:36:11 :> Conditional rendering based on props 
+- 2:27:17 :> Implement a simple form component along with error handling
+----------------------------------------------------------------------------------
+
+ - - - - - -         T H A N K   Y O U        - - - - - -
+  
+  
   ## What is ReactJS?
 - React is a **front-end and open-source JavaScript library** which is useful in developing user interfaces specifically for applications with a **single page**. It is helpful in building complex and **reusable user interface(UI) components** of mobile and web applications as it follows the **component-based approach**.
 
