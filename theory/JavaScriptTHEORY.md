@@ -38,6 +38,18 @@ https://app.enhancv.com/share/86842f23/?utm_medium=growth&utm_campaign=share-res
 ```
  ## 4) Null in JavaScript ?
  if a variable can **not contain a value** other than null, it is called a null datatype.
+ - null: Represents the intentional absence of a value.
+   
+ Use Cases for null
+ 
+ - Resetting Values: When you want to clear a variable or reset its value
+   
+     let user = { name: "Alice" };
+    user = null; // Reset the user object
+   
+   console.log(null == undefined); // true
+   console.log(null === undefined); // false
+
 ## 5) Difference between var, let and const keywords in JavaScript
   - **Function scope:** Variables that are declared inside a function are called local variables and in the function scope. Local variables are accessible 
                      anywhere inside the function. 
