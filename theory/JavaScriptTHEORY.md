@@ -2187,7 +2187,7 @@ console.log(Object.getPrototypeOf(obj) === Object.prototype); // true
   - **Closures:** The combination of a function and the lexical environment within which that function was declared. You can read more about them here and here.
   
 - **Higher Order Functions:** Functions that operate on other functions, either by taking them as arguments or by returning them. You can read more about them here.
-![image](https://github.com/user-attachments/assets/b1ce396b-22bc-4c14-bf49-b5d85e020ee5)
+- 
 **JavaScript Memoization Example**
     - we'll use the classic example of the **Fibonacci sequence**.
 ```javascript    
