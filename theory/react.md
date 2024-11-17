@@ -1459,6 +1459,34 @@ Both hooks help improve performance in functional components, especially in larg
 - **React Context:** Best for simple state management, avoiding prop drilling, and sharing global data/settings across components.
   
 - **Redux:** Ideal for complex state management needs, predictable state changes, handling side effects, and needing robust developer tools.
+```javascript 
+import React, { createContext, useState } from 'react'
+ //step=1
+const Authcontect = createContext()
+
+//step=2 {children} 
+
+export const Postcontext = ({children}) => {
+    
+    const [data ,setData]=useState(
+         [
+            { name: 'John', age: 25, height: 175 },
+            { name: 'Mary', age: 30, height: 165 },
+            { name: 'Bob', age: 40, height: 180 },
+            { name: 'Jane', age: 20, height: 170 }
+          ]
+
+    )
+//step=3
+  return (
+        <Authcontect.Provider value={data}>
+            {children}
+        </Authcontect.Provider>
+  )
+}
+//step=4
+export default Authcontect
+```
   
 **usememo**
 
