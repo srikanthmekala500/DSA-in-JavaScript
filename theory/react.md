@@ -451,6 +451,9 @@ document.body.appendChild(div);
 ## What is the difference between Element and Component?
 **Elements**
       **Definition:** Elements are the **smallest building blocks of React applications**. They are plain objects that describe **what you want to see on the screen.**
+     -  You can create elements in React using JSX (which gets converted to React.createElement() calls).
+     
+      - React elements are not functions; they are simple objects describing the layout and structure of the UI
       
  -    **Creation:** Typically created using **JSX (JavaScript XML) or React.createElement()**.
       
