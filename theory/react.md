@@ -1486,6 +1486,29 @@ export const Postcontext = ({children}) => {
 }
 //step=4
 export default Authcontect
+
+//////
+ import React, { useContext } from 'react'
+import Postcontext from './Postcontext'
+
+const Context = () => {
+    const data = useContext(Postcontext)
+    console.log(data)
+  return (
+    <div>
+{
+    data.map((e)=>{
+        const {name}=e
+        return (
+            <div> {name} </div>
+        )
+    })
+}
+    </div>
+  )
+}
+
+export default Context
 ```
   
 **usememo**
