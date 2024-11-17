@@ -1460,3 +1460,31 @@ Both hooks help improve performance in functional components, especially in larg
   
 - **Redux:** Ideal for complex state management needs, predictable state changes, handling side effects, and needing robust developer tools.
   
+**usememo**
+
+- When we say "expensive calculations" in the context of React (or any programming environment), we refer to operations or computations that require significant processing time or resources. These could be operations like complex mathematical calculations, filtering large datasets, sorting, or rendering large components with many elements.
+
+- "Recalculating the value on every render" means that each time the component re-renders (due to state or prop changes), the computation is run again, even if the data or conditions that triggered it haven’t changed. This can lead to performance issues, especially if the calculation is complex or the component re-renders frequently.
+
+- Why is it a problem?
+  
+- In React, a component re-renders whenever its state or props change. If your component involves an expensive calculation, this calculation might get triggered on every re-render, which can result in:
+
+- Slow performance: The app can become sluggish if the expensive computation happens frequently.
+Unnecessary computations: In many cases, the result of the computation does not change between renders (for example, the data you’re working with is the same), so re-running the calculation wastes resources.
+
+ imp  https://chatgpt.com/share/6739f810-d3e4-800c-b263-4cf140296db1
+
+
+- **useCallback() Explained**
+- 
+- In React, useCallback() is a hook used to memoize functions, meaning it prevents the function from being recreated on every render unless one of its dependencies changes. This can be helpful in optimizing performance, especially when passing functions down to child components or using functions inside hooks like useEffect(), where recreating the function on every render may cause unnecessary re-renders of child components or effects.
+
+  **Why is useCallback() Useful?**
+  
+- When a component re-renders, all functions inside it are re-created. This includes both event handlers and other functions that may be passed to child components or used in useEffect() dependencies. This might not be an issue for small apps, but in complex or large apps, frequent re-creations of functions can lead to performance problems, especially when passing functions as props to child components, leading to unnecessary re-renders.
+
+- By memoizing a function, useCallback() ensures that the function reference stays the same between renders unless the specified dependencies change. This is particularly useful for:
+
+-**Passing callbacks to child components:** If a child component re-renders due to its parent’s state change, using useCallback() can prevent re-renders of the child component caused by the function reference changing.
+Using functions in useEffect() dependencies: Recreating functions on each render can cause unnecessary re-renders or re-executions of effects.
