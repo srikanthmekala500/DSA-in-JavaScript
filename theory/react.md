@@ -430,6 +430,22 @@ const Example = () => {
 //expression placeholders
 const name = "Alice";
 return <h1>Hello, {name}!</h1>
+
+const element = React.createElement(
+  'h1', 
+  { className: 'greeting' }, 
+  'Hello, World!'
+);
+
+// Create a new <div> element
+const div = document.createElement('div');
+
+// Add some content inside the div
+div.textContent = "Hello, World!";
+
+// Append the div to the body of the document
+document.body.appendChild(div);
+
  ```
 }
 ## What is the difference between Element and Component?
