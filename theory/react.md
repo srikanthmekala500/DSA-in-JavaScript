@@ -1220,6 +1220,7 @@ function FetchEmployees() {
 ## Use React useReducer() Hook ?
 
  - useReducer hook in React is used to **store and update states**, particularly in situations where the state management logic is **complex or involves multiple related values**
+ - The useReducer() hook in React is used to manage complex state changes in a React application: 
     
  - The useReducer(**reducer, initialState**) hook accepts **2 arguments**: the **reducer function** and the **initial state**. The hook then **returns an array of 2 items**: the **current state** and the **dispatch function**.
 
