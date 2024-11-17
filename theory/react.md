@@ -1509,6 +1509,22 @@ const Context = () => {
 }
 
 export default Context
+////////////////////////
+
+import { Postcontext } from './react-interview/usecontext/Postcontext';
+function App() {
+  return (
+    <Postcontext>
+      <Context/>
+    </Postcontext>
+
+
+    
+  );
+}
+
+export default App;
+
 ```
   
 **usememo**
