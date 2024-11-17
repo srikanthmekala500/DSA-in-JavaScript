@@ -414,15 +414,22 @@ HANDS ON QUESTIONS :> TRY YOURSELF
  (or)
  
 JSX stands for JavaScript XML. **JSX allows us to write HTML in React**. JSX makes it easier to write and add HTML in React.
-```javascript
-function App() {
-    /////////////////////////////
-    return (
-        <div>
-            { <p>This is a text</p> }
-        </div>
 
-    ); 
+- in JSX, the curly braces {} are known as "**expression placeholders**". They are used to embed JavaScript expressions inside JSX code. This allows you to insert dynamic content and JavaScript logic directly within the markup.
+```javascript
+
+const Example = () => {
+  return (
+    <>
+//JSX
+      <h1>Hello</h1>
+    </>
+  );
+};
+
+//expression placeholders
+const name = "Alice";
+return <h1>Hello, {name}!</h1>
  ```
 }
 ## What is the difference between Element and Component?
