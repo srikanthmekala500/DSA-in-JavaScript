@@ -2408,6 +2408,8 @@ console.log(combined); // Output: [1, 2, 3, 4, 5, 6]
     - The super() method **refers to the parent class**.
     
  ```javascript
+//cat is child
+// animal is prent
         class Cat extends Animal {
           constructor(name, color) {
             super(name); // Call the parent constructor
@@ -2460,4 +2462,10 @@ console.log(animal.name);        output: undefined
 
        which is implemented at the application level. With abstraction, **only essential details are shown to the user**.
 **Polymorphism**
+
+-The polymorphism is a core concept of an object-oriented paradigm that provides a way to perform a single action in different forms. It provides an ability to call the same method on different JavaScript objects. As JavaScript is not a type-safe language, we can pass any type of data members with the methods.
+
+- Polymorphism allows objects of different types to respond to the same method in their own way. For example, all cars can start the engine, but the sound or behavior might be different for electric cars and sports cars.
+
+ 
 
