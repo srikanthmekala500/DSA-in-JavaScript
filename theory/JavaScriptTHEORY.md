@@ -1,4 +1,29 @@
 https://app.enhancv.com/share/86842f23/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic
+
+## What is difference between process and threads in Node.js?
+
+1. Process:
+
+Processes are basically the programs that are dispatched from the ready state and are scheduled in the CPU for execution. PCB (Process Control Block) holds the concept of process. A process can create other processes which are known as Child Processes. The process takes more time to terminate and it is isolated means it does not share the memory with any other process.
+
+The process can have the following states new, ready, running, waiting, terminated, and suspended.
+
+2. Thread:
+
+Thread is the segment of a process which means a process can have multiple threads and these multiple threads are contained within a process. A thread has three states: Running, Ready, and Blocked.
+
+The thread takes less time to terminate as compared to the process but unlike the process, threads do not isolate.
+ 
+**Real-time Notification System (Event-driven)**
+
+- A real-time notification system in apps like Facebook or Twitter notifies users about events (new messages, likes, comments) in real-time.
+
+- **Main process:** Listens for incoming events, such as new comments or likes, from users. It can be triggered by HTTP requests or WebSocket events.
+ 
+- **Background threads (via worker threads or child processes):** For notifications that require complex operations (e.g., sending emails, updating databases), these tasks are offloaded to worker threads, ensuring the main thread remains free for handling user interactions.
+- 
+Example (Node.js for sending notifications in the background):
+
 1) ## what is the javascript ?
     JavaScript is a **scripting language and is used for client-side and server-side development**. The JavaScript code can be inserted into HTML pages 
     that can be understood and executed by web browsers while also supporting object-oriented programming abilities.
