@@ -1264,6 +1264,9 @@ function reversers(num){
 return rev
 }
 console.log(reversers(123))
+//rem = 123 % 10 = 3
+//rev = 0 * 10 + 3 = 3
+//num = Math.floor(123 / 10) = 12
 //
 
  function stringpalindrome(res){
