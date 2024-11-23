@@ -38,7 +38,8 @@ console.log(myArrays(myArray));
     console.log(digitCount(563349)); //6
 29) console.log(digitSum(4367)); //20
 30) star pattern in JavaScript
- 
+----------------------------------------------
+
  1 >> longestnumbet
  
  2 >>  Sortstrings
