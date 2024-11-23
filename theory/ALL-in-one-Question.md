@@ -1,5 +1,43 @@
-https://forms.office.com/pages/responsepage.aspx?id=kM6XGKYhVEGtKtqAK9Ag5WvvKDiXXoNAqDyTsuD70fFUM01PVksxTjQxWFlHSDJHNk5VOTBMQlNZWi4u&route=shorturl
+ 
 
+1) console.log(longestnumbet([3, 6, 2, 56, 32, 5, 89, 32])) //Ans : 89
+2) console.log(Sortstrings(['orange', 'apple', 'banana', 'pear']))
+3) console.log(getFibonacci(6)); 
+4) console.log(nonrepeating("helooh"))
+5) console.log(Longeststring(["aa",'aac','adfcs','adfcs"]))
+6) console.log(sumnumber("1,12"))
+7)  console.log(maxCharacters("helosssssssss,hhhhhhelpp"))
+8)  console.log(Palindromes("racecar"))
+9)  console.log(removeValues( [1,2,3,6,4,],[1,2,5,96,4]))
+10) console.log(getStringsWithVowels(['apple', 'banana', 'orange', 'pear'])) 
+11) console.log(areAnagrams('cinema', 'iceman')) 
+12) console.log(rotate([1,2,3,6,4  ], 3))
+13) console.log(Frequencycounter([1,2,2,3]))
+14) console.log(removeDuplicates("abcccccdef")) 
+15) console.log(flatten([[1,2,[3]],4]))
+16) console.log(twosum([2,7,11,15],9))
+17) console.log(areArraysEqual([1, 2, 3], [1, 2, 3]))
+18) console.log(capitaliseAllWords("helllo"))
+19) console.log(removeVowels('Hello, World!'))
+20) console.log(findMax([4, 7, 2, 9, 1, 5]))
+-------
+21) console.log(sumOfEvens([1, 1, 1, 2, 2,2, 2, 3, 3, 3]))
+22) console.log(fundEvens([1, 1, 1, 2, 2,2, 2, 3, 3, 3]))
+23) console.log(sumOfThirds([1, 1, 2, 3, 2, 2, 3, 3, 3]))
+24) console.log(getAnAdult(users)) const users = [
+  { name: 'John', age: 15 },
+  { name: 'Jane', age: 20 },
+  { name: 'Bob', age: 25 },
+];
+25) console.log(reversers(123)) // using funtion 
+26) const myArray = [1, 2, 3, 4, 2, 5, 6, 7, 8, 9, 1];
+console.log(myArrays(myArray));
+27) console.log(shuffleArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+28) Write a JS code to find the no of digits in a number 
+    console.log(digitCount(53)); //2
+    console.log(digitCount(563349)); //6
+29) console.log(digitSum(4367)); //20
+30) star pattern in JavaScript
  
  1 >> longestnumbet
  
