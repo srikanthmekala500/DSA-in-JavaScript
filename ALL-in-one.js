@@ -1,4 +1,19 @@
+function sreee(arr) {
+    for (let row of arr) {
+        for (let element of row) {
+            console.log(element);
+        }
+    }
+}
 
+let arreee = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+];
+
+sreee(arreee);
+///////
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         // Generate a random index between 0 and i (inclusive)
