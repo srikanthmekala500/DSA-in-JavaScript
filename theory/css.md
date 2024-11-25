@@ -231,3 +231,7 @@ h1 {
   font-size: 24px;   /* Property: value */
 }
 ```
+## What is meant by RGB stream?
+
+- RGB represents colors in CSS. The three streams are namely **Red, Green, and Blue**. The intensity of colors is represented using **numbers 0 to 256**. This allows CSS to have a **spectrum of visible colors**.
+- 
