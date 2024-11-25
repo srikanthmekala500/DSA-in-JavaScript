@@ -32,3 +32,25 @@ background-position:-128px 0px;
 width: 125px;
 height: 125px;
 ```
+## What is viewport height/viewport width in CSS?
+- Viewport Height (vh) and Viewport Width (vw) are CSS units used to define sizes relative to the dimensions of the viewport (the visible part of a webpage in the browser).
+- The measure VH is 1/100 of the height of the viewport. If the height of browser is equal to 1000px, 1vh is  10px. and if the width is 1000px, 1 vw is 10px
+```.css
+**Viewport Height (vh)**
+1vh equals 1% of the height of the viewport.
+The total height of the viewport is considered as 100vh.
+- Example:
+If the viewport height is 800px:
+
+1vh = 8px
+100vh = 800px
+
+**Viewport Width (vw)**
+ - 1vw equals 1% of the width of the viewport.
+- The total width of the viewport is considered as 100vw.
+- Example:
+ If the viewport width is 1200px:
+
+1vw = 12px
+100vw = 1200px
+```
