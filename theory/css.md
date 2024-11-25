@@ -133,3 +133,12 @@ In CSS, the position property determines how an element is placed:
 - **fixed:** Positioned relative to the viewport (stays in place when scrolling).
   
 - **sticky:** Acts like relative until a scroll threshold is reached, then becomes fixed.
+  
+## What is cascading in CSS?
+ - Cascading in CSS refers to the process by which the browser determines **which CSS styles to apply when multiple rules target the same element.**
+ - The term "cascade" comes from the way CSS rules are applied in a layered manner, based on their **specificity, importance, and order in the stylesheet.**
+ - !**important**: Highest priority, overrides other rules.
+- **Specificity**: More specific selectors (e.g., IDs > classes > elements) take precedence.
+- **Source Order:** If two rules have the same specificity, the one that appears last is applied.
+- **Inheritance:** Some properties are inherited from parent elements
+ Overriding Styles with !important
