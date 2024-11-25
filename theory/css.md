@@ -357,6 +357,17 @@ Examples:
 - **vw (viewport width):** 1% of the viewport’s width.
 
 - **vh (viewport height):** 1% of the viewport’s height.
+![image](https://github.com/user-attachments/assets/f7e8b3af-8c7f-438a-8825-14377bda0da5)
 
+## What is the difference between inline, inline-block, and block?
 
+ -  The terms inline, inline-block, and block refer to different types of display behaviors in CSS. Here's a breakdown of the differences:
+ 
+**Block Element:** The block elements always start on a new line. They will also take space for an entire row or width. List of block elements are <div>, <p>.
 
+**Inline Elements:** Inline elements don't start on a new line, they appear on the same line as the content and tags beside them. Some examples of inline elements are <a>, <span> , <strong>, and <img> tags. 
+
+ **Inline-block elements** behave like inline elements in that they do not break the line, but they still respect the width and height properties, like block elements.
+ - They can be placed next to other inline or inline-block elements, but you can also set the width, height, padding, and margin.
+**Behavior:**
+- Inline-block elements appear in the same line, but you can control their size. They won't take up the whole width of the parent container and can be sized and spaced like block elements.
