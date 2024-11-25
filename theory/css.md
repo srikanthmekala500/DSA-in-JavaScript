@@ -503,3 +503,16 @@ Align-items property define the behavior of how flex item laid out across horizo
 - flex-end
 - center
 - baseline
+- 
+## Difference between display:none and visiblity: hidden
+
+- **visibility:** hidden hides the element, but it still takes up space in the layout.
+
+- **display:** none removes the element from the document. It does not take up any space.
+
+- **display:** none turns off the layout of the elements, so they are not rendered
+
+- **visibility:** hidden hides the elements without changing their layouts
+
+- **opacity:0** causes the elements to be very transparent but users can still interact with them.
+  
