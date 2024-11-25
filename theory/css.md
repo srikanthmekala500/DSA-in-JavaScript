@@ -9,3 +9,8 @@
 - A web page with many images, particularly many small images, such as icons, buttons, etc. can take a long time to load and generates multiple server requests.
 
 - Using the image sprites instead of separate images will significantly reduce the number of HTTP requests a browser makes to the server, which can be very effective for improving the loading time of web pages and overall site performance.
+
+- A sprite represents a visual object in a 2D game, such as a character, enemy, or item. It's an image or set of images used to depict these elements and can include animations by cycling through frames.
+
+**For example:**
+A character walking in a game is displayed using multiple images (frames) of the sprite in different walking poses. 
