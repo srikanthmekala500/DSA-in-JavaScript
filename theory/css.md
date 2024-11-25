@@ -65,3 +65,22 @@ Example: If the viewport width is 1200px:
 **vmax:** Represents the larger of **vw or vh**.
 
 - Example: 10vmax = 10% of the larger viewport dimension.
+- 
+## Define gradients in CSS. ?
+  - Gradients in CSS are a way to **create smooth transitions between two or more colors**. They are often used for backgrounds, buttons, and other elements to create visually appealing effects.
+  -CSS provides two main types of gradients: **linear gradients and radial gradients**, along with a third, less commonly used type, **conic gradients**.
+
+**Types:**
+**Linear Gradient:** Transitions along a line
+```.css
+background: linear-gradient(to right, red, blue);
+```
+**Radial Gradient:** Colors radiate outward from a center
+```.css
+background: radial-gradient(circle, red, yellow);;
+```
+**Conic Gradient:** Colors rotate around a central point.
+```.css
+background: conic-gradient(red, yellow, green, blue);
+
+```
