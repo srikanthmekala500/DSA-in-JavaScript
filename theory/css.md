@@ -2,7 +2,7 @@
 
 - Sprites are two-dimensional images which are made up of combining small images into one larger image at defined X and Y coordinates.
 
-- To display a single image from the combined image, you could use the CSS background-position property, defining the exact position of the image to be displayed.
+- To display a single image from the combined image, you could use the CSS **background-position property**, defining the exact position of the image to be displayed.
 
 **Advantage of Using CSS Image Sprite**
 
@@ -14,3 +14,12 @@
 
 **For example:**
 A character walking in a game is displayed using multiple images (frames) of the sprite in different walking poses. 
+
+**Access a particular element of the sprite using the CSS background-position property**
+
+Once the sprite sheet is ready, the developer then has to use CSS attributes to access different parts of the sheet.
+
+width: Width of the sprite
+height: Height of the sprite
+background: Reference to the sprite sheet
+Background-position: Offset values (in pixels) to access only the required part of the sprite sheet
