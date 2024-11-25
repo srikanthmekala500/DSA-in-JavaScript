@@ -465,4 +465,41 @@ Examples:
 Imagine you have a webpage with a button that, when clicked, opens a modal window. The modal needs to appear on top of the page content.
 
  ![image](https://github.com/user-attachments/assets/38748fd4-7342-41c1-9bf3-e7294880f1d2)
+
+![image](https://github.com/user-attachments/assets/5531f838-a77a-4854-b2ee-543ce05ebb41)
+
+## What is CSS Flexbox?
+
+- **CSS Flexbox** is a layout model that makes it easier to design responsive and dynamic web layouts. It allows items within a container to be aligned and distributed based on available space.
   
+- **display**: flex: Defines a flex container.
+  
+- **flex-direction:** Defines the direction of items inside the container (row or column).
+  
+- **justify-content:** Aligns items horizontally (main axis).
+  
+- **align-items:** Aligns items vertically (cross axis).
+  
+- **flex:** Shorthand to control how items grow and shrink.
+  
+- **flex-wrap:** Allows items to wrap onto multiple lines when necessary.
+  
+
+**justify-content values**
+
+- flex-start (default)
+- flex-end
+- center
+- space-between
+- space-around
+- space-evenly
+
+  **Align Items**
+Align-items property define the behavior of how flex item laid out across horizontal axis. By-default, the value is stretch.
+
+**Values of align-items**
+- stretch
+- flex-start
+- flex-end
+- center
+- baseline
