@@ -449,3 +449,20 @@ Examples:
 - **content-box:** Width/height applies to content only, padding and border are outside.
 
 - **border-box:** Width/height includes content, padding, and border. The total size stays as set.
+  
+ ##  How is opacity specified in CSS3?
+
+- The opacity property sets the opacity level for an element. The opacity-level describes the transparency-level, where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent.
+
+##  What is a z-index, how does it function?
+
+- The z-index property in CSS controls the **stacking order** of elements that overlap. It determines **which element appears on top when elements are positioned in the same space**.
+  ![image](https://github.com/user-attachments/assets/be4cbbd5-96d3-41cf-9218-e65fdfa5bb80)
+  
+  -  An element with a higher z-index value will appear in front of an element with a lower z-index value.
+   
+ **Scenario:** A Modal Window Overlapping Content
+Imagine you have a webpage with a button that, when clicked, opens a modal window. The modal needs to appear on top of the page content.
+
+ ![image](https://github.com/user-attachments/assets/38748fd4-7342-41c1-9bf3-e7294880f1d2)
+  
