@@ -179,4 +179,34 @@ body { font-family: Arial; color: black; }
 h1 { font-size: 2em; }  /* Inherits font-family and color */
 
 ```
+# What are the limitations of CSS?
+
+-  CSS cannot always assure compatibility with every browser; you need to be cautious while choosing the style selector.
  
+-  The parent selector tag is not available, thus you can’t select the parent selector tag.
+
+-  Some selectors can lead to cross-browser issues due to their less browser-friendly behavior.
+
+-  We cannot request a webpage through CSS.
+- 
+## How can you use CSS to control image repetition?
+  You can control image repetition in CSS using the background-repeat property:
+
+**repeat:** Repeats both horizontally and vertically (default).
+
+**repeat-x:** Repeats horizontally (left to right).
+
+**repeat-y:** Repeats vertically (top to bottom).
+
+**no-repeat:** No repetition, shows one instance of the image.
+
+**space:** Repeats with space between images.
+
+**round:** Repeats and resizes to fit the space without stretching.
+
+````.css
+div {
+  background-image: url('image.jpg');
+  background-repeat: no-repeat; /* No repetition */
+}
+```
