@@ -414,16 +414,38 @@ Examples:
 
 ## What property is used for changing the font face?
 
-This chapter teaches you how to set fonts of a content, available in an HTML element. You can set following font properties of an element −
+- This chapter teaches you how to set fonts of a content, available in an HTML element. You can set following font properties of an element −
 
-The font-family property is used to change the face of a font.
+- The **font-family** property is used to change the face of a font.
 
-The font-style property is used to make a font italic or oblique.
+- Th e**font-style** property is used to make a font italic or oblique.
 
-The font-variant property is used to create a small-caps effect.
+- The **font-variant** property is used to create a small-caps effect.
 
-The font-weight property is used to increase or decrease how bold or light a font appears.
+- The **font-weigh**t property is used to increase or decrease how bold or light a font appears.
 
-The font-size property is used to increase or decrease the size of a font.
+- The **font-size** property is used to increase or decrease the size of a font.
 
-The font property is used as shorthand to specify a number of other font properties.
+- The **font property** is used as shorthand to specify a number of other font properties.
+  
+## How is border-box different from content-box?
+
+**content-box (default)**
+
+- The width and height you set apply only to the **content area** of the element.
+  
+- Padding and border are **added** to the width and height, increasing the overall size of the element.
+  
+**border-box**
+
+- The width and height you set include the **content, padding, and border**.
+
+- This means the total size of the element will remain **exactly as specified, without adding padding or border to the width/height**.
+- 
+  ![image](https://github.com/user-attachments/assets/cba6c7e6-19a6-4923-bf15-7bcfef02ad29)
+
+**Key Difference:**
+
+- **content-box:** Width/height applies to content only, padding and border are outside.
+
+- **border-box:** Width/height includes content, padding, and border. The total size stays as set.
