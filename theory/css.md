@@ -54,3 +54,14 @@ Example: If the viewport width is 1200px:
 
 - 1vw = 12px
 - 100vw = 1200px
+  
+**Related Units:**
+
+**vmin**: Represents the smaller of **vw or vh.**
+
+- Useful when you want an element to adapt to the smallest dimension of the viewport.
+- Example: 10vmin = 10% of the smaller viewport dimension.
+  
+**vmax:** Represents the larger of **vw or vh**.
+
+- Example: 10vmax = 10% of the larger viewport dimension.
