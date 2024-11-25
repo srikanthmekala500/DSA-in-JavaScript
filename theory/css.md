@@ -210,6 +210,7 @@ div {
 }
 ```
 ## How can you target h3 and h2 with the same styling?
+
 - You can target both **<h3> and <h2> elements with the same styling by grouping them in the CSS selector:**
   
   ```.css
