@@ -92,28 +92,30 @@ imp : https://css-tricks.com/snippets/css/a-guide-to-flexbox/
  -  Flexbox (Flexible Box Layout) is a CSS layout model that provides properties for arranging items efficiently within a container. It is ideal for creating responsive and aligned designs. The properties of flexbox are categorized into container properties and item properties.
 **Flex Container Propertie**
 -display: Defines a flex container. (flex, inline-flex)
+
 -flex-direction: Sets the direction of items. (row, column, etc.)
+
 -flex-wrap: Controls wrapping of items. (nowrap, wrap)
+
 -justify-content: Aligns items along the main axis. (center, space-between)
+
 -align-items: Aligns items along the cross axis. (center, stretch)
+
 -align-content: Aligns rows in a multi-line container. (space-around, center)
+
 -gap: Adds space between items.
+
 **Flex Item Properties**
+
 -order: Changes the order of an item.
+
 -flex-grow: Defines how much an item grows.
+
 -flex-shrink: Defines how much an item shrinks.
+
 -flex-basis: Sets the initial size of an item.
+
 -align-self: Overrides align-items for a specific item.
+
 -----
-display: flex, inline-flex.
-flex-direction: row, row-reverse, column, column-reverse.
-flex-wrap: nowrap, wrap, wrap-reverse.
-justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly.
-align-items: stretch, flex-start, flex-end, center, baseline.
-align-content: stretch, flex-start, flex-end, center, space-between, space-around, space-evenly.
-gap: Length units (e.g., 10px, 1rem).
-order: Integer values (default: 0).
-flex-grow: Number (default: 0).
-flex-shrink: Number (default: 1).
-flex-basis: auto, length units (e.g., 100px).
-align-self: Same as align-items.
+
