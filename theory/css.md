@@ -325,6 +325,36 @@ input[type="text"] { border: 1px solid gray; }
 ```
 ![image](https://github.com/user-attachments/assets/21ae3bb9-4792-465f-a2db-5df49edb7f5e)
 
+## Absolute Unitsa and Relative Units?
+
+**Absolute Units**
+
+- Absolute units are fixed and do not change based on the device or screen size. They are defined in a specific, fixed measurement.
+Examples:
+**px (pixels):** A fixed unit, usually used for precise control over element dimensions.
+  
+**pt (points):** Typically used in print media, where 1 pt = 1/72 inch.
+
+**in (inches):** Measures in physical inches.
+
+**cm (centimeters):** Measures in physical centimeters.
+
+**mm (millimeters):** Measures in physical millimeters.
+
+**Relative Units:**
+
+- Relative units adjust based on the parent element or the viewport, making them more flexible for responsive designs.
+
+**Examples:**
+**em:** Relative to the font-size of the parent element. Used mainly for text sizes.
+
+**rem (root em):** Relative to the font-size of the root element (<html>).
+
+**% (percentage):** Relative to the parent element’s size (e.g., width, height).
+
+**vw (viewport width):** 1% of the viewport’s width.
+
+**vh (viewport height):** 1% of the viewport’s height.
 
 
 
