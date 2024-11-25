@@ -173,3 +173,10 @@ p {
   color: yellow;
 }
 ```
+**Inherited Styles:**
+```.css
+body { font-family: Arial; color: black; }
+h1 { font-size: 2em; }  /* Inherits font-family and color */
+
+```
+ 
