@@ -211,12 +211,23 @@ div {
 ```
 ## How can you target h3 and h2 with the same styling?
 
-- You can target both <h3> and <h2> elements with the same styling by grouping them in the CSS selector
-    
-  ```.css
+- You can target both <h3> and <h2> elements with the same styling by grouping them in the CSS selector.
+```.css
   h2, h3 {
   font-family: Arial, sans-serif;
   color: blue;
 }
 ```
+## Tell us about the use of the ruleset.
 
+- A ruleset in CSS consists of a **selector and a declaration block**. It defines how specific HTML elements should be styled.
+  
+ **Selector:** Targets HTML elements (e.g., h1, .class, #id).
+ 
+**Declaration block:** Contains one or more property-value pairs that define the styles for the selected elements.
+```.css
+h1 {
+  color: red;        /* Property: value */
+  font-size: 24px;   /* Property: value */
+}
+```
