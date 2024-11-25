@@ -235,3 +235,50 @@ h1 {
 
 - RGB represents colors in CSS. The three streams are namely **Red, Green, and Blue**. The intensity of colors is represented using **numbers 0 to 256**. This allows CSS to have a **spectrum of visible colors**.
 - 
+## What is CSS?
+
+- CSS stands for Cascading Style Sheet. It’s a style sheet language that determines how the elements/contents in the page are looked/shown. CSS is used to develop a consistent look and feel for all the pages.
+- 
+## What is the CSS Box Model? short ?
+
+- The CSS Box Model defines the structure of an element on a webpage, consisting of four areas:
+
+**Content**: The actual content of the element (e.g., text or images).
+
+**Padding**: The space between the content and the border, inside the element.
+
+**Border**: A line surrounding the padding (optional).
+
+**Margin**: The space outside the border, separating the element from others.
+
+## What are the advantages of using CSS? 
+
+**Separation of Content and Design:** CSS separates the structure (HTML) from the styling (CSS), making maintenance easier.
+
+**Consistency:** A single CSS file can style multiple pages, ensuring a consistent look across the website.
+
+**Faster Load Times:** External CSS files are cached by browsers, reducing page load times on subsequent visits.
+
+**Flexibility and Control:** CSS offers precise control over layout, colors, fonts, and responsiveness.
+
+**Improved Accessibility**: CSS allows for better control over the visual presentation, making it easier to design for different 
+devices.
+
+**Easier Maintenance:** Changes in design can be made in one place (the CSS file), updating the entire site automatically.
+
+## How to include CSS in the webpage?
+
+There are 4 main ways to include CSS in a webpage:
+
+**Inline CSS:** Directly within an HTML element using the style attribute.
+
+<h1 style="color: blue; font-size: 24px;">Hello World</h1>
+
+
+
+
+
+
+
+
+
