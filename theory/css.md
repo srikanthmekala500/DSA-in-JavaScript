@@ -141,4 +141,35 @@ In CSS, the position property determines how an element is placed:
 - **Specificity**: More specific selectors (e.g., IDs > classes > elements) take precedence.
 - **Source Order:** If two rules have the same specificity, the one that appears last is applied.
 - **Inheritance:** Some properties are inherited from parent elements
- Overriding Styles with !important
+   
+**Overriding Styles with !important**
+```.css
+/* Default button style */
+button {
+  background-color: blue;
+  color: white;
+}
+
+/* More specific button style */
+button.primary {
+  background-color: red !important;
+  color: black;
+}
+```
+**Specificity vs Order**
+```.css
+/* General style for paragraphs */
+p {
+  color: green;
+}
+
+/* More specific style for paragraphs in a container */
+.container p {
+  color: blue;
+}
+
+/* Paragraph color defined in a later style */
+p {
+  color: yellow;
+}
+```
