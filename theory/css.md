@@ -271,13 +271,58 @@ devices.
 There are 4 main ways to include CSS in a webpage:
 
 **Inline CSS:** Directly within an HTML element using the style attribute.
-
+```.css
 <h1 style="color: blue; font-size: 24px;">Hello World</h1>
+```
+**Internal CSS:** Within a <style> tag in the <head> section of the HTML document.
 
+```.css
+<head>
+  <style>
+    h1 {
+      color: blue;
+      font-size: 24px;
+    }
+  </style>
+</head>
 
+ ```
+**External CSS:** Linking to an external CSS file using the <link> tag in the <head> section.
 
+```.css
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
+ ```
+**Import a stylesheet** file (An external file imported into another CSS file): Another way to add CSS is by using the @import rule. This is to add a new CSS file within CSS itself.
 
+ @import "path/to/style.css"
+ 
+ ## What is a CSS selector?  
+- A CSS selector is a pattern used to target HTML elements in order to apply styles to them. It defines which elements the CSS rules will affect.
+  
+**Types of CSS Selectors:**
+**Element Selector:** Targets HTML elements (e.g., h1, p).
+```.css
+p { color: red; }
+```
+**Class Selector:** Targets elements with a specific class (e.g., .class-name).
+```.css
+.my-class { font-size: 16px; }
+```
+**ID Selector:** Targets an element with a specific ID (e.g., #id-name).
+```.css
+#header { background-color: blue; }
+```
+**Attribute Selector:** Targets elements with a specific attribute (e.g., [type="text"]).
+```.css 
+input[type="text"] { border: 1px solid gray; }
+```
+**Universal Selector:** Targets all elements (*).
+ ```.css 
+ * { margin: 0; padding: 0; }
+```
 
 
 
