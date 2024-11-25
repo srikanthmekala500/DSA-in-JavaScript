@@ -188,7 +188,7 @@ h1 { font-size: 2em; }  /* Inherits font-family and color */
 -  Some selectors can lead to cross-browser issues due to their less browser-friendly behavior.
 
 -  We cannot request a webpage through CSS.
-- 
+ 
 ## How can you use CSS to control image repetition?
   You can control image repetition in CSS using the background-repeat property:
 
@@ -210,7 +210,8 @@ div {
 }
 ```
 ## How can you target h3 and h2 with the same styling?
-- You can target both <h3> and <h2> elements with the same styling by grouping them in the CSS selector:
+- You can target both **<h3> and <h2> elements with the same styling by grouping them in the CSS selector:**
+  
   ```.css
   h2, h3 {
   font-family: Arial, sans-serif;
