@@ -203,10 +203,17 @@ h1 { font-size: 2em; }  /* Inherits font-family and color */
 **space:** Repeats with space between images.
 
 **round:** Repeats and resizes to fit the space without stretching.
-
-````.css
+```.css
 div {
   background-image: url('image.jpg');
   background-repeat: no-repeat; /* No repetition */
+}
+```
+## How can you target h3 and h2 with the same styling?
+- You can target both <h3> and <h2> elements with the same styling by grouping them in the CSS selector:
+  ```.css
+  h2, h3 {
+  font-family: Arial, sans-serif;
+  color: blue;
 }
 ```
