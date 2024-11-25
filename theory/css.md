@@ -368,6 +368,62 @@ Examples:
 **Inline Elements:** Inline elements don't start on a new line, they appear on the same line as the content and tags beside them. Some examples of inline elements are <a>, <span> , <strong>, and <img> tags. 
 
  **Inline-block elements** behave like inline elements in that they do not break the line, but they still respect the width and height properties, like block elements.
+ 
  - They can be placed next to other inline or inline-block elements, but you can also set the width, height, padding, and margin.
+   
 **Behavior:**
+
 - Inline-block elements appear in the same line, but you can control their size. They won't take up the whole width of the parent container and can be sized and spaced like block elements.
+```.css   
+<div>This is an inline-block element</div>
+<span>This is another inline-block element</span>
+```
+## Pseudo-elements vs Pseudo-classes ?
+
+**Pseudo-elements (::)**
+
+- Pseudo-elements style specific parts of an element or insert content before or after the element.
+
+**Syntax: ::pseudo-element**
+**Common examples:**
+
+**::before:** Inserts content before an element’s content.
+
+**::after:** Inserts content after an element’s content.
+
+**::first-letter:** Targets the first letter of an element.
+
+**::first-line:** Targets the first line of text in a block element.
+
+**Pseudo-classes (:)**
+
+- Pseudo-classes apply styles based on the state or interaction of an element, like when it is hovered, focused, or active.
+
+**Syntax: :pseudo-class**
+**Common examples:**
+
+**:hover:** Applies when the element is hovered over.
+
+**:active:** Applies when the element is being clicked.
+
+**:focus:** Applies when the element is focused (like a form input).
+
+**:nth-child():** Targets elements based on their position in a parent element.
+
+![image](https://github.com/user-attachments/assets/6827f84f-8b20-4743-9510-8d280353d581)
+
+## What property is used for changing the font face?
+
+This chapter teaches you how to set fonts of a content, available in an HTML element. You can set following font properties of an element −
+
+The font-family property is used to change the face of a font.
+
+The font-style property is used to make a font italic or oblique.
+
+The font-variant property is used to create a small-caps effect.
+
+The font-weight property is used to increase or decrease how bold or light a font appears.
+
+The font-size property is used to increase or decrease the size of a font.
+
+The font property is used as shorthand to specify a number of other font properties.
