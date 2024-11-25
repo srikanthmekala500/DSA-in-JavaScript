@@ -323,6 +323,7 @@ input[type="text"] { border: 1px solid gray; }
  ```.css 
  * { margin: 0; padding: 0; }
 ```
+![image](https://github.com/user-attachments/assets/21ae3bb9-4792-465f-a2db-5df49edb7f5e)
 
 
 
