@@ -116,6 +116,20 @@ imp : https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 - **flex-basis**: Sets the initial size of an item.
 
 - **align-self:** Overrides align-items for a specific item.
+![image](https://github.com/user-attachments/assets/bc58d233-4bc5-413a-918f-8e0abefe222c)
 
------
+ ## What are the position states in CSS?
 
+- In CSS, the position property determines how an element is positioned in the document. There are five main position states: 
+
+In CSS, the position property determines how an element is placed:
+
+- **static:** Default, placed in normal flow. No offset applied.
+ 
+- **relative:** Positioned relative to its original position (offsets applied).
+  
+- **absolute:** Positioned relative to the nearest positioned ancestor (removed from flow).
+  
+- **fixed:** Positioned relative to the viewport (stays in place when scrolling).
+  
+- **sticky:** Acts like relative until a scroll threshold is reached, then becomes fixed.
