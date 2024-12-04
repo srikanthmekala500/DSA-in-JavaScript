@@ -3,7 +3,7 @@ LMS
 j1644
 jodas@1644
 ## imp
-
+most imp : https://microbiologyguideritesh.com/environmental-monitoring/
 https://www.cleanroomtechnology.com/news/article_page/Choosing_the_most_suitable_particle_sample_point_locations_in_the_cleanroom/205610
 
 https://antoandoluong.com/Files/Docs/20203181613304.pdf
@@ -21,6 +21,7 @@ https://www.youtube.com/watch?v=q2ADC9YLJ4E&ab_channel=PharmGrow
 
 https://drive.google.com/drive/mobile/folders/1sl0umG1gaeIx4G_qlCPpTEFzF1AHIJGc?utm_source=en&pli=1&sort=13&direction=a
 
+![image](https://github.com/user-attachments/assets/1306fff9-1f17-4103-bdd5-15511ed4afb7)
 
  
 ## bacterial endotoxins test (BET)
