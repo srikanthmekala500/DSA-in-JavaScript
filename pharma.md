@@ -13,7 +13,26 @@ https://pharmabeginers.com/guideline-environmental-monitoring-em/
 https://pharmabeginers.com/lal-test-bacterial-endotoxin/
 ![image](https://github.com/user-attachments/assets/dccf3021-33e3-4a70-8fde-f54cf33d2b28)
 
+**Alert Limit:**
 
+-Alert limits are in-house limits that are defined based on the trend analysis.
+
+
+-These limits are like a barrier before the final action limits, given by different regulatory agencies.
+
+
+We have to be alert if microbial count reach to this alert level. It is not necessary to take any action when count reach to alert limit level but we have to be alert as this is a trigger that something is going wrong within the environment/Water and microbial contamination is increasing in the area/water .
+
+
+**Action Limit:**
+
+-Action limits are also in house limits which are defined based on the trend analysis. When microbial contamination reach to these action limits then action is mandatory to control the contamination in area otherwise if not controlled, we might get area failure.
+
+-These alert and action limits must be less than the final limits defined by different guidelines and regulatory agencies.
+
+**Specification Limit:**
+
+-It is the final limit for any test/parameter which is within the acceptable range defined by customer standards ,different guideline and/ or  regulatory guideline to evaluate the quality in the process or product itself.
 **youtube **
 
 https://www.youtube.com/watch?v=q2ADC9YLJ4E&ab_channel=PharmGrow
