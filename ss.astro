@@ -1,5 +1,6 @@
 ---
 import '../styles/header.css'
+import Hamburger from "./Hamburger";
 const navLinks = [
   {
     name: 'Product',
@@ -28,18 +29,21 @@ const navLinks = [
   { name: 'Pricing', href: '/pricing' },
   { name: 'Cloud', href: '/cloud' },
 ];
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="navbar">
   <div class="container">
     <!-- Logo -->
     <img class="logo" src="/images/logo.svg" alt="Company Logo" />
-
+    <Hamburger client:load /> 
     <!-- Navigation Links -->
     <ul class="nav-links">
-      {navLinks.map((link) => (
+      {navLinks.map((link) =>{
+        const isActive = currentPath === link.href; 
+        return (
         <li class="nav-item">
-          <a href={link.href}>
+          <a href={link.href} class={`nav-link ${isActive ? "active" : ""}`}>
             {link.name}
             {link.dropdown && link.dropdown.length > 0 && (
               <span class="dropdown-arrow">&#62;</span>
@@ -49,26 +53,29 @@ const navLinks = [
             <ul class="dropdown">
               {link.dropdown.map((subLink) => (
                 <li>
-                  <a href={subLink.href}>{subLink.name}</a>
+                  <a href={subLink.href} class={currentPath === subLink.href ? "active" : ""}>{subLink.name}</a>
                 </li>
               ))}
             </ul>
           )}
         </li>
-      ))}
-      
-    </ul>
-    <div class="social-followers">
+      )
+      })}
+     <div class="social-followers">
       <div class="social-item">
         <img src="/images/GitHub.svg" alt="GitHub" class="github-icon" />
         <span>18.7k</span>
           
       </div>
     </div>
-    <!-- Buttons -->
-    <div class="buttons">
-      <button class="btn primary">Contact Sales</button>
-      <button class="btn secondary">Get Started</button>
+<!-- Buttons -->
+       <div class="buttons">
+        <button class="btn primary">Contact Sales</button>
+        <button class="btn secondary">Get Started</button>
+      </div>
     </div>
-  </div>
+    </ul>
+   
+    
+   
 </nav>
