@@ -1,0 +1,74 @@
+---
+import '../styles/header.css'
+const navLinks = [
+  {
+    name: 'Product',
+    href: '/',
+    dropdown: [
+      { name: 'Team', href: '/about/team' },
+      { name: 'Mission', href: '/about/mission' },
+    ],
+  },
+  {
+    name: 'Developers',
+    href: '/ ',
+     dropdown: [
+      { name: 'API Docs', href: '/developers/api' },
+      { name: 'SDKs', href: '/developers/sdks' },
+    ],
+  },
+  {
+    name: 'Resources',
+    href: '/ ',
+     dropdown: [
+      { name: 'API Docs', href: '/developers/api' },
+      { name: 'SDKs', href: '/developers/sdks' },
+    ],
+  },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Cloud', href: '/cloud' },
+];
+---
+
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <img class="logo" src="/images/logo.svg" alt="Company Logo" />
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      {navLinks.map((link) => (
+        <li class="nav-item">
+          <a href={link.href}>
+            {link.name}
+            {link.dropdown && link.dropdown.length > 0 && (
+              <span class="dropdown-arrow">&#62;</span>
+            )}
+          </a>
+          {link.dropdown && link.dropdown.length > 0 && (
+            <ul class="dropdown">
+              {link.dropdown.map((subLink) => (
+                <li>
+                  <a href={subLink.href}>{subLink.name}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+      
+    </ul>
+    <div class="social-followers">
+      <div class="social-item">
+        <img src="/images/GitHub.svg" alt="GitHub" class="github-icon" />
+        <span>18.7k</span>
+          
+      </div>
+    </div>
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="btn primary">Contact Sales</button>
+      <button class="btn secondary">Get Started</button>
+    </div>
+  </div>
+</nav>
