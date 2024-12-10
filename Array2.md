@@ -1,3 +1,323 @@
+---
+import '../styles/header.css'
+const navLinks = [
+  {
+    name: 'Product',
+    href: '/',
+    dropdown: [
+      { name: 'Team', href: '/about/team' },
+      { name: 'Mission', href: '/about/mission' },
+    ],
+  },
+  {
+    name: 'Developers',
+    href: '/ ',
+     dropdown: [
+      { name: 'API Docs', href: '/developers/api' },
+      { name: 'SDKs', href: '/developers/sdks' },
+    ],
+  },
+  {
+    name: 'Resources',
+    href: '/ ',
+     dropdown: [
+      { name: 'API Docs', href: '/developers/api' },
+      { name: 'SDKs', href: '/developers/sdks' },
+    ],
+  },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Cloud', href: '/cloud' },
+];
+---
+
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <img class="logo" src="/images/logo.svg" alt="Company Logo" />
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      {navLinks.map((link) => (
+        <li class="nav-item">
+          <a href={link.href}>
+            {link.name}
+            {link.dropdown && link.dropdown.length > 0 && (
+              <span class="dropdown-arrow">&#62;</span>
+            )}
+          </a>
+          {link.dropdown && link.dropdown.length > 0 && (
+            <ul class="dropdown">
+              {link.dropdown.map((subLink) => (
+                <li>
+                  <a href={subLink.href}>{subLink.name}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+      
+    </ul>
+    <div class="social-followers">
+      <div class="social-item">
+        <img src="/images/GitHub.svg" alt="GitHub" class="github-icon" />
+        <span>18.7k</span>
+          
+      </div>
+    </div>
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="btn primary">Contact Sales</button>
+      <button class="btn secondary">Get Started</button>
+    </div>
+  </div>
+</nav>
+
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.nav-item a:hover {
+  color: #090909;
+}
+ /* Dropdown Styling */
+.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%; /* Adjust position to align with your navbar */
+  left: 0;
+  background-color: #f6f6f6;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: visibility 0s ease 0.3s, opacity 0.3s ease; /* Delayed visibility for smooth transition */
+}
+
+.nav-item {
+  position: relative; /* Required for positioning dropdown correctly */
+}
+
+.nav-item:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.3s ease-in; /* Smooth transition */
+}
+
+.dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown li a {
+  color: #0b0b0b;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.dropdown li a:hover {
+  background-color: #fdfdfd;
+  color: #ffffff; /* Optional: Adjust hover text color */
+}
+ 
+/* Social Followers Section */
+.social-followers {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+ 
+
+.github-icon {
+  width: 35px;
+  height: 30.4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.dropdown-arrow {
+  display: inline-block;
+  font-size: 0.8rem; /* Adjust size as needed */
+  transition: transform 0.3s ease; /* Smooth rotation effect */
+}
+
+/* Rotate Arrow on Hover */
+.nav-item:hover .dropdown-arrow {
+  transform: rotate(90deg); /* Rotates 90 degrees */
+}
+.social-item span {
+  margin-left: 0; /* Space between the icon and text */
+  font-size: 1rem;
+}
+/* Buttons Section (if added later) */
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: #edebeb;
+  color: #000000;
+}
+
+.btn.primary:hover {
+  background-color: #f2f2f2;
+}
+
+.btn.secondary {
+  background-color: #5c8ec7;
+  color: #ffffff;
+  border: 1px solid #00d1b2;
+}
+
+.btn.secondary:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+@media (max-width: 541px) {
+  .nav-links {
+    display: none;
+  }
+
+  .Headerlogo {
+    height: 31px;
+    width: 30px;
+  }
+
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 24px;
+    justify-content: space-around;
+  }
+
+  .line {
+    background-color: #000;
+    border-radius: 25px;
+    height: 2px;
+    transition: transform 0.3s ease;
+    width: 24px;
+  }
+
+  .mobile-nav {
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    z-index: 10;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+  }
+}
+
+@media (min-width: 540px) {
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}
+
+.line.open {
+  background-color: #004d87;
+}
+
+@media (min-width: 541px) and (max-width: 610px) {
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  .nav-link {
+    font-size: clamp(2rem, 2vw, 4rem);
+  }
+
+  .Headerlogo {
+    height: clamp(2.5rem, 4vw, 12rem);
+    margin-right: clamp(2rem, 3vw, 8rem);
+    width: clamp(2.5rem, 4vw, 12rem);
+  }
+
+  .nav {
+    gap: clamp(2rem, 2vw, 4rem);
+  }
+}
+
+
+
+
 1)  Map in JavaScript
 2)  Polyfill of map()
 3)  Filter In JavaScript
