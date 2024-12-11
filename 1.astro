@@ -1,0 +1,62 @@
+---
+const navLinks = [
+    {
+        name: "Features",
+        href: "/",
+        dropdown: [
+            { name: "Team", href: "/about/team" },
+            { name: "Mission", href: "/about/mission" },
+        ],
+    },
+    {
+        name: "Resources",
+        href: "/ ",
+        dropdown: [
+            { name: "API Docs", href: "/developers/api" },
+            { name: "SDKs", href: "/developers/sdks" },
+        ],
+    },
+    {
+        name: "Testimonials",
+        href: "/ ",
+        dropdown: [
+            { name: "API Docs", href: "/developers/api" },
+            { name: "SDKs", href: "/developers/sdks" },
+        ],
+    },
+   
+];
+---
+
+<nav class="navbar">
+    <div class="container">
+        <img class="logo" src="/Images/Logo.svg" alt="Company Logo" />
+        <ul class="nav-links">
+            {
+                navLinks.map((links) => (
+                    <li class="nav-item">
+                        <a href={links.href}>
+                            {links.name}
+                            {links.dropdown && links.dropdown.length > 0 && (
+                                <span>
+                                    <img src="/Images/Vector.svg" />
+                                </span>
+                            )}
+                        </a>
+                        {links.dropdown && links.dropdown.length > 0 && (
+                            <ul class="dropdown">
+                                {links.dropdown.map((sublinks) => (
+                                    <li>
+                                        <a href={sublinks.href}>
+                                            {sublinks.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</nav>
