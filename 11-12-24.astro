@@ -1,0 +1,127 @@
+ ---
+import "../styles/header.css";
+import Button from '../styles/Button.astro';
+import Hamburger from "./Hamburger";
+
+const navLinks = [
+    {
+        name: "Features",
+        href: "/",
+        dropdown: [
+            { name: "Team", href: "/about/team" },
+            { name: "Mission", href: "/about/mission" },
+            { name: "Team", href: "/about/team" },
+            { name: "Mission", href: "/about/mission" },
+        ],
+    },
+    {
+        name: "Resources",
+        href: "/",
+        dropdown: [
+            { name: "API Docs", href: "/developers/api" },
+            { name: "SDKs", href: "/developers/sdks" },
+        ],
+    },
+    {
+        name: "Testimonials",
+        href: "/",
+        
+    },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navbar">
+    <div class="container">
+        <img class="logo" src="/Images/Logo.svg" alt="Company Logo" />
+        <Hamburger client:load />
+        <ul class="nav-links">
+            {navLinks.map((links) => {
+                const isActive = currentPath === links.href;
+                return (
+                    <li class="nav-item">
+                        <a
+                            href={links.href}
+                            class={`nav-link ${isActive ? "active" : ""}`}
+                        >
+                            {links.name}
+                            {links.dropdown && links.dropdown.length > 0 && (
+                                <span class="dropdown-icon">
+                                    <img src="/Images/Vector.svg" alt="Dropdown Icon" />
+                                </span>
+                            )}
+                        </a>
+                        {links.dropdown && (
+                            <ul class="dropdown">
+                                {links.dropdown.map((sublinks) => (
+                                    <li>
+                                        <a
+                                            href={sublinks.href}
+                                            class="dropdown-link"
+                                        >
+                                            {sublinks.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
+                );
+            })}
+        </ul>
+
+        
+        <div class="button-container">
+            <Button 
+                text="Get Started" 
+                href="/contact-us" 
+                backgroundColor="white" 
+                color="balck" 
+            />
+        </div>
+    </div>
+</nav>
+
+-------------------
+## Hamburger
+
+import React, { useState } from 'react'
+
+const Hamburger: React.FC = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleMenu = () => {
+        setIsOpen((prev) => !prev);
+    }
+    return (
+        <div>
+            <button
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+                aria-expanded={isOpen}
+                className={`hamburger ${isOpen ? "open" : ""}`}
+            >
+                <span className={`line ${isOpen ? "open" : ""}`}></span>
+                
+                <span className={`line ${isOpen ? "open" : ""}`}></span>
+                <span className={`line ${isOpen ? "open" : ""}`}></span>
+
+            </button>
+            <nav className={`mobile-nav ${isOpen ? "open" : ""}`}>
+                <a href="/" className="nav-link">
+                    Product <img src='/Images/Vector.svg'/>
+                </a>
+                <a href="/services" className="nav-link">
+                    Resources <img src='/Images/Vector.svg'/>
+                </a>
+                <a href="/our-work" className="nav-link">
+                    Developers <img src='/Images/Vector.svg'/>
+                </a>
+                
+            </nav>
+        </div>
+    )
+}
+
+export default Hamburger
