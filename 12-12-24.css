@@ -88,13 +88,14 @@ body {
   background-color: #ffffff; /* Softer background for a modern look */
   color: #fafafa; /* Darker text for better readability */
   padding: 2rem;
-  box-shadow: 0 6px 30px rgba(236, 236, 236, 0.25); /* Enhanced shadow for depth */
+  border-radius: 10px;
+  box-shadow: 0 15px 15px rgba(119, 119, 119, 0.25); /* Enhanced shadow for depth */
   z-index: 1000;
   animation: slideToMiddle 0.8s ease-in-out forwards;
   opacity: 0; /* Start hidden */
   display: grid; /* Use grid for layout */
   grid-template-columns: repeat(2, 1fr); 
-  gap: 1.5rem; /* More spacing between items */
+  gap:  2rem; /* More spacing between items */
   align-items: center;
   max-width: 100%; /* Restrict popup width */
   margin: 0 auto; /* Center horizontally */
@@ -120,19 +121,37 @@ body {
 .top-popup-items {
   display: flex; /* Use flexbox for layout */  
   gap: 1rem; /* Space between items */
-  justify-content: center; /* Center align items */
-  align-items: center; /* Vertically align items */
-  padding:  0.5rem; /* Add padding around the container */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Vertically center items */
+  
+  width: 330px; /* Fixed width */
+  height: 56px; /* Fixed height */
+
+  padding: 0.5rem; /* Add padding around the container */
   border: 1px solid #e0e0e0; /* Light border around the box */
-  max-width: 100%; /* Ensure the container doesn’t overflow */
-  width: auto; /* Let the width adjust based on content */
-  margin:  0 auto; /* Center the box horizontally */
+  box-sizing: border-box; /* Include padding and border in width and height */
+
+  background-color: #ffffff; /* Optional: Add a white background */
+  border-radius: 8px; /* Optional: Add rounded corners for better aesthetics */
+  
+  margin: 0 auto; /* Center the box horizontally if needed */
+  cursor: pointer; /* Add pointer cursor on hover */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
 }
- .top-popup-a{
+
+/* Optional Hover Effect */
+.top-popup-items:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  transform: translateY(-1px); /* Slight elevation effect */
+}
+
+.top-popup-a{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
+  text-decoration: none; /* Remove underline for anchor links */
+  color: inherit; /* Ensure the text color inherits from parent */
  }
 
 /* Button styling */
@@ -149,7 +168,6 @@ body {
  .top-popup-button-two {
   margin: 1rem;
   position: fixed;
-  
   transform: translateX(60%);
   z-index: 1000;
   animation: slideToMiddlesecondbutton 0.8s ease-in-out forwards;
@@ -171,6 +189,18 @@ body {
     transform: translateX(52%); /* Center horizontally */
     opacity: 1; /* Fully visible */
   }
+}
+.top-popup-text {
+  font-weight: 600; /* Semi-bold text */
+  font-size: 16px; /* Set font size */
+  color: #333; /* Darker text color for better readability */
+  margin-top: 0.5rem; /* Add space above the text */
+  text-align: center; /* Center-align the text */
+  line-height: 1.5; /* Adjust line height for better spacing */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  text-decoration: none; /* Remove underline */
 }
 
 /* Hamburger Menu */
