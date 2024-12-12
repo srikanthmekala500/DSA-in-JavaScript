@@ -1,6 +1,6 @@
 /* Base Styles */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 1rem;
   margin: 0;
   padding: 0;
@@ -84,11 +84,11 @@ body {
   position: fixed;
   top: -50%;
   left: 50%;
-  transform: translateX(-65%);
+  transform: translateX(-55%);
   background-color: #ffffff; /* Softer background for a modern look */
   color: #fafafa; /* Darker text for better readability */
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 15px 15px rgba(119, 119, 119, 0.25); /* Enhanced shadow for depth */
   z-index: 1000;
   animation: slideToMiddle 0.8s ease-in-out forwards;
@@ -112,7 +112,7 @@ body {
   }
   to {
     top: 10%; /* Move to the middle of the viewport */
-    transform: translateX(-65%); /* Center horizontally */
+    transform: translateX(-55%); /* Center horizontally */
     opacity: 1; /* Fully visible */
   }
 }
@@ -124,16 +124,16 @@ body {
   justify-content: flex-start; /* Align items to the left */
   align-items: center; /* Vertically center items */
   
-  width: 330px; /* Fixed width */
-  height: 56px; /* Fixed height */
-
-  padding: 0.5rem; /* Add padding around the container */
-  border: 1px solid #e0e0e0; /* Light border around the box */
-  box-sizing: border-box; /* Include padding and border in width and height */
-
-  background-color: #ffffff; /* Optional: Add a white background */
-  border-radius: 8px; /* Optional: Add rounded corners for better aesthetics */
+  width: 330px; 
+  height: 56px;  
   
+  padding: 0.5rem; /* Add padding around the container */
+  border: 0.5px solid #e0e0e0; /* Light border around the box */
+  box-sizing: border-box; /* Include padding and border in width and height */
+  border: 1px solid #e0e0e0; /* Light border line around the popup */
+  background-color: #ffffff; /* Optional: Add a white background */
+  border-radius: 4px; /* Optional: Add rounded corners for better aesthetics */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
   margin: 0 auto; /* Center the box horizontally if needed */
   cursor: pointer; /* Add pointer cursor on hover */
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
@@ -165,10 +165,10 @@ body {
   transition: background-color 0.3s ease;
 }
 
- .top-popup-button-two {
-  margin: 1rem;
+.top-popup-button-two {
+ 
   position: fixed;
-  transform: translateX(60%);
+  transform: translateX(30%);
   z-index: 1000;
   animation: slideToMiddlesecondbutton 0.8s ease-in-out forwards;
   opacity: 0; /* Start hidden */
@@ -177,8 +177,22 @@ body {
   align-items: center;
   max-width: 100%; /* Restrict popup width */
   margin: 0 auto; /* Center horizontally */
-  border: 0.5px solid #e0e0e0; /* Light border around the box */
- }
+  border: 1px solid #e0e0e0; /* Light border line around the popup */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+  background-color: #ffffff; /* Ensure the background color is set */
+  border-radius: 8px; /* Optional: Slightly round the corners for a modern look */
+  padding: 1rem; /* Optional: Add some padding for internal spacing */
+  display: flex; /* Use flexbox for layout */  
+  gap: 1rem; /* Space between items */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Vertically center items */
+  
+  width: 330px; 
+  height: 30px;  
+  
+}
+
+
  @keyframes slideToMiddlesecondbutton {
   from {
     top: -50%; /* Start outside of the viewport */
@@ -186,23 +200,20 @@ body {
   }
   to {
     top: 10%; /* Move to the middle of the viewport */
-    transform: translateX(52%); /* Center horizontally */
+    transform: translateX(30%); /* Center horizontally */
     opacity: 1; /* Fully visible */
   }
 }
 .top-popup-text {
-  font-weight: 600; /* Semi-bold text */
-  font-size: 16px; /* Set font size */
-  color: #333; /* Darker text color for better readability */
+   color: #000000; /* Darker text color for better readability */
   margin-top: 0.5rem; /* Add space above the text */
   text-align: center; /* Center-align the text */
   line-height: 1.5; /* Adjust line height for better spacing */
   white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
-  text-decoration: none; /* Remove underline */
-}
 
+}
+ 
 /* Hamburger Menu */
 .mobile-logo {
   width: 120px;
@@ -341,15 +352,12 @@ body {
     gap: clamp(2rem, 2vw, 4rem);
   }
 }
-
-
-
 import React, { useState } from 'react';
 
 const ExportButton: React.FC = () => {
-    const [activePopup, setActivePopup] = useState<null | 'features' | 'resources'>(null);
+    const [activePopup, setActivePopup] = useState<null | 'features' | 'resources' | 'testimonials'>(null);
 
-    const togglePopup = (popupType: 'features' | 'resources') => {
+    const togglePopup = (popupType: 'features' | 'resources' | 'testimonials' ) => {
         setActivePopup((prev) => (prev === popupType ? null : popupType));
     };
 
@@ -362,12 +370,12 @@ const ExportButton: React.FC = () => {
             {activePopup === 'features' && (
                 <div className="top-popup">
                     {[
-                        { href: '/', src: '/Images/money-bag.svg', text: 'Payroll Management' },
-                        { href: '/', src: '/Images/analytics.svg', text: 'Expense & Inventory Management' },
-                        { href: '/', src: '/Images/settings.svg', text: 'Timesheets Management' },
-                        { href: '/', src: '/Images/settings.svg', text: 'Employee Loan Management' },
-                        { href: '/', src: '/Images/settings.svg', text: 'Employee Management' },
-                        { href: '/', src: '/Images/settings.svg', text: 'Project Management' },
+                        { href: '/', src: '/Images/Payroll-Management.svg', text: 'Payroll Management' },
+                        { href: '/', src: '/Images/Expense-inventory-Management.svg', text: 'Expense & Inventory Management' },
+                        { href: '/', src: '/Images/Timesheets-Management.svg', text: 'Timesheets Management' },
+                        { href: '/', src: '/Images/money-bag.svg', text: 'Employee Loan Management' },
+                        { href: '/', src: '/Images/Employee-Management.svg', text: 'Employee Management' },
+                        { href: '/', src: '/Images/Project-Management.svg', text: 'Project Management' },
                     ].map(({ href, src, text }, index) => (
                         <div key={index} className="top-popup-items">
                             <a href={href} className='top-popup-a'>
@@ -385,6 +393,25 @@ const ExportButton: React.FC = () => {
             {activePopup === 'resources' && (
                 <div className="top-popup-button-two">
                     {[
+                        { href: '/', src: '/Images/Blog.svg', text: 'Blog' },
+                        
+                    ].map(({ href, src, text }, index) => (
+                        <div key={index} className="top-popup-item">
+                            <a href={href} className='top-popup-a'>
+                                <img src={src} className='images'  />
+                                <span className='top-popup-text'>{text}</span>
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            )}
+         <button className="toggle-popup-button" onClick={() => togglePopup('testimonials')}>
+                Testimonials  
+            </button>
+
+            {/* {activePopup === 'testimonials' && (
+                <div className="top-popup-button-two">
+                    {[
                         { href: '/', src: '/Images/money-bag.svg', text: 'Payroll Management' },
                         
                     ].map(({ href, src, text }, index) => (
@@ -396,13 +423,13 @@ const ExportButton: React.FC = () => {
                         </div>
                     ))}
                 </div>
-            )}
+            )} */}
+         
         </div>
     );
 };
 
 export default ExportButton;
-
 ---
 import "../styles/header.css";
 import Button from '../styles/Button.astro';
