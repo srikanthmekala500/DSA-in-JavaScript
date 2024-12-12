@@ -1,0 +1,466 @@
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: #000000;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Logo */
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: #090909;
+}
+
+/* Button Styling */
+.button-container {
+  margin-left: auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 35px;
+  background-color: var(--button-bg-color, #f8f9fa);
+  color: var(--button-text-color, rgb(226, 230, 236));
+  border: 2px solid var(--button-border-color, #004D87 );
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.button:hover {
+  box-shadow: 2px 4px rgba(109, 179, 226, 0.5);
+}
+
+.top-popup {
+  margin: 1rem;
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-65%);
+  background-color: #ffffff; /* Softer background for a modern look */
+  color: #fafafa; /* Darker text for better readability */
+  padding: 2rem;
+  box-shadow: 0 6px 30px rgba(236, 236, 236, 0.25); /* Enhanced shadow for depth */
+  z-index: 1000;
+  animation: slideToMiddle 0.8s ease-in-out forwards;
+  opacity: 0; /* Start hidden */
+  display: grid; /* Use grid for layout */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1.5rem; /* More spacing between items */
+  align-items: center;
+  max-width: 100%; /* Restrict popup width */
+  margin: 0 auto; /* Center horizontally */
+  border: 1px solid #e0e0e0; /* Light border around the box */
+}
+
+ 
+ 
+/* Animation for sliding to the middle */
+@keyframes slideToMiddle {
+  from {
+    top: -50%; /* Start outside of the viewport */
+    opacity: 0; /* Invisible at start */
+  }
+  to {
+    top: 10%; /* Move to the middle of the viewport */
+    transform: translateX(-65%); /* Center horizontally */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+ 
+.top-popup-items {
+  display: flex; /* Use flexbox for layout */  
+  gap: 1rem; /* Space between items */
+  justify-content: center; /* Center align items */
+  align-items: center; /* Vertically align items */
+  padding:  0.5rem; /* Add padding around the container */
+  border: 1px solid #e0e0e0; /* Light border around the box */
+  max-width: 100%; /* Ensure the container doesn’t overflow */
+  width: auto; /* Let the width adjust based on content */
+  margin:  0 auto; /* Center the box horizontally */
+}
+ .top-popup-a{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+ }
+
+/* Button styling */
+.toggle-popup-button, .close-button {
+  color: rgb ;
+  border: none;
+  gap: 2rem;
+  background-color: transparent;
+  padding: 0.5rem 1rem;  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+ .top-popup-button-two {
+  margin: 1rem;
+  position: fixed;
+  
+  transform: translateX(60%);
+  z-index: 1000;
+  animation: slideToMiddlesecondbutton 0.8s ease-in-out forwards;
+  opacity: 0; /* Start hidden */
+  display: grid; /* Use grid for layout */
+  gap: 1.5rem; /* More spacing between items */
+  align-items: center;
+  max-width: 100%; /* Restrict popup width */
+  margin: 0 auto; /* Center horizontally */
+  border: 0.5px solid #e0e0e0; /* Light border around the box */
+ }
+ @keyframes slideToMiddlesecondbutton {
+  from {
+    top: -50%; /* Start outside of the viewport */
+    opacity: 0; /* Invisible at start */
+  }
+  to {
+    top: 10%; /* Move to the middle of the viewport */
+    transform: translateX(52%); /* Center horizontally */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Hamburger Menu */
+.mobile-logo {
+  width: 120px;
+  transition: opacity 0.3s ease-in-out;
+}
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin-right: auto;
+}
+
+.line {
+  background-color: #000;
+  height: 2px;
+  width: 24px;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Navigation Link Style */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  margin: 12px 0;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+  border-radius: 4px;
+}
+
+/* Mobile View */
+@media (max-width: 541px) {
+  .button {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    height: 24px;
+    justify-content: space-around;
+  }
+
+  .line {
+    background-color: #000;
+    border-radius: 25px;
+    height: 2px;
+    width: 24px;
+  }
+
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 0 0;
+    padding: 15px 20px;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Desktop View */
+@media (min-width: 540px) {
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1600px) {
+  .nav-link {
+    font-size: clamp(2rem, 2vw, 4rem);
+  }
+
+  .logo {
+    height: clamp(2.5rem, 4vw, 12rem);
+    margin-right: clamp(2rem, 3vw, 8rem);
+    width: clamp(2.5rem, 4vw, 12rem);
+  }
+
+  .nav {
+    gap: clamp(2rem, 2vw, 4rem);
+  }
+}
+
+
+
+import React, { useState } from 'react';
+
+const ExportButton: React.FC = () => {
+    const [activePopup, setActivePopup] = useState<null | 'features' | 'resources'>(null);
+
+    const togglePopup = (popupType: 'features' | 'resources') => {
+        setActivePopup((prev) => (prev === popupType ? null : popupType));
+    };
+
+    return (
+        <div className="popup">
+            <button className="toggle-popup-button" onClick={() => togglePopup('features')}>
+                Features <img src="/Images/Vector.svg" alt="Dropdown Icon" /> 
+            </button>
+
+            {activePopup === 'features' && (
+                <div className="top-popup">
+                    {[
+                        { href: '/', src: '/Images/money-bag.svg', text: 'Payroll Management' },
+                        { href: '/', src: '/Images/analytics.svg', text: 'Expense & Inventory Management' },
+                        { href: '/', src: '/Images/settings.svg', text: 'Timesheets Management' },
+                        { href: '/', src: '/Images/settings.svg', text: 'Employee Loan Management' },
+                        { href: '/', src: '/Images/settings.svg', text: 'Employee Management' },
+                        { href: '/', src: '/Images/settings.svg', text: 'Project Management' },
+                    ].map(({ href, src, text }, index) => (
+                        <div key={index} className="top-popup-items">
+                            <a href={href} className='top-popup-a'>
+                                <img src={src} className='images'  />
+                                <span className='top-popup-text'>{text}</span>
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            <button className="toggle-popup-button" onClick={() => togglePopup('resources')}>
+                Resources <img src="/Images/Vector.svg" alt="Dropdown Icon" />
+            </button>
+            {activePopup === 'resources' && (
+                <div className="top-popup-button-two">
+                    {[
+                        { href: '/', src: '/Images/money-bag.svg', text: 'Payroll Management' },
+                        
+                    ].map(({ href, src, text }, index) => (
+                        <div key={index} className="top-popup-items">
+                            <a href={href} className='top-popup-a'>
+                                <img src={src} className='images'  />
+                                <span className='top-popup-text'>{text}</span>
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default ExportButton;
+
+---
+import "../styles/header.css";
+import Button from '../styles/Button.astro';
+import Hamburger from "./Hamburger";
+import Popup  from  './Navbarpop'
+
+const navLinks = [
+    {
+        name: "Features",
+        href: "/",
+       
+    },
+    {
+        name: "Resources",
+        href: "/",
+       
+    },
+    {
+        name: "Testimonials",
+        href: "/",
+        
+    },
+];
+
+ 
+---
+
+<nav class="navbar">
+    <div class="container">
+        <img class="logo" src="/Images/Logo.svg" alt="Company Logo" />
+        <Hamburger client:load />
+       
+        <ul class="nav-links">
+           <li class="nav-items"> <Popup client:load /> </li>
+        </ul>
+
+        
+        <div class="button-container">
+            <Button 
+                text="Get Started" 
+                href="/contact-us" 
+                backgroundColor="white" 
+                color="balck" 
+                
+            />
+        </div>
+    </div>
+
+   
+</nav>
+
+import React, { useState } from 'react'
+
+const Hamburger: React.FC = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleMenu = () => {
+        setIsOpen((prev) => !prev);
+    }
+    return (
+        <div>
+             
+            <button
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+                aria-expanded={isOpen}
+                className={`hamburger ${isOpen ? "open" : ""}`}
+            >
+                <span className={`line ${isOpen ? "open" : ""}`}></span>
+                
+                <span className={`line ${isOpen ? "open" : ""}`}></span>
+                <span className={`line ${isOpen ? "open" : ""}`}></span>
+
+            </button>
+            <nav className={`mobile-nav ${isOpen ? "open" : ""}`}>
+                <a href="/" className="nav-link">
+                    Product <img src='/Images/Vector.svg'/>
+                </a>
+                <a href="/services" className="nav-link">
+                    Resources <img src='/Images/Vector.svg'/>
+                </a>
+                <a href="/our-work" className="nav-link">
+                    Developers <img src='/Images/Vector.svg'/>
+                </a>
+                
+            </nav>
+        </div>
+    )
+}
+
+export default Hamburger
