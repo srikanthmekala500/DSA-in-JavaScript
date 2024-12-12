@@ -215,16 +215,18 @@ body {
 }
  
 /* Hamburger Menu */
-.mobile-logo {
-  width: 120px;
-  transition: opacity 0.3s ease-in-out;
-}
+
 .hamburger {
+  display: flex;
   background: none;
   border: none;
   cursor: pointer;
   display: flex;
-  margin-right: auto;
+  margin-left: auto;
+  position: absolute; 
+  right: 1rem; 
+  top: 1rem; 
+   
 }
 
 .line {
@@ -235,33 +237,14 @@ body {
   transition: transform 0.3s ease;
 }
 
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  background-color: white;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  padding: 15px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transform: translateY(-20px);
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.mobile-nav.open {
-  display: flex;
-  transform: translateY(0);
-  opacity: 1;
-}
+ 
 
 /* Navigation Link Style */
 .nav-link {
   text-decoration: none;
   color: #333;
   font-size: 1rem;
-  margin: 12px 0;
+  margin: 6px 0;
   padding: 10px;
   transition: background-color 0.3s ease;
 }
@@ -273,6 +256,15 @@ body {
 }
 
 /* Mobile View */
+@media screen and (max-width: 768px) {
+  .logo {
+    content: url('/Images/mobile_logo.svg'); /* Mobile logo */
+    height: 30px;
+    width: auto;
+  }
+}
+
+
 @media (max-width: 541px) {
   .button {
     display: none;
@@ -287,6 +279,7 @@ body {
     flex-direction: column;
     height: 24px;
     justify-content: space-around;
+    
   }
 
   .line {
@@ -301,15 +294,16 @@ body {
     flex-direction: column;
     position: absolute;
     top: 60px;
-    left: 0;
-    right: 0;
+    left: 20px;
+    right: 20px;
     z-index: 10;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px rgba(7, 7, 7, 0.1);
     border-radius: 8px 8px 0 0;
     padding: 15px 20px;
     transform: translateY(-20px);
     opacity: 0;
     transition: all 0.3s ease-in-out;
+     
   }
 
   .mobile-nav.open {
@@ -352,6 +346,7 @@ body {
     gap: clamp(2rem, 2vw, 4rem);
   }
 }
+
 import React, { useState } from 'react';
 
 const ExportButton: React.FC = () => {
