@@ -4,8 +4,7 @@
 **Functions of the Endocrine System**
 
   **Regulation of Metabolism:** Controls how the body uses energy.
-  
-  **Homeostasis:** Maintains internal balance (e.g., blood glucose levels, blood pressure).
+   **Homeostasis:** Maintains internal balance (e.g., blood glucose levels, blood pressure).
   
   **Growth and Development:** Regulates tissue and skeletal growth.
     
