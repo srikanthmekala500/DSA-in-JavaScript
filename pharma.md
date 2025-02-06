@@ -1,3 +1,7 @@
+**FDA and EU GMP Annex 1 Differences in Cleanroom Specifications**    https://www.raps.org/news-and-articles/news-articles/2019/7/fda-and-eu-gmp-annex-1-differences-in-cleanroom-sp
+
+
+
 https://app.enhancv.com/share/86842f23/?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic
 LMS
 j1644
