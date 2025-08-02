@@ -1,3 +1,4 @@
+```javascript
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,3 +160,4 @@
             <li><strong>Lambing Zone:</strong> Separate 5x5 ft pens for each ewe during lambing, warm & dry bedding, disinfection ready.</li>
             <li><strong>Feeding Zone:</strong> Covered area with troughs (1 trough per 10 sheep), easy access for cleaning & water.</li>
             <li><strong>Quarantine Area:</strong> Separate space for new/infected animals, 14-day is
+```
