@@ -1,4 +1,4 @@
-```javascript
+```HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
