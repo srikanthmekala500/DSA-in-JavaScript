@@ -1,0 +1,334 @@
+<!-- Adds Sale button to each health record row.
+     On clicking "Sale", opens modal for sale details.
+     On submit, moves record to "sheepSaledRecords" and removes from "sheepHealthRecords". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewe Care - Sheep Health Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body { background-color: #f0f2f5; color: #333; }
+        .header-section { background-color: #fff; padding: 2rem 0; margin-bottom: 2rem; }
+        .main-container { background-color: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .hidden { display: none; }
+        .status-healthy { color: #28a745; font-weight: bold; }
+        .status-sick { color: #dc3545; font-weight: bold; }
+        .status-treatment { color: #ffc107; font-weight: bold; }
+        .loading { font-style: italic; color: #6c757d; }
+        .nav-link.active { font-weight: bold; color: #007bff !important; }
+    </style>
+</head>
+<body>
+    <header class="header-section text-center">
+        <h1 class="display-4 text-primary">🐏 Ewe Care</h1>
+        <p class="lead text-muted">A simple application to track the health of your flock.</p>
+    </header>
+    <div class="container main-container">
+        <ul class="nav nav-tabs mb-4">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" onclick="showSection('home')">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('records')">Records</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('saled')">Sale Management</a>
+            </li>
+        </ul>
+
+        <div id="homeSection">
+            <h2 class="mb-4">Add New Health Record</h2>
+            <form id="sheepHealthForm">
+                <div class="mb-3">
+                    <label for="sheepId" class="form-label">Sheep ID</label>
+                    <input type="text" class="form-control" id="sheepId" required>
+                </div>
+                <div class="mb-3">
+                    <label for="healthStatus" class="form-label">Health Status</label>
+                    <select class="form-select" id="healthStatus" required>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Sick">Sick</option>
+                        <option value="Under Treatment">Under Treatment</option>
+                        <option value="Recovering">Recovering</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="dateRecorded" class="form-label">Date Recorded</label>
+                    <input type="date" class="form-control" id="dateRecorded" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="weight" class="form-label">Weight (kg)</label>
+                        <input type="number" step="0.1" class="form-control" id="weight">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="temperature" class="form-label">Temperature (°C)</label>
+                        <input type="number" step="0.1" class="form-control" id="temperature">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="notes" class="form-label">Notes</label>
+                    <textarea class="form-control" id="notes" rows="3"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">Reset</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add Record</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="recordsSection" class="hidden">
+            <h2 class="mb-4">All Health Records</h2>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="input-group w-50">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    <input type="text" class="form-control" id="searchInput" onkeyup="filterRecords()" placeholder="Search by Sheep ID...">
+                </div>
+                <button class="btn btn-outline-success" onclick="exportData()"><i class="fas fa-download"></i> Export CSV</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sheep ID</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Weight</th>
+                            <th>Temp</th>
+                            <th>Notes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sheepHealthTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sale Modal -->
+        <div class="modal fade" id="saleSheepModal" tabindex="-1" aria-labelledby="saleSheepModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <form class="modal-content" id="saleSheepForm">
+              <div class="modal-header">
+                <h5 class="modal-title" id="saleSheepModalLabel">Sale Sheep Record</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <input type="hidden" id="saleRecordId">
+                <div class="mb-3">
+                  <label for="saleDate" class="form-label">Date of Sale</label>
+                  <input type="date" class="form-control" id="saleDate" required>
+                </div>
+                <div class="mb-3">
+                  <label for="salePrice" class="form-label">Sale Price</label>
+                  <input type="number" step="0.01" class="form-control" id="salePrice" required>
+                </div>
+                <div class="mb-3">
+                  <label for="saleBuyer" class="form-label">Buyer Name</label>
+                  <input type="text" class="form-control" id="saleBuyer" required>
+                </div>
+                <div class="mb-3">
+                  <label for="saleNotes" class="form-label">Sale Notes</label>
+                  <textarea class="form-control" id="saleNotes" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success">Confirm Sale</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sale Management Section -->
+        <div id="saledSection" class="hidden">
+            <h2 class="mb-4">Sale Management</h2>
+            <button class="btn btn-outline-success mb-3" onclick="exportSaleData()">Export Sale CSV</button>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sheep ID</th>
+                            <th>Status</th>
+                            <th>Date Sold</th>
+                            <th>Price</th>
+                            <th>Buyer</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sheepSaledTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-database-compat.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBdiEUorFPkiZAya84Xzx17id82nB77Zg4",
+            authDomain: "sheep-1b6a7.firebaseapp.com",
+            databaseURL: "https://sheep-1b6a7-default-rtdb.firebaseio.com",
+            projectId: "sheep-1b6a7",
+            storageBucket: "sheep-1b6a7.firebasestorage.app",
+            messagingSenderId: "243565434909",
+            appId: "1:243565434909:web:25312f89033e3fd0d54ef4"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        let allRecords = [], allSaledRecords = [];
+
+        function showSection(section) {
+            ["homeSection", "recordsSection", "saledSection"].forEach(s =>
+                document.getElementById(s).classList.add("hidden"));
+            document.getElementById(section + "Section").classList.remove("hidden");
+            if (section === "records") fetchHealthRecords();
+            if (section === "saled") fetchSaledRecords();
+        }
+
+        // Health Records
+        function fetchHealthRecords() {
+            const sheepHealthTableBody = document.getElementById('sheepHealthTableBody');
+            sheepHealthTableBody.innerHTML = '<tr><td colspan="7" class="text-center loading">Loading records...</td></tr>';
+            db.ref("sheepHealthRecords").orderByChild("dateRecorded").once("value", snapshot => {
+                allRecords = [];
+                sheepHealthTableBody.innerHTML = '';
+                snapshot.forEach(childSnapshot => {
+                    const record = { id: childSnapshot.key, ...childSnapshot.val() };
+                    allRecords.push(record);
+                });
+                allRecords.reverse();
+                allRecords.forEach(record => {
+                    sheepHealthTableBody.innerHTML += renderHealthRecordRow(record);
+                });
+            });
+        }
+        function renderHealthRecordRow(record) {
+            return `<tr>
+                <td><strong>${record.sheepId}</strong></td>
+                <td><span class="${getStatusClass(record.healthStatus)}">${record.healthStatus}</span></td>
+                <td>${record.dateRecorded || 'N/A'}</td>
+                <td>${record.weight || 'N/A'}</td>
+                <td>${record.temperature || 'N/A'}</td>
+                <td>${record.notes || ''}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary" onclick="saleRecord('${record.id}')"><i class="fas fa-money-bill-wave"></i> Sale</button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="deleteRecord('${record.id}')"><i class="fas fa-trash"></i></button>
+                </td>
+            </tr>`;
+        }
+        function getStatusClass(status) {
+            switch (status) {
+                case 'Healthy': return 'status-healthy';
+                case 'Sick': return 'status-sick';
+                case 'Under Treatment': case 'Recovering': return 'status-treatment';
+                default: return '';
+            }
+        }
+        function deleteRecord(id) {
+            if (confirm("Delete record?")) {
+                db.ref("sheepHealthRecords/" + id).remove().then(fetchHealthRecords);
+            }
+        }
+        function saleRecord(recordId) {
+            const record = allRecords.find(r => r.id === recordId);
+            if (!record) return;
+            document.getElementById('saleRecordId').value = record.id;
+            document.getElementById('saleDate').value = new Date().toISOString().split('T')[0];
+            document.getElementById('salePrice').value = '';
+            document.getElementById('saleBuyer').value = '';
+            document.getElementById('saleNotes').value = '';
+            new bootstrap.Modal(document.getElementById('saleSheepModal')).show();
+        }
+        document.getElementById('saleSheepForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('saleRecordId').value;
+            const saleDate = document.getElementById('saleDate').value;
+            const salePrice = document.getElementById('salePrice').value;
+            const saleBuyer = document.getElementById('saleBuyer').value.trim();
+            const saleNotes = document.getElementById('saleNotes').value.trim();
+            const record = allRecords.find(r => r.id === id);
+            if (!record) return;
+            const saledRecord = {
+                ...record,
+                saleDate,
+                salePrice: salePrice ? parseFloat(salePrice) : '',
+                saleBuyer,
+                saleNotes,
+                saledTimestamp: new Date().toISOString()
+            };
+            db.ref("sheepSaledRecords").push(saledRecord).then(() => {
+                db.ref("sheepHealthRecords/" + id).remove().then(() => {
+                    bootstrap.Modal.getInstance(document.getElementById('saleSheepModal')).hide();
+                    fetchHealthRecords();
+                    fetchSaledRecords();
+                });
+            });
+        });
+
+        function exportData() {
+            if (allRecords.length === 0) {
+                alert('No data to export');
+                return;
+            }
+            const csv = 'Sheep ID,Health Status,Date Recorded,Weight,Temperature,Notes\n' +
+                allRecords.map(record =>
+                    `${record.sheepId},${record.healthStatus},${record.dateRecorded || ''},${record.weight || ''},${record.temperature || ''},"${record.notes || ''}"`
+                ).join('\n');
+            downloadCSV(csv, 'sheep_health_records.csv');
+        }
+        function downloadCSV(csv, filename) {
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+        // Sale Management
+        function fetchSaledRecords() {
+            const sheepSaledTableBody = document.getElementById('sheepSaledTableBody');
+            sheepSaledTableBody.innerHTML = '<tr><td colspan="6" class="text-center loading">Loading sales...</td></tr>';
+            db.ref("sheepSaledRecords").orderByChild("saleDate").once("value", snapshot => {
+                allSaledRecords = [];
+                sheepSaledTableBody.innerHTML = '';
+                snapshot.forEach(childSnapshot => {
+                    const record = { id: childSnapshot.key, ...childSnapshot.val() };
+                    allSaledRecords.push(record);
+                });
+                allSaledRecords.reverse();
+                allSaledRecords.forEach(record => {
+                    sheepSaledTableBody.innerHTML += `
+                        <tr>
+                            <td>${record.sheepId}</td>
+                            <td>${record.healthStatus || ''}</td>
+                            <td>${record.saleDate || ''}</td>
+                            <td>${record.salePrice || ''}</td>
+                            <td>${record.saleBuyer || ''}</td>
+                            <td>${record.saleNotes || ''}</td>
+                        </tr>
+                    `;
+                });
+            });
+        }
+        function exportSaleData() {
+            if (allSaledRecords.length === 0) { alert("No sale data to export."); return; }
+            const csv = 'Sheep ID,Status,Date Sold,Price,Buyer,Notes\n' + allSaledRecords.map(r =>
+                `${r.sheepId},${r.healthStatus || ""},${r.saleDate || ""},${r.salePrice || ""},${r.saleBuyer || ""},"${r.saleNotes || ""}"`).join('\n');
+            downloadCSV(csv, 'sheep_sales.csv');
+        }
+
+        // Initial load
+        showSection('home');
+        </script>
+</body>
+</html>

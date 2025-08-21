@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewe Care - Sheep Health Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .header-section {
+            background-color: #fff;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .main-container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .hidden { display: none; }
+        .status-healthy { color: #28a745; font-weight: bold; }
+        .status-sick { color: #dc3545; font-weight: bold; }
+        .status-treatment { color: #ffc107; font-weight: bold; }
+        .loading { font-style: italic; color: #6c757d; }
+        .nav-link.active { font-weight: bold; color: #007bff !important; }
+        .reminder-red { color: #dc3545; font-weight: bold; }
+        .reminder-green { color: #28a745; font-weight: bold; }
+        .reminder-soon { color: #ffc107; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header class="header-section text-center">
+        <h1 class="display-4 text-primary">🐏 Ewe Care</h1>
+        <p class="lead text-muted">A simple application to track the health of your flock.</p>
+    </header>
+    <div class="container main-container">
+        <ul class="nav nav-tabs mb-4">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" onclick="showSection('home')">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('records')">Records</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('reminders')">Reminders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('saled')">Sale Management</a>
+            </li>
+        </ul>
+
+        <div id="homeSection">
+            <h2 class="mb-4">Add New Health Record</h2>
+            <form id="sheepHealthForm">
+                <div class="mb-3">
+                    <label for="sheepId" class="form-label">Sheep ID</label>
+                    <input type="text" class="form-control" id="sheepId" required>
+                </div>
+                <div class="mb-3">
+                    <label for="healthStatus" class="form-label">Health Status</label>
+                    <select class="form-select" id="healthStatus" required>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Sick">Sick</option>
+                        <option value="Under Treatment">Under Treatment</option>
+                        <option value="Recovering">Recovering</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="dateRecorded" class="form-label">Date Recorded</label>
+                    <input type="date" class="form-control" id="dateRecorded" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="weight" class="form-label">Weight (kg)</label>
+                        <input type="number" step="0.1" class="form-control" id="weight">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="temperature" class="form-label">Temperature (°C)</label>
+                        <input type="number" step="0.1" class="form-control" id="temperature">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="notes" class="form-label">Notes</label>
+                    <textarea class="form-control" id="notes" rows="3"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">Reset</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add Record</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="recordsSection" class="hidden">
+            <h2 class="mb-4">All Health Records</h2>
+            <form id="editRecordForm" class="mb-4 hidden"></form>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="input-group w-50">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    <input type="text" class="form-control" id="searchInput" onkeyup="filterRecords()" placeholder="Search by Sheep ID...">
+                </div>
+                <button class="btn btn-outline-success" onclick="exportData()"><i class="fas fa-download"></i> Export CSV</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sheep ID</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Weight</th>
+                            <th>Temp</th>
+                            <th>Notes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sheepHealthTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Reminders Management Section -->
+        <div id="remindersSection" class="hidden">
+            <h2 class="mb-4">Manage Reminders</h2>
+            <form id="reminderForm" class="mb-4">
+                <div class="row">
+                    <div class="col-md-2 mb-2">
+                        <input type="text" class="form-control" id="reminderSheepId" placeholder="Sheep ID" required>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <input type="date" class="form-control" id="reminderDeworm" required>
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <input type="date" class="form-control" id="reminderWeekly" required>
+                    </div>
+                    <div class="col-md-2 mb-2">
+                        <input type="date" class="form-control" id="reminderWeight" required>
+                    </div>
+                    <div class="col-md-2 mb-2">
+                        <button type="submit" class="btn btn-success">Add Reminder</button>
+                    </div>
+                </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sheep ID</th>
+                            <th>Deworm</th>
+                            <th>Weekly</th>
+                            <th>Weight</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="remindersTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="editReminderModal" tabindex="-1" aria-labelledby="editReminderModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <form class="modal-content" id="editReminderForm">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editReminderModalLabel">Edit Reminder</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <input type="hidden" id="editReminderId">
+                <div class="mb-3">
+                  <label for="editReminderSheepId" class="form-label">Sheep ID</label>
+                  <input type="text" class="form-control" id="editReminderSheepId" required disabled>
+                </div>
+                <div class="mb-3">
+                  <label for="editReminderDeworm" class="form-label">Deworm Date</label>
+                  <div class="input-group">
+                      <input type="date" class="form-control" id="editReminderDeworm" required>
+                      <button type="button" class="btn btn-outline-primary" onclick="changeDewormDate(10)">+10</button>
+                      <button type="button" class="btn btn-outline-primary" onclick="changeDewormDate(-10)">-10</button>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="editReminderWeekly" class="form-label">Weekly Check</label>
+                  <input type="date" class="form-control" id="editReminderWeekly" required>
+                </div>
+                <div class="mb-3">
+                  <label for="editReminderWeight" class="form-label">Weight Check</label>
+                  <input type="date" class="form-control" id="editReminderWeight" required>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Update Reminder</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Edit Health Record Modal -->
+        <div class="modal fade" id="editRecordModal" tabindex="-1" aria-labelledby="editRecordModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <form class="modal-content" id="editHealthRecordForm">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editRecordModalLabel">Edit Health Record</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <input type="hidden" id="editRecordId">
+                <div class="mb-3">
+                  <label for="editSheepId" class="form-label">Sheep ID</label>
+                  <input type="text" class="form-control" id="editSheepId" required>
+                </div>
+                <div class="mb-3">
+                  <label for="editHealthStatus" class="form-label">Health Status</label>
+                  <select class="form-select" id="editHealthStatus" required>
+                    <option value="Healthy">Healthy</option>
+                    <option value="Sick">Sick</option>
+                    <option value="Under Treatment">Under Treatment</option>
+                    <option value="Recovering">Recovering</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="editDateRecorded" class="form-label">Date Recorded</label>
+                  <input type="date" class="form-control" id="editDateRecorded" required>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="editWeight" class="form-label">Weight (kg)</label>
+                    <input type="number" step="0.1" class="form-control" id="editWeight">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="editTemperature" class="form-label">Temperature (°C)</label>
+                    <input type="number" step="0.1" class="form-control" id="editTemperature">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="editNotes" class="form-label">Notes</label>
+                  <textarea class="form-control" id="editNotes" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Update Record</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sale Management Section -->
+        <div id="saledSection" class="hidden">
+            <h2 class="mb-4">Sale Management</h2>
+            <button class="btn btn-outline-success mb-3" onclick="exportSaleData()">Export Sale CSV</button>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sheep ID</th>
+                            <th>Date Sold</th>
+                            <th>Price</th>
+                            <th>Buyer</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sheepSaledTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-database-compat.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBdiEUorFPkiZAya84Xzx17id82nB77Zg4",
+            authDomain: "sheep-1b6a7.firebaseapp.com",
+            databaseURL: "https://sheep-1b6a7-default-rtdb.firebaseio.com",
+            projectId: "sheep-1b6a7",
+            storageBucket: "sheep-1b6a7.firebasestorage.app",
+            messagingSenderId: "243565434909",
+            appId: "1:243565434909:web:25312f89033e3fd0d54ef4"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        let allRecords = [], allReminders = [], allSaledRecords = [];
+
+        function showSection(section) {
+            ["homeSection", "recordsSection", "remindersSection", "saledSection"].forEach(s =>
+                document.getElementById(s).classList.add("hidden"));
+            document.getElementById(section + "Section").classList.remove("hidden");
+            if (section === "records") fetchHealthRecords();
+            if (section === "reminders") fetchReminders();
+            if (section === "saled") fetchSaledRecords();
+        }
+
+        // Health Records
+        function fetchHealthRecords() {
+            const sheepHealthTableBody = document.getElementById('sheepHealthTableBody');
+            sheepHealthTableBody.innerHTML = '<tr><td colspan="7" class="text-center loading">Loading records...</td></tr>';
+            db.ref("sheepHealthRecords").orderByChild("dateRecorded").once("value", snapshot => {
+                allRecords = [];
+                sheepHealthTableBody.innerHTML = '';
+                snapshot.forEach(childSnapshot => {
+                    const record = { id: childSnapshot.key, ...childSnapshot.val() };
+                    allRecords.push(record);
+                });
+                allRecords.reverse();
+                allRecords.forEach(record => {
+                    sheepHealthTableBody.innerHTML += renderHealthRecordRow(record);
+                });
+            });
+        }
+        function renderHealthRecordRow(record) {
+            return `<tr>
+                <td><strong>${record.sheepId}</strong></td>
+                <td><span class="${getStatusClass(record.healthStatus)}">${record.healthStatus}</span></td>
+                <td>${record.dateRecorded || 'N/A'}</td>
+                <td>${record.weight || 'N/A'}</td>
+                <td>${record.temperature || 'N/A'}</td>
+                <td>${record.notes || ''}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary" onclick="editHealthRecord('${record.id}')"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="deleteRecord('${record.id}')"><i class="fas fa-trash"></i></button>
+                </td>
+            </tr>`;
+        }
+        function getStatusClass(status) {
+            switch (status) {
+                case 'Healthy': return 'status-healthy';
+                case 'Sick': return 'status-sick';
+                case 'Under Treatment': case 'Recovering': return 'status-treatment';
+                default: return '';
+            }
+        }
+        function deleteRecord(id) {
+            if (confirm("Delete record?")) {
+                db.ref("sheepHealthRecords/" + id).remove().then(fetchHealthRecords);
+            }
+        }
+        document.getElementById('sheepHealthForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const sheepId = document.getElementById('sheepId').value.trim();
+            const healthStatus = document.getElementById('healthStatus').value;
+            const dateRecorded = document.getElementById('dateRecorded').value;
+            const weight = document.getElementById('weight').value;
+            const temperature = document.getElementById('temperature').value;
+            const notes = document.getElementById('notes').value.trim();
+            if (!sheepId || !healthStatus || !dateRecorded) {
+                alert('Please fill out Sheep ID, Health Status, and Date.');
+                return;
+            }
+            const record = { sheepId, healthStatus, dateRecorded, notes, timestamp: new Date().toISOString() };
+            if (weight) record.weight = parseFloat(weight);
+            if (temperature) record.temperature = parseFloat(temperature);
+            db.ref("sheepHealthRecords").push(record).then(() => {
+                this.reset();
+                fetchHealthRecords();
+            });
+        });
+        function editHealthRecord(id) {
+            const record = allRecords.find(r => r.id === id);
+            if (!record) return;
+            document.getElementById('editRecordId').value = record.id;
+            document.getElementById('editSheepId').value = record.sheepId;
+            document.getElementById('editHealthStatus').value = record.healthStatus;
+            document.getElementById('editDateRecorded').value = record.dateRecorded || '';
+            document.getElementById('editWeight').value = record.weight || '';
+            document.getElementById('editTemperature').value = record.temperature || '';
+            document.getElementById('editNotes').value = record.notes || '';
+            new bootstrap.Modal(document.getElementById('editRecordModal')).show();
+        }
+        document.getElementById('editHealthRecordForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const id = document.getElementById('editRecordId').value;
+            const sheepId = document.getElementById('editSheepId').value.trim();
+            const healthStatus = document.getElementById('editHealthStatus').value;
+            const dateRecorded = document.getElementById('editDateRecorded').value;
+            const weight = document.getElementById('editWeight').value;
+            const temperature = document.getElementById('editTemperature').value;
+            const notes = document.getElementById('editNotes').value.trim();
+            if (!sheepId || !healthStatus || !dateRecorded) {
+                alert('Please fill out Sheep ID, Health Status, and Date.');
+                return;
+            }
+            const updatedRecord = { sheepId, healthStatus, dateRecorded, notes, timestamp: new Date().toISOString() };
+            if (weight) updatedRecord.weight = parseFloat(weight);
+            if (temperature) updatedRecord.temperature = parseFloat(temperature);
+            db.ref("sheepHealthRecords/" + id).update(updatedRecord).then(() => {
+                bootstrap.Modal.getInstance(document.getElementById('editRecordModal')).hide();
+                fetchHealthRecords();
+            });
+        });
+
+        function resetForm() { document.getElementById('sheepHealthForm').reset(); }
+        function filterRecords() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const rows = sheepHealthTableBody.querySelectorAll('tr');
+            rows.forEach(row => {
+                const sheepId = row.cells[0]?.textContent.toLowerCase() || '';
+                if (sheepId.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        function exportData() {
+            if (allRecords.length === 0) {
+                alert('No data to export');
+                return;
+            }
+            const csv = 'Sheep ID,Health Status,Date Recorded,Weight,Temperature,Notes\n' +
+                allRecords.map(record =>
+                    `${record.sheepId},${record.healthStatus},${record.dateRecorded || ''},${record.weight || ''},${record.temperature || ''},"${record.notes || ''}"`
+                ).join('\n');
+            downloadCSV(csv, 'sheep_health_records.csv');
+        }
+        function downloadCSV(csv, filename) {
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+        // Reminders
+        function fetchReminders() {
+            const remindersTableBody = document.getElementById('remindersTableBody');
+            remindersTableBody.innerHTML = '<tr><td colspan="5" class="text-center loading">Loading reminders...</td></tr>';
+            db.ref("sheepReminders").once("value", snapshot => {
+                allReminders = [];
+                remindersTableBody.innerHTML = '';
+                snapshot.forEach(childSnapshot => {
+                    const reminder = { id: childSnapshot.key, ...childSnapshot.val() };
+                    allReminders.push(reminder);
+                });
+                allReminders.forEach(reminder => {
+                    remindersTableBody.innerHTML += renderReminderRow(reminder);
+                });
+            });
+        }
+        function renderReminderRow(rem) {
+            return `<tr>
+                <td>${rem.sheepId}</td>
+                <td>
+                    <span class="${getReminderClass(rem.dewormDate)}">Deworm: ${rem.dewormDate}</span>
+                </td>
+                <td>
+                    <span>${rem.weeklyDate}</span>
+                </td>
+                <td>
+                    <span>${rem.weightDate}</span>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary" onclick="editReminder('${rem.id}')"><i class="fas fa-edit"></i></button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="deleteReminder('${rem.id}')"><i class="fas fa-trash"></i></button>
+                </td>
+            </tr>`;
+        }
+        function getReminderClass(date) {
+            const today = new Date().toISOString().split('T')[0];
+            if (!date) return "";
+            if (today > date) return "reminder-red";
+            const dateObj = new Date(date);
+            const todayObj = new Date(today);
+            const daysDiff = (dateObj - todayObj) / (1000*60*60*24);
+            if (daysDiff <= 3 && daysDiff >= 0) return "reminder-soon";
+            return "reminder-green";
+        }
+        document.getElementById('reminderForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const sheepId = document.getElementById('reminderSheepId').value.trim();
+            const dewormDate = document.getElementById('reminderDeworm').value;
+            const weeklyDate = document.getElementById('reminderWeekly').value;
+            const weightDate = document.getElementById('reminderWeight').value;
+            if (!sheepId || !dewormDate || !weeklyDate || !weightDate) return;
+            const data = { sheepId, dewormDate, weeklyDate, weightDate };
+            db.ref("sheepReminders").push(data).then(() => {
+                this.reset();
+                fetchReminders();
+            });
+        });
+        function editReminder(id) {
+            const rem = allReminders.find(r => r.id === id);
+            if (!rem) return;
+            document.getElementById('editReminderId').value = rem.id;
+            document.getElementById('editReminderSheepId').value = rem.sheepId;
+            document.getElementById('editReminderDeworm').value = rem.dewormDate;
+            document.getElementById('editReminderWeekly').value = rem.weeklyDate;
+            document.getElementById('editReminderWeight').value = rem.weightDate;
+            new bootstrap.Modal(document.getElementById('editReminderModal')).show();
+        }
+        document.getElementById('editReminderForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const id = document.getElementById('editReminderId').value;
+            const dewormDate = document.getElementById('editReminderDeworm').value;
+            const weeklyDate = document.getElementById('editReminderWeekly').value;
+            const weightDate = document.getElementById('editReminderWeight').value;
+            db.ref("sheepReminders/" + id).update({ dewormDate, weeklyDate, weightDate }).then(() => {
+                bootstrap.Modal.getInstance(document.getElementById('editReminderModal')).hide();
+                fetchReminders();
+            });
+        });
+        function deleteReminder(id) {
+            if (confirm("Delete reminder?")) {
+                db.ref("sheepReminders/" + id).remove().then(fetchReminders);
+            }
+        }
+        function changeDewormDate(days) {
+            const input = document.getElementById('editReminderDeworm');
+            let date = new Date(input.value);
+            if (isNaN(date)) return;
+            date.setDate(date.getDate() + days);
+            input.value = date.toISOString().split('T')[0];
+        }
+
+        // Sale Management
+        function fetchSaledRecords() {
+            const sheepSaledTableBody = document.getElementById('sheepSaledTableBody');
+            sheepSaledTableBody.innerHTML = '<tr><td colspan="5" class="text-center loading">Loading sales...</td></tr>';
+            db.ref("sheepSaledRecords").orderByChild("saleDate").once("value", snapshot => {
+                allSaledRecords = [];
+                sheepSaledTableBody.innerHTML = '';
+                snapshot.forEach(childSnapshot => {
+                    const record = { id: childSnapshot.key, ...childSnapshot.val() };
+                    allSaledRecords.push(record);
+                });
+                allSaledRecords.reverse();
+                allSaledRecords.forEach(record => {
+                    sheepSaledTableBody.innerHTML += `
+                        <tr>
+                            <td>${record.sheepId}</td>
+                            <td>${record.saleDate || ""}</td>
+                            <td>${record.salePrice || ""}</td>
+                            <td>${record.saleBuyer || ""}</td>
+                            <td>${record.saleNotes || ""}</td>
+                        </tr>
+                    `;
+                });
+            });
+        }
+        function exportSaleData() {
+            if (allSaledRecords.length === 0) { alert("No sale data to export."); return; }
+            const csv = 'Sheep ID,Date Sold,Price,Buyer,Notes\n' + allSaledRecords.map(r =>
+                `${r.sheepId},${r.saleDate || ""},${r.salePrice || ""},${r.saleBuyer || ""},"${r.saleNotes || ""}"`).join('\n');
+            downloadCSV(csv, 'sheep_sales.csv');
+        }
+
+        // Initial load
+        showSection('home');
+        </script>
+</body>
+</html>
