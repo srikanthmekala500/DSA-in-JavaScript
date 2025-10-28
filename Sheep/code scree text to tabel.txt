@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convert Pasted Data to Table</title>
+</head>
+<body>
+
+<h3>Paste Raw Data Below:</h3>
+<textarea id="rawData" rows="15" cols="60" placeholder="Paste your data here..."></textarea>
+<br><br>
+
+<button onclick="convertToTable()">Convert to Table</button>
+
+<h3>Formatted Table Output:</h3>
+<table id="outputTable" border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Batch</th>
+      <th>PWS</th>
+      <th>Person</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+function convertToTable() {
+  const input = document.getElementById("rawData").value.trim();
+  const lines = input.split(/\r?\n/); // Split by line
+  const tbody = document.querySelector("#outputTable tbody");
+
+  tbody.innerHTML = ""; // Clear previous output
+
+  for (let i = 0; i < lines.length; i += 7) {
+    const row = lines.slice(i, i + 7);
+    const tr = document.createElement("tr");
+
+    // Fill missing values with empty cells if row has less than 7
+    while (row.length < 7) {
+      row.push(""); // Add empty string for missing fields
+    }
+
+    row.forEach(value => {
+      const td = document.createElement("td");
+      td.textContent = value.trim();
+      tr.appendChild(td);
+    });
+
+    tbody.appendChild(tr);
+  }
+}
+</script>
+
+</body>
+</html>

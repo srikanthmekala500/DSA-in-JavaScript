@@ -1,0 +1,324 @@
+﻿https://github.com/srikanthmekala500/DSA-in-JavaScript/tree/main/Sheep
+isolated colonies : MBO61
+>>>Alphabetically<<<<<
+
+Sub SortSheetsAlphabetically()								
+    Dim i As Integer, j As Integer								
+    Dim SheetCount As Integer								
+								
+    SheetCount = ThisWorkbook.Sheets.Count								
+								
+    For i = 1 To SheetCount - 1								
+        For j = i + 1 To SheetCount								
+            If UCase(ThisWorkbook.Sheets(j).Name) < UCase(ThisWorkbook.Sheets(i).Name) Then								
+                ThisWorkbook.Sheets(j).Move Before:=ThisWorkbook.Sheets(i)								
+            End If								
+        Next j								
+    Next i								
+								
+    MsgBox "Sheets have been sorted alphabetically.", vbInformation								
+End Sub								
+								
+
+
+>>>ListAllSheetNames<<<<<
+
+
+Sub ListAllSheetNames()
+    Dim ws As Worksheet
+    Dim summarySheet As Worksheet
+    Dim i As Long
+    
+    On Error Resume Next
+    ' Try to delete the existing summary sheet if it exists
+    Application.DisplayAlerts = False
+    Sheets("SheetList").Delete
+    Application.DisplayAlerts = True
+    On Error GoTo 0
+    
+    ' Add a new sheet for the summary
+    Set summarySheet = ThisWorkbook.Sheets.Add
+    summarySheet.Name = "SheetList"
+    
+    ' Loop through all sheets and write their names
+    i = 1
+    For Each ws In ThisWorkbook.Sheets
+        If ws.Name <> summarySheet.Name Then
+            summarySheet.Cells(i, 1).Value = ws.Name
+            i = i + 1
+        End If
+    Next ws
+    
+    MsgBox "All sheet names listed in 'SheetList'.", vbInformation
+End Sub
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sheep Info Dashboard with Left Sidebar</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container-fluid {
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Left sidebar */
+    .sidebar-left {
+      width: 220px;
+      background-color: #f8f9fa; /* light background */
+      color: #212529;             /* dark text */
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      border-right: 1px solid #dee2e6; /* subtle right border */
+      box-sizing: border-box;
+    }
+
+    .sidebar-left h4 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #212529;
+    }
+
+    .sidebar-left a {
+      color: #212529;
+      text-decoration: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .sidebar-left a:hover {
+      background-color: #e9ecef;
+    }
+
+    /* Main content area */
+    .main-content {
+      flex: 1;
+      padding: 20px 30px;
+      overflow-y: auto;
+      background: white;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Sheep input form */
+    .add-sheep {
+      margin-bottom: 25px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .add-sheep input,
+    .add-sheep select {
+      padding: 8px 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 160px;
+      max-width: 100%;
+    }
+
+    .add-sheep button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-sheep button:hover {
+      background: #0056b3;
+    }
+
+    /* Sheep list */
+    .sheep-list {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .sheep {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafafa;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .sheep strong {
+      font-size: 1.1rem;
+    }
+
+    .sheep button {
+      background: #dc3545;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .sheep button:hover {
+      background: #b02a37;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid">
+
+    <!-- Left sidebar -->
+    <nav class="sidebar-left">
+      <h4>Quick Links</h4>
+      <a href="#"><i class="fas fa-home"></i> Home</a>
+      <a href="#"><i class="fas fa-chart-bar"></i> Analytics</a>
+      <a href="#"><i class="fas fa-table"></i> Sheep Records</a>
+      <a href="#"><i class="fas fa-cogs"></i> Settings</a>
+    </nav>
+
+    <!-- Main content area -->
+    <div class="main-content">
+      <h1>Sheep Info Dashboard</h1>
+
+      <div class="add-sheep">
+        <input type="text" id="sheepName" placeholder="Sheep Name or ID" />
+        <input type="number" id="sheepAge" placeholder="Age (years)" min="0" />
+        <input type="text" id="sheepBreed" placeholder="Breed" />
+        <select id="sheepHealth">
+          <option value="" disabled selected>Health Status</option>
+          <option value="Healthy">Healthy</option>
+          <option value="Sick">Sick</option>
+          <option value="Injured">Injured</option>
+        </select>
+        <button onclick="addSheep()">Add Sheep</button>
+      </div>
+
+      <div class="sheep-list" id="sheepList">
+        <!-- Sheep records will appear here -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <script>
+    // Your Firebase config here
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+
+    // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+// Connect to local emulator
+db.useEmulator('localhost', 9000);
+
+const sheepRef = db.ref('sheep');
+
+    function addSheep() {
+      const name = document.getElementById('sheepName').value.trim();
+      const age = document.getElementById('sheepAge').value.trim();
+      const breed = document.getElementById('sheepBreed').value.trim();
+      const health = document.getElementById('sheepHealth').value;
+
+      if (!name || !age || !breed || !health) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      const newSheepRef = sheepRef.push();
+      newSheepRef.set({
+        name,
+        age: Number(age),
+        breed,
+        health,
+        createdAt: Date.now()
+      });
+
+      // Clear inputs
+      document.getElementById('sheepName').value = '';
+      document.getElementById('sheepAge').value = '';
+      document.getElementById('sheepBreed').value = '';
+      document.getElementById('sheepHealth').selectedIndex = 0;
+    }
+
+    function removeSheep(key) {
+      sheepRef.child(key).remove();
+    }
+
+    sheepRef.on('value', snapshot => {
+      const sheepData = snapshot.val();
+      const sheepList = document.getElementById('sheepList');
+      sheepList.innerHTML = '';
+
+      if (!sheepData) {
+        sheepList.innerHTML = '<p>No sheep records found.</p>';
+        return;
+      }
+
+      Object.entries(sheepData).forEach(([key, sheep]) => {
+        const div = document.createElement('div');
+        div.className = 'sheep';
+        div.innerHTML = `
+          <div>
+            <strong>${sheep.name}</strong> — Age: ${sheep.age}, Breed: ${sheep.breed}, Health: <em>${sheep.health}</em>
+          </div>
+          <button onclick="removeSheep('${key}')">Remove</button>
+        `;
+        sheepList.appendChild(div);
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,24 @@
+ https://beleaf.biologicale.com/pgLogin.aspx
+
+apps.biologicale.com
+compliancewire iD :16912
+pswd :Welcome@1234
+System :
+psws : Welcome@123
+	
+2024/module-II
+
+Period: Quarterly : Summary Report No:2024/module-II
+
+JANUARY-2024 TO MARCH-2024 :EMP/QUA/B2/M2/01/24/00
+APRIL-2024 TO JUNE-2024 :EMP/QUA/B2/M2/02/24/00
+JULY-2024 TO SEPTEMBER-2024 :EMP/QUA/B2/M2/03/24/00
+OCTOBER-2024 TO DECEMBER-2024 : EMP/QUA/B2/M2/04/24/00
+
+Period: Quarterly : Summary Report No:2025/module-II
+
+JANUARY-2025 TO MARCH-2025 : EMP/QUA/B2/M2/01/25/00
+APRIL-2025 TO JUNE-2025 : EMP/QUA/B2/M2/02/25/00
+
+On 19/08/25, during the assembling of glove port gloves in the manufacturing line-I  for the product " Teriparatide injection 560 mcg/ 2.24 mL (250 mcg/ mL) with batch No. 19F003A"  BMS person Mr. K. Suresh (Emp. ID. No: 14305) had identified that AHUs running status off alarm triggered  in BMS system of block- I facility (line-I, II and III). 
+As per the SOP No. BEL-EN030 (Title : Procedure for monitoring, handling & analysis of process alarms in building management system), during the batch activities AHUs running status off alarm triggered , it should be handled through SOP No. BEL-QA012.
