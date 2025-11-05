@@ -16,6 +16,8 @@ https://pharmabeginers.com/guideline-environmental-monitoring-em/
 
 https://pharmabeginers.com/lal-test-bacterial-endotoxin/
 ![image](https://github.com/user-attachments/assets/dccf3021-33e3-4a70-8fde-f54cf33d2b28)
+https://www.slideshare.net/slideshow/bet-ppt/132105157
+https://www.slideshare.net/slideshow/bacterial-endotoxins-test/80089107
 
 **Alert Limit:**
 
